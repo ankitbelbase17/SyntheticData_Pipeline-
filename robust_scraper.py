@@ -8,6 +8,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import WebDriverException
 import time
+import json
+import os
+from qwen_vl_processor import process_and_save_edits
+from keyword_sampler import sample_keywords_hierarchical
 from urllib.parse import urljoin, urlparse
 import os
 
@@ -239,6 +243,53 @@ Output Format:
     accepted_imgs_cloth = [r for r in results_cloth if r]
     print(f"Accepted human images: {accepted_imgs_human}")
     print(f"Accepted cloth images: {accepted_imgs_cloth}")
+    
+    # ===== QWEN VL INTEGRATION FOR EDIT-BASED PROMPTS =====
+    print("\n[Pipeline] Starting Qwen VL analysis for edit-based model prompts...")
+    
+    # Sample keyword context from keyword_sampler
+    keyword_dict = sample_keywords_hierarchical()
+    
+    # Process human-clothing pairs with Qwen VL
+    vl_outputs_dir = "outputs/vl_analysis/"
+    os.makedirs(vl_outputs_dir, exist_ok=True)
+    
+    if accepted_imgs_human and accepted_imgs_cloth:
+        for idx, human_img in enumerate(accepted_imgs_human[:5]):  # Limit to 5 for demo
+            for jdx, cloth_img in enumerate(accepted_imgs_cloth[:3]):
+                try:
+                    output_json_path = os.path.join(vl_outputs_dir, f"vl_analysis_{idx}_{jdx}.json")
+                    
+                    # Context prompt combining sampled keywords
+                    context_prompt = f"""
+                    Virtual Try-On Task:
+                    - Target garment type: {keyword_dict.get('garment', 't-shirt')}
+                    - Fit style: {keyword_dict.get('fit', 'regular')}
+                    - Color: {keyword_dict.get('color', 'blue')}
+                    - Pattern: {keyword_dict.get('pattern', 'solid')}
+                    - Body shape: {keyword_dict.get('body_shape', 'average')}
+                    - Lighting: {keyword_dict.get('lighting', 'natural')}
+                    - Background: {keyword_dict.get('background', 'studio')}
+                    Generate strong, realistic editing instructions for virtual try-on synthesis.
+                    """
+                    
+                    # Process with Qwen VL
+                    result = process_and_save_edits(
+                        human_img,
+                        [cloth_img],
+                        context_prompt,
+                        output_json_path,
+                        keyword_dict
+                    )
+                    
+                    # Log edit prompt for edit-based models
+                    edit_prompt = result.get("edit_prompt_for_model", "")
+                    print(f"[VL] Edit Prompt ({idx},{jdx}):\n{edit_prompt}\n")
+                    
+                except Exception as e:
+                    print(f"[VL] Error processing pair ({idx},{jdx}): {e}")
+    else:
+        print("[Pipeline] Not enough images to process with Qwen VL.")
 
 if __name__ == "__main__":
     robust_scraper()
