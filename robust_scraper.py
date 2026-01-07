@@ -63,6 +63,25 @@ SCRAPE_SITES = [
     ("https://www.myntra.com/", 0.02),
     ("https://www.flipkart.com/", 0.02),
     ("https://www.snapdeal.com/", 0.02)
+# Clothes diversity dictionary with probabilities
+CLOTHES_DIVERSITY = {
+    "tops": [
+        ("t-shirt", 0.18), ("blouse", 0.10), ("sweater", 0.09), ("tank top", 0.07), ("hoodie", 0.10), ("cardigan", 0.06), ("blazer", 0.05)
+    ],
+    "bottoms": [
+        ("jeans", 0.25), ("trousers", 0.13), ("shorts", 0.13), ("skirt", 0.10), ("leggings", 0.10)
+    ],
+    "dresses": [
+        ("maxi dress", 0.15), ("midi dress", 0.18), ("mini dress", 0.18), ("sundress", 0.10)
+    ],
+    "outerwear": [
+        ("jacket", 0.18), ("coat", 0.13), ("bomber jacket", 0.08), ("denim jacket", 0.10), ("leather jacket", 0.10)
+    ],
+    "full_body": [
+        ("jumpsuit", 0.30), ("romper", 0.20), ("overall", 0.15)
+    ]
+}
+
 ]
 
 def weighted_sample_sites(sites, k=4):
