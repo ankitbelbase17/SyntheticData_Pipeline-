@@ -75,6 +75,9 @@ def sample_prompt_json():
     obs_pose = sample_component_keywords(observed['pose_type'])
     obs_camera = sample_component_keywords(observed['camera_view'])
     obs_visible = sample_component_keywords(observed['visible_elements'])
+    obs_age = sample_component_keywords(observed['age_group'])
+    obs_gender = sample_component_keywords(observed['gender'])
+    obs_body_shape = sample_component_keywords(observed['body_shape'])
 
     # Scene
     scene_bg = sample_component_keywords(scene['background'])
@@ -119,7 +122,10 @@ def sample_prompt_json():
             "skin_tone": obs_skin,
             "pose_type": obs_pose,
             "camera_view": obs_camera,
-            "visible_elements": obs_visible
+            "visible_elements": obs_visible,
+            "age_group": obs_age,
+            "gender": obs_gender,
+            "body_shape": obs_body_shape
         },
         "scene": {
             "background": scene_bg,

@@ -184,31 +184,40 @@ VTON_DICTIONARY = {
     # 3. VISUAL COMPOSITION (What VLM sees in image)
     "observed_elements": {
         "prob": 0.30,
-        "current_garment": {"prob": 0.25, "keywords": [
+        "current_garment": {"prob": 0.12, "keywords": [
             ("describe current garment type", 0.25), ("describe current color", 0.25), ("describe current fit", 0.25), ("describe current pattern", 0.25)
         ]},
-        "body_characteristics": {"prob": 0.99, "keywords": [
+        "body_characteristics": {"prob": 0.15, "keywords": [
             ("average build", 0.18), ("slim build", 0.13), ("athletic build", 0.10), ("curvy build", 0.10), ("plus-size", 0.08),
             ("petite frame", 0.07), ("tall frame", 0.05), ("muscular", 0.05),
             ("prosthetic limb", 0.07), ("wheelchair user", 0.07), ("visible birthmark", 0.06), ("visible tattoo", 0.06),
             ("hijab", 0.04), ("turban", 0.03), ("hearing aid", 0.03)
         ]},
-        "skin_tone": {"prob": 0.99, "keywords": [
+        "skin_tone": {"prob": 0.12, "keywords": [
             ("medium skin", 0.18), ("light skin", 0.15), ("fair skin", 0.13), ("tan skin", 0.13), ("olive skin", 0.10),
             ("brown skin", 0.10), ("dark skin", 0.10), ("deep skin tone", 0.08), ("albinism", 0.03)
         ]},
-        "pose_type": {"prob": 0.99, "keywords": [
+        "pose_type": {"prob": 0.15, "keywords": [
             ("standing straight", 0.13), ("standing casually", 0.12), ("arms at sides", 0.10), ("hands in pockets", 0.08), ("arms crossed", 0.07),
             ("one hand on hip", 0.07), ("hands clasped", 0.06), ("arms raised", 0.06), ("turned slightly", 0.06),
             ("walking", 0.06), ("sitting", 0.06), ("leaning", 0.04), ("posed", 0.03),
             ("crouching", 0.03), ("jumping", 0.03)
         ]},
-        "camera_view": {"prob": 0.10, "keywords": [
+        "camera_view": {"prob": 0.08, "keywords": [
             ("front view", 0.25), ("front-facing", 0.20), ("facing camera", 0.15), ("side view", 0.10), ("profile view", 0.10),
             ("three-quarter view", 0.08), ("back view", 0.05), ("angled view", 0.04), ("turned body", 0.03)
         ]},
-        "visible_elements": {"prob": 0.10, "keywords": [
+        "visible_elements": {"prob": 0.08, "keywords": [
             ("full body visible", 0.30), ("upper body visible", 0.25), ("torso visible", 0.15), ("head cropped", 0.10), ("legs visible", 0.10), ("arms visible", 0.10)
+        ]},
+        "age_group": {"prob": 0.15, "keywords": [
+            ("child", 0.18), ("teen", 0.18), ("young adult", 0.22), ("adult", 0.30), ("senior", 0.12)
+        ]},
+        "gender": {"prob": 0.12, "keywords": [
+            ("male", 0.48), ("female", 0.48), ("non-binary", 0.04)
+        ]},
+        "body_shape": {"prob": 0.13, "keywords": [
+            ("ectomorph", 0.25), ("mesomorph", 0.25), ("endomorph", 0.25), ("pear", 0.10), ("apple", 0.10), ("hourglass", 0.05)
         ]}
     },
     
