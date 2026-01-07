@@ -1,4 +1,5 @@
 import random
+import json
 from keywords_dictionary import VTON_DICTIONARY
 
 def weighted_choice(items):
@@ -44,7 +45,7 @@ def sample_component_keywords(component_dict):
     main_key = weighted_choice(choices)
     return sample_component_keywords(component_dict[main_key])
 
-def sample_prompt():
+def sample_prompt_json():
     garment = VTON_DICTIONARY['garment']
     fit = VTON_DICTIONARY['fit']
     observed = VTON_DICTIONARY['observed_elements']
@@ -96,16 +97,54 @@ def sample_prompt():
     complexity_key = weighted_choice(complexity_choices)
     complexity_example = complexity[complexity_key]['example']
 
-    # Compose prompt (example, can be customized)
-    prompt = f"{edit_verb.capitalize()} {edit_target.format(garment_type=garment_type)} {edit_result.format(description=f'{garment_color} {garment_material} {garment_pattern} {garment_surface}')} " \
-             f"with {fit_overall} fit, {fit_length} length, {fit_neckline} neckline, {fit_waist} waist, {fit_cut} cut. " \
-             f"Scene: {scene_bg}, {scene_light}, {scene_quality}. " \
-             f"Style: {style_aesthetic}, {style_occasion}, {style_season}. " \
-             f"Observed: {obs_garment}, {obs_body}, {obs_skin}, {obs_pose}, {obs_camera}, {obs_visible}. " \
-             f"Complexity: {complexity_example}"
-    return prompt
+    # Output as JSON
+    output = {
+        "garment": {
+            "type": garment_type,
+            "color": garment_color,
+            "material": garment_material,
+            "pattern": garment_pattern,
+            "surface_detail": garment_surface
+        },
+        "fit": {
+            "overall_fit": fit_overall,
+            "length": fit_length,
+            "neckline": fit_neckline,
+            "waist": fit_waist,
+            "cut_style": fit_cut
+        },
+        "observed_elements": {
+            "current_garment": obs_garment,
+            "body_characteristics": obs_body,
+            "skin_tone": obs_skin,
+            "pose_type": obs_pose,
+            "camera_view": obs_camera,
+            "visible_elements": obs_visible
+        },
+        "scene": {
+            "background": scene_bg,
+            "lighting": scene_light,
+            "image_quality": scene_quality
+        },
+        "editing_actions": {
+            "primary_verb": edit_verb,
+            "preservation_verb": edit_preserve,
+            "target_specification": edit_target,
+            "result_specification": edit_result
+        },
+        "style_context": {
+            "aesthetic": style_aesthetic,
+            "occasion": style_occasion,
+            "season": style_season
+        },
+        "complexity": {
+            "level": complexity_key,
+            "example": complexity_example
+        }
+    }
+    return output
 
 if __name__ == "__main__":
     # Example: sample 5 prompts
     for _ in range(5):
-        print(sample_prompt())
+        print(json.dumps(sample_prompt_json(), indent=2))
