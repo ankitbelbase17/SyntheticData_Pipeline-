@@ -3,6 +3,13 @@ import requests
 from concurrent.futures import ThreadPoolExecutor
 from PIL import Image
 from io import BytesIO
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+from selenium.common.exceptions import WebDriverException
+import time
+from urllib.parse import urljoin, urlparse
+import os
 
 # Hierarchical site dictionary with probabilities
 SCRAPE_SITE_CATEGORIES = {
@@ -123,9 +130,66 @@ def weighted_sample_sites_hierarchical(site_dict, k=4):
         chosen_sites.append(random.choices(sites, weights=probs, k=1)[0])
     return chosen_sites
 
+# Selenium-based crawler with deep crawling logic
+
+def selenium_crawl_images(start_urls, image_type="human", max_depth=3, max_images=100):
+    """
+    Crawl and scrape images from start_urls using Selenium, following links recursively up to max_depth.
+    Saves images in images/{image_type}/
+    """
+    chrome_options = Options()
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--no-sandbox')
+    driver = webdriver.Chrome(options=chrome_options)
+    visited = set()
+    images_downloaded = 0
+    folder = f"images/{image_type}/"
+    os.makedirs(folder, exist_ok=True)
+
+    def crawl(url, depth):
+        nonlocal images_downloaded
+        if depth > max_depth or images_downloaded >= max_images or url in visited:
+            return
+        visited.add(url)
+        try:
+            driver.get(url)
+            time.sleep(1)  # minimal wait for page load
+        except WebDriverException:
+            return
+        # Scrape images
+        img_elements = driver.find_elements(By.TAG_NAME, 'img')
+        for img in img_elements:
+            src = img.get_attribute('src')
+            if src and src.startswith('http'):
+                try:
+                    img_data = driver.execute_script(
+                        "return fetch(arguments[0]).then(r=>r.arrayBuffer()).then(b=>Array.from(new Uint8Array(b)));", src)
+                    if img_data:
+                        filename = os.path.join(folder, os.path.basename(urlparse(src).path))
+                        with open(filename, 'wb') as f:
+                            f.write(bytes(img_data))
+                        images_downloaded += 1
+                        if images_downloaded >= max_images:
+                            return
+                except Exception:
+                    continue
+        # Crawl links
+        if depth < max_depth:
+            links = driver.find_elements(By.TAG_NAME, 'a')
+            for link in links:
+                href = link.get_attribute('href')
+                if href and href.startswith('http') and urlparse(href).netloc == urlparse(url).netloc and href not in visited:
+                    crawl(href, depth + 1)
+
+    for url in start_urls:
+        crawl(url, 0)
+    driver.quit()
+
 def robust_scraper():
     # Sample 4 sites for human images (hierarchical)
     sampled_sites = weighted_sample_sites_hierarchical(SCRAPE_SITE_CATEGORIES, k=4)
+    selenium_crawl_images(sampled_sites, image_type="human", max_depth=3, max_images=100)
     all_img_urls = []
     for site in sampled_sites:
         img_urls = scrape_images_from_site(site)
