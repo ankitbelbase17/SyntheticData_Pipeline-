@@ -4,65 +4,57 @@ from concurrent.futures import ThreadPoolExecutor
 from PIL import Image
 from io import BytesIO
 
-# Probabilistic website dictionary
-SCRAPE_SITES = [
-    ("https://www.amazon.com/", 0.05),
-    ("https://www.ebay.com/", 0.05),
-    ("https://www.zalando.com/", 0.04),
-    ("https://www.asos.com/", 0.04),
-    ("https://www.farfetch.com/", 0.03),
-    ("https://www.nordstrom.com/", 0.03),
-    ("https://www.macys.com/", 0.03),
-    ("https://www2.hm.com/", 0.03),
-    ("https://www.uniqlo.com/", 0.03),
-    ("https://www.shein.com/", 0.03),
-    ("https://www.forever21.com/", 0.03),
-    ("https://www.boohoo.com/", 0.03),
-    ("https://www.missguided.com/", 0.03),
-    ("https://www.urbanoutfitters.com/", 0.03),
-    ("https://www.revolve.com/", 0.03),
-    ("https://www.zara.com/", 0.03),
-    ("https://www.net-a-porter.com/", 0.02),
-    ("https://www.ssense.com/", 0.02),
-    ("https://www.shopbop.com/", 0.02),
-    ("https://www.anthropologie.com/", 0.02),
-    ("https://www.lulus.com/", 0.02),
-    ("https://www.modcloth.com/", 0.02),
-    ("https://www.prettylittlething.com/", 0.02),
-    ("https://www.stockx.com/", 0.02),
-    ("https://www.depop.com/", 0.02),
-    ("https://www.grailed.com/", 0.02),
-    ("https://www.vinted.com/", 0.02),
-    ("https://www.etsy.com/", 0.02),
-    ("https://www.pinterest.com/", 0.02),
-    ("https://www.instagram.com/", 0.02),
-    ("https://www.facebook.com/marketplace/", 0.02),
-    ("https://www.reddit.com/r/fashion/", 0.02),
-    ("https://www.flickr.com/", 0.02),
-    ("https://www.gettyimages.com/", 0.02),
-    ("https://unsplash.com/", 0.02),
-    ("https://www.pexels.com/", 0.02),
-    ("https://pixabay.com/", 0.02),
-    ("https://www.shutterstock.com/", 0.02),
-    ("https://www.aliexpress.com/", 0.02),
-    ("https://www.wish.com/", 0.02),
-    ("https://www.target.com/", 0.02),
-    ("https://www.walmart.com/", 0.02),
-    ("https://www.jdsports.com/", 0.02),
-    ("https://www.nike.com/", 0.02),
-    ("https://www.adidas.com/", 0.02),
-    ("https://www.levi.com/", 0.02),
-    ("https://www.gap.com/", 0.02),
-    ("https://www.oldnavy.com/", 0.02),
-    ("https://www.saksfifthavenue.com/", 0.02),
-    ("https://www.bloomingdales.com/", 0.02),
-    ("https://www.dillards.com/", 0.02),
-    ("https://www.kohls.com/", 0.02),
-    ("https://www.primark.com/", 0.02),
-    ("https://www.next.co.uk/", 0.02),
-    ("https://www.myntra.com/", 0.02),
-    ("https://www.flipkart.com/", 0.02),
-    ("https://www.snapdeal.com/", 0.02)
+# Hierarchical site dictionary with probabilities
+SCRAPE_SITE_CATEGORIES = {
+    "ecommerce": {
+        "prob": 0.45,
+        "sites": [
+            ("https://www.amazon.com/", 0.05), ("https://www.ebay.com/", 0.05), ("https://www.zalando.com/", 0.04), ("https://www.asos.com/", 0.04),
+            ("https://www.farfetch.com/", 0.03), ("https://www.nordstrom.com/", 0.03), ("https://www.macys.com/", 0.03), ("https://www2.hm.com/", 0.03),
+            ("https://www.uniqlo.com/", 0.03), ("https://www.shein.com/", 0.03), ("https://www.forever21.com/", 0.03), ("https://www.boohoo.com/", 0.03),
+            ("https://www.missguided.com/", 0.03), ("https://www.urbanoutfitters.com/", 0.03), ("https://www.revolve.com/", 0.03), ("https://www.zara.com/", 0.03),
+            ("https://www.net-a-porter.com/", 0.02), ("https://www.ssense.com/", 0.02), ("https://www.shopbop.com/", 0.02), ("https://www.anthropologie.com/", 0.02),
+            ("https://www.lulus.com/", 0.02), ("https://www.modcloth.com/", 0.02), ("https://www.prettylittlething.com/", 0.02), ("https://www.stockx.com/", 0.02),
+            ("https://www.depop.com/", 0.02), ("https://www.grailed.com/", 0.02), ("https://www.vinted.com/", 0.02), ("https://www.etsy.com/", 0.02),
+            ("https://www.aliexpress.com/", 0.02), ("https://www.wish.com/", 0.02), ("https://www.target.com/", 0.02), ("https://www.walmart.com/", 0.02),
+            ("https://www.jdsports.com/", 0.02), ("https://www.nike.com/", 0.02), ("https://www.adidas.com/", 0.02), ("https://www.levi.com/", 0.02),
+            ("https://www.gap.com/", 0.02), ("https://www.oldnavy.com/", 0.02), ("https://www.saksfifthavenue.com/", 0.02), ("https://www.bloomingdales.com/", 0.02),
+            ("https://www.dillards.com/", 0.02), ("https://www.kohls.com/", 0.02), ("https://www.primark.com/", 0.02), ("https://www.next.co.uk/", 0.02),
+            ("https://www.myntra.com/", 0.02), ("https://www.flipkart.com/", 0.02), ("https://www.snapdeal.com/", 0.02)
+        ]
+    },
+    "marketplace": {
+        "prob": 0.15,
+        "sites": [
+            ("https://www.facebook.com/marketplace/", 0.25), ("https://www.depop.com/", 0.20), ("https://www.grailed.com/", 0.20), ("https://www.vinted.com/", 0.20), ("https://www.etsy.com/", 0.15)
+        ]
+    },
+    "stock_photo": {
+        "prob": 0.15,
+        "sites": [
+            ("https://www.gettyimages.com/", 0.25), ("https://unsplash.com/", 0.25), ("https://www.pexels.com/", 0.20), ("https://pixabay.com/", 0.15), ("https://www.shutterstock.com/", 0.15)
+        ]
+    },
+    "social_media": {
+        "prob": 0.10,
+        "sites": [
+            ("https://www.instagram.com/", 0.40), ("https://www.pinterest.com/", 0.30), ("https://www.flickr.com/", 0.15), ("https://www.reddit.com/r/fashion/", 0.15)
+        ]
+    },
+    "fashion_blog_magazine": {
+        "prob": 0.10,
+        "sites": [
+            ("https://www.vogue.com/", 0.30), ("https://www.harpersbazaar.com/", 0.25), ("https://www.gq.com/", 0.20), ("https://www.elle.com/", 0.15), ("https://www.highsnobiety.com/", 0.10)
+        ]
+    },
+    "creative_commons": {
+        "prob": 0.05,
+        "sites": [
+            ("https://commons.wikimedia.org/", 0.50), ("https://www.flickr.com/creativecommons/", 0.50)
+        ]
+    }
+}
+
 # Expanded clothes diversity dictionary with probabilities
 CLOTHES_DIVERSITY = {
     "tops": [
@@ -91,20 +83,6 @@ CLOTHES_DIVERSITY = {
     ]
 }
 
-]
-
-def weighted_sample_sites(sites, k=4):
-    """Sample k sites according to their probabilities."""
-    sites, probs = zip(*sites)
-    chosen = random.choices(sites, weights=probs, k=k)
-    return chosen
-
-def scrape_images_from_site(site_url, max_images=10):
-    """Dummy scraper: In practice, use BeautifulSoup/Scrapy for robust scraping."""
-    # This is a placeholder for actual scraping logic
-    # Here, we just simulate image URLs
-    return [f"{site_url}/image_{i}.jpg" for i in range(max_images)]
-
 def download_and_filter_image(img_url, gemma_prompt, folder):
     try:
         response = requests.get(img_url, timeout=5)
@@ -132,9 +110,22 @@ def weighted_sample_items(items, k=1):
     chosen = random.choices(names, weights=probs, k=k)
     return chosen
 
+# Hierarchical site sampling
+
+def weighted_sample_sites_hierarchical(site_dict, k=4):
+    """Sample k sites from hierarchical site dictionary according to category and site probabilities."""
+    categories = list(site_dict.keys())
+    cat_probs = [site_dict[cat]["prob"] for cat in categories]
+    chosen_cats = random.choices(categories, weights=cat_probs, k=k)
+    chosen_sites = []
+    for cat in chosen_cats:
+        sites, probs = zip(*site_dict[cat]["sites"])
+        chosen_sites.append(random.choices(sites, weights=probs, k=1)[0])
+    return chosen_sites
+
 def robust_scraper():
-    # Sample 4 sites for human images
-    sampled_sites = weighted_sample_sites(SCRAPE_SITES, k=4)
+    # Sample 4 sites for human images (hierarchical)
+    sampled_sites = weighted_sample_sites_hierarchical(SCRAPE_SITE_CATEGORIES, k=4)
     all_img_urls = []
     for site in sampled_sites:
         img_urls = scrape_images_from_site(site)
