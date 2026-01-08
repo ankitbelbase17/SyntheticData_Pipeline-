@@ -1,0 +1,33 @@
+{
+  "method": "selenium_advanced_evasion",
+  "tested": 6,
+  "accessible": 2,
+  "blocked_by_captcha": 3,
+  "failed": 1,
+  "sites": {
+    "https://www.amazon.com/": {
+      "status": "success",
+      "images_found": 155
+    },
+    "https://www.ebay.com/": {
+      "status": "failed",
+      "reason": "Page load timeout"
+    },
+    "https://www.zalando.com/": {
+      "status": "success",
+      "images_found": 1
+    },
+    "https://www.shein.com/": {
+      "status": "blocked_captcha",
+      "reason": "CAPTCHA detected"
+    },
+    "https://unsplash.com/": {
+      "status": "blocked_captcha",
+      "reason": "CAPTCHA detected"
+    },
+    "https://pixabay.com/": {
+      "status": "blocked_captcha",
+      "reason": "CAPTCHA detected"
+    }
+  }
+}

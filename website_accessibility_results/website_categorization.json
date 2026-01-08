@@ -1,0 +1,465 @@
+{
+  "accessible_and_scrapeable": [
+    {
+      "url": "https://www.zalando.com/",
+      "category": "ecommerce",
+      "status": "success",
+      "error_reason": null,
+      "images_count": 1
+    },
+    {
+      "url": "https://www.grailed.com/",
+      "category": "ecommerce",
+      "status": "success",
+      "error_reason": null,
+      "images_count": 2
+    },
+    {
+      "url": "https://www.levi.com/",
+      "category": "ecommerce",
+      "status": "success",
+      "error_reason": null,
+      "images_count": 72
+    }
+  ],
+  "accessible_no_images": [],
+  "blocked_by_captcha": [
+    {
+      "url": "https://www.ebay.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.shein.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.forever21.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.boohoo.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.missguided.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.urbanoutfitters.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.revolve.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.zara.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.ssense.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.anthropologie.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.lulus.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.etsy.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.wish.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.target.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.gap.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.oldnavy.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.saksfifthavenue.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.dillards.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.myntra.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.facebook.com/marketplace/",
+      "category": "marketplace",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://unsplash.com/",
+      "category": "stock_photo",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.pexels.com/",
+      "category": "stock_photo",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://pixabay.com/",
+      "category": "stock_photo",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.shutterstock.com/",
+      "category": "stock_photo",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.instagram.com/",
+      "category": "social_media",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.pinterest.com/",
+      "category": "social_media",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.flickr.com/",
+      "category": "social_media",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.reddit.com/r/fashion/",
+      "category": "social_media",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.highsnobiety.com/",
+      "category": "fashion_blog_magazine",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    },
+    {
+      "url": "https://commons.wikimedia.org/",
+      "category": "creative_commons",
+      "status": "blocked",
+      "error_reason": "CAPTCHA challenge detected",
+      "images_count": 0
+    }
+  ],
+  "blocked_by_login": [
+    {
+      "url": "https://www.amazon.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "Login/Authentication required",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.asos.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "Login/Authentication required",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.farfetch.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "Login/Authentication required",
+      "images_count": 0
+    },
+    {
+      "url": "https://www2.hm.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "Login/Authentication required",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.shopbop.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "Login/Authentication required",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.aliexpress.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "Login/Authentication required",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.jdsports.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "Login/Authentication required",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.nike.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "Login/Authentication required",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.kohls.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "Login/Authentication required",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.primark.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "Login/Authentication required",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.next.co.uk/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "Login/Authentication required",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.flipkart.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "Login/Authentication required",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.gettyimages.com/",
+      "category": "stock_photo",
+      "status": "blocked",
+      "error_reason": "Login/Authentication required",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.flickr.com/creativecommons/",
+      "category": "creative_commons",
+      "status": "blocked",
+      "error_reason": "Login/Authentication required",
+      "images_count": 0
+    }
+  ],
+  "blocked_by_access_denied": [
+    {
+      "url": "https://www.nordstrom.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "Access denied by website",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.net-a-porter.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "Access denied by website",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.adidas.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "Access denied by website",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.snapdeal.com/",
+      "category": "ecommerce",
+      "status": "blocked",
+      "error_reason": "Access denied by website",
+      "images_count": 0
+    }
+  ],
+  "failed_connection": [],
+  "failed_timeout": [
+    {
+      "url": "https://www.macys.com/",
+      "category": "ecommerce",
+      "status": "timeout",
+      "error_reason": "Page load timeout (15 seconds)",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.uniqlo.com/",
+      "category": "ecommerce",
+      "status": "timeout",
+      "error_reason": "Page load timeout (15 seconds)",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.modcloth.com/",
+      "category": "ecommerce",
+      "status": "timeout",
+      "error_reason": "Page load timeout (15 seconds)",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.prettylittlething.com/",
+      "category": "ecommerce",
+      "status": "timeout",
+      "error_reason": "Page load timeout (15 seconds)",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.stockx.com/",
+      "category": "ecommerce",
+      "status": "timeout",
+      "error_reason": "Page load timeout (15 seconds)",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.depop.com/",
+      "category": "ecommerce",
+      "status": "timeout",
+      "error_reason": "Page load timeout (15 seconds)",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.vinted.com/",
+      "category": "ecommerce",
+      "status": "timeout",
+      "error_reason": "Page load timeout (15 seconds)",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.walmart.com/",
+      "category": "ecommerce",
+      "status": "timeout",
+      "error_reason": "Page load timeout (15 seconds)",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.bloomingdales.com/",
+      "category": "ecommerce",
+      "status": "timeout",
+      "error_reason": "Page load timeout (15 seconds)",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.vogue.com/",
+      "category": "fashion_blog_magazine",
+      "status": "timeout",
+      "error_reason": "Page load timeout (15 seconds)",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.harpersbazaar.com/",
+      "category": "fashion_blog_magazine",
+      "status": "timeout",
+      "error_reason": "Page load timeout (15 seconds)",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.gq.com/",
+      "category": "fashion_blog_magazine",
+      "status": "timeout",
+      "error_reason": "Page load timeout (15 seconds)",
+      "images_count": 0
+    },
+    {
+      "url": "https://www.elle.com/",
+      "category": "fashion_blog_magazine",
+      "status": "timeout",
+      "error_reason": "Page load timeout (15 seconds)",
+      "images_count": 0
+    }
+  ],
+  "failed_dns": [],
+  "failed_other": [],
+  "no_access_possible": []
+}
