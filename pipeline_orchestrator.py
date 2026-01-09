@@ -16,7 +16,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-from robust_scraper import robust_scraper, weighted_sample_sites_hierarchical, SCRAPE_SITE_CATEGORIES, selenium_crawl_images
+from scraper.robust_scraper import robust_scraper, weighted_sample_sites_hierarchical, SCRAPE_SITE_CATEGORIES, selenium_crawl_images
 from keyword_sampler import sample_keywords_hierarchical, VTON_DICTIONARY
 from qwen_vl_processor import process_and_save_edits
 from edit_model_pipeline import process_vl_to_edits

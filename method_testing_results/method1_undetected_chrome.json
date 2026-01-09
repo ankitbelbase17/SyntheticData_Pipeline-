@@ -6,24 +6,24 @@
   "failed": 1,
   "sites": {
     "https://www.amazon.com/": {
-      "status": "blocked_captcha",
-      "reason": "CAPTCHA detected"
+      "status": "success",
+      "images_found": 156
     },
     "https://www.ebay.com/": {
-      "status": "success",
-      "images_found": 155
+      "status": "blocked_captcha",
+      "reason": "CAPTCHA detected"
     },
     "https://www.zalando.com/": {
       "status": "success",
       "images_found": 1
     },
     "https://www.shein.com/": {
-      "status": "failed",
-      "reason": "Page load timeout"
-    },
-    "https://unsplash.com/": {
       "status": "blocked_captcha",
       "reason": "CAPTCHA detected"
+    },
+    "https://unsplash.com/": {
+      "status": "failed",
+      "reason": "Page load timeout"
     },
     "https://pixabay.com/": {
       "status": "blocked_captcha",

@@ -11,7 +11,7 @@
     },
     "https://www.ebay.com/": {
       "status": "success",
-      "images_found": 82
+      "images_found": 90
     },
     "https://www.zalando.com/": {
       "status": "success",
@@ -22,8 +22,8 @@
       "reason": "CAPTCHA detected in HTML"
     },
     "https://unsplash.com/": {
-      "status": "failed",
-      "reason": "HTTP 401"
+      "status": "blocked",
+      "reason": "HTTP 403 Forbidden"
     },
     "https://pixabay.com/": {
       "status": "blocked",

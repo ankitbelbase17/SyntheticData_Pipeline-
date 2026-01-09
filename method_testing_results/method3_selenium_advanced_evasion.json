@@ -7,7 +7,7 @@
   "sites": {
     "https://www.amazon.com/": {
       "status": "success",
-      "images_found": 155
+      "images_found": 158
     },
     "https://www.ebay.com/": {
       "status": "failed",
