@@ -8,8 +8,9 @@ SETUP FOR EC2:
 1. Install Chrome: sudo yum install google-chrome-stable (Amazon Linux) or
                    sudo apt-get install google-chrome-stable (Ubuntu)
 2. Install ChromeDriver: via webdriver-manager (auto-managed)
-3. Set AWS credentials: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY env vars or IAM role
-4. Run: python zalando_gallery_scraper_s3_ec2.py
+3. Attach IAM role with S3 permissions to EC2 instance (no credentials needed)
+4. Set environment variables: S3_BUCKET, AWS_REGION (or pass as parameters)
+5. Run: python zalando_gallery_scraper_s3_ec2.py
 """
 
 import os
@@ -34,10 +35,6 @@ import boto3
 from botocore.exceptions import ClientError
 import logging
 
-# Import config
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from config import AWS_S3_BUCKET, AWS_S3_REGION, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
-
 # Setup logging
 logging.basicConfig(
     level=logging.INFO,
@@ -47,15 +44,19 @@ logger = logging.getLogger(__name__)
 
 
 class ZalandoGalleryScraperEC2:
-    def __init__(self, output_dir="/tmp/vton_gallery_dataset", use_s3=True):
+    def __init__(self, output_dir="/tmp/vton_gallery_dataset", use_s3=True, s3_bucket=None, aws_region=None):
         """
         Initialize Zalando scraper optimized for EC2 with optional S3 support
         
         Args:
             output_dir: Local directory for temporary storage (use /tmp on EC2)
             use_s3: If True, save to AWS S3; otherwise save locally
+            s3_bucket: S3 bucket name (or set S3_BUCKET env var)
+            aws_region: AWS region (or set AWS_REGION env var)
         """
         self.use_s3 = use_s3
+        self.s3_bucket = s3_bucket or os.environ.get('S3_BUCKET')
+        self.aws_region = aws_region or os.environ.get('AWS_REGION')
         self.output_dir = Path(output_dir)
         
         # Create local directories
@@ -73,28 +74,26 @@ class ZalandoGalleryScraperEC2:
 
         # Initialize S3 client if enabled
         if self.use_s3:
-            try:
-                # Try to use IAM role first (preferred for EC2), fallback to credentials
+            if not self.s3_bucket:
+                logger.warning("S3 bucket not specified. Set S3_BUCKET env var or pass s3_bucket parameter.")
+                logger.warning("Falling back to local storage.")
+                self.use_s3 = False
+                self.s3_client = None
+            else:
                 try:
+                    # Use IAM role credentials (automatically picked up on EC2)
                     self.s3_client = boto3.client(
                         's3',
-                        region_name=AWS_S3_REGION
+                        region_name=self.aws_region
                     )
                     logger.info("Using IAM role for S3 authentication")
-                except:
-                    self.s3_client = boto3.client(
-                        's3',
-                        region_name=AWS_S3_REGION,
-                        aws_access_key_id=AWS_ACCESS_KEY_ID,
-                        aws_secret_access_key=AWS_SECRET_ACCESS_KEY
-                    )
-                    logger.info("Using credentials for S3 authentication")
-                
-                logger.info(f"Connected to S3 bucket: {AWS_S3_BUCKET}")
-                self._verify_s3_access()
-            except ClientError as e:
-                logger.error(f"Failed to connect to S3: {e}")
-                raise
+                    logger.info(f"Connected to S3 bucket: {self.s3_bucket}")
+                    self._verify_s3_access()
+                except ClientError as e:
+                    logger.warning(f"Failed to connect to S3: {e}")
+                    logger.warning("Falling back to local storage.")
+                    self.use_s3 = False
+                    self.s3_client = None
         else:
             self.s3_client = None
 
@@ -103,14 +102,14 @@ class ZalandoGalleryScraperEC2:
     def _verify_s3_access(self):
         """Verify S3 credentials and bucket access"""
         try:
-            self.s3_client.head_bucket(Bucket=AWS_S3_BUCKET)
+            self.s3_client.head_bucket(Bucket=self.s3_bucket)
             logger.info("S3 bucket access verified")
         except ClientError as e:
             if e.response['Error']['Code'] == '404':
-                logger.error(f"S3 bucket {AWS_S3_BUCKET} does not exist")
+                logger.error(f"S3 bucket {self.s3_bucket} does not exist")
                 raise
             elif e.response['Error']['Code'] == '403':
-                logger.error(f"Access denied to S3 bucket {AWS_S3_BUCKET}")
+                logger.error(f"Access denied to S3 bucket {self.s3_bucket}")
                 raise
             else:
                 logger.error(f"Error accessing S3: {e}")
@@ -214,11 +213,11 @@ class ZalandoGalleryScraperEC2:
         try:
             self.s3_client.upload_file(
                 str(file_path),
-                AWS_S3_BUCKET,
+                self.s3_bucket,
                 s3_key,
                 ExtraArgs={'ContentType': 'application/octet-stream'}
             )
-            logger.debug(f"Uploaded to S3: s3://{AWS_S3_BUCKET}/{s3_key}")
+            logger.debug(f"Uploaded to S3: s3://{self.s3_bucket}/{s3_key}")
             return True
         except ClientError as e:
             logger.error(f"Failed to upload {s3_key} to S3: {e}")
@@ -599,13 +598,30 @@ def main():
     logger.info("Saves to AWS S3 bucket with auto-cleanup of local files")
     logger.info("="*80)
 
+    # ==========================================================================
+    # CONFIGURATION
+    # ==========================================================================
+    # Set these via environment variables or pass directly:
+    #   export S3_BUCKET=your-bucket-name
+    #   export AWS_REGION=us-east-1  (optional)
+    # ==========================================================================
+
     # Use S3 by default, set to False for local-only mode
     use_s3 = True
 
     # Use /tmp for EC2 temporary storage
     output_dir = "/tmp/vton_gallery_dataset"
 
-    scraper = ZalandoGalleryScraperEC2(output_dir=output_dir, use_s3=use_s3)
+    # S3 bucket name (from env var or specify directly)
+    s3_bucket = os.environ.get('S3_BUCKET')  # Or set directly: "your-bucket-name"
+    aws_region = os.environ.get('AWS_REGION')  # Optional
+
+    scraper = ZalandoGalleryScraperEC2(
+        output_dir=output_dir,
+        use_s3=use_s3,
+        s3_bucket=s3_bucket,
+        aws_region=aws_region
+    )
 
     try:
         scraper.init_driver()
@@ -623,8 +639,8 @@ def main():
         logger.info(f"Output directory: {scraper.output_dir.absolute()}")
         logger.info(f"Items scraped: {scraper.items_scraped}")
         if use_s3:
-            logger.info(f"S3 Bucket: {AWS_S3_BUCKET}")
-            logger.info(f"S3 Region: {AWS_S3_REGION}")
+            logger.info(f"S3 Bucket: {scraper.s3_bucket}")
+            logger.info(f"S3 Region: {scraper.aws_region}")
         else:
             logger.info(f"Storage: Local ({scraper.output_dir.absolute()})")
 
