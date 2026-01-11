@@ -1,0 +1,11 @@
+{
+  "item_id": "zalando_4",
+  "source": "zalando_uk",
+  "title": "Anna Field\nShift dress - blue",
+  "url": "https://www.zalando.co.uk/anna-field-shift-dress-blue-an621c25g-k11.html",
+  "cloth_image": "vton_zalando_dataset\\cloth_images\\zalando_4.jpg",
+  "model_image": "vton_zalando_dataset\\model_images\\zalando_4.jpg",
+  "total_images_available": 63,
+  "cloth_size": "1801x2600",
+  "model_size": "1080x1920"
+}

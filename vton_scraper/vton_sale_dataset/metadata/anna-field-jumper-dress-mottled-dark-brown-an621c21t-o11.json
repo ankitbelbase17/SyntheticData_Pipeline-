@@ -1,0 +1,372 @@
+{
+  "item_id": 5,
+  "product_id": "anna-field-jumper-dress-mottled-dark-brown-an621c21t-o11",
+  "source": "zalando_sale",
+  "title": "Anna Field\nJumper dress - mottled dark brown",
+  "url": "https://www.zalando.co.uk/anna-field-jumper-dress-mottled-dark-brown-an621c21t-o11.html",
+  "product_directory": "vton_sale_dataset\\products\\anna-field-jumper-dress-mottled-dark-brown-an621c21t-o11",
+  "images": [
+    {
+      "filename": "image_00.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/69e3cbddd6a34e23afed2aa77cf3a6fd/55172b003e1d4ec98cbd0e50fdced7ed.jpg",
+      "size": "1801x2600",
+      "index": 0
+    },
+    {
+      "filename": "image_01.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/0fbfe372368041a985a2a03590353dbd/e0f1d231d47f45e183c3e8611422b205.jpg",
+      "size": "1801x2600",
+      "index": 1
+    },
+    {
+      "filename": "image_02.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/3d2a849f90064af6bd3a0e7f405b9167/3b83f0722fad4775a2548594e1b13feb.jpg",
+      "size": "1801x2600",
+      "index": 2
+    },
+    {
+      "filename": "image_03.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/8c3a160b27c74898b7afecbd2cee2460/28a28d0ec225455c96521bbfdaae29a7.jpg",
+      "size": "1801x2600",
+      "index": 3
+    },
+    {
+      "filename": "image_04.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/88091125092a422b85561db124f5103f/a1d7583c36194525a2e068ed04a8e8a5.jpg",
+      "size": "1801x2600",
+      "index": 4
+    },
+    {
+      "filename": "image_05.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/0a202df3a6da4f4cb69e3942f368c4b9/7601a14193434a02adb7f06116aa9ae5.jpg",
+      "size": "1801x2600",
+      "index": 5
+    },
+    {
+      "filename": "image_06.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/c5e23d0d01fc42c5bf138107744ad9c5/fdfe116cbf344e9da6cec908fa60a0da.jpg",
+      "size": "1801x2600",
+      "index": 6
+    },
+    {
+      "filename": "image_07.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/fd995ba8f5364a6aab43c43e39c55404/81ac399ba93447ab897bc4ecd6037b4f.jpg",
+      "size": "1801x2600",
+      "index": 7
+    },
+    {
+      "filename": "image_08.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/a011aaf2d6a04bd6bdbcef59e448f561/6c4a00fba601452d8f67d82a86b2b260.jpg",
+      "size": "1801x2600",
+      "index": 8
+    },
+    {
+      "filename": "image_09.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/d980d5f661da485eae715565a2394bb2/ce30b44e723147d0be85be876898f385.jpg",
+      "size": "1801x2600",
+      "index": 9
+    },
+    {
+      "filename": "image_10.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/0be9d76f68454ad1ac526f59762585a5/a78169f56e54403b8f4baa21de933821.jpg",
+      "size": "1801x2600",
+      "index": 10
+    },
+    {
+      "filename": "image_11.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/35ffcbba3c25457dac1a3feed23091a7/89a1f4766407472aa0ffc31caebe03ee.jpg",
+      "size": "1801x2600",
+      "index": 11
+    },
+    {
+      "filename": "image_12.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/7de1ade5c7b940969f6367ca1a44cf0f/7207ef9a1d2349da98b30d89e852ebd2.jpg",
+      "size": "4084x5880",
+      "index": 12
+    },
+    {
+      "filename": "image_13.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/e1d4f38cb11946b5be02bd0c8933429a/421381ad2ce74a20ab767e9b7b88dc89.jpg",
+      "size": "1801x2600",
+      "index": 13
+    },
+    {
+      "filename": "image_14.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/5cb433aff89a42f98a7c405c87bd4c08/453fa27da2b64b728e6a92cee5b3e482.jpg",
+      "size": "1801x2600",
+      "index": 14
+    },
+    {
+      "filename": "image_15.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/422c0618676d476b93108c29c7402cc9/740823f60d8b4267ab0baf43e8c2fad9.jpg",
+      "size": "1801x2600",
+      "index": 15
+    },
+    {
+      "filename": "image_16.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/3c3ba288b99644c1ad52d13a577b170a/ffb79997307b4bc2a1b9ce0d503e9f3d.jpg",
+      "size": "1801x2600",
+      "index": 16
+    },
+    {
+      "filename": "image_17.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/7f80b11cbee041b0b5e555d34f02bec1/42e2ed8a0cdd4101a32b30dd0702f7ec.jpg",
+      "size": "1801x2600",
+      "index": 17
+    },
+    {
+      "filename": "image_18.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/5d5a3167d3324297b140002e4a783265/a523fba7e933463a8e5bd793ee3efa0d.jpg",
+      "size": "1801x2600",
+      "index": 18
+    },
+    {
+      "filename": "image_19.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/1412e1733ef046278f89be72a36c6488/432930c2d62b4262b205c3f148a6b8ae.jpg",
+      "size": "1801x2600",
+      "index": 19
+    },
+    {
+      "filename": "image_20.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/242f856338064372b29e93b961fa58b1/b4087593aa664a02bc3b2ac1dfecd2e9.jpg",
+      "size": "1801x2600",
+      "index": 20
+    },
+    {
+      "filename": "image_21.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/fb75169003684e828e7eb786d24538e4/5e564aa7e12946b89e2aa635bc630d08.jpg",
+      "size": "1801x2600",
+      "index": 21
+    },
+    {
+      "filename": "image_22.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/0b08bb834acf4656841f36444abf1289/b6a847eb85414fb68496852cdbd7ed54.jpg",
+      "size": "1801x2600",
+      "index": 22
+    },
+    {
+      "filename": "image_23.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/38c9c98a39904f55860974bfa44cb251/bd6155bf84574fa5940fcee0c462d3e2.jpg",
+      "size": "1801x2600",
+      "index": 23
+    },
+    {
+      "filename": "image_24.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/58423edcb3fa47729f7ad3aec79558e1/7e73ba55b8d24df49ae4c7aeebed0dfe.jpg",
+      "size": "1801x2600",
+      "index": 24
+    },
+    {
+      "filename": "image_25.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/3731cec3bd6a435ca2ebc38d6cad232a/838a213e75334070aef7abccfe931043.jpg",
+      "size": "1801x2600",
+      "index": 25
+    },
+    {
+      "filename": "image_26.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/e8f7f887e5114cc88f66cd99756345f2/c4b62a1a881c4921adcb36ec9fbcd325.jpg",
+      "size": "1801x2600",
+      "index": 26
+    },
+    {
+      "filename": "image_27.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/5bd62a830cd842f1ad825380f5e9f71c/88ab32421de34b268eabc2ff45e87a09.jpg",
+      "size": "1801x2600",
+      "index": 27
+    },
+    {
+      "filename": "image_28.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/dec5ef0447c84b51aca9dd634725a0ab/331929614ca7400b836c1695c44ec8b5.jpg",
+      "size": "1801x2600",
+      "index": 28
+    },
+    {
+      "filename": "image_29.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/64eb1b0dbef64bbba978b0952c78b459/c9f7b11fe7e64f52b6d7b51f467b83a6.jpg",
+      "size": "1801x2600",
+      "index": 29
+    },
+    {
+      "filename": "image_30.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/1a480e6216564bc79f6f58adb1bd2c4a/3733a0ce164b48d792cf01b6c24f03d6.jpg",
+      "size": "1801x2600",
+      "index": 30
+    },
+    {
+      "filename": "image_31.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/2cdfe28f30bb4f5b8e30e9b0fe457246/a3779ab3823041d8b601c20275cb40eb.jpg",
+      "size": "1801x2600",
+      "index": 31
+    },
+    {
+      "filename": "image_32.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/6192d607bc6f4a3da6a138e692f5bf10/5c20fbe5d8a74d0ea069accd746d65e1.jpg",
+      "size": "1801x2600",
+      "index": 32
+    },
+    {
+      "filename": "image_33.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/1d5f58d9bd934cbeab9512546617af26/da17c84d7e404c1ebfcc2126b31dd0f7.jpg",
+      "size": "1801x2600",
+      "index": 33
+    },
+    {
+      "filename": "image_34.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/e69c86b25e154ffc97b3bda028e89700/598afba885c34f118d3e6f1b6320394e.jpg",
+      "size": "1801x2600",
+      "index": 34
+    },
+    {
+      "filename": "image_35.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/ec9fc77aac863d0e86a7bead7e4dc1e7/d36d2a6b94e648df97b69c72bd4726db.jpg",
+      "size": "1801x2600",
+      "index": 35
+    },
+    {
+      "filename": "image_36.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/58f743075ac44c34a596ab7e243062d0/a3cfeddda519433c82a3d51fafb31b08.jpg",
+      "size": "1801x2600",
+      "index": 36
+    },
+    {
+      "filename": "image_37.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/b3254dc838c14b9a921724174b7751ce/38245067aef7489194695d837439ba7e.jpg",
+      "size": "1801x2600",
+      "index": 37
+    },
+    {
+      "filename": "image_38.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/0e1ab258632648968891755155322fa8/d94edd2df978448fbe7a2a70c0e15694.jpg",
+      "size": "1801x2600",
+      "index": 38
+    },
+    {
+      "filename": "image_39.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/36126baf5eeb423d9085b5e58c26b2ba/921e8bd91849421fa9a6363fa34b9ae0.jpg",
+      "size": "1801x2600",
+      "index": 39
+    },
+    {
+      "filename": "image_40.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/9a04d8e7888a47a49c02f64fb9a0b81f/924fb2721f134602a37dff17f7a41d63.jpg",
+      "size": "1801x2600",
+      "index": 40
+    },
+    {
+      "filename": "image_41.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/602a31d2d6af4fbf99648e6e67e80f9a/0f6fd759264043aaa4c96139992ab6fe.jpg",
+      "size": "1801x2600",
+      "index": 41
+    },
+    {
+      "filename": "image_42.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/28ba7137663640be82bbdbaa21cac91d/a5fcb0603cf745b3a49aa616bfe3495d.jpg",
+      "size": "4000x5760",
+      "index": 42
+    },
+    {
+      "filename": "image_43.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/a6e462b853f44572852192be3ae31287/baf362d3f6884c7ab51acb007af085bc.jpg",
+      "size": "1801x2600",
+      "index": 43
+    },
+    {
+      "filename": "image_44.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/2e814774be8e4cd496853db32d5cd7f8/3d3598b7ae98478c8a88dab5b4130b4e.jpg",
+      "size": "1801x2600",
+      "index": 44
+    },
+    {
+      "filename": "image_45.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/ac687ecb0638468085c7abc420ee9bc7/f0f48042e7d946eba9ce71a3acf2e7d6.jpg",
+      "size": "1801x2600",
+      "index": 45
+    },
+    {
+      "filename": "image_46.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/fdd19d6dbc653703b95217cc1db54adc/e8ad6ecfce434875bd4754f111e12fa7.jpg",
+      "size": "1801x2600",
+      "index": 46
+    },
+    {
+      "filename": "image_47.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/bde4c51b760c4227a48363528ef1f1c2/8c3059dda7264b68aed0764ae4f7ece4.jpg",
+      "size": "1801x2600",
+      "index": 47
+    },
+    {
+      "filename": "image_48.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/f71c92e71d444abf972d2b559ef6e8d1/7f272659b4f14257b473915093389084.jpg",
+      "size": "1801x2600",
+      "index": 48
+    },
+    {
+      "filename": "image_49.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/2c9c2f7aa932436ab0df759cdc82c99f/abbbaa9782934397bcca13473fe3392d.jpg",
+      "size": "1800x2600",
+      "index": 49
+    },
+    {
+      "filename": "image_50.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/ab92206b7c72489dae6dabc5e3408c51/e88511c576c547d6a3d886d3814bb853.jpg",
+      "size": "1801x2600",
+      "index": 50
+    },
+    {
+      "filename": "image_51.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/6d36af474fdf4db69f4d9a4a2d965725/71164ed422bd4b27b7457b21b8590380.jpg",
+      "size": "1801x2600",
+      "index": 51
+    },
+    {
+      "filename": "image_52.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/64e99ec954f646f1a04eb0d892215853/a236b441e3434982a6628fb87090a280.jpg",
+      "size": "1801x2600",
+      "index": 52
+    },
+    {
+      "filename": "image_53.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/7ea5dbabb94742cda8c0577ffff3085d/d0f27bd057fd4ceb818ca0f9025348a7.jpg",
+      "size": "3304x4759",
+      "index": 53
+    },
+    {
+      "filename": "image_54.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/19be01fc5d294435ba2821df3c95281c/1986c90ab6e34dbbadcd75b10e735213.jpg",
+      "size": "1801x2600",
+      "index": 54
+    },
+    {
+      "filename": "image_55.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/6ba52c6a47d34f06b46f7396467d8ee9/a997e0b3d5bf46e5a23c84606e880f31.jpg",
+      "size": "1801x2600",
+      "index": 55
+    },
+    {
+      "filename": "image_56.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/18bb056c147a4f7dbf043d72ffba2523/c6586b63f4084f55bbb2e77aa153c98d.jpg",
+      "size": "1801x2600",
+      "index": 56
+    },
+    {
+      "filename": "image_57.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/73e7007af7ec4c63acf2a99c664986be/202e99717a68401bbfa608348467b37d.jpg",
+      "size": "1801x2600",
+      "index": 57
+    },
+    {
+      "filename": "image_58.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/8b6bbdf7b55c4e3eb39aedfbc4fc00c4/ae0ee48e12324e9d8c0b9940477b5525.jpg",
+      "size": "1980x2852",
+      "index": 58
+    },
+    {
+      "filename": "image_59.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/ecce0445b4e04281b7af59fb463a7c89/81aa44d0bde9490f8e153ff818ae26c2.jpg",
+      "size": "1801x2600",
+      "index": 59
+    }
+  ],
+  "total_images": 60,
+  "scraped_at": "2026-01-10T22:44:31.232163"
+}

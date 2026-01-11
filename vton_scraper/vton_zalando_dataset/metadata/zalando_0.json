@@ -1,0 +1,11 @@
+{
+  "item_id": "zalando_0",
+  "source": "zalando_uk",
+  "title": "Anna Field\nJumper dress - dark brown",
+  "url": "https://www.zalando.co.uk/anna-field-jumper-dress-dark-brown-an621c26s-o11.html",
+  "cloth_image": "vton_zalando_dataset\\cloth_images\\zalando_0.jpg",
+  "model_image": "vton_zalando_dataset\\model_images\\zalando_0.jpg",
+  "total_images_available": 63,
+  "cloth_size": "1801x2600",
+  "model_size": "1801x2600"
+}

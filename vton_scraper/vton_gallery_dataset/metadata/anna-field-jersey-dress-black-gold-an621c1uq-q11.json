@@ -1,0 +1,36 @@
+{
+  "item_id": 2,
+  "product_id": "anna-field-jersey-dress-black-gold-an621c1uq-q11",
+  "source": "zalando_gallery",
+  "title": "Anna Field\nCocktail dress / Party dress - black/gold-colored",
+  "url": "https://www.zalando.co.uk/anna-field-jersey-dress-black-gold-an621c1uq-q11.html",
+  "product_directory": "vton_gallery_dataset\\products\\anna-field-jersey-dress-black-gold-an621c1uq-q11",
+  "images": [
+    {
+      "filename": "image_00.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/a4077c1078954b339bc23bb316fab9f2/9ce56c623af1417794e36f23f3d4ff96.jpg",
+      "size": "1801x2600",
+      "index": 0
+    },
+    {
+      "filename": "image_01.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/d2c91a10132c4160be125bc1063702bf/a14668d898fe403196ccdfd903bf054c.jpg",
+      "size": "1801x2600",
+      "index": 1
+    },
+    {
+      "filename": "image_02.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/efd14202f50642c5b793ad57c792574d/3f83cd7072174679b51d9dabf8c06cea.jpg",
+      "size": "1801x2600",
+      "index": 2
+    },
+    {
+      "filename": "image_03.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/df6ed3a3c9dc461f94e7bf7c430d9db8/0c937ea4cd374e81bceb37ccf0c26a28.jpg",
+      "size": "1801x2600",
+      "index": 3
+    }
+  ],
+  "total_images": 4,
+  "scraped_at": "2026-01-11T11:21:30.392481"
+}

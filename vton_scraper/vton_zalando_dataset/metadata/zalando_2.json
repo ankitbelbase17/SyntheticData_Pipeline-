@@ -1,0 +1,11 @@
+{
+  "item_id": "zalando_2",
+  "source": "zalando_uk",
+  "title": "Anna Field\nJumper dress - navy/ecru",
+  "url": "https://www.zalando.co.uk/anna-field-jumper-dress-navy-ecru-piping-an621c286-k11.html",
+  "cloth_image": "vton_zalando_dataset\\cloth_images\\zalando_2.jpg",
+  "model_image": "vton_zalando_dataset\\model_images\\zalando_2.jpg",
+  "total_images_available": 65,
+  "cloth_size": "3868x5570",
+  "model_size": "1080x1920"
+}
