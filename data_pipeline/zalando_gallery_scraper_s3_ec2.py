@@ -36,7 +36,7 @@ import logging
 
 # Import config
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from config import AWS_S3_BUCKET, AWS_S3_REGION, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
+from config import AWS_S3_BUCKET, AWS_S3_REGION
 
 # Setup logging
 logging.basicConfig(
@@ -74,22 +74,12 @@ class ZalandoGalleryScraperEC2:
         # Initialize S3 client if enabled
         if self.use_s3:
             try:
-                # Try to use IAM role first (preferred for EC2), fallback to credentials
-                try:
-                    self.s3_client = boto3.client(
-                        's3',
-                        region_name=AWS_S3_REGION
-                    )
-                    logger.info("Using IAM role for S3 authentication")
-                except:
-                    self.s3_client = boto3.client(
-                        's3',
-                        region_name=AWS_S3_REGION,
-                        aws_access_key_id=AWS_ACCESS_KEY_ID,
-                        aws_secret_access_key=AWS_SECRET_ACCESS_KEY
-                    )
-                    logger.info("Using credentials for S3 authentication")
-                
+                # Use IAM role credentials (automatically picked up on EC2)
+                self.s3_client = boto3.client(
+                    's3',
+                    region_name=AWS_S3_REGION
+                )
+                logger.info("Using IAM role for S3 authentication")
                 logger.info(f"Connected to S3 bucket: {AWS_S3_BUCKET}")
                 self._verify_s3_access()
             except ClientError as e:
