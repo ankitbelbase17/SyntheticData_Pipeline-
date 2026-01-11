@@ -16,11 +16,11 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-from scraper.robust_scraper import robust_scraper, weighted_sample_sites_hierarchical, SCRAPE_SITE_CATEGORIES, selenium_crawl_images
-from keyword_sampler import sample_keywords_hierarchical, VTON_DICTIONARY
-from qwen_vl_processor import process_and_save_edits
-from edit_model_pipeline import process_vl_to_edits
-from utils import create_dataset_index, save_json_metadata
+from data_pipeline.scrapers.robust_scraper import robust_scraper, weighted_sample_sites_hierarchical, SCRAPE_SITE_CATEGORIES, selenium_crawl_images
+from data_pipeline.utils.keyword_sampler import sample_keywords_hierarchical, VTON_DICTIONARY
+from data_pipeline.models.qwen_vl_processor import process_and_save_edits
+from data_pipeline.models.edit_model_pipeline import process_vl_to_edits
+from data_pipeline.utils.image_utils import create_dataset_index, save_json_metadata
 
 class SyntheticDataPipeline:
     """Orchestrate the full synthetic dataset creation pipeline."""

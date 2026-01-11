@@ -1,4 +1,3 @@
-# utils.py
 """
 Utility functions for image processing: aspect ratio checks, resizing, and more.
 Import and use these in the scraper and other modules as needed.

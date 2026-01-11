@@ -10,10 +10,9 @@ from selenium.common.exceptions import WebDriverException
 import time
 import json
 import os
-from qwen_vl_processor import process_and_save_edits
-from keyword_sampler import sample_keywords_hierarchical
+from data_pipeline.models.qwen_vl_processor import process_and_save_edits
+from data_pipeline.utils.keyword_sampler import sample_keywords_hierarchical, VTON_DICTIONARY
 from urllib.parse import urljoin, urlparse
-import os
 
 # Hierarchical site dictionary with probabilities
 SCRAPE_SITE_CATEGORIES = {
@@ -102,7 +101,6 @@ def download_and_filter_image(img_url, gemma_prompt, folder):
         # For now, we simulate acceptance
         accepted = True  # Replace with actual GEMMA call
         if accepted:
-            import os
             os.makedirs(folder, exist_ok=True)
             img.save(f"{folder}/{img_url.split('/')[-1]}")
             return img_url
@@ -248,7 +246,7 @@ Output Format:
     print("\n[Pipeline] Starting Qwen VL analysis for edit-based model prompts...")
     
     # Sample keyword context from keyword_sampler
-    keyword_dict = sample_keywords_hierarchical()
+    keyword_dict = sample_keywords_hierarchical(VTON_DICTIONARY)
     
     # Process human-clothing pairs with Qwen VL
     vl_outputs_dir = "outputs/vl_analysis/"

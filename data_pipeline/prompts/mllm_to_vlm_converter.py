@@ -120,7 +120,7 @@ def mllm_generate_vlm_prompt(json_data):
 
 if __name__ == "__main__":
     # Example usage: load JSON from sampler, fill placeholders, correct implausible combos, generate VLM prompt
-    from keyword_sampler import sample_prompt_json
+    from data_pipeline.utils.keyword_sampler import sample_prompt_json
     for _ in range(3):
         sampled_json = sample_prompt_json()
         filled_json = fill_json_placeholders_and_correct(sampled_json)

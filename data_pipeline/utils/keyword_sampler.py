@@ -1,6 +1,6 @@
 import random
 import json
-from keywords_dictionary import VTON_DICTIONARY
+from data_pipeline.utils.keywords_dictionary import VTON_DICTIONARY
 
 def weighted_choice(items):
     """items: list of (item, prob) tuples. Returns one item according to prob."""

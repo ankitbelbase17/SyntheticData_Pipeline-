@@ -1,11 +1,10 @@
-# model.py
 """
 Centralized model loader for all ML/VLM/LLM models used in the codebase.
 Import and use these functions in other .py files instead of loading models directly.
 """
 
 import os
-from config import HF_TOKEN, OPENAI_API_KEY, GEMINI_API_KEY
+from data_pipeline.config import HF_TOKEN, OPENAI_API_KEY, GEMINI_API_KEY
 
 # Example: HuggingFace Transformers
 from transformers import AutoModel, AutoTokenizer
@@ -37,6 +36,7 @@ def call_custom_vlm_api(image_bytes, prompt, api_url=None):
     headers = {"Authorization": f"Bearer {HF_TOKEN}"}
     response = requests.post(api_url, files=files, data=data, headers=headers)
     return response.json()
+
 # Qwen 2.5 VL Model
 from transformers import Qwen2VLForConditionalGeneration, AutoProcessor
 import torch
@@ -55,4 +55,5 @@ def load_qwen_vl_model(model_name="Qwen/Qwen2-VL-7B-Instruct", device=None):
     processor = AutoProcessor.from_pretrained(model_name)
     
     return model, processor, device
+
 # Add more model loading/utilities as needed

@@ -1,3 +1,15 @@
+"""
+Website Accessibility Tester
+Tests multiple websites to determine accessibility, scrapability, and categorizes errors.
+Includes CAPTCHA detection and optional manual human intervention for solving CAPTCHAs.
+
+Run with:
+  python test_website_accessibility.py                          # Headless mode
+  python test_website_accessibility.py --gui                    # GUI mode
+  python test_website_accessibility.py --manual-captcha          # Enable manual CAPTCHA solving
+  python test_website_accessibility.py --gui --manual-captcha    # GUI with manual CAPTCHA
+"""
+
 import json
 import os
 import time
@@ -537,12 +549,12 @@ if __name__ == "__main__":
         if "--manual-captcha" in sys.argv:
             allow_manual_captcha = True
     
-    print("\nUsage: python website_accessibility_tester.py [OPTIONS]")
+    print("\nUsage: python test_website_accessibility.py [OPTIONS]")
     print("Options:")
     print("  --gui              : Run in GUI mode (non-headless) for better visibility")
     print("  --manual-captcha   : Enable manual CAPTCHA solving with human intervention")
     print("  --no-headless      : Same as --gui")
-    print("\nExample: python website_accessibility_tester.py --gui --manual-captcha\n")
+    print("\nExample: python test_website_accessibility.py --gui --manual-captcha\n")
     
     tester = WebsiteAccessibilityTester()
     tester.test_all_websites(headless=headless, allow_manual_captcha=allow_manual_captcha)
