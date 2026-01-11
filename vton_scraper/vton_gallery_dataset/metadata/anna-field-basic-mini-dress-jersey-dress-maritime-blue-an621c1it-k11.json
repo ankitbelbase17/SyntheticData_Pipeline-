@@ -1,0 +1,48 @@
+{
+  "item_id": 7,
+  "product_id": "anna-field-basic-mini-dress-jersey-dress-maritime-blue-an621c1it-k11",
+  "source": "zalando_gallery",
+  "title": "Anna Field\nJersey dress - maritime blue",
+  "url": "https://www.zalando.co.uk/anna-field-basic-mini-dress-jersey-dress-maritime-blue-an621c1it-k11.html",
+  "product_directory": "vton_gallery_dataset\\products\\anna-field-basic-mini-dress-jersey-dress-maritime-blue-an621c1it-k11",
+  "images": [
+    {
+      "filename": "image_00.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/60754bb6b3b54288a801d4f6c9c3bc44/17bb35f6a7a642c4a5303885c7822a3e.jpg",
+      "size": "1801x2600",
+      "index": 0
+    },
+    {
+      "filename": "image_01.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/7a3e055aaa2a47b89a8c54d2716905b1/55655c664d904332b8410eaee35eec80.jpg",
+      "size": "762x1100",
+      "index": 1
+    },
+    {
+      "filename": "image_02.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/06feeee83b0f40bf91d7b2e8d987dd98/d87783c13fb74adcaf82a48ef26c0387.jpg",
+      "size": "1801x2600",
+      "index": 2
+    },
+    {
+      "filename": "image_03.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/81cd9680dc8c4434a60c6ecd9ad3afce/d33af49487e942ecaaff7d3ff73ed660.jpg",
+      "size": "1801x2600",
+      "index": 3
+    },
+    {
+      "filename": "image_04.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/3fc6ee80ae12483daf34f6ae4ffd78fe/0f40077c97244d13a10b7238f5bd4a9e.jpg",
+      "size": "1801x2600",
+      "index": 4
+    },
+    {
+      "filename": "image_05.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/ce24d2bf36354c9f80c00e7b8c787b59/db5df37d7de04eeb9e3da4fa9f91aa0c.jpg",
+      "size": "1801x2600",
+      "index": 5
+    }
+  ],
+  "total_images": 6,
+  "scraped_at": "2026-01-11T11:44:47.980755"
+}

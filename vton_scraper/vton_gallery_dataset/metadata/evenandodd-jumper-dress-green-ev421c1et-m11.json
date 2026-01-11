@@ -1,0 +1,24 @@
+{
+  "item_id": 8,
+  "product_id": "evenandodd-jumper-dress-green-ev421c1et-m11",
+  "source": "zalando_gallery",
+  "title": "Even&Odd\nJumper dress - green",
+  "url": "https://www.zalando.co.uk/evenandodd-jumper-dress-green-ev421c1et-m11.html",
+  "product_directory": "vton_gallery_dataset\\products\\evenandodd-jumper-dress-green-ev421c1et-m11",
+  "images": [
+    {
+      "filename": "image_00.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/d980d5f661da485eae715565a2394bb2/ce30b44e723147d0be85be876898f385.jpg",
+      "size": "1801x2600",
+      "index": 0
+    },
+    {
+      "filename": "image_01.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/4fa8f5108b775e28ab8fdbd12e827e65/21abd95ae2c94fbc8c291b2b283f0b39.jpg",
+      "size": "1080x1920",
+      "index": 1
+    }
+  ],
+  "total_images": 2,
+  "scraped_at": "2026-01-11T11:45:05.524270"
+}

@@ -415,14 +415,16 @@ def main():
     scraper = ZalandoGalleryScraper()
 
     try:
+        # headless=False: See browser (slower)
+        # headless=True: Background mode (faster, recommended for large scrapes)
         scraper.init_driver(headless=False)
 
-        # TEST: 2 pages, 5 items
+        # PRODUCTION MODE: Scrape all 120 pages, 10,041 items
         sale_url = "https://www.zalando.co.uk/womens-dresses-sale/"
-        scraper.scrape_sale_page(sale_url, max_pages=2, max_items=5)
+        scraper.scrape_sale_page(sale_url, max_pages=None, max_items=None)
 
-        # PRODUCTION: Uncomment below for full scrape
-        # scraper.scrape_sale_page(sale_url, max_pages=None, max_items=None)
+        # TEST MODE: Use this for testing (5 items, 2 pages)
+        # scraper.scrape_sale_page(sale_url, max_pages=2, max_items=5)
 
         print(f"\nOutput: {scraper.output_dir.absolute()}")
         print(f"Products: {len(list((scraper.output_dir / 'products').iterdir()))}")
