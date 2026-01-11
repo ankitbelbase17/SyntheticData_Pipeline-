@@ -1,0 +1,188 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: synthetic-data-pipeline
+  namespace: default
+  labels:
+    app: synthetic-data-pipeline
+    version: v1
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: synthetic-data-pipeline
+  template:
+    metadata:
+      labels:
+        app: synthetic-data-pipeline
+        version: v1
+    spec:
+      serviceAccountName: synthetic-data-pipeline
+      containers:
+      - name: pipeline
+        image: synthetic-data-pipeline:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
+          name: http
+          protocol: TCP
+        env:
+        - name: PYTHONUNBUFFERED
+          value: "1"
+        - name: QWEN_VL_DEVICE
+          value: "cpu"
+        - name: HF_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: pipeline-secrets
+              key: hf-token
+              optional: true
+        - name: OPENAI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: pipeline-secrets
+              key: openai-api-key
+              optional: true
+        - name: GEMINI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: pipeline-secrets
+              key: gemini-api-key
+              optional: true
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: "1000m"
+          limits:
+            memory: "4Gi"
+            cpu: "2000m"
+        livenessProbe:
+          exec:
+            command:
+            - python
+            - -c
+            - "import sys; sys.exit(0)"
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          exec:
+            command:
+            - python
+            - -c
+            - "import sys; sys.exit(0)"
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 3
+          failureThreshold: 3
+        volumeMounts:
+        - name: app-volume
+          mountPath: /app
+        - name: images-volume
+          mountPath: /app/images
+        - name: outputs-volume
+          mountPath: /app/outputs
+        securityContext:
+          runAsNonRoot: true
+          runAsUser: 1000
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: false
+          capabilities:
+            drop:
+            - ALL
+      volumes:
+      - name: app-volume
+        emptyDir: {}
+      - name: images-volume
+        persistentVolumeClaim:
+          claimName: images-pvc
+      - name: outputs-volume
+        persistentVolumeClaim:
+          claimName: outputs-pvc
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: synthetic-data-pipeline
+  namespace: default
+  labels:
+    app: synthetic-data-pipeline
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8000
+    targetPort: 8000
+    protocol: TCP
+    name: http
+  selector:
+    app: synthetic-data-pipeline
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: images-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Gi
+  storageClassName: standard
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: outputs-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Gi
+  storageClassName: standard
+
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: synthetic-data-pipeline
+  namespace: default
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: synthetic-data-pipeline
+  namespace: default
+rules:
+- apiGroups: [""]
+  resources: ["pods", "pods/logs"]
+  verbs: ["get", "list", "watch"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: synthetic-data-pipeline
+  namespace: default
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: synthetic-data-pipeline
+subjects:
+- kind: ServiceAccount
+  name: synthetic-data-pipeline
+  namespace: default

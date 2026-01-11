@@ -1,0 +1,11 @@
+{
+  "item_id": "zalando_3",
+  "source": "zalando_uk",
+  "title": "Vero Moda\nShirt dress - tobacco brown",
+  "url": "https://www.zalando.co.uk/vero-moda-shirt-dress-tobacco-brown-ve121c4ya-o12.html",
+  "cloth_image": "vton_zalando_dataset\\cloth_images\\zalando_3.jpg",
+  "model_image": "vton_zalando_dataset\\model_images\\zalando_3.jpg",
+  "total_images_available": 66,
+  "cloth_size": "1654x2382",
+  "model_size": "1488x2142"
+}

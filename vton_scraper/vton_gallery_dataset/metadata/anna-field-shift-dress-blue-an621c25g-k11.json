@@ -1,0 +1,48 @@
+{
+  "item_id": 1,
+  "product_id": "anna-field-shift-dress-blue-an621c25g-k11",
+  "source": "zalando_gallery",
+  "title": "Anna Field\nShift dress - blue",
+  "url": "https://www.zalando.co.uk/anna-field-shift-dress-blue-an621c25g-k11.html",
+  "product_directory": "vton_gallery_dataset\\products\\anna-field-shift-dress-blue-an621c25g-k11",
+  "images": [
+    {
+      "filename": "image_00.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/7291ecb9dbe04edaaa2934607e41ce3a/c3e1baccc5cf48b1b36eab1fdd97871f.jpg",
+      "size": "1801x2600",
+      "index": 0
+    },
+    {
+      "filename": "image_01.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/f1d0fc162978581c95e8124ad1e527c4/6406a4fc72bf4a51a10df928a617dfd7.jpg",
+      "size": "1080x1920",
+      "index": 1
+    },
+    {
+      "filename": "image_02.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/f4aeac18f92b4858a83f2acc61cd1154/296adc14f3244394b5ac41a39059fd8e.jpg",
+      "size": "1801x2600",
+      "index": 2
+    },
+    {
+      "filename": "image_03.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/ed2bca6b96a9442aa50a835b17326f4c/031e0d5a722c4439862572970bc73be6.jpg",
+      "size": "1801x2600",
+      "index": 3
+    },
+    {
+      "filename": "image_04.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/fe51b012681e489eaa711379d5c11949/b0e4fa7bd4d64d8cb2e8da083ae3a2c5.jpg",
+      "size": "1801x2600",
+      "index": 4
+    },
+    {
+      "filename": "image_05.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/b39c860b812c4dc4a1a35d45de8204a1/69cf838d8db54a7eb9bce3e01f4e9531.jpg",
+      "size": "1801x2600",
+      "index": 5
+    }
+  ],
+  "total_images": 6,
+  "scraped_at": "2026-01-11T11:21:12.856047"
+}

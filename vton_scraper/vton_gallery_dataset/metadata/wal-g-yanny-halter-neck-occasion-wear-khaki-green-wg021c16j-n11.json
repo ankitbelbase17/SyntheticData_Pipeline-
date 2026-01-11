@@ -1,0 +1,36 @@
+{
+  "item_id": 5,
+  "product_id": "wal-g-yanny-halter-neck-occasion-wear-khaki-green-wg021c16j-n11",
+  "source": "zalando_gallery",
+  "title": "WAL G.\nYANNY HALTER NECK BODYCON - Occasion wear - khaki green",
+  "url": "https://www.zalando.co.uk/wal-g-yanny-halter-neck-occasion-wear-khaki-green-wg021c16j-n11.html",
+  "product_directory": "vton_gallery_dataset\\products\\wal-g-yanny-halter-neck-occasion-wear-khaki-green-wg021c16j-n11",
+  "images": [
+    {
+      "filename": "image_00.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/90e55bd4c25440b292e5abed28c4a2f4/047dad1566ae4e81864f90ebf919326c.jpg",
+      "size": "5000x7496",
+      "index": 0
+    },
+    {
+      "filename": "image_01.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/e44c94b1a0134000912a2982494a1673/6f3671f26b6c4fe0ac39554a82ebf728.jpg",
+      "size": "5000x7496",
+      "index": 1
+    },
+    {
+      "filename": "image_02.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/c6f6539710974698bf8609dc5a9d836a/c793d4f23bf54254b4b07aff397287ec.jpg",
+      "size": "5000x7496",
+      "index": 2
+    },
+    {
+      "filename": "image_04.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/32f3ca211e624c1597585d09ac6a088b/92c24e13c2914d389353d137c1c33ccd.jpg",
+      "size": "5000x7496",
+      "index": 4
+    }
+  ],
+  "total_images": 4,
+  "scraped_at": "2026-01-11T11:44:12.628274"
+}

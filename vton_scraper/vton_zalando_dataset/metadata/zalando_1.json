@@ -1,0 +1,11 @@
+{
+  "item_id": "zalando_1",
+  "source": "zalando_uk",
+  "title": "Anna Field\nJumper dress - maritme blue/white",
+  "url": "https://www.zalando.co.uk/anna-field-jumper-dress-maritme-bluewhite-an621c26a-k11.html",
+  "cloth_image": "vton_zalando_dataset\\cloth_images\\zalando_1.jpg",
+  "model_image": "vton_zalando_dataset\\model_images\\zalando_1.jpg",
+  "total_images_available": 78,
+  "cloth_size": "1801x2600",
+  "model_size": "762x1100"
+}

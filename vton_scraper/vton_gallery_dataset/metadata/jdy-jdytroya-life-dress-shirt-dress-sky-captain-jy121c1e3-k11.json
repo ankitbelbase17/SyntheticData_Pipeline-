@@ -1,0 +1,54 @@
+{
+  "item_id": 3,
+  "product_id": "jdy-jdytroya-life-dress-shirt-dress-sky-captain-jy121c1e3-k11",
+  "source": "zalando_gallery",
+  "title": "JDY\nJDYTROYA LIFE DRESS - Day dress - sky captain",
+  "url": "https://www.zalando.co.uk/jdy-jdytroya-life-dress-shirt-dress-sky-captain-jy121c1e3-k11.html",
+  "product_directory": "vton_gallery_dataset\\products\\jdy-jdytroya-life-dress-shirt-dress-sky-captain-jy121c1e3-k11",
+  "images": [
+    {
+      "filename": "image_00.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/23ce61a9c2f846e49bbbd6fdac612b54/0cda8149e9a74538a1fc2df373a59b1e.jpg",
+      "size": "1801x2600",
+      "index": 0
+    },
+    {
+      "filename": "image_01.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/1b1f7f3673594590bf2e7b4a38df8f1b/a7bfec9083a841c89233562138fe974a.jpg",
+      "size": "762x1100",
+      "index": 1
+    },
+    {
+      "filename": "image_02.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/98cd1d45131f470582cb94e0dab10448/92c829c91fb6492b9f7ada6590493061.jpg",
+      "size": "1801x2600",
+      "index": 2
+    },
+    {
+      "filename": "image_03.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/ae0261454e5648bab5711b4a6f8e1ee4/538fcd6893cb46afb3c928e19878af5e.jpg",
+      "size": "1801x2600",
+      "index": 3
+    },
+    {
+      "filename": "image_04.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/8fff21a869674f8c8766f6c934aebe6b/363a21e208b14318817473951c5ceeb2.jpg",
+      "size": "1801x2600",
+      "index": 4
+    },
+    {
+      "filename": "image_05.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/9d1c4ff3a1874470b7ef7cdc4690f16e/d1294b16a3834fcdaee6e8dd41958934.jpg",
+      "size": "1801x2600",
+      "index": 5
+    },
+    {
+      "filename": "image_06.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/1d2b3c85a51e45ad9ef6a7d1fc49e7ea/2c8d4933fd1a49c2a8a222d1b422a1bc.jpg",
+      "size": "1801x2600",
+      "index": 6
+    }
+  ],
+  "total_images": 7,
+  "scraped_at": "2026-01-11T11:21:57.049646"
+}

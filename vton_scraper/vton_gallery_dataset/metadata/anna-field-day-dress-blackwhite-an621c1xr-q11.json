@@ -1,0 +1,54 @@
+{
+  "item_id": 4,
+  "product_id": "anna-field-day-dress-blackwhite-an621c1xr-q11",
+  "source": "zalando_gallery",
+  "title": "Anna Field\nJersey dress - black/white",
+  "url": "https://www.zalando.co.uk/anna-field-day-dress-blackwhite-an621c1xr-q11.html",
+  "product_directory": "vton_gallery_dataset\\products\\anna-field-day-dress-blackwhite-an621c1xr-q11",
+  "images": [
+    {
+      "filename": "image_00.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/4f80776c985f43bdb9b7c4842b345c5e/74f0057b920547adbff35df6c7f2c070.jpg",
+      "size": "1801x2600",
+      "index": 0
+    },
+    {
+      "filename": "image_01.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/8812b8aa35cc4a1da84d7f9ba7343af4/8206e67489aa4ba68b35dbb6b1d48fc2.jpg",
+      "size": "762x1100",
+      "index": 1
+    },
+    {
+      "filename": "image_02.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/bd98e5dcbf92429699083382aaa09453/343b815e25e34d3f94806da4dba1cb8a.jpg",
+      "size": "1801x2600",
+      "index": 2
+    },
+    {
+      "filename": "image_03.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/69b89042581f4d3297a8a5bee796be7a/cb1f8a0c0d764e3d8f6e57b520e5014e.jpg",
+      "size": "1801x2600",
+      "index": 3
+    },
+    {
+      "filename": "image_04.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/32568da6868746d7a2f85ef6aae1602e/40a380ef0e5f497da6d7c38c740cdae1.jpg",
+      "size": "1801x2600",
+      "index": 4
+    },
+    {
+      "filename": "image_05.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/d5562038742e45a8a9e7d42a55ad95cc/a14721d02021443598a0576cdcf0b326.jpg",
+      "size": "1801x2600",
+      "index": 5
+    },
+    {
+      "filename": "image_06.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/0ca59b1cece146f58b7b8c5a148fb189/02de3fdf599f48c99d70ec0c741e4df6.jpg",
+      "size": "1801x2600",
+      "index": 6
+    }
+  ],
+  "total_images": 7,
+  "scraped_at": "2026-01-11T11:22:17.657129"
+}

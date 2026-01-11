@@ -1,0 +1,19 @@
+{
+  "url": "https://www.zalando.co.uk/tommy-jeans-original-tee-regular-fit-basic-t-shirt-tob22o018-a11.html",
+  "title": "Tommy Jeans TEE - Basic T-shirt - classic white/white - Zalando.co.uk",
+  "images_downloaded": 2,
+  "images": [
+    {
+      "filename": "zalando_image_1.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/a3aebbd3ecfa471aa42d010836b4d9b9/391f761bea294996b3d2975194c21a27.jpg?imwidth=156&filter=packshot",
+      "size": "200x289",
+      "alt": "White short-sleeve crew neck T-shirt with small Tommy Hilfiger logo on chest and red, white, and blue striped trim inside collar."
+    },
+    {
+      "filename": "zalando_image_2.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/a3aebbd3ecfa471aa42d010836b4d9b9/391f761bea294996b3d2975194c21a27.jpg?imwidth=156&filter=packshot",
+      "size": "200x289",
+      "alt": "Selected, classic white"
+    }
+  ]
+}

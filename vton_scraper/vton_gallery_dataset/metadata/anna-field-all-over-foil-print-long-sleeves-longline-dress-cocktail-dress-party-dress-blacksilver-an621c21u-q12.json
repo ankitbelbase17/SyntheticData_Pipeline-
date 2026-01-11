@@ -1,0 +1,48 @@
+{
+  "item_id": 6,
+  "product_id": "anna-field-all-over-foil-print-long-sleeves-longline-dress-cocktail-dress-party-dress-blacksilver-an621c21u-q12",
+  "source": "zalando_gallery",
+  "title": "Anna Field\nCocktail dress / Party dress - black/silver",
+  "url": "https://www.zalando.co.uk/anna-field-all-over-foil-print-long-sleeves-longline-dress-cocktail-dress-party-dress-blacksilver-an621c21u-q12.html",
+  "product_directory": "vton_gallery_dataset\\products\\anna-field-all-over-foil-print-long-sleeves-longline-dress-cocktail-dress-party-dress-blacksilver-an621c21u-q12",
+  "images": [
+    {
+      "filename": "image_00.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/6a0ec5be58a94ea4aaea1718879ad851/3179c4db59774efbb8bc6de42128f541.jpg",
+      "size": "1801x2600",
+      "index": 0
+    },
+    {
+      "filename": "image_01.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/c200299cd9834ce28029cd2aa241034a/5e00f32af2714a90a43b4a70718343b5.jpg",
+      "size": "1801x2600",
+      "index": 1
+    },
+    {
+      "filename": "image_02.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/c7fd2d4952a84a3bb829ebfa3905585d/41d1e0744a3746fb86111ad75095e688.jpg",
+      "size": "1801x2600",
+      "index": 2
+    },
+    {
+      "filename": "image_03.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/80ab9961acd24e43bda717631a40961d/ca6c994cf1384d8ab02d6393c51153e1.jpg",
+      "size": "1801x2600",
+      "index": 3
+    },
+    {
+      "filename": "image_04.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/328121c5574849ccacba5d13e077bf36/5a58e78db38741c495f0b5d1f088b6c2.jpg",
+      "size": "1801x2600",
+      "index": 4
+    },
+    {
+      "filename": "image_05.jpg",
+      "url": "https://img01.ztat.net/article/spp-media-p1/6149e153fc2644e3bae5401fb10f6330/5f9e665bfbd34147bebc2aa428bc8ca8.jpg",
+      "size": "1801x2600",
+      "index": 5
+    }
+  ],
+  "total_images": 6,
+  "scraped_at": "2026-01-11T11:44:30.101201"
+}
