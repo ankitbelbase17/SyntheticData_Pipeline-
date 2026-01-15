@@ -628,8 +628,8 @@ def main():
     output_dir = os.path.expanduser("/tmp/vton_gallery_dataset")
 
     # S3 bucket name (from env var or specify directly)
-    s3_bucket = os.environ.get('S3_BUCKET')  # Or set directly: "your-bucket-name"
-    aws_region = os.environ.get('AWS_REGION')  # Optional
+    s3_bucket = "my-scrapped-images"# Or set directly: "your-bucket-name"
+    aws_region = "ap-south-1"  # Optional
 
     scraper = ZalandoGalleryScraperEC2(
         output_dir=output_dir,
