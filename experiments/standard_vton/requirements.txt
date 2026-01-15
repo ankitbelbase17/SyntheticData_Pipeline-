@@ -1,0 +1,22 @@
+# Core dependencies
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+pillow>=9.5.0
+
+# Diffusion models
+diffusers>=0.25.0
+transformers>=4.35.0
+accelerate>=0.25.0
+
+# Utilities
+scipy>=1.10.0
+matplotlib>=3.7.0
+tqdm>=4.65.0
+tensorboard>=2.15.0
+
+# Optional (for metrics)
+lpips>=0.1.4
+
+# Data handling
+omegaconf>=2.3.0

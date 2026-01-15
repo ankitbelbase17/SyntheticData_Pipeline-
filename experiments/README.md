@@ -1,47 +1,102 @@
 # Experiments Directory
 
-This directory contains experimental implementations for the Synthetic Data Pipeline.
+This directory contains experimental implementations for Virtual Try-On (VTON) models.
 
 ## Overview
 
-The `experiments` directory is dedicated to advanced research and prototyping, currently focused on:
+The `experiments` directory contains two VTON approaches:
 
-### Virtual Try-On (VTON) with Stable Diffusion 1.5
+1. **Standard VTON** - Baseline implementation
+2. **Our Approach** - Advanced/novel implementation (coming soon)
 
-An end-to-end virtual try-on implementation inspired by the CATVTON paper, but using a different training paradigm:
+## Virtual Try-On (VTON) with Stable Diffusion 1.5
 
-- **Dataset Composition**: 
-  - Person image in Clothing 1
-  - Image of Clothing 2 (standalone)
-  - Person image in Clothing 2 (ground truth)
+An end-to-end virtual try-on implementation using Stable Diffusion 1.5 as the backbone:
+
+- **Dataset Composition**:
+  - Masked person image (person with cloth region masked)
+  - Cloth image (standalone garment)
+  - Person image with cloth (ground truth)
 
 - **Task**: End-to-end virtual try-on synthesis
-- **Model**: Stable Diffusion 1.5 (fine-tuned)
-- **Approach**: Direct image-to-image translation without explicit masking-based segmentation
+- **Model**: Stable Diffusion 1.5 (pretrained backbone)
+- **Training**: Only self-attention weights are trainable
 
 ## Directory Structure
 
 ```
 experiments/
 ├── README.md                 # This file
-├── config.py                 # Experiment-specific configuration
-└── (code to be added)
+├── config.py                 # Global experiment configuration
+├── standard_vton/            # Baseline VTON implementation
+│   ├── model.py              # StandardVTONModel architecture
+│   ├── dataloader.py         # Dataset loaders
+│   ├── train.py              # Training script
+│   ├── inference.py          # Inference script
+│   ├── utils.py              # Utility functions
+│   ├── metrics.py            # Evaluation metrics
+│   ├── config.py             # Training configuration
+│   ├── requirements.txt      # Dependencies
+│   ├── quick_start.sh        # Quick start script
+│   └── README.md             # Detailed documentation
+└── our_approach/             # Advanced VTON (to be implemented)
+    └── README.md             # Placeholder
+```
+
+## Standard VTON
+
+The standard approach uses:
+- **Pretrained VAE** for encoding images to latent space
+- **Concatenated latents** (masked person + cloth) as conditioning
+- **Pretrained UNet** with modified input channels (8 instead of 4)
+- **Trainable attention weights** only (~5-10% of parameters)
+
+See [standard_vton/README.md](standard_vton/README.md) for detailed documentation.
+
+## Quick Start
+
+### Installation
+
+```bash
+cd experiments/standard_vton
+pip install -r requirements.txt
+```
+
+### Training
+
+```bash
+python train.py \
+  --data_root ./data/vton_dataset \
+  --output_dir ./outputs/standard_vton \
+  --batch_size 4 \
+  --num_epochs 100
+```
+
+### Inference
+
+```bash
+python inference.py \
+  --checkpoint ./outputs/standard_vton/checkpoints/checkpoint_best.pt \
+  --mode single \
+  --person_masked ./examples/person_masked.jpg \
+  --cloth ./examples/cloth.jpg \
+  --output_dir ./outputs/inference
 ```
 
 ## Configuration
 
-See `config.py` for experiment-specific settings including:
-- Model paths and checkpoints
-- Training parameters
-- Dataset paths
-- Hardware configuration
+See individual subdirectories for specific configurations:
+- `standard_vton/config.py` - Standard VTON configuration
+- `config.py` - Global experiment settings
 
 ## Status
 
-Currently in setup phase. Code implementation pending.
+- **Standard VTON**: ✅ Complete and ready to use
+- **Our Approach**: 🚧 Coming soon
 
 ## Notes
 
 - All experimental code is isolated from the main data pipeline
 - Results and models are tracked separately
-- This allows for safe experimentation without affecting production pipelines
+- Each approach has its own dependencies and configuration
+- Supports both custom datasets and VITON-HD format
