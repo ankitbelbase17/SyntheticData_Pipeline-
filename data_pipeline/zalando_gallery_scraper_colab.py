@@ -92,6 +92,19 @@ class ZalandoGalleryScraperColab:
             'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
         })
 
+        # Statistics tracking
+        self.stats = {
+            'total_pages_explored': 0,
+            'total_products_found': 0,
+            'total_products_explored': 0,
+            'successful_scrapes': 0,
+            'failed_scrapes': 0,
+            'skipped_already_scraped': 0,
+            'total_images_downloaded': 0,
+            'start_time': None,
+            'end_time': None
+        }
+
         logger.info(f"Output directory: {self.output_dir}")
         logger.info(f"Storage: {'Google Drive' if self.use_google_drive else 'Local (Colab runtime)'}")
         
@@ -369,9 +382,13 @@ class ZalandoGalleryScraperColab:
         """Scrape sale page with pagination"""
         from selenium.webdriver.common.by import By
         
+        # Start timing
+        self.stats['start_time'] = time.time()
+        
         logger.info(f"\n{'='*80}")
         logger.info(f"SCRAPING: {sale_url}")
         logger.info(f"Max Pages: {max_pages}, Max Items: {max_items}")
+        logger.info(f"Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         logger.info(f"{'='*80}")
 
         try:
@@ -405,6 +422,9 @@ class ZalandoGalleryScraperColab:
                 logger.info(f"\n{'='*80}")
                 logger.info(f"PAGE {page_num}")
                 logger.info(f"{'='*80}")
+                
+                # Update page stats
+                self.stats['total_pages_explored'] += 1
 
                 if page_num == 1:
                     page_url = sale_url
@@ -429,6 +449,11 @@ class ZalandoGalleryScraperColab:
                         product_links.append(href)
 
                 logger.info(f"Found {len(product_links)} products on page {page_num}")
+                self.stats['total_products_found'] += len(product_links)
+                
+                # Print page exploration summary
+                elapsed = time.time() - self.stats['start_time']
+                logger.info(f"[PAGE {page_num} STATS] Products found: {len(product_links)} | Total products so far: {self.stats['total_products_found']} | Time elapsed: {elapsed:.1f}s")
 
                 if not product_links:
                     logger.info("No products found on this page — stopping pagination.")
@@ -449,9 +474,11 @@ class ZalandoGalleryScraperColab:
 
                     if product_url in self.scraped_urls:
                         logger.info(f"\n[{idx+1}/{len(product_links)}] Skipping (already scraped)")
+                        self.stats['skipped_already_scraped'] += 1
                         continue
 
-                    logger.info(f"\n[{idx+1}/{len(product_links)}] Processing...")
+                    self.stats['total_products_explored'] += 1
+                    logger.info(f"\n[{idx+1}/{len(product_links)}] Processing... (Product #{self.stats['total_products_explored']})")
 
                     try:
                         product_id = self.extract_product_id_from_url(product_url)
@@ -486,29 +513,127 @@ class ZalandoGalleryScraperColab:
                                 self.items_scraped += 1
                                 items_this_run += 1
                                 self.scraped_urls.add(product_url)
+                                self.stats['successful_scrapes'] += 1
+                                self.stats['total_images_downloaded'] += len(downloaded)
 
+                                # Calculate and display timing info
+                                elapsed = time.time() - self.stats['start_time']
+                                avg_time_per_item = elapsed / self.stats['successful_scrapes'] if self.stats['successful_scrapes'] > 0 else 0
+                                
                                 logger.info(f"  [SUCCESS] Item {self.items_scraped} | {len(downloaded)} gallery images")
+                                logger.info(f"  [TIMING] Elapsed: {elapsed:.1f}s | Avg per item: {avg_time_per_item:.1f}s")
 
                                 if self.items_scraped % 10 == 0:
                                     self.save_progress()
+                                    self._print_exploration_summary()
 
                         self.random_delay(2, 4)
 
                     except Exception as e:
                         logger.error(f"  [ERROR] {e}")
+                        self.stats['failed_scrapes'] += 1
                         continue
 
                 page_num += 1
 
+            # End timing
+            self.stats['end_time'] = time.time()
+            
             logger.info(f"\n{'='*80}")
-            logger.info(f"COMPLETE! Items scraped this run: {items_this_run}")
-            logger.info(f"Total items scraped: {self.items_scraped}")
+            logger.info(f"SCRAPING COMPLETE!")
             logger.info(f"{'='*80}")
+            self._print_final_summary(items_this_run)
 
         except Exception as e:
+            self.stats['end_time'] = time.time()
             logger.error(f"\nError: {e}")
             import traceback
             traceback.print_exc()
+            self._print_final_summary(items_this_run if 'items_this_run' in locals() else 0)
+
+    def _format_duration(self, seconds):
+        """Format duration in human-readable format"""
+        if seconds < 60:
+            return f"{seconds:.1f} seconds"
+        elif seconds < 3600:
+            mins = seconds / 60
+            return f"{mins:.1f} minutes ({seconds:.0f}s)"
+        else:
+            hours = seconds / 3600
+            mins = (seconds % 3600) / 60
+            return f"{hours:.1f} hours ({int(hours)}h {int(mins)}m)"
+
+    def _print_exploration_summary(self):
+        """Print intermediate exploration summary"""
+        elapsed = time.time() - self.stats['start_time'] if self.stats['start_time'] else 0
+        
+        logger.info(f"\n{'-'*60}")
+        logger.info(f"EXPLORATION SUMMARY (at {self._format_duration(elapsed)})")
+        logger.info(f"{'-'*60}")
+        logger.info(f"Pages explored:        {self.stats['total_pages_explored']}")
+        logger.info(f"Products found:        {self.stats['total_products_found']}")
+        logger.info(f"Products explored:     {self.stats['total_products_explored']}")
+        logger.info(f"Successful scrapes:    {self.stats['successful_scrapes']}")
+        logger.info(f"Failed scrapes:        {self.stats['failed_scrapes']}")
+        logger.info(f"Skipped (duplicate):   {self.stats['skipped_already_scraped']}")
+        logger.info(f"Total images:          {self.stats['total_images_downloaded']}")
+        
+        if self.stats['successful_scrapes'] > 0:
+            avg_time = elapsed / self.stats['successful_scrapes']
+            logger.info(f"Avg time per product:  {avg_time:.1f}s")
+        logger.info(f"{'-'*60}\n")
+
+    def _print_final_summary(self, items_this_run):
+        """Print final summary with timing information"""
+        elapsed = (self.stats['end_time'] - self.stats['start_time']) if self.stats['start_time'] and self.stats['end_time'] else 0
+        
+        logger.info(f"\n{'#'*80}")
+        logger.info(f"FINAL SCRAPING REPORT")
+        logger.info(f"{'#'*80}")
+        
+        # Timing info
+        logger.info(f"\n[TIMING]")
+        logger.info(f"  Total duration:      {self._format_duration(elapsed)}")
+        if self.stats['successful_scrapes'] > 0:
+            avg_time = elapsed / self.stats['successful_scrapes']
+            logger.info(f"  Avg per product:     {avg_time:.1f} seconds")
+            products_per_min = (self.stats['successful_scrapes'] / elapsed) * 60 if elapsed > 0 else 0
+            logger.info(f"  Scraping rate:       {products_per_min:.2f} products/minute")
+        
+        # Page exploration info
+        logger.info(f"\n[PAGE EXPLORATION]")
+        logger.info(f"  Pages explored:      {self.stats['total_pages_explored']}")
+        logger.info(f"  Products found:      {self.stats['total_products_found']}")
+        if self.stats['total_pages_explored'] > 0:
+            avg_per_page = self.stats['total_products_found'] / self.stats['total_pages_explored']
+            logger.info(f"  Avg products/page:   {avg_per_page:.1f}")
+        
+        # Product exploration info
+        logger.info(f"\n[PRODUCT EXPLORATION]")
+        logger.info(f"  Products explored:   {self.stats['total_products_explored']}")
+        logger.info(f"  Successful scrapes:  {self.stats['successful_scrapes']}")
+        logger.info(f"  Failed scrapes:      {self.stats['failed_scrapes']}")
+        logger.info(f"  Skipped (duplicate): {self.stats['skipped_already_scraped']}")
+        
+        if self.stats['total_products_explored'] > 0:
+            success_rate = (self.stats['successful_scrapes'] / self.stats['total_products_explored']) * 100
+            logger.info(f"  Success rate:        {success_rate:.1f}%")
+        
+        # Image info
+        logger.info(f"\n[IMAGES]")
+        logger.info(f"  Total downloaded:    {self.stats['total_images_downloaded']}")
+        if self.stats['successful_scrapes'] > 0:
+            avg_images = self.stats['total_images_downloaded'] / self.stats['successful_scrapes']
+            logger.info(f"  Avg per product:     {avg_images:.1f}")
+        
+        # Session info
+        logger.info(f"\n[SESSION]")
+        logger.info(f"  Items this run:      {items_this_run}")
+        logger.info(f"  Total items scraped: {self.items_scraped}")
+        logger.info(f"  Output directory:    {self.output_dir}")
+        logger.info(f"  Storage:             {'Google Drive' if self.use_google_drive else 'Colab Runtime'}")
+        
+        logger.info(f"\n{'#'*80}\n")
 
     def close(self):
         """Clean up resources"""
