@@ -22,8 +22,6 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse, parse_qs, urlencode
 import hashlib
 import json
-import time
-import random
 import re
 import logging
 from datetime import datetime
@@ -117,11 +115,6 @@ class AnyScraper:
         except Exception as e:
             logger.error(f"Failed to save progress: {e}")
 
-    def random_delay(self, min_sec=2, max_sec=4):
-        """Random delay to avoid detection."""
-        delay = random.uniform(min_sec, max_sec)
-        time.sleep(delay)
-
     def fetch_page(self, url):
         """
         Fetch page content using Crawlbase API.
@@ -186,6 +179,11 @@ class AnyScraper:
         if zalando_match:
             return zalando_match.group(1)
 
+        # Nykaa Fashion: /product-name/p/SKU123 or /p/SKU123
+        nykaa_match = re.search(r'/p/([a-zA-Z0-9_-]+)', url)
+        if nykaa_match:
+            return nykaa_match.group(1)
+
         # Generic: last path segment before query
         parsed = urlparse(url)
         path_parts = [p for p in parsed.path.split('/') if p]
@@ -247,6 +245,14 @@ class AnyScraper:
             high_res = high_res.replace("thumb", "org").replace("sq", "org")
             if ".jpg?" in high_res:
                 high_res = high_res.split(".jpg?")[0] + ".jpg"
+
+        # Nykaa Fashion: Convert to high-res
+        elif 'nykaa' in image_url or 'akamaized' in image_url:
+            # Nykaa uses patterns like w_150,h_150 or tr:w-150,h-150
+            # Remove size constraints to get full resolution
+            high_res = re.sub(r'/w_\d+,h_\d+/', '/', high_res)
+            high_res = re.sub(r'/tr:[^/]+/', '/', high_res)
+            high_res = re.sub(r'\?.*$', '', high_res)  # Remove query params
 
         # Generic: Try common patterns
         else:
@@ -318,6 +324,8 @@ class AnyScraper:
             site_type = "amazon"
         elif "zalando" in product_url:
             site_type = "zalando"
+        elif "nykaa" in product_url:
+            site_type = "nykaa"
 
         # Strategy 1: Amazon-specific selectors
         if site_type == "amazon":
@@ -381,7 +389,41 @@ class AnyScraper:
                         seen_hashes.add(img_hash)
                         gallery_images.append(high_res)
 
-        # Strategy 3: Generic approach
+        # Strategy 3: Nykaa Fashion-specific selectors
+        elif site_type == "nykaa":
+            # Nykaa product page selectors
+            selectors = [
+                '.product-images img',
+                '.pdp-image-carousel img',
+                '[class*="ProductImage"] img',
+                '[class*="product-gallery"] img',
+                '[class*="slider"] img',
+                '[class*="carousel"] img',
+                'img[src*="nykaa"]',
+                'img[src*="akamaized"]',
+            ]
+
+            for selector in selectors:
+                imgs = soup.select(selector)
+                for img in imgs:
+                    src = img.get('src') or img.get('data-src') or img.get('data-lazy-src')
+                    if not src or src.startswith('data:'):
+                        continue
+
+                    # Skip tiny icons and non-product images
+                    skip_patterns = ['icon', 'logo', 'sprite', 'placeholder', 'lazy']
+                    if any(pattern in src.lower() for pattern in skip_patterns):
+                        continue
+
+                    src = urljoin(product_url, src)
+                    high_res = self.convert_to_high_res(src)
+                    img_hash = self.get_image_hash(high_res)
+
+                    if img_hash not in seen_hashes:
+                        seen_hashes.add(img_hash)
+                        gallery_images.append(high_res)
+
+        # Strategy 4: Generic approach
         else:
             # Common gallery selectors
             selectors = [
@@ -482,8 +524,6 @@ class AnyScraper:
         if not soup:
             return None
 
-        self.random_delay(1, 2)
-
         title = self.extract_product_title(soup)
         logger.info(f"  Product: {title[:60]}...")
 
@@ -539,8 +579,6 @@ class AnyScraper:
             else:
                 logger.debug(f"    [{idx+1}/{len(product_data['images'])}] Skipped: {info}")
 
-            self.random_delay(0.5, 1)
-
         return downloaded_images
 
     def extract_product_links(self, soup, base_url):
@@ -556,17 +594,37 @@ class AnyScraper:
         """
         product_links = []
 
-        # Common product link patterns
-        selectors = [
-            'article a[href*=".html"]',  # Zalando style
-            'a[href*="/dp/"]',  # Amazon style
-            'a[href*="/product/"]',
-            'a[href*="/p/"]',
-            '.product-card a',
-            '.product-item a',
-            '.product-link',
-            '[data-product] a',
-        ]
+        # Determine site type for specific selectors
+        site_type = "generic"
+        if "nykaa" in base_url:
+            site_type = "nykaa"
+        elif "amazon" in base_url:
+            site_type = "amazon"
+        elif "zalando" in base_url:
+            site_type = "zalando"
+
+        # Nykaa Fashion specific selectors
+        if site_type == "nykaa":
+            selectors = [
+                'a[href*="/p/"]',  # Nykaa product URLs contain /p/SKU
+                '[class*="product"] a[href*="/p/"]',
+                '[class*="Product"] a[href*="/p/"]',
+                '.product-card a',
+                '.product-list a[href*="/p/"]',
+                '[data-product] a',
+            ]
+        else:
+            # Generic/other site selectors
+            selectors = [
+                'article a[href*=".html"]',  # Zalando style
+                'a[href*="/dp/"]',  # Amazon style
+                'a[href*="/product/"]',
+                'a[href*="/p/"]',
+                '.product-card a',
+                '.product-item a',
+                '.product-link',
+                '[data-product] a',
+            ]
 
         for selector in selectors:
             links = soup.select(selector)
@@ -574,7 +632,11 @@ class AnyScraper:
                 href = link.get('href')
                 if href:
                     full_url = urljoin(base_url, href)
-                    if full_url not in product_links:
+                    # For Nykaa, ensure it's a product page (contains /p/)
+                    if site_type == "nykaa":
+                        if '/p/' in full_url and full_url not in product_links:
+                            product_links.append(full_url)
+                    elif full_url not in product_links:
                         product_links.append(full_url)
 
         return product_links
@@ -630,8 +692,6 @@ class AnyScraper:
                 consecutive_empty_pages += 1
                 page_num += 1
                 continue
-
-            self.random_delay(2, 4)
 
             # Extract product links
             product_links = self.extract_product_links(soup, page_url)
@@ -700,8 +760,6 @@ class AnyScraper:
                             # Save progress periodically
                             if self.items_scraped % 10 == 0:
                                 self.save_progress()
-
-                    self.random_delay(2, 4)
 
                 except Exception as e:
                     logger.error(f"  [ERROR] {e}")
@@ -786,15 +844,14 @@ def main():
     # ==========================================================================
     # CONFIGURATION
     # ==========================================================================
-    api_key = os.environ.get("CRAWLBASE_TOKEN", "YOUR_API_KEY_HERE")
+    api_key = os.environ.get("CRAWLBASE_TOKEN")
     output_dir = "downloaded_images"
 
-    # Example URLs
-    # Single product:
-    product_url = "https://www.amazon.com/Runaway-Label-Womens-Sondrey-Casanova/dp/B0DQWJYG1D/?th=1&psc=1"
+    # Nykaa Fashion listing page
+    listing_url = "https://www.nykaafashion.com/men/topwear/t-shirts/c/6825"
 
-    # Listing page (uncomment to use):
-    # listing_url = "https://www.zalando.co.uk/womens-dresses-sale/"
+    # Example single product (uncomment to use):
+    # product_url = "https://www.nykaafashion.com/product-name/p/SKU123"
     # ==========================================================================
 
     scraper = AnyScraper(
@@ -804,11 +861,11 @@ def main():
     )
 
     try:
-        # Scrape single product
-        scraper.scrape_single_product(product_url)
+        # Scrape Nykaa Fashion listing page - no limits (scrape all pages and items)
+        scraper.scrape_listing_page(listing_url, max_pages=None, max_items=None)
 
-        # Or scrape listing page with pagination:
-        # scraper.scrape_listing_page(listing_url, max_pages=5, max_items=50)
+        # Or scrape single product:
+        # scraper.scrape_single_product(product_url)
 
         logger.info(f"\n[SUMMARY]")
         logger.info(f"Output directory: {scraper.output_dir.absolute()}")
