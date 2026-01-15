@@ -453,36 +453,33 @@ class ZalandoGalleryScraperEC2:
             except:
                 pass
 
-            # Detect total pages
-            try:
-                pagination = self.driver.find_elements(By.CSS_SELECTOR, "[data-testid='pagination'] button")
-                if pagination:
-                    page_texts = [p.text for p in pagination if p.text.isdigit()]
-                    total_pages = max([int(p) for p in page_texts]) if page_texts else 1
-                else:
-                    total_pages = 1
-
-                logger.info(f"\nDetected {total_pages} pages")
-
-                if max_pages:
-                    total_pages = min(total_pages, max_pages)
-                    logger.info(f"Limited to {total_pages} pages")
-
-            except:
-                total_pages = 1
-
+            # Incremental pagination: keep requesting pages until no new products are found
+            # This is more robust than detecting total pages from pagination buttons
             items_this_run = 0
+            page_num = 1
+            consecutive_empty_pages = 0
 
-            for page_num in range(1, total_pages + 1):
+            while True:
                 if max_items and items_this_run >= max_items:
+                    logger.info(f"Reached max_items limit ({max_items})")
+                    break
+                if max_pages and page_num > max_pages:
+                    logger.info(f"Reached max_pages limit ({max_pages})")
+                    break
+                # Stop after 3 consecutive pages with no new products
+                if consecutive_empty_pages >= 3:
+                    logger.info("No new products found for 3 consecutive pages — stopping.")
                     break
 
                 logger.info(f"\n{'='*80}")
-                logger.info(f"PAGE {page_num}/{total_pages}")
+                logger.info(f"PAGE {page_num}")
                 logger.info(f"{'='*80}")
 
-                if page_num > 1:
-                    page_url = f"{sale_url}?p={page_num}"
+                if page_num == 1:
+                    page_url = sale_url
+                else:
+                    sep = '&' if '?' in sale_url else '?'
+                    page_url = f"{sale_url}{sep}p={page_num}"
                     self.driver.get(page_url)
                     self.random_delay(3, 5)
 
@@ -500,7 +497,22 @@ class ZalandoGalleryScraperEC2:
                     if href and ".html" in href and href not in product_links:
                         product_links.append(href)
 
-                logger.info(f"Found {len(product_links)} products")
+                logger.info(f"Found {len(product_links)} products on page {page_num}")
+
+                # Stop if no products at all on this page
+                if not product_links:
+                    logger.info("No products found on this page — stopping pagination.")
+                    break
+
+                # Check for new (unscraped) products
+                new_links = [l for l in product_links if l not in self.scraped_urls]
+                if not new_links:
+                    consecutive_empty_pages += 1
+                    logger.info(f"No new products on page {page_num} (consecutive empty: {consecutive_empty_pages})")
+                    page_num += 1
+                    continue
+                else:
+                    consecutive_empty_pages = 0
 
                 for idx, product_url in enumerate(product_links):
                     if max_items and items_this_run >= max_items:
@@ -567,6 +579,8 @@ class ZalandoGalleryScraperEC2:
                         logger.error(f"  [ERROR] {e}")
                         continue
 
+                page_num += 1
+
             logger.info(f"\n{'='*80}")
             logger.info(f"COMPLETE! Items scraped this run: {items_this_run}")
             logger.info(f"Total items scraped: {self.items_scraped}")
@@ -609,8 +623,9 @@ def main():
     # Use S3 by default, set to False for local-only mode
     use_s3 = True
 
-    # Use /tmp for EC2 temporary storage
-    output_dir = "/tmp/vton_gallery_dataset"
+    # Use home directory for EC2 storage (or /tmp if space is concern with S3 enabled)
+    # Files are deleted after S3 upload, so /tmp won't fill up when use_s3=True
+    output_dir = os.path.expanduser("/tmp/vton_gallery_dataset")
 
     # S3 bucket name (from env var or specify directly)
     s3_bucket = os.environ.get('S3_BUCKET')  # Or set directly: "your-bucket-name"
@@ -629,11 +644,10 @@ def main():
         sale_url = "https://www.zalando.co.uk/womens-dresses-sale/"
         
         # PRODUCTION MODE: Scrape all pages and unlimited items
-        # Uncomment below to run in production
-        # scraper.scrape_sale_page(sale_url, max_pages=None, max_items=None)
+        scraper.scrape_sale_page(sale_url, max_pages=None, max_items=None)
 
-        # TEST MODE: 10 items, 2 pages
-        scraper.scrape_sale_page(sale_url, max_pages=2, max_items=10)
+        # TEST MODE: 10 items, 2 pages (uncomment for testing)
+        # scraper.scrape_sale_page(sale_url, max_pages=2, max_items=10)
 
         logger.info(f"\n[SUMMARY]")
         logger.info(f"Output directory: {scraper.output_dir.absolute()}")
