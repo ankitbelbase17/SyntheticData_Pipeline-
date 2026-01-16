@@ -12,6 +12,8 @@ SETUP FOR LOCAL PC:
 
 import time
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 from pathlib import Path
 from PIL import Image
 from io import BytesIO
@@ -20,6 +22,11 @@ import random
 from datetime import datetime
 import re
 import logging
+
+# Retry configuration
+MAX_RETRIES = 3
+RETRY_DELAY = 5  # seconds
+CONNECTION_TIMEOUT = 30
 
 # Setup logging
 logging.basicConfig(
@@ -51,10 +58,8 @@ class KimurakamiGalleryScraperLocal:
 
         self.driver = None
         self.items_scraped = 0
-        self.session = requests.Session()
-        self.session.headers.update({
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-        })
+        self.session = self._create_session()
+        self.consecutive_errors = 0  # Track consecutive errors for adaptive delays
 
         # Statistics tracking
         self.stats = {
@@ -73,6 +78,41 @@ class KimurakamiGalleryScraperLocal:
         logger.info(f"Output directory: {self.output_dir.absolute()}")
 
         self.load_progress()
+
+    def _create_session(self):
+        """Create a requests session with retry logic"""
+        session = requests.Session()
+        
+        # Configure retry strategy
+        retry_strategy = Retry(
+            total=MAX_RETRIES,
+            backoff_factor=1,  # Wait 1, 2, 4 seconds between retries
+            status_forcelist=[429, 500, 502, 503, 504],
+            allowed_methods=["HEAD", "GET", "OPTIONS"]
+        )
+        
+        adapter = HTTPAdapter(max_retries=retry_strategy)
+        session.mount("http://", adapter)
+        session.mount("https://", adapter)
+        
+        session.headers.update({
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.5',
+            'Connection': 'keep-alive',
+        })
+        
+        return session
+
+    def _refresh_session(self):
+        """Refresh the requests session when connection issues occur"""
+        logger.info("  Refreshing HTTP session...")
+        try:
+            self.session.close()
+        except:
+            pass
+        self.session = self._create_session()
+        time.sleep(RETRY_DELAY)
 
     def load_progress(self):
         """Load scraping progress from local storage"""
@@ -165,13 +205,20 @@ class KimurakamiGalleryScraperLocal:
             raise
 
     def random_delay(self, min_sec=2, max_sec=4):
-        """Random delay to avoid detection"""
+        """Random delay to avoid detection - adaptive based on errors"""
+        # Increase delay if we've had recent errors
+        if self.consecutive_errors > 0:
+            multiplier = 1 + (self.consecutive_errors * 0.5)
+            min_sec = min_sec * multiplier
+            max_sec = max_sec * multiplier
+            logger.debug(f"  Adaptive delay: {min_sec:.1f}-{max_sec:.1f}s (errors: {self.consecutive_errors})")
+        
         delay = random.uniform(min_sec, max_sec)
         time.sleep(delay)
 
     def download_image(self, url, filepath):
         """
-        Download image and save locally
+        Download image and save locally with retry logic
 
         Args:
             url: Image URL
@@ -180,25 +227,50 @@ class KimurakamiGalleryScraperLocal:
         Returns:
             tuple: (success, info)
         """
-        try:
-            response = self.session.get(url, timeout=15)
-            if response.status_code == 200:
-                img = Image.open(BytesIO(response.content))
-                width, height = img.size
+        for attempt in range(MAX_RETRIES):
+            try:
+                response = self.session.get(url, timeout=CONNECTION_TIMEOUT)
+                if response.status_code == 200:
+                    img = Image.open(BytesIO(response.content))
+                    width, height = img.size
 
-                if width < 400 or height < 400:
-                    return False, f"{width}x{height}"
+                    if width < 400 or height < 400:
+                        return False, f"{width}x{height}"
 
-                # Save locally
-                filepath.parent.mkdir(parents=True, exist_ok=True)
-                with open(filepath, 'wb') as f:
-                    f.write(response.content)
+                    # Save locally
+                    filepath.parent.mkdir(parents=True, exist_ok=True)
+                    with open(filepath, 'wb') as f:
+                        f.write(response.content)
 
-                return True, f"{width}x{height}"
+                    self.consecutive_errors = 0  # Reset on success
+                    return True, f"{width}x{height}"
+                elif response.status_code == 429:  # Rate limited
+                    logger.warning(f"  Rate limited, waiting {RETRY_DELAY * 2}s...")
+                    time.sleep(RETRY_DELAY * 2)
+                    continue
 
-        except Exception as e:
-            logger.error(f"Error downloading {url}: {e}")
-            return False, str(e)
+            except (requests.exceptions.ConnectionError, 
+                    requests.exceptions.Timeout,
+                    requests.exceptions.ChunkedEncodingError) as e:
+                self.consecutive_errors += 1
+                logger.warning(f"  Connection error (attempt {attempt + 1}/{MAX_RETRIES}): {type(e).__name__}")
+                
+                if attempt < MAX_RETRIES - 1:
+                    # Exponential backoff
+                    wait_time = RETRY_DELAY * (2 ** attempt)
+                    logger.info(f"  Waiting {wait_time}s before retry...")
+                    time.sleep(wait_time)
+                    
+                    # Refresh session after multiple consecutive errors
+                    if self.consecutive_errors >= 3:
+                        self._refresh_session()
+                        self.consecutive_errors = 0
+                else:
+                    return False, f"Connection failed after {MAX_RETRIES} attempts"
+                    
+            except Exception as e:
+                logger.error(f"Error downloading {url}: {e}")
+                return False, str(e)
 
         return False, "Unknown error"
 
@@ -216,155 +288,93 @@ class KimurakamiGalleryScraperLocal:
         Excludes: "Pair it with" recommendations, related products, icons, etc.
         """
         from selenium.webdriver.common.by import By
+        from selenium.common.exceptions import TimeoutException, WebDriverException
 
-        try:
-            logger.info(f"  Loading product page...")
-            self.driver.get(product_url)
-            self.random_delay(3, 5)
-
-            # Get product title
+        max_page_attempts = 2
+        
+        for page_attempt in range(max_page_attempts):
             try:
-                title = self.driver.find_element(By.CSS_SELECTOR, "h1").text
-                logger.info(f"  Product: {title[:60]}...")
-            except:
-                title = "Unknown"
+                logger.info(f"  Loading product page...")
+                self.driver.get(product_url)
+                self.random_delay(3, 5)
 
-            # Extract product handle from URL for filtering
-            product_handle = self.extract_product_id_from_url(product_url)
-            logger.info(f"  Product handle: {product_handle}")
+                # Get product title
+                try:
+                    title = self.driver.find_element(By.CSS_SELECTOR, "h1").text
+                    logger.info(f"  Product: {title[:60]}...")
+                except:
+                    title = "Unknown"
 
-            time.sleep(2)
+                # Extract product handle from URL for filtering
+                product_handle = self.extract_product_id_from_url(product_url)
+                logger.info(f"  Product handle: {product_handle}")
 
-            gallery_images = []
-            seen_filenames = set()
+                time.sleep(2)
 
-            # Method 1: Find gallery images specifically in the product gallery section
-            # Look for the main product gallery container and its images
-            try:
-                # Shopify typically has product gallery in specific containers
-                # First, try to find images that are in the product media/gallery section
-                gallery_selectors = [
-                    # Main product gallery selectors for Shopify themes
-                    ".product__media img[src*='cdn/shop']",
-                    ".product-gallery img[src*='cdn/shop']",
-                    ".product-single__media img[src*='cdn/shop']",
-                    ".product-images img[src*='cdn/shop']",
-                    "[data-product-media-type='image'] img",
-                    ".product__main-photos img[src*='cdn/shop']",
-                    # Thumbnail gallery
-                    ".product__thumbs img[src*='cdn/shop']",
-                    ".product-single__thumbnails img[src*='cdn/shop']",
-                ]
-                
-                all_gallery_images = []
-                for selector in gallery_selectors:
-                    try:
-                        images = self.driver.find_elements(By.CSS_SELECTOR, selector)
-                        all_gallery_images.extend(images)
-                    except:
-                        continue
+                gallery_images = []
+                seen_filenames = set()
 
-                # If specific selectors didn't work, try a more targeted approach
-                if len(all_gallery_images) == 0:
-                    # Get images that link to high-res versions (typical gallery behavior)
-                    # Gallery images are usually inside anchor tags that open larger versions
-                    anchors = self.driver.find_elements(
-                        By.CSS_SELECTOR,
-                        "a[href*='cdn/shop/files'][href*='1800x1800'], a[href*='cdn/shop/products'][href*='1800x1800']"
-                    )
+                # Method 1: Find gallery images specifically in the product gallery section
+                try:
+                    gallery_selectors = [
+                        ".product__media img[src*='cdn/shop']",
+                        ".product-gallery img[src*='cdn/shop']",
+                        ".product-single__media img[src*='cdn/shop']",
+                        ".product-images img[src*='cdn/shop']",
+                        "[data-product-media-type='image'] img",
+                        ".product__main-photos img[src*='cdn/shop']",
+                        ".product__thumbs img[src*='cdn/shop']",
+                        ".product-single__thumbnails img[src*='cdn/shop']",
+                    ]
                     
-                    for anchor in anchors:
+                    all_gallery_images = []
+                    for selector in gallery_selectors:
                         try:
-                            href = anchor.get_attribute("href")
-                            if not href:
-                                continue
-                            
-                            # Check if this image belongs to the current product
-                            # by checking if filename contains product handle
-                            filename_match = re.search(r'/([^/]+?)(?:[-_]\d+)?(?:_\d+x\d+)?\.(?:jpg|png|webp)', href, re.IGNORECASE)
-                            if filename_match:
-                                filename = filename_match.group(1).lower()
-                                # Only include if filename relates to current product
-                                product_words = product_handle.replace('-', ' ').split()
-                                if any(word in filename for word in product_words if len(word) > 3):
-                                    if href not in gallery_images:
-                                        gallery_images.append(href.split('?')[0])
-                                        seen_filenames.add(filename)
+                            images = self.driver.find_elements(By.CSS_SELECTOR, selector)
+                            all_gallery_images.extend(images)
                         except:
                             continue
 
-                logger.info(f"  Found {len(all_gallery_images)} elements in gallery selectors")
-
-                # Process gallery images found via selectors
-                for img in all_gallery_images:
-                    try:
-                        src = img.get_attribute("src")
-                        if not src or 'cdn/shop' not in src:
-                            continue
-
-                        # Skip non-product images
-                        if any(x in src.lower() for x in ['logo', 'icon', 'badge', 'payment', 'visa', 'mastercard', 'obi-belt', 'socks', 'tabi', 'nagajuban']):
-                            continue
-
-                        # Extract filename
-                        filename_match = re.search(r'/([^/]+?)(?:[-_]\d+)?(?:_\d+x\d*)?\.(?:jpg|png|webp)', src, re.IGNORECASE)
-                        if filename_match:
-                            filename = filename_match.group(1).lower()
-                            
-                            # Check if this image is for the current product
-                            product_words = product_handle.replace('-', ' ').split()
-                            is_product_image = any(word in filename for word in product_words if len(word) > 3)
-                            
-                            if not is_product_image:
+                    # If specific selectors didn't work, try anchor tags
+                    if len(all_gallery_images) == 0:
+                        anchors = self.driver.find_elements(
+                            By.CSS_SELECTOR,
+                            "a[href*='cdn/shop/files'][href*='1800x1800'], a[href*='cdn/shop/products'][href*='1800x1800']"
+                        )
+                        
+                        for anchor in anchors:
+                            try:
+                                href = anchor.get_attribute("href")
+                                if not href:
+                                    continue
+                                
+                                filename_match = re.search(r'/([^/]+?)(?:[-_]\d+)?(?:_\d+x\d+)?\.(?:jpg|png|webp)', href, re.IGNORECASE)
+                                if filename_match:
+                                    filename = filename_match.group(1).lower()
+                                    product_words = product_handle.replace('-', ' ').split()
+                                    if any(word in filename for word in product_words if len(word) > 3):
+                                        if href not in gallery_images:
+                                            gallery_images.append(href.split('?')[0])
+                                            seen_filenames.add(filename)
+                            except:
                                 continue
-                            
-                            if filename in seen_filenames:
-                                continue
-                            seen_filenames.add(filename)
 
-                        # Convert to high-res version
-                        high_res = re.sub(r'_\d+x\d*\.', '_1800x1800.', src)
-                        if '?' in high_res:
-                            high_res = high_res.split('?')[0]
+                    logger.info(f"  Found {len(all_gallery_images)} elements in gallery selectors")
 
-                        if high_res not in gallery_images:
-                            gallery_images.append(high_res)
-                            logger.debug(f"    Gallery image {len(gallery_images)}: {high_res[:80]}...")
-
-                    except Exception as e:
-                        logger.debug(f"Error processing image: {e}")
-                        continue
-
-            except Exception as e:
-                logger.error(f"  Error finding gallery images: {e}")
-
-            # Method 2: If still no images, try finding by product handle in URL
-            if len(gallery_images) < 2:
-                logger.info(f"  Trying fallback method - matching by product name...")
-                try:
-                    all_images = self.driver.find_elements(
-                        By.CSS_SELECTOR,
-                        "img[src*='cdn/shop/files'], img[src*='cdn/shop/products']"
-                    )
-                    
-                    for img in all_images:
+                    # Process gallery images found via selectors
+                    for img in all_gallery_images:
                         try:
                             src = img.get_attribute("src")
-                            if not src:
+                            if not src or 'cdn/shop' not in src:
                                 continue
-                            
-                            # Skip unwanted images
-                            if any(x in src.lower() for x in ['logo', 'icon', 'badge', 'payment', 'visa', 'mastercard', 
-                                                               'obi-belt', 'japanese-obi', 'socks', 'tabi', 'nagajuban',
-                                                               'geta', 'sandal', 'zori', 'haori', 'hanten']):
+
+                            if any(x in src.lower() for x in ['logo', 'icon', 'badge', 'payment', 'visa', 'mastercard', 'obi-belt', 'socks', 'tabi', 'nagajuban']):
                                 continue
-                            
-                            # Extract and check filename
+
                             filename_match = re.search(r'/([^/]+?)(?:[-_]\d+)?(?:_\d+x\d*)?\.(?:jpg|png|webp)', src, re.IGNORECASE)
                             if filename_match:
                                 filename = filename_match.group(1).lower()
                                 
-                                # Match product handle words
                                 product_words = product_handle.replace('-', ' ').split()
                                 is_product_image = any(word in filename for word in product_words if len(word) > 3)
                                 
@@ -374,35 +384,108 @@ class KimurakamiGalleryScraperLocal:
                                 if filename in seen_filenames:
                                     continue
                                 seen_filenames.add(filename)
-                                
-                                # Convert to high-res
-                                high_res = re.sub(r'_\d+x\d*\.', '_1800x1800.', src)
-                                if '?' in high_res:
-                                    high_res = high_res.split('?')[0]
-                                
-                                if high_res not in gallery_images:
-                                    gallery_images.append(high_res)
-                                    logger.debug(f"    Fallback image {len(gallery_images)}: {high_res[:80]}...")
-                        except:
+
+                            high_res = re.sub(r'_\d+x\d*\.', '_1800x1800.', src)
+                            if '?' in high_res:
+                                high_res = high_res.split('?')[0]
+
+                            if high_res not in gallery_images:
+                                gallery_images.append(high_res)
+                                logger.debug(f"    Gallery image {len(gallery_images)}: {high_res[:80]}...")
+
+                        except Exception as e:
+                            logger.debug(f"Error processing image: {e}")
                             continue
-                            
+
                 except Exception as e:
-                    logger.error(f"  Fallback method error: {e}")
+                    logger.error(f"  Error finding gallery images: {e}")
 
-            logger.info(f"  Total gallery images (filtered): {len(gallery_images)}")
+                # Method 2: Fallback - match by product name
+                if len(gallery_images) < 2:
+                    logger.info(f"  Trying fallback method - matching by product name...")
+                    try:
+                        all_images = self.driver.find_elements(
+                            By.CSS_SELECTOR,
+                            "img[src*='cdn/shop/files'], img[src*='cdn/shop/products']"
+                        )
+                        
+                        for img in all_images:
+                            try:
+                                src = img.get_attribute("src")
+                                if not src:
+                                    continue
+                                
+                                if any(x in src.lower() for x in ['logo', 'icon', 'badge', 'payment', 'visa', 'mastercard', 
+                                                                   'obi-belt', 'japanese-obi', 'socks', 'tabi', 'nagajuban',
+                                                                   'geta', 'sandal', 'zori', 'haori', 'hanten']):
+                                    continue
+                                
+                                filename_match = re.search(r'/([^/]+?)(?:[-_]\d+)?(?:_\d+x\d*)?\.(?:jpg|png|webp)', src, re.IGNORECASE)
+                                if filename_match:
+                                    filename = filename_match.group(1).lower()
+                                    
+                                    product_words = product_handle.replace('-', ' ').split()
+                                    is_product_image = any(word in filename for word in product_words if len(word) > 3)
+                                    
+                                    if not is_product_image:
+                                        continue
+                                    
+                                    if filename in seen_filenames:
+                                        continue
+                                    seen_filenames.add(filename)
+                                    
+                                    high_res = re.sub(r'_\d+x\d*\.', '_1800x1800.', src)
+                                    if '?' in high_res:
+                                        high_res = high_res.split('?')[0]
+                                    
+                                    if high_res not in gallery_images:
+                                        gallery_images.append(high_res)
+                                        logger.debug(f"    Fallback image {len(gallery_images)}: {high_res[:80]}...")
+                            except:
+                                continue
+                                
+                    except Exception as e:
+                        logger.error(f"  Fallback method error: {e}")
 
-            if len(gallery_images) >= 1:
-                return {
-                    "title": title,
-                    "url": product_url,
-                    "images": gallery_images
-                }
+                logger.info(f"  Total gallery images (filtered): {len(gallery_images)}")
 
-            return None
+                if len(gallery_images) >= 1:
+                    self.consecutive_errors = 0  # Reset on success
+                    return {
+                        "title": title,
+                        "url": product_url,
+                        "images": gallery_images
+                    }
 
-        except Exception as e:
-            logger.error(f"  Error: {e}")
-            return None
+                return None
+
+            except (TimeoutException, WebDriverException) as e:
+                self.consecutive_errors += 1
+                logger.warning(f"  Page load error (attempt {page_attempt + 1}/{max_page_attempts}): {type(e).__name__}")
+                
+                if page_attempt < max_page_attempts - 1:
+                    logger.info(f"  Waiting {RETRY_DELAY}s before retry...")
+                    time.sleep(RETRY_DELAY)
+                    
+                    if self.consecutive_errors >= 5:
+                        logger.info("  Restarting WebDriver due to repeated errors...")
+                        try:
+                            self.driver.quit()
+                        except:
+                            pass
+                        time.sleep(RETRY_DELAY)
+                        self.init_driver()
+                        self.consecutive_errors = 0
+                else:
+                    logger.error(f"  Failed to load product page after {max_page_attempts} attempts")
+                    return None
+
+            except Exception as e:
+                logger.error(f"  Error: {e}")
+                self.consecutive_errors += 1
+                return None
+        
+        return None
 
     def download_all_gallery_images(self, product_data, product_id):
         """Download gallery images locally"""
