@@ -1,5 +1,7 @@
+
 import random
 from easy_dict import EASY_DICT
+
 
 def weighted_choice(items: dict, k=1):
     """
@@ -9,42 +11,30 @@ def weighted_choice(items: dict, k=1):
     weights = list(items.values())
     return random.choices(keys, weights=weights, k=k)
 
-def sample_keywords(
-    easy_dict,
-    num_category_probs={1: 0.4, 2: 0.4, 3: 0.2}
-):
+
+def sample_keywords(easy_dict):
     """
-    Samples categories and one sub-item per category.
+    Samples categories independently using their category probabilities.
+    From each selected category, samples exactly one sub-item.
 
     Returns:
         dict: {category_name: selected_item}
     """
 
-    # --- Step 1: sample number of categories ---
-    num_categories = weighted_choice(num_category_probs)[0]
-    num_categories = min(num_categories, len(easy_dict))
-
-    # --- Step 2: sample categories (weighted, without replacement) ---
-    categories = list(easy_dict.keys())
-    category_weights = [easy_dict[c]["prob"] for c in categories]
-
-    selected_categories = random.choices(
-        categories,
-        weights=category_weights,
-        k=num_categories
-    )
-
-    # remove duplicates while preserving order
-    selected_categories = list(dict.fromkeys(selected_categories))
-
-    while len(selected_categories) < num_categories:
-        extra = random.choices(categories, weights=category_weights, k=1)[0]
-        if extra not in selected_categories:
-            selected_categories.append(extra)
-
-    # --- Step 3: sample sub-items ---
     selected = {}
-    for category in selected_categories:
+
+    # --- Step 1: sample categories independently ---
+    for category, data in easy_dict.items():
+        if random.random() < data["prob"]:
+            selected[category] = weighted_choice(
+                data["items"]
+            )[0]
+
+    # --- Step 2: ensure at least one category is selected ---
+    if not selected:
+        categories = list(easy_dict.keys())
+        category_weights = [easy_dict[c]["prob"] for c in categories]
+        category = random.choices(categories, weights=category_weights, k=1)[0]
         selected[category] = weighted_choice(
             easy_dict[category]["items"]
         )[0]
