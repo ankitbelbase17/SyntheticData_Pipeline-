@@ -1,4 +1,4 @@
-MEDIUM_DICT = {
+MEDIUM_DICT = { 
   "Body Shape": {
     "prob": 0.131712,
     "items": {
@@ -68,13 +68,17 @@ MEDIUM_DICT = {
   },
 
   "Age Group": {
-    "prob": 0.131712,
-    "items": {
-      "teen": 0.257100,
-      "young adult": 0.314300,
-      "adult": 0.428600
-    }
-  },
+  "prob": 0.131712,
+  "items": {
+    "10s": 0.12,
+    "20s": 0.24,
+    "30s": 0.26,
+    "40s": 0.18,
+    "50s": 0.11,
+    "60s": 0.06,
+    "70s": 0.03
+  }
+},
 
   "Skin tone/race": {
     "prob": 0.083311,
@@ -98,3 +102,4 @@ MEDIUM_DICT = {
     }
   }
 }
+
