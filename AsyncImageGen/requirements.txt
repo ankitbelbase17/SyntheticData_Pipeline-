@@ -1,0 +1,12 @@
+torch
+diffusers @ git+https://github.com/huggingface/diffusers.git
+transformers
+accelerate
+sentencepiece
+protobuf
+Pillow
+safetensors
+huggingface_hub
+aioboto3
+aiofiles
+python-dotenv
