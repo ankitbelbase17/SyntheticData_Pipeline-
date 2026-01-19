@@ -1,7 +1,7 @@
 import random
 from medium_dict import MEDIUM_DICT
 
-MIN_CATEGORIES = 2   # <-- change this single value to control the minimum
+MIN_CATEGORIES = 4   # <-- change this single value to control the minimum
 def weighted_choice(items: dict, k=1):
     """
     Selects k keys from a dict {item: weight}
