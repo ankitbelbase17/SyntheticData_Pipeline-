@@ -3,7 +3,7 @@ from hard_dict import HARD_DICT
 from medium_dict import MEDIUM_DICT
 
 MIN_CATEGORIES_FROM_HARD = 3  # <-- minimum number of categories from HARD_DICT
-MIN_CATEGORIES_FROM_MEDIUM = 2  # <-- minimum number of categories from MEDIUM_DICT
+MIN_CATEGORIES_FROM_MEDIUM = 4  # <-- minimum number of categories from MEDIUM_DICT
 
 
 def weighted_choice(items: dict, k=1):
