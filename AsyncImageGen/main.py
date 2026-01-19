@@ -17,6 +17,9 @@ async def main(model_type="nvfp4"):
     # Initialize Uploader
     uploader = AsyncUploader()
     
+    # Check S3 for existing prompts to resume
+    processed_prompts = await uploader.get_existing_prompts(S3_PREFIX)
+
     upload_tasks = []
     
     # 2. Processing Loop
@@ -24,6 +27,7 @@ async def main(model_type="nvfp4"):
     
     # We use a set to keep track of active tasks to avoid potential memory issues if queue grows too large,
     # though with image gen being slow, upload should keep up.
+
     
     for prompt_data in parse_prompts(jsonl_files):
         prompt_number = prompt_data.get("prompt_number")
@@ -31,7 +35,11 @@ async def main(model_type="nvfp4"):
         dress_name = prompt_data.get("dress_name", "N/A")
         setting = prompt_data.get("setting", "N/A")
         
-        print(f"\nGeneratng Prompt {prompt_number}...")
+        print(f"\nProcessing Prompt {prompt_number}...")
+        
+        if str(prompt_number) in processed_prompts:
+            print(f"Skipping Prompt {prompt_number} (Already exists in S3).")
+            continue
         
         # synchronous generation (blocks the main thread).
         # We run it in a thread to allow the asyncio event loop (S3 uploads) to progress.
@@ -47,6 +55,22 @@ Dress Name: {dress_name}
 Setting: {setting}
 
 {prompt_text}"""
+
+        # Save Locally
+        from src.config import OUTPUT_BASE_DIR
+        local_output_dir = OUTPUT_BASE_DIR / str(prompt_number)
+        local_output_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Save Local Image
+        local_image_path = local_output_dir / f"{prompt_number}.png"
+        image.save(local_image_path)
+        
+        # Save Local Text
+        local_text_path = local_output_dir / f"{prompt_number}.txt"
+        with open(local_text_path, "w", encoding="utf-8") as f:
+            f.write(text_content)
+            
+        print(f"✓ Saved locally to {local_output_dir}")
 
         # Determine S3 Path structure: Bucket/S3_PREFIX/prompt_number/
         # Files: prompt_number.png, prompt_number.txt
