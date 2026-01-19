@@ -129,9 +129,9 @@ class KimurakamiGalleryScraperColab:
 
         # Create directories
         self.output_dir.mkdir(exist_ok=True, parents=True)
-        (self.output_dir / "products_anishcb6").mkdir(exist_ok=True)
-        (self.output_dir / "metadata_anishcb6").mkdir(exist_ok=True)
-        (self.output_dir / "progress_anishcb6").mkdir(exist_ok=True)
+        (self.output_dir / "products_anishcb7").mkdir(exist_ok=True)
+        (self.output_dir / "metadata_anishcb7").mkdir(exist_ok=True)
+        (self.output_dir / "progress_anishcb7").mkdir(exist_ok=True)
 
         self.driver = None
         self.items_scraped = 0
@@ -336,7 +336,7 @@ class KimurakamiGalleryScraperColab:
         if not self.use_s3 or not self.s3_client:
             return None
 
-        s3_progress_key = "progress_anishcb6/scraper_progress.json"
+        s3_progress_key = "progress_anishcb7/scraper_progress.json"
 
         try:
             response = self.s3_client.get_object(
@@ -374,7 +374,7 @@ class KimurakamiGalleryScraperColab:
                 return
 
         # Fall back to local progress file
-        progress_file = self.output_dir / "progress_anishcb6" / "scraper_progress.json"
+        progress_file = self.output_dir / "progress_anishcb7" / "scraper_progress.json"
         if progress_file.exists():
             try:
                 with open(progress_file, 'r') as f:
@@ -390,7 +390,7 @@ class KimurakamiGalleryScraperColab:
 
     def _save_progress_locally(self, data=None):
         """Save progress data to local file"""
-        progress_file = self.output_dir / "progress_anishcb6" / "scraper_progress.json"
+        progress_file = self.output_dir / "progress_anishcb7" / "scraper_progress.json"
         try:
             if data is None:
                 data = {
@@ -421,7 +421,7 @@ class KimurakamiGalleryScraperColab:
 
         # Upload to S3 if enabled
         if self.use_s3:
-            s3_key = "progress_anishcb6/scraper_progress.json"
+            s3_key = "progress_anishcb7/scraper_progress.json"
             if self.upload_json_to_s3(progress_data, s3_key):
                 logger.debug(f"Progress uploaded to S3: {s3_key}")
 
@@ -768,7 +768,7 @@ class KimurakamiGalleryScraperColab:
 
     def download_all_gallery_images(self, product_data, product_id):
         """Download gallery images, optionally upload to S3"""
-        product_dir = self.output_dir / "products_anishcb6" / product_id
+        product_dir = self.output_dir / "products_anishcb7" / product_id
         product_dir.mkdir(exist_ok=True, parents=True)
 
         downloaded_images = []
@@ -778,8 +778,8 @@ class KimurakamiGalleryScraperColab:
                 filename = f"image_{idx:02d}.jpg"
                 filepath = product_dir / filename
 
-                # S3 key: products_anishcb6/product_id/image_00.jpg
-                s3_key = f"products_anishcb6/{product_id}/{filename}" if self.use_s3 else None
+                # S3 key: products_anishcb7/product_id/image_00.jpg
+                s3_key = f"products_anishcb7/{product_id}/{filename}" if self.use_s3 else None
 
                 success, info, s3_uploaded = self.download_image(img_url, filepath, s3_key)
 
@@ -937,16 +937,16 @@ class KimurakamiGalleryScraperColab:
 
                                 if self.use_s3:
                                     metadata["s3_bucket"] = self.s3_bucket
-                                    metadata["s3_prefix"] = f"products_anishcb6/{product_id}/"
+                                    metadata["s3_prefix"] = f"products_anishcb7/{product_id}/"
 
                                 # Save metadata locally
-                                metadata_file = self.output_dir / "metadata_anishcb6" / f"{product_id}.json"
+                                metadata_file = self.output_dir / "metadata_anishcb7" / f"{product_id}.json"
                                 with open(metadata_file, 'w') as f:
                                     json.dump(metadata, f, indent=2)
 
                                 # Upload metadata to S3
                                 if self.use_s3:
-                                    s3_metadata_key = f"metadata_anishcb6/{product_id}.json"
+                                    s3_metadata_key = f"metadata_anishcb7/{product_id}.json"
                                     self.upload_json_to_s3(metadata, s3_metadata_key)
 
                                 self.items_scraped += 1
@@ -1131,14 +1131,30 @@ def main():
     # ==========================================================================
 
     # S3 Configuration (set to True to enable S3 upload)
-    USE_S3 = False
-    S3_BUCKET = os.environ.get('S3_BUCKET', 'your-bucket-name')
-    AWS_REGION = os.environ.get('AWS_REGION', 'us-east-1')
-    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID', None)
-    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY', None)
+    USE_S3 = True
+    S3_BUCKET = "test-scrap-bucket" 
+    AWS_REGION = "ap-south-1"
+    AWS_ACCESS_KEY_ID = "ABCDEFGHIJKLMNOPQRST"
+    AWS_SECRET_ACCESS_KEY = "abcdefghijklmnopqrstuvwxyz1234567890ABCD"
 
     # Google Drive (only used if S3 is disabled)
     USE_GOOGLE_DRIVE = False
+
+    # ==========================================================================
+    
+    # All Kimurakami collection URLs to scrape
+    COLLECTION_URLS = [
+        "https://kimurakami.com/collections/haori",
+        "https://kimurakami.com/collections/kimono-men",
+        "https://kimurakami.com/collections/japanese-apron",
+        "https://kimurakami.com/collections/japanese-pants",
+        "https://kimurakami.com/collections/hakama-pants",
+        "https://kimurakami.com/collections/japanese-shirts",
+        "https://kimurakami.com/collections/japanese-hoodie",
+        "https://kimurakami.com/collections/hanten",
+        "https://kimurakami.com/collections/kimonos-for-women",
+        "https://kimurakami.com/collections/japanese-kimono-dress",
+    ]
 
     # ==========================================================================
 
@@ -1154,18 +1170,30 @@ def main():
     try:
         scraper.init_driver()
 
-        # Kimurakami collections URL
-        sale_url = "https://kimurakami.com/collections/japanese-kimono-dress"
+        # Scrape all collections
+        total_collections = len(COLLECTION_URLS)
+        for idx, sale_url in enumerate(COLLECTION_URLS, 1):
+            collection_name = sale_url.split("/")[-1]
+            logger.info(f"\n{'='*80}")
+            logger.info(f"COLLECTION {idx}/{total_collections}: {collection_name}")
+            logger.info(f"{'='*80}")
+            
+            try:
+                # PRODUCTION MODE: Scrape all pages and unlimited items per collection
+                scraper.scrape_sale_page(sale_url, max_pages=None, max_items=None)
+                
+                # TEST MODE: Uncomment below for testing (2 pages, 5 items per collection)
+                # scraper.scrape_sale_page(sale_url, max_pages=2, max_items=5)
+                
+            except Exception as e:
+                logger.error(f"Error scraping {collection_name}: {e}")
+                continue  # Continue with next collection
 
-        # TEST MODE: 10 items, 2 pages (recommended for initial testing)
-        scraper.scrape_sale_page(sale_url, max_pages=2, max_items=10)
-
-        # PRODUCTION MODE: Scrape all pages and unlimited items
-        # scraper.scrape_sale_page(sale_url, max_pages=None, max_items=None)
-
-        logger.info(f"\n[SUMMARY]")
+        logger.info(f"\n{'='*80}")
+        logger.info(f"ALL COLLECTIONS COMPLETE!")
+        logger.info(f"{'='*80}")
         logger.info(f"Output directory: {scraper.output_dir}")
-        logger.info(f"Items scraped: {scraper.items_scraped}")
+        logger.info(f"Total items scraped: {scraper.items_scraped}")
 
     except KeyboardInterrupt:
         logger.info("\n[INTERRUPTED BY USER]")
@@ -1180,12 +1208,12 @@ def main():
 
 
 def run_scraper(
-    sale_url="https://kimurakami.com/collections/japanese-kimono-dress",
+    sale_urls=None,
     max_pages=None,
     max_items=None,
-    use_s3=False,
+    use_s3=True,
     s3_bucket=None,
-    aws_region="us-east-1",
+    aws_region="ap-south-1",
     aws_access_key_id=None,
     aws_secret_access_key=None,
     use_google_drive=False,
@@ -1195,9 +1223,10 @@ def run_scraper(
     Convenience function to run the scraper with custom parameters
 
     Args:
-        sale_url: URL of the Kimurakami collection page to scrape
-        max_pages: Maximum number of pages to scrape (None for unlimited)
-        max_items: Maximum number of items to scrape (None for unlimited)
+        sale_urls: URL or list of URLs of Kimurakami collection pages to scrape
+                   If None, scrapes all default collections
+        max_pages: Maximum number of pages to scrape per collection (None for unlimited)
+        max_items: Maximum number of items to scrape per collection (None for unlimited)
         use_s3: Whether to upload to S3
         s3_bucket: S3 bucket name
         aws_region: AWS region
@@ -1210,8 +1239,17 @@ def run_scraper(
         KimurakamiGalleryScraperColab: The scraper instance
 
     Examples:
-        # Basic local storage:
-        scraper = run_scraper(max_pages=2, max_items=10)
+        # Scrape all collections:
+        scraper = run_scraper()
+
+        # Scrape specific collection:
+        scraper = run_scraper(sale_urls="https://kimurakami.com/collections/haori")
+
+        # Scrape multiple specific collections:
+        scraper = run_scraper(sale_urls=[
+            "https://kimurakami.com/collections/haori",
+            "https://kimurakami.com/collections/hanten"
+        ])
 
         # With S3:
         scraper = run_scraper(
@@ -1222,6 +1260,28 @@ def run_scraper(
             max_items=50
         )
     """
+    # Default collection URLs
+    DEFAULT_URLS = [
+        "https://kimurakami.com/collections/haori",
+        "https://kimurakami.com/collections/kimono-men",
+        "https://kimurakami.com/collections/japanese-apron",
+        "https://kimurakami.com/collections/japanese-pants",
+        "https://kimurakami.com/collections/hakama-pants",
+        "https://kimurakami.com/collections/japanese-shirts",
+        "https://kimurakami.com/collections/japanese-hoodie",
+        "https://kimurakami.com/collections/hanten",
+        "https://kimurakami.com/collections/kimonos-for-women",
+        "https://kimurakami.com/collections/japanese-kimono-dress",
+    ]
+    
+    # Handle sale_urls parameter
+    if sale_urls is None:
+        urls_to_scrape = DEFAULT_URLS
+    elif isinstance(sale_urls, str):
+        urls_to_scrape = [sale_urls]
+    else:
+        urls_to_scrape = list(sale_urls)
+    
     scraper = KimurakamiGalleryScraperColab(
         output_dir=output_dir,
         use_s3=use_s3,
@@ -1234,7 +1294,22 @@ def run_scraper(
 
     try:
         scraper.init_driver()
-        scraper.scrape_sale_page(sale_url, max_pages=max_pages, max_items=max_items)
+        
+        total_collections = len(urls_to_scrape)
+        for idx, url in enumerate(urls_to_scrape, 1):
+            collection_name = url.split("/")[-1]
+            logger.info(f"\n{'='*80}")
+            logger.info(f"COLLECTION {idx}/{total_collections}: {collection_name}")
+            logger.info(f"{'='*80}")
+            
+            try:
+                scraper.scrape_sale_page(url, max_pages=max_pages, max_items=max_items)
+            except Exception as e:
+                logger.error(f"Error scraping {collection_name}: {e}")
+                continue
+                
+        logger.info(f"\nTotal items scraped across all collections: {scraper.items_scraped}")
+        
     except KeyboardInterrupt:
         logger.info("\n[INTERRUPTED BY USER]")
     except Exception as e:

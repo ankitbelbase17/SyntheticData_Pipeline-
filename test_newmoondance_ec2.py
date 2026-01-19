@@ -223,14 +223,14 @@ class NewMoonDanceGalleryScraperS3:
             chrome_options = Options()
 
             # EC2 headless options
-            chrome_options.add_argument('--headless')
+            chrome_options.add_argument('--headless=new')  # New headless mode for Chrome 109+
             chrome_options.add_argument('--no-sandbox')
             chrome_options.add_argument('--disable-dev-shm-usage')
             chrome_options.add_argument('--disable-gpu')
             chrome_options.add_argument('--disable-blink-features=AutomationControlled')
             chrome_options.add_argument('--window-size=1920,1080')
             chrome_options.add_argument(
-                'user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+                'user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36'
             )
 
             # Additional EC2 stability options
@@ -241,23 +241,44 @@ class NewMoonDanceGalleryScraperS3:
             chrome_options.add_argument('--disable-default-apps')
             chrome_options.add_argument('--no-first-run')
             chrome_options.add_argument('--no-default-browser-check')
-            chrome_options.add_argument('--single-process')
             chrome_options.add_argument('--disable-setuid-sandbox')
+            chrome_options.add_argument('--remote-debugging-port=9222')
 
-            # Try webdriver-manager first, then system chromium
+            # Method 1: Let Selenium 4.6+ auto-manage driver (Selenium Manager)
+            # This is the most reliable method for modern Chrome versions
             try:
-                from webdriver_manager.chrome import ChromeDriverManager
-                from webdriver_manager.core.os_manager import ChromeType
-                service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
-                self.driver = webdriver.Chrome(service=service, options=chrome_options)
-            except Exception:
-                # Fallback to system chromedriver
+                logger.info("Trying Selenium's built-in driver management...")
+                self.driver = webdriver.Chrome(options=chrome_options)
+                logger.info("Chrome WebDriver initialized via Selenium Manager")
+            except Exception as e1:
+                logger.warning(f"Selenium Manager failed: {e1}")
+                
+                # Method 2: Try webdriver-manager with GOOGLE type (not CHROMIUM)
                 try:
-                    service = Service('/usr/bin/chromedriver')
+                    logger.info("Trying webdriver-manager...")
+                    from webdriver_manager.chrome import ChromeDriverManager
+                    service = Service(ChromeDriverManager().install())
                     self.driver = webdriver.Chrome(service=service, options=chrome_options)
-                except Exception:
-                    # Last resort - let Selenium find it
-                    self.driver = webdriver.Chrome(options=chrome_options)
+                    logger.info("Chrome WebDriver initialized via webdriver-manager")
+                except Exception as e2:
+                    logger.warning(f"webdriver-manager failed: {e2}")
+                    
+                    # Method 3: Try system chromedriver
+                    try:
+                        logger.info("Trying system chromedriver...")
+                        service = Service('/usr/local/bin/chromedriver')
+                        self.driver = webdriver.Chrome(service=service, options=chrome_options)
+                        logger.info("Chrome WebDriver initialized via system chromedriver")
+                    except Exception as e3:
+                        logger.error(f"All driver methods failed!")
+                        logger.error(f"  Selenium Manager: {e1}")
+                        logger.error(f"  webdriver-manager: {e2}")
+                        logger.error(f"  System chromedriver: {e3}")
+                        raise RuntimeError(
+                            "Could not initialize ChromeDriver. "
+                            "Run: sudo yum install -y chromedriver  OR  "
+                            "pip install --upgrade selenium webdriver-manager"
+                        )
 
             self.driver.set_page_load_timeout(30)
             self.driver.implicitly_wait(10)
@@ -267,7 +288,9 @@ class NewMoonDanceGalleryScraperS3:
 
         except Exception as e:
             logger.error(f"Failed to initialize ChromeDriver: {e}")
-            logger.error("Make sure chromium-browser is installed: sudo apt-get install chromium-browser")
+            logger.error("Try running these commands on EC2:")
+            logger.error("  sudo yum remove -y chromedriver")
+            logger.error("  pip install --upgrade selenium webdriver-manager")
             raise
 
     def random_delay(self, min_sec=2, max_sec=4):
@@ -852,12 +875,17 @@ def main():
     # ==========================================================================
     # CONFIGURATION - MODIFY THESE VALUES
     # ==========================================================================
-    S3_BUCKET = "your-bucket-name"  # <-- Change this!
-    S3_PREFIX = "newmoondance_dataset"
-    AWS_REGION = "us-east-1"
+    S3_BUCKET = "test-scrap-bucket"  # <-- Change this!
+    S3_PREFIX = "nuwahanfu_dataset"
+    AWS_REGION = "ap-south-1"
     
-    # Collection URL to scrape
-    COLLECTION_URL = "https://newmoondance.com/collections/qipao-%E6%97%97%E8%A2%8D"
+    # Collection URLs to scrape (multiple collections supported)
+    COLLECTION_URLS = [
+        "https://nuwahanfu.com/collections/all-dynasties",
+        "https://nuwahanfu.com/collections/modern",
+        "https://nuwahanfu.com/collections/qing-%E6%B8%85-dynasty",
+        "https://nuwahanfu.com/collections/qipao",
+    ]
     # ==========================================================================
 
     scraper = NewMoonDanceGalleryScraperS3(
@@ -869,15 +897,21 @@ def main():
     try:
         scraper.init_driver()
 
-        # PRODUCTION MODE: Scrape all pages and unlimited items
-        scraper.scrape_collection_page(COLLECTION_URL, max_pages=None, max_items=None)
+        # PRODUCTION MODE: Scrape all collections
+        for idx, collection_url in enumerate(COLLECTION_URLS):
+            logger.info(f"\n{'#'*80}")
+            logger.info(f"COLLECTION {idx+1}/{len(COLLECTION_URLS)}: {collection_url}")
+            logger.info(f"{'#'*80}")
+            scraper.scrape_collection_page(collection_url, max_pages=None, max_items=None)
 
-        # TEST MODE: 10 items, 2 pages (recommended for initial testing)
-        # scraper.scrape_collection_page(COLLECTION_URL, max_pages=2, max_items=10)
+        # TEST MODE: 5 items per collection (recommended for initial testing)
+        # for collection_url in COLLECTION_URLS:
+        #     scraper.scrape_collection_page(collection_url, max_pages=1, max_items=5)
 
-        logger.info(f"\n[SUMMARY]")
+        logger.info(f"\n[FINAL SUMMARY]")
+        logger.info(f"Collections scraped: {len(COLLECTION_URLS)}")
         logger.info(f"S3 Location: s3://{S3_BUCKET}/{S3_PREFIX}/")
-        logger.info(f"Items scraped: {scraper.items_scraped}")
+        logger.info(f"Total items scraped: {scraper.items_scraped}")
         logger.info(f"Storage: AWS S3")
 
     except KeyboardInterrupt:

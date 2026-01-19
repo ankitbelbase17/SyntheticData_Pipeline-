@@ -809,7 +809,7 @@ def main():
     # CONFIGURATION
     # ==========================================================================
     # Output directory (change to your preferred location)
-    output_dir = "./nuwahanfu_dataset"
+    output_dir = "./nuwaha_dataset"
     # ==========================================================================
 
     scraper = NewMoonDanceGalleryScraperLocal(output_dir=output_dir)

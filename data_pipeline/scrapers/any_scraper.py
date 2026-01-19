@@ -276,9 +276,35 @@ class AnyScraper:
             tuple: (success: bool, info: str with dimensions or error)
         """
         try:
-            response = self.session.get(url, timeout=15)
+            # Add referer header to bypass CDN restrictions
+            # Use the main site as referer, not the CDN domain
+            if 'nykaa' in url or 'akamaized' in url:
+                referer = 'https://www.nykaafashion.com/'
+            else:
+                referer = urlparse(url).scheme + '://' + urlparse(url).netloc + '/'
+            
+            headers = {
+                'Referer': referer,
+                'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+                'sec-ch-ua': '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"',
+                'sec-ch-ua-mobile': '?0',
+                'sec-ch-ua-platform': '"Windows"',
+                'Sec-Fetch-Dest': 'image',
+                'Sec-Fetch-Mode': 'no-cors',
+                'Sec-Fetch-Site': 'cross-site',
+            }
+            response = self.session.get(url, timeout=15, headers=headers)
             if response.status_code != 200:
                 return False, f"HTTP {response.status_code}"
+
+            # Check content type - should be an image
+            content_type = response.headers.get('Content-Type', '')
+            if 'text/html' in content_type or 'application/json' in content_type:
+                return False, f"Not an image (Content-Type: {content_type})"
+            
+            # Check if response looks like HTML (error page)
+            if response.content[:100].strip().startswith(b'<') or b'<!DOCTYPE' in response.content[:100]:
+                return False, "Received HTML instead of image (blocked by CDN)"
 
             # Validate with PIL
             try:
@@ -577,7 +603,7 @@ class AnyScraper:
                 })
                 logger.info(f"    [{idx+1}/{len(product_data['images'])}] Downloaded: {info}")
             else:
-                logger.debug(f"    [{idx+1}/{len(product_data['images'])}] Skipped: {info}")
+                logger.info(f"    [{idx+1}/{len(product_data['images'])}] SKIPPED: {info} - {img_url[:80]}")
 
         return downloaded_images
 
@@ -844,7 +870,7 @@ def main():
     # ==========================================================================
     # CONFIGURATION
     # ==========================================================================
-    api_key = os.environ.get("CRAWLBASE_TOKEN")
+    api_key = os.environ.get("CRAWLBASE_TOKEN", "ABCDEFGHIJKLMNOPQRST")  # Replace with your Crawlbase API key
     output_dir = "downloaded_images"
 
     # Nykaa Fashion listing page
