@@ -76,7 +76,7 @@ class QwenVLBatchInference:
     
     def batch_inference_multi_image(
         self, 
-        image_sources: List[str], 
+        image_sources: List[Union[str, Image.Image]], 
         prompts: List[str], 
         max_new_tokens: int = 512, 
         temperature: float = 0.7
@@ -86,7 +86,7 @@ class QwenVLBatchInference:
         Each image gets its own prompt in a single forward pass
         
         Args:
-            image_sources: List of paths to different images (one per prompt)
+            image_sources: List of paths (str) OR PIL Image objects
             prompts: List of text prompts (one per image)
             max_new_tokens: Maximum number of tokens to generate
             temperature: Sampling temperature (higher = more creative)
@@ -99,10 +99,16 @@ class QwenVLBatchInference:
         if len(prompts) != batch_size:
             raise ValueError(f"Number of images ({batch_size}) must match number of prompts ({len(prompts)})")
         
-        print(f"Processing batch of {batch_size} different images...")
+        # print(f"Processing batch of {batch_size} different images...")
         
-        # Load all images
-        images = [self.load_image(img_src) for img_src in image_sources]
+        # Load all images if they are strings
+        images = []
+        for img_src in image_sources:
+            if isinstance(img_src, str):
+                images.append(self.load_image(img_src))
+            else:
+                # Assume it's already a PIL image
+                images.append(img_src)
         
         # Prepare batch of messages (different image + different prompt for each)
         messages_batch = []
@@ -139,7 +145,7 @@ class QwenVLBatchInference:
         ).to(self.device)
         
         # Generate responses in batch
-        print(f"Running batch generation on {self.device}...")
+        # print(f"Running batch generation on {self.device}...")
         with torch.no_grad():
             output_ids = self.model.generate(
                 **inputs,
