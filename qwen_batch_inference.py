@@ -119,11 +119,31 @@ class QwenBatchProcessor:
                  # Fallback: if no bucket, we print/skip since local save is disabled
                  pass
 
+    def get_existing_s3_files(self, bucket_name, prefix):
+        """Retrieve a set of existing filenames in the output folder to allow resuming"""
+        print(f"Checking for existing files in s3://{bucket_name}/{prefix}...")
+        s3 = boto3.client('s3')
+        paginator = s3.get_paginator('list_objects_v2')
+        existing_files = set()
+        
+        try:
+            for page in paginator.paginate(Bucket=bucket_name, Prefix=prefix):
+                if 'Contents' in page:
+                    for obj in page['Contents']:
+                        # Store just the filename "1_0_edit.txt"
+                        existing_files.add(Path(obj['Key']).name)
+        except Exception as e:
+            print(f"Warning: Could not list existing files ({e}). Assuming empty.")
+            
+        print(f"Found {len(existing_files)} existing output files.")
+        return existing_files
+
     def process_s3_group(self, bucket_name, input_prefix, output_folder, batch_size=28, shard_id=0, total_shards=1, epochs=1):
         """
         Process a specific group of S3 images (defined by prefix) with sharding support.
         Uses DataLoader for async prefetching and ThreadPool for async saving/uploading.
         Loops for `epochs` times to generate multiple variants per image.
+        Checks for existing files to resume progress.
         """
         print(f"\n{'#'*80}")
         print(f"S3 BATCH PROCESSING (Shard {shard_id+1}/{total_shards})")
@@ -132,6 +152,9 @@ class QwenBatchProcessor:
         print(f"Output: {output_folder}")
         print(f"Epochs: {epochs}")
         print(f"{'#'*80}")
+        
+        # 1. Fetch existing outputs for resume capability
+        existing_outputs = self.get_existing_s3_files(bucket_name, output_folder)
         
         # Get all images from S3 (Listing is fast enough to do synchronously)
         print("Fetching file list from S3...")
@@ -176,6 +199,7 @@ class QwenBatchProcessor:
             collate_fn=collate_fn,
             prefetch_factor=2     # Prefetch next batches
         )
+        
         num_batches = len(loader)
         total_overall_processed = 0
         pipeline_start_time = time.time()
@@ -186,18 +210,33 @@ class QwenBatchProcessor:
             print(f"{'='*40}")
             
             for i, (batch_images, batch_urls) in enumerate(loader, 1):
+                # --- Resume Logic: Filter batch ---
+                images_to_process = []
+                urls_to_process = []
+                
+                for img, url in zip(batch_images, batch_urls):
+                    stem = Path(url).stem
+                    expected_filename = f"{stem}_{epoch}_edit.txt"
+                    if expected_filename not in existing_outputs:
+                        images_to_process.append(img)
+                        urls_to_process.append(url)
+                
+                if not images_to_process:
+                    print(f"Epoch {epoch+1} | Batch {i}/{num_batches} - All skipped (already exist).")
+                    continue
+                    
                 batch_start = time.time()
-                print(f"Epoch {epoch+1} | Batch {i}/{num_batches} ({len(batch_images)} imgs)...", end="", flush=True)
+                print(f"Epoch {epoch+1} | Batch {i}/{num_batches} ({len(images_to_process)}/{len(batch_images)} imgs)...", end="", flush=True)
                 
                 # --- GPU Inference (Synchronous) ---
                 # Random sampling happens inside here for each call, 
                 # ensuring unique keywords for each epoch/image combo
-                responses = self.process_batch_multi_image(batch_images)
+                responses = self.process_batch_multi_image(images_to_process)
                 
                 # --- Async Save ---
                 self.save_executor.submit(
                     self.save_batch_results, 
-                    list(batch_urls), 
+                    list(urls_to_process), 
                     list(responses), 
                     output_folder,
                     bucket_name,
@@ -205,7 +244,7 @@ class QwenBatchProcessor:
                 )
                 
                 batch_time = time.time() - batch_start
-                total_overall_processed += len(batch_images)
+                total_overall_processed += len(images_to_process)
                 print(f" Done ({batch_time:.2f}s)")
             
         # Wait for all saves to finish
