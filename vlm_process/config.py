@@ -5,7 +5,7 @@ IMAGE_FOLDER = "./data/images"
 OUTPUT_FOLDER = "./outputs/prompts"
 
 # AWS S3 Configuration
-S3_BUCKET_NAME = os.getenv("S3_BUCKET_NAME", "vton-pe")
+S3_BUCKET_NAME = os.getenv("S3_BUCKET_NAME", "p1-to-ep1")
 AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID", "your_access_key_here")
 AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY", "your_secret_key_here")
 AWS_REGION_NAME = os.getenv("AWS_REGION_NAME", "us-east-1")
