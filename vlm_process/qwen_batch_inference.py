@@ -321,12 +321,13 @@ def main():
     processor = QwenBatchProcessor(difficulty=args.difficulty)
     
     # Define Strict Paths
+    # Define Strict Paths (Bucket name is handled separately, these are KEYS)
     if args.gender == 'male':
-        input_prefix = "p1-to-ep1/dataset/male/male/images/"
-        output_folder = f"p1-to-ep1/dataset/edit_prompts/{args.difficulty}/edit_male/partition_{args.shard_id}"
+        input_prefix = "dataset/male/male/images/"
+        output_folder = f"dataset/edit_prompts/{args.difficulty}/edit_male/partition_{args.shard_id}"
     else:
-        input_prefix = "p1-to-ep1/dataset/female/female/images/"
-        output_folder = f"p1-to-ep1/dataset/edit_prompts/{args.difficulty}/edit_female/partition_{args.shard_id}"
+        input_prefix = "dataset/female/female/images/"
+        output_folder = f"dataset/edit_prompts/{args.difficulty}/edit_female/partition_{args.shard_id}"
     
     # Run Sharded Processing
     processor.process_s3_group(
