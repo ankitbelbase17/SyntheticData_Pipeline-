@@ -301,12 +301,19 @@ def get_s3_image_files(bucket_name, prefix, extensions=('.png',)):
     paginator = s3.get_paginator('list_objects_v2')
     pages = paginator.paginate(Bucket=bucket_name, Prefix=prefix)
     
+    print(f"DEBUG: Listing S3 objects in bucket '{bucket_name}' with prefix '{prefix}'")
     for page in pages:
         if 'Contents' in page:
+            print(f"DEBUG: Page found with {len(page['Contents'])} objects.")
             for obj in page['Contents']:
                 key = obj['Key']
+                # print(f"DEBUG: Found key: {key}") # Verbose
                 if key.lower().endswith(extensions):
                     s3_files.append(f"s3://{bucket_name}/{key}")
+        else:
+             print("DEBUG: Page contains no 'Contents'.")
+             
+    print(f"DEBUG: Total matching files found: {len(s3_files)}")
     
     # Sort files to ensure 1.png, 2.png order if possible
     # We can try to sort by the numeric part of the filename

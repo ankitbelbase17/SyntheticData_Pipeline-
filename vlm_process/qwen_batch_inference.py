@@ -263,7 +263,8 @@ class QwenBatchProcessor:
                     continue
                     
                 batch_start = time.time()
-                print(f"Epoch {epoch+1} | Batch {i}/{num_batches} ({len(images_to_process)}/{len(batch_images)} imgs)...", end="", flush=True)
+                # Print progress with Shard ID for visibility in parallel logs
+                print(f"[Shard {shard_id}] Epoch {epoch+1} | Batch {i}/{num_batches} ({len(images_to_process)}/{len(batch_images)} imgs)...", end="", flush=True)
                 
                 # --- GPU Inference (Synchronous) ---
                 # Random sampling happens inside here for each call, 
