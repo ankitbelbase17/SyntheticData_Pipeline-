@@ -94,7 +94,12 @@ class QwenBatchProcessor:
     def save_batch_results(self, batch_files, responses, output_folder, bucket_name=None, epoch=0):
         """Background task to upload results directly to S3"""
         # Create S3 client inside thread if needed, or use a new one per thread
-        s3_client = boto3.client('s3') if bucket_name else None
+        s3_client = boto3.client(
+            's3',
+            aws_access_key_id=config.AWS_ACCESS_KEY_ID,
+            aws_secret_access_key=config.AWS_SECRET_ACCESS_KEY,
+            region_name=config.AWS_REGION_NAME
+        ) if bucket_name else None
         
         for img_path, response in zip(batch_files, responses):
             # Parse filename from s3 path: s3://bucket/.../1.png -> 1
@@ -122,7 +127,12 @@ class QwenBatchProcessor:
     def get_existing_s3_files(self, bucket_name, prefix):
         """Retrieve a set of existing filenames in the output folder to allow resuming"""
         print(f"Checking for existing files in s3://{bucket_name}/{prefix}...")
-        s3 = boto3.client('s3')
+        s3 = boto3.client(
+            's3',
+            aws_access_key_id=config.AWS_ACCESS_KEY_ID,
+            aws_secret_access_key=config.AWS_SECRET_ACCESS_KEY,
+            region_name=config.AWS_REGION_NAME
+        )
         paginator = s3.get_paginator('list_objects_v2')
         existing_files = set()
         
@@ -289,13 +299,8 @@ class QwenBatchProcessor:
 def main():
     """Main execution function"""
     
-    # Apply AWS Credentials from config if set and not default
-    if config.AWS_ACCESS_KEY_ID and "your_access_key" not in config.AWS_ACCESS_KEY_ID:
-        os.environ["AWS_ACCESS_KEY_ID"] = config.AWS_ACCESS_KEY_ID
-    if config.AWS_SECRET_ACCESS_KEY and "your_secret_key" not in config.AWS_SECRET_ACCESS_KEY:
-        os.environ["AWS_SECRET_ACCESS_KEY"] = config.AWS_SECRET_ACCESS_KEY
-    if config.AWS_REGION_NAME:
-        os.environ["AWS_REGION_NAME"] = config.AWS_REGION_NAME
+    # AWS Credentials are now handled directly via config in boto3 calls
+
 
     parser = argparse.ArgumentParser(description="Qwen VLM Batch Inference")
     parser.add_argument("--difficulty", type=str, choices=['easy', 'medium', 'hard'], default='medium', help="Sampler difficulty")

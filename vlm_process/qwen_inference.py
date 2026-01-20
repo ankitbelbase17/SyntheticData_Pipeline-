@@ -9,6 +9,7 @@ from PIL import Image
 import requests
 from io import BytesIO
 from typing import List, Union
+import config
 
 
 class QwenVLBatchInference:
@@ -63,7 +64,12 @@ class QwenVLBatchInference:
                 bucket = parts[0]
                 key = parts[1]
                 
-                s3 = boto3.client('s3')
+                s3 = boto3.client(
+                    's3',
+                    aws_access_key_id=config.AWS_ACCESS_KEY_ID,
+                    aws_secret_access_key=config.AWS_SECRET_ACCESS_KEY,
+                    region_name=config.AWS_REGION_NAME
+                )
                 response = s3.get_object(Bucket=bucket, Key=key)
                 img = Image.open(BytesIO(response['Body'].read()))
             except Exception as e:

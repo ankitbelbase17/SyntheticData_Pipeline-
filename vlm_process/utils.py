@@ -10,6 +10,7 @@ from datetime import datetime
 from easy_dict import EASY_DICT
 from hard_dict import HARD_DICT
 from medium_dict import MEDIUM_DICT
+import config
 
 
 def weighted_choice(items: dict, k=1):
@@ -287,7 +288,12 @@ def get_s3_image_files(bucket_name, prefix, extensions=('.png',)):
         List of S3 URLs (s3://bucket/key)
     """
     import boto3
-    s3 = boto3.client('s3')
+    s3 = boto3.client(
+        's3',
+        aws_access_key_id=config.AWS_ACCESS_KEY_ID,
+        aws_secret_access_key=config.AWS_SECRET_ACCESS_KEY,
+        region_name=config.AWS_REGION_NAME
+    )
     
     s3_files = []
     

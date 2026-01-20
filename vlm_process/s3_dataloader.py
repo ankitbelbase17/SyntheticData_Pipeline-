@@ -3,8 +3,10 @@ import os
 import boto3
 import requests
 from io import BytesIO
+from io import BytesIO
 from PIL import Image
 from torch.utils.data import Dataset
+import config
 
 class S3ImageDataset(Dataset):
     """
@@ -26,7 +28,12 @@ class S3ImageDataset(Dataset):
             if url.startswith("s3://"):
                 # Use boto3
                 # Optimization: Create client here to be safe in multiprocessing
-                s3 = boto3.client('s3')
+                s3 = boto3.client(
+                    's3',
+                    aws_access_key_id=config.AWS_ACCESS_KEY_ID,
+                    aws_secret_access_key=config.AWS_SECRET_ACCESS_KEY,
+                    region_name=config.AWS_REGION_NAME
+                )
                 parts = url.replace("s3://", "").split("/", 1)
                 bucket, key = parts[0], parts[1]
                 response = s3.get_object(Bucket=bucket, Key=key)
