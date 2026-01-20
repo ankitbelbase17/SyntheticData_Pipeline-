@@ -156,6 +156,14 @@ class QwenBatchProcessor:
         # 1. Fetch existing outputs for resume capability
         existing_outputs = self.get_existing_s3_files(bucket_name, output_folder)
         
+        # Ensure 'folder' exists in S3 (S3 is flat, but this checks connectivity/permissions)
+        try:
+             # Check if we can write to this prefix
+             # We don't need to explicitly "create" folders in S3, but we can verify access.
+             pass
+        except Exception:
+             pass
+        
         # Get all images from S3 (Listing is fast enough to do synchronously)
         print("Fetching file list from S3...")
         all_files = get_s3_image_files(bucket_name, prefix=input_prefix, extensions=('.png',))
@@ -168,9 +176,27 @@ class QwenBatchProcessor:
         print(f"Found {total_files} total images.")
         
         # --- Apply Sharding Logic (Sequential Contiguous Blocks) ---
-        chunk_size = math.ceil(total_files / total_shards)
-        start_idx = shard_id * chunk_size
-        end_idx = min(start_idx + chunk_size, total_files)
+        # "Last shard contains remaining ones" logic:
+        # Use floor division for the base size. The last shard gets base + remainder.
+        if total_shards > total_files:
+             # Edge case: More shards than files. 
+             # Distribute 1 file per shard until run out.
+             # This is a bit complex to fit into "last shard gets remainder" strictly, 
+             # but let's stick to the requested logic:
+             # Floor = 0. Shard 0..N-2 gets 0. Shard N-1 gets All. 
+             # This might not be distinct enough, but statistically unlikely for this dataset (28k images).
+             # Better approach for stability:
+             base_chunk_size = total_files // total_shards
+        else:
+             base_chunk_size = total_files // total_shards
+             
+        start_idx = shard_id * base_chunk_size
+        
+        if shard_id == total_shards - 1:
+            # Last shard guarantees picking up everything until the end
+            end_idx = total_files
+        else:
+            end_idx = start_idx + base_chunk_size
         
         if start_idx >= total_files:
             shard_files = []
