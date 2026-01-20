@@ -108,9 +108,9 @@ class QwenBatchProcessor:
             
             if bucket_name:
                 try:
-                    # S3 Key: output_folder/filename_epoch_edit.txt
+                    # S3 Key: output_folder/filename_epoch_edit.png
                     # Ensure we form the key correctly
-                    s3_key = f"{output_folder}/{filename}_{epoch}_edit.txt".replace("\\", "/")
+                    s3_key = f"{output_folder}/{filename}_{epoch}_edit.png".replace("\\", "/")
                     
                     # Upload directly from memory
                     s3_client.put_object(
@@ -141,7 +141,7 @@ class QwenBatchProcessor:
             for page in paginator.paginate(Bucket=bucket_name, Prefix=prefix):
                 if 'Contents' in page:
                     for obj in page['Contents']:
-                        # Store just the filename "1_0_edit.txt"
+                        # Store just the filename "1_0_edit.png"
                         existing_files.add(Path(obj['Key']).name)
         except Exception as e:
             print(f"Warning: Could not list existing files ({e}). Assuming empty.")
@@ -253,7 +253,7 @@ class QwenBatchProcessor:
                 
                 for img, url in zip(batch_images, batch_urls):
                     stem = Path(url).stem
-                    expected_filename = f"{stem}_{epoch}_edit.txt"
+                    expected_filename = f"{stem}_{epoch}_edit.png"
                     if expected_filename not in existing_outputs:
                         images_to_process.append(img)
                         urls_to_process.append(url)
@@ -324,10 +324,10 @@ def main():
     # Define Strict Paths (Bucket name is handled separately, these are KEYS)
     if args.gender == 'male':
         input_prefix = "dataset/male/male/images/"
-        output_folder = f"dataset/edit_prompts/{args.difficulty}/edit_male/partition_{args.shard_id}"
+        output_folder = f"dataset/edit_images/{args.difficulty}/edit_male/partition_{args.shard_id}"
     else:
         input_prefix = "dataset/female/female/images/"
-        output_folder = f"dataset/edit_prompts/{args.difficulty}/edit_female/partition_{args.shard_id}"
+        output_folder = f"dataset/edit_images/{args.difficulty}/edit_female/partition_{args.shard_id}"
     
     # Run Sharded Processing
     processor.process_s3_group(
