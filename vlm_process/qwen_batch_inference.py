@@ -3,6 +3,7 @@ import time
 import torch
 import argparse
 import math
+import boto3
 from pathlib import Path
 from itertools import cycle
 from concurrent.futures import ThreadPoolExecutor
