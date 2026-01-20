@@ -290,10 +290,10 @@ def main():
     # Define Strict Paths
     if args.gender == 'male':
         input_prefix = "p1-to-ep1/dataset/male/male/images/"
-        output_folder = f"p1-to-ep1/dataset/edit_prompts/{args.difficulty}/edit_male"
+        output_folder = f"p1-to-ep1/dataset/edit_prompts/{args.difficulty}/edit_male/partition_{args.shard_id}"
     else:
         input_prefix = "p1-to-ep1/dataset/female/female/images/"
-        output_folder = f"p1-to-ep1/dataset/edit_prompts/{args.difficulty}/edit_female"
+        output_folder = f"p1-to-ep1/dataset/edit_prompts/{args.difficulty}/edit_female/partition_{args.shard_id}"
     
     # Run Sharded Processing
     processor.process_s3_group(
