@@ -7,6 +7,7 @@ import json
 import random
 from pathlib import Path
 from datetime import datetime
+from easy_dict import EASY_DICT
 from hard_dict import HARD_DICT
 from medium_dict import MEDIUM_DICT
 
@@ -90,12 +91,71 @@ def format_keywords_as_string(keywords_dict):
     return ", ".join(items)
 
 
-def sample_keywords(num_samples, min_categories_medium, min_categories_hard):
+def sample_easy_keywords(easy_dict):
+    """
+    Samples categories independently using their category probabilities for Easy mode.
+    From each selected category, samples exactly one sub-item.
+    Ensures at least one category is always selected.
+
+    Returns:
+        dict: {category_name: selected_item}
+    """
+    selected = {}
+
+    # --- Step 1: sample categories independently ---
+    for category, data in easy_dict.items():
+        if random.random() < data["prob"]:
+            selected[category] = weighted_choice(data["items"])[0]
+
+    # --- Step 2: ensure at least one category is selected ---
+    if not selected:
+        categories = list(easy_dict.keys())
+        category_weights = [easy_dict[c]["prob"] for c in categories]
+        category = random.choices(categories, weights=category_weights, k=1)[0]
+        selected[category] = weighted_choice(easy_dict[category]["items"])[0]
+
+    return selected
+
+
+def sample_medium_keywords(medium_dict, min_categories=4):
+    """
+    Samples categories independently using their category probabilities.
+    From each selected category, samples exactly one sub-item.
+    Enforces minimum number of categories.
+
+    Returns:
+        dict: {category_name: selected_item}
+    """
+    selected = {}
+
+    # --- Step 1: sample categories independently ---
+    for category, data in medium_dict.items():
+        if random.random() < data["prob"]:
+            selected[category] = weighted_choice(data["items"])[0]
+
+    # --- Step 2: enforce minimum number of categories ---
+    if len(selected) < min_categories:
+        remaining = list(set(medium_dict.keys()) - set(selected.keys()))
+        remaining_weights = [medium_dict[c]["prob"] for c in remaining]
+
+        while len(selected) < min_categories and remaining:
+            category = random.choices(remaining, weights=remaining_weights, k=1)[0]
+            selected[category] = weighted_choice(medium_dict[category]["items"])[0]
+
+            idx = remaining.index(category)
+            remaining.pop(idx)
+            remaining_weights.pop(idx)
+
+    return selected
+
+
+def sample_keywords(num_samples, difficulty='medium', min_categories_medium=4, min_categories_hard=3):
     """
     Sample random keywords for each prompt in the batch using the sampling dictionaries.
     
     Args:
         num_samples: Number of samples to generate
+        difficulty: 'easy', 'medium', or 'hard'
         min_categories_medium: Minimum categories from medium dict
         min_categories_hard: Minimum categories from hard dict
     
@@ -103,8 +163,19 @@ def sample_keywords(num_samples, min_categories_medium, min_categories_hard):
         List of keyword strings (sampled combinations)
     """
     sampled = []
+    
     for _ in range(num_samples):
-        keywords_dict = sample_combined_keywords(min_categories_medium, min_categories_hard)
+        if difficulty == 'easy':
+            # Use specific Easy sampling logic
+            keywords_dict = sample_easy_keywords(EASY_DICT)
+        elif difficulty == 'medium':
+            keywords_dict = sample_medium_keywords(MEDIUM_DICT, min_categories_medium)
+        elif difficulty == 'hard':
+            keywords_dict = sample_keywords_from_dict(HARD_DICT, min_categories_hard)
+        else:
+            # Combined / default case
+            keywords_dict = sample_combined_keywords(min_categories_medium, min_categories_hard)
+            
         keywords_str = format_keywords_as_string(keywords_dict)
         sampled.append(keywords_str)
     
@@ -116,9 +187,34 @@ def create_output_folder(output_folder):
     Path(output_folder).mkdir(parents=True, exist_ok=True)
 
 
+def save_edit_prompt(prompt, output_folder, image_name):
+    """
+    Save generated prompt to {image_name}_edit.txt
+    
+    Args:
+        prompt: Single editing prompt
+        output_folder: Output directory
+        image_name: Name of the source image (without extension), e.g. "1" from "1.png" or "1_edit"
+    """
+    # Ensure image_name matches strict naming convention "X_edit"
+    if not image_name.endswith("_edit"):
+        base_name = image_name
+        filename = f"{base_name}_edit.txt"
+    else:
+        filename = f"{image_name}.txt"
+        
+    txt_path = os.path.join(output_folder, filename)
+    
+    with open(txt_path, 'w') as f:
+        f.write(prompt)
+    
+    print(f"  Saved: {txt_path}")
+    return txt_path
+
+
 def save_prompts(prompts, output_folder, image_name, batch_id=None):
     """
-    Save generated prompts to file
+    Save generated prompts to file (Legacy mode)
     
     Args:
         prompts: List of generated prompts
@@ -177,3 +273,40 @@ def get_image_files(image_folder, extensions=('.png', '.jpg', '.jpeg', '.webp'))
         image_files.extend(Path(image_folder).glob(f"*{ext}"))
     
     return sorted([str(f) for f in image_files])
+
+def get_s3_image_files(bucket_name, prefix, extensions=('.png',)):
+    """
+    Get all image files from S3 bucket under a specific prefix
+    
+    Args:
+        bucket_name: Name of S3 bucket
+        prefix: S3 prefix to search in (e.g. 'p1-to-ep1/dataset/male/male/images/')
+        extensions: Tuple of valid image extensions
+    
+    Returns:
+        List of S3 URLs (s3://bucket/key)
+    """
+    import boto3
+    s3 = boto3.client('s3')
+    
+    s3_files = []
+    
+    # List objects in folder
+    paginator = s3.get_paginator('list_objects_v2')
+    pages = paginator.paginate(Bucket=bucket_name, Prefix=prefix)
+    
+    for page in pages:
+        if 'Contents' in page:
+            for obj in page['Contents']:
+                key = obj['Key']
+                if key.lower().endswith(extensions):
+                    s3_files.append(f"s3://{bucket_name}/{key}")
+    
+    # Sort files to ensure 1.png, 2.png order if possible
+    # We can try to sort by the numeric part of the filename
+    try:
+        s3_files.sort(key=lambda x: int(Path(x).stem))
+    except (ValueError, TypeError):
+        s3_files.sort()
+        
+    return s3_files

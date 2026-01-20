@@ -44,7 +44,7 @@ class QwenVLBatchInference:
     
     def load_image(self, image_source):
         """
-        Load image from file path or URL
+        Load image from file path or URL (http/s, s3)
         
         Args:
             image_source: Path to local image or URL
@@ -55,6 +55,20 @@ class QwenVLBatchInference:
         if image_source.startswith(('http://', 'https://')):
             response = requests.get(image_source)
             img = Image.open(BytesIO(response.content))
+        elif image_source.startswith('s3://'):
+            try:
+                import boto3
+                # Parse s3 url
+                parts = image_source.replace("s3://", "").split("/", 1)
+                bucket = parts[0]
+                key = parts[1]
+                
+                s3 = boto3.client('s3')
+                response = s3.get_object(Bucket=bucket, Key=key)
+                img = Image.open(BytesIO(response['Body'].read()))
+            except Exception as e:
+                print(f"Error loading from S3: {e}")
+                raise
         else:
             img = Image.open(image_source)
         
