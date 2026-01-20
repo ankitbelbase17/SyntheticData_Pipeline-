@@ -27,8 +27,14 @@ def collate_fn(batch):
     Custom collate function to handle PIL images and URLs
     Returns: (list_of_images, list_of_urls)
     """
-    images = [item[0] for item in batch]
-    urls = [item[1] for item in batch]
+    # Filter out None items (failed downloads)
+    valid_batch = [item for item in batch if item is not None]
+    
+    if not valid_batch:
+        return [], []
+
+    images = [item[0] for item in valid_batch]
+    urls = [item[1] for item in valid_batch]
     return images, urls
 
 class QwenBatchProcessor:

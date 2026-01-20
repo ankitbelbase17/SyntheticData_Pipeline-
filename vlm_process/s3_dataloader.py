@@ -48,4 +48,4 @@ class S3ImageDataset(Dataset):
             print(f"Error loading {url}: {e}")
             # Return a placeholder or None? 
             # Ideally handle this robustly, but for now return a black image to avoid crashing the batch
-            return Image.new('RGB', (224, 224)), url
+            return None
