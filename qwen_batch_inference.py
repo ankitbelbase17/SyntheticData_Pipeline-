@@ -2,6 +2,7 @@ import os
 import time
 import torch
 import argparse
+import math
 from pathlib import Path
 from itertools import cycle
 
@@ -31,11 +32,6 @@ class QwenBatchProcessor:
             model_name=config.MODEL_NAME,
             device=config.DEVICE
         )
-        
-        # Create output folder
-        print("\n[2/3] Setting up output folder...")
-        create_output_folder(config.OUTPUT_FOLDER)
-        print(f"✓ Output folder: {config.OUTPUT_FOLDER}")
         
         self.difficulty = difficulty
         
@@ -97,39 +93,56 @@ class QwenBatchProcessor:
         
         return responses, total_time
 
-    def process_images_from_s3(self, bucket_name, batch_size=28):
+    def process_s3_group(self, bucket_name, input_prefix, output_folder, batch_size=28, shard_id=0, total_shards=1):
         """
-        Process images from S3 bucket folders 'males' and 'females'
+        Process a specific group of S3 images (defined by prefix) with sharding support.
         
         Args:
             bucket_name: S3 Bucket name
-            batch_size: Batch size (default 28)
+            input_prefix: S3 Prefix for input images
+            output_folder: Local folder pattern to save outputs (mirrored from S3 logic)
+            batch_size: Batch size
+            shard_id: Index of this shard (0 to total_shards-1)
+            total_shards: Total number of parallel shards
         """
         print(f"\n{'#'*80}")
-        print(f"S3 BATCH PROCESSING (Bucket: {bucket_name})")
+        print(f"S3 BATCH PROCESSING (Shard {shard_id+1}/{total_shards})")
+        print(f"Bucket: {bucket_name}")
+        print(f"Prefix: {input_prefix}")
+        print(f"Output: {output_folder}")
         print(f"{'#'*80}")
         
         # Get all images from S3
         print("Fetching file list from S3...")
         # Only get pngs as requested
-        s3_files = get_s3_image_files(bucket_name, folders=['males', 'females'], extensions=('.png',))
+        all_files = get_s3_image_files(bucket_name, prefix=input_prefix, extensions=('.png',))
         
-        if not s3_files:
-            print(f"No PNG images found in {bucket_name}/males or {bucket_name}/females")
+        if not all_files:
+            print(f"No PNG images found in {bucket_name}/{input_prefix}")
             return
 
-        print(f"Found {len(s3_files)} images total.")
+        total_files = len(all_files)
+        print(f"Found {total_files} total images.")
+        
+        # --- Apply Sharding Logic ---
+        # Select every Nth file starting from shard_id
+        # e.g., Shard 0 of 2: 0, 2, 4... | Shard 1 of 2: 1, 3, 5...
+        shard_files = all_files[shard_id::total_shards]
+        
+        print(f"Files assigned to this shard: {len(shard_files)}")
         print(f"Batch size: {batch_size}")
         print(f"{'#'*80}\n")
+        
+        create_output_folder(output_folder)
         
         total_processed = 0
         total_start_time = time.time()
         
         # Process in batches
-        num_batches = (len(s3_files) + batch_size - 1) // batch_size
+        num_batches = (len(shard_files) + batch_size - 1) // batch_size
         
-        for i in range(0, len(s3_files), batch_size):
-            batch_files = s3_files[i:i+batch_size]
+        for i in range(0, len(shard_files), batch_size):
+            batch_files = shard_files[i:i+batch_size]
             batch_idx = (i // batch_size) + 1
             
             print(f"\n{'='*80}")
@@ -139,33 +152,23 @@ class QwenBatchProcessor:
             # Process this batch
             responses, batch_time = self.process_batch_multi_image(batch_files)
             
-            # Save results individually as requested
-            print(f"\n[3/3] Saving individual results...")
+            # Save results strictly to the designated output folder
+            print(f"\n[3/3] Saving individual results to {output_folder}...")
             for img_path, response in zip(batch_files, responses):
-                # Parse filename from s3 path: s3://bucket/folder/1.png -> 1
+                # Parse filename from s3 path: s3://bucket/.../1.png -> 1
                 filename = Path(img_path).stem # "1"
                 
-                # Determine subfolder for output based on source folder (males/females)
-                # s3://bucket/males/1.png
-                parts = img_path.replace("s3://", "").split("/")
-                if len(parts) > 2:
-                     subfolder = parts[1] # males or females
-                     output_dir = os.path.join(config.OUTPUT_FOLDER, subfolder)
-                     create_output_folder(output_dir)
-                else:
-                     output_dir = config.OUTPUT_FOLDER
-                
                 # Format: 1_edit.txt
-                save_edit_prompt(response, output_dir, f"{filename}_edit")
+                save_edit_prompt(response, output_folder, f"{filename}_edit")
             
             total_processed += len(batch_files)
             
         total_processing_time = time.time() - total_start_time
         
         print(f"\n\n{'#'*80}")
-        print("FINAL SUMMARY")
+        print(f"SHARD {shard_id+1}/{total_shards} COMPLETE")
         print(f"{'#'*80}")
-        print(f"Total images processed: {total_processed}")
+        print(f"Images processed: {total_processed}")
         print(f"Total time: {total_processing_time:.2f}s")
         print(f"{'#'*80}\n")
         
@@ -176,28 +179,41 @@ def main():
     parser.add_argument("--difficulty", type=str, choices=['easy', 'medium', 'hard'], default='medium', help="Sampler difficulty")
     parser.add_argument("--bucket", type=str, default="vton-pe", help="S3 Bucket Name")
     parser.add_argument("--batch_size", type=int, default=28, help="Batch size")
-    parser.add_argument("--local", action="store_true", help="Use local images instead of S3")
+    
+    # New arguments for parallel execution
+    parser.add_argument("--gender", type=str, choices=['male', 'female'], required=True, help="Process 'male' or 'female' partition")
+    parser.add_argument("--shard_id", type=int, default=0, help="Shard index (0-indexed)")
+    parser.add_argument("--total_shards", type=int, default=1, help="Total number of parallel shards")
     
     args = parser.parse_args()
     
-    # Initialize processor (loads model once)
+    # Initialize processor
     processor = QwenBatchProcessor(difficulty=args.difficulty)
     
-    if args.local:
-        # Legacy local processing (cyclic)
-        processor.process_all_images_cyclic(
-            total_prompts=config.TOTAL_PROMPTS,
-            batch_size=args.batch_size
-        )
+    # Define Strict Paths
+    if args.gender == 'male':
+        input_prefix = "p1-to-ep1/dataset/male/male/images/"
+        # Output: p1-to-ep1/dataset/edit_prompts/edit_male/
+        # We map this to a local path to simulate the structure or save directly
+        # The prompt implies saving LOCALLY under this structure? Or S3?
+        # Typically "stored in individual .txt files" implies local generation first.
+        # Assuming local structure mirroring.
+        output_folder = "p1-to-ep1/dataset/edit_prompts/edit_male"
     else:
-        # S3 processing
-        processor.process_images_from_s3(
-            bucket_name=args.bucket,
-            batch_size=args.batch_size
-        )
+        input_prefix = "p1-to-ep1/dataset/female/female/images/"
+        output_folder = "p1-to-ep1/dataset/edit_prompts/edit_female"
     
-    print("\n✓ All processing complete!")
-    print(f"Check outputs in: {config.OUTPUT_FOLDER}")
+    # Run Sharded Processing
+    processor.process_s3_group(
+        bucket_name=args.bucket,
+        input_prefix=input_prefix,
+        output_folder=output_folder,
+        batch_size=args.batch_size,
+        shard_id=args.shard_id,
+        total_shards=args.total_shards
+    )
+    
+    print("\n✓ Processing complete!")
 
 
 if __name__ == "__main__":
