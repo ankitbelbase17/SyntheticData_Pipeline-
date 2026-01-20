@@ -91,7 +91,7 @@ class QwenBatchProcessor:
         
         return responses
 
-    def save_batch_results(self, batch_files, responses, output_folder, bucket_name=None):
+    def save_batch_results(self, batch_files, responses, output_folder, bucket_name=None, epoch=0):
         """Background task to upload results directly to S3"""
         # Create S3 client inside thread if needed, or use a new one per thread
         s3_client = boto3.client('s3') if bucket_name else None
@@ -102,9 +102,9 @@ class QwenBatchProcessor:
             
             if bucket_name:
                 try:
-                    # S3 Key: output_folder/filename_edit.txt
+                    # S3 Key: output_folder/filename_epoch_edit.txt
                     # Ensure we form the key correctly
-                    s3_key = f"{output_folder}/{filename}_edit.txt".replace("\\", "/")
+                    s3_key = f"{output_folder}/{filename}_{epoch}_edit.txt".replace("\\", "/")
                     
                     # Upload directly from memory
                     s3_client.put_object(
@@ -119,16 +119,18 @@ class QwenBatchProcessor:
                  # Fallback: if no bucket, we print/skip since local save is disabled
                  pass
 
-    def process_s3_group(self, bucket_name, input_prefix, output_folder, batch_size=28, shard_id=0, total_shards=1):
+    def process_s3_group(self, bucket_name, input_prefix, output_folder, batch_size=28, shard_id=0, total_shards=1, epochs=1):
         """
         Process a specific group of S3 images (defined by prefix) with sharding support.
         Uses DataLoader for async prefetching and ThreadPool for async saving/uploading.
+        Loops for `epochs` times to generate multiple variants per image.
         """
         print(f"\n{'#'*80}")
         print(f"S3 BATCH PROCESSING (Shard {shard_id+1}/{total_shards})")
         print(f"Bucket: {bucket_name}")
         print(f"Prefix: {input_prefix}")
         print(f"Output: {output_folder}")
+        print(f"Epochs: {epochs}")
         print(f"{'#'*80}")
         
         # Get all images from S3 (Listing is fast enough to do synchronously)
@@ -174,60 +176,73 @@ class QwenBatchProcessor:
             collate_fn=collate_fn,
             prefetch_factor=2     # Prefetch next batches
         )
-        
-        total_processed = 0
-        total_start_time = time.time()
         num_batches = len(loader)
+        total_overall_processed = 0
+        pipeline_start_time = time.time()
         
-        print("Starting Async Pipeline...")
-        
-        for i, (batch_images, batch_urls) in enumerate(loader, 1):
-            batch_start = time.time()
-            print(f"Processing Batch {i}/{num_batches} ({len(batch_images)} images)...", end="", flush=True)
+        for epoch in range(epochs):
+            print(f"\n{'='*40}")
+            print(f"STARTING EPOCH {epoch+1}/{epochs}")
+            print(f"{'='*40}")
             
-            # --- GPU Inference (Synchronous) ---
-            responses = self.process_batch_multi_image(batch_images)
-            
-            # --- Async Save ---
-            # Offload saving to thread pool so GPU can start next batch immediately
-            # We copy list to ensure thread safety if needed (lists are safe passed by ref here)
-            self.save_executor.submit(
-                self.save_batch_results, 
-                list(batch_urls), 
-                list(responses), 
-                output_folder,
-                bucket_name
-            )
-            
-            batch_time = time.time() - batch_start
-            total_processed += len(batch_images)
-            print(f" Done ({batch_time:.2f}s)")
+            for i, (batch_images, batch_urls) in enumerate(loader, 1):
+                batch_start = time.time()
+                print(f"Epoch {epoch+1} | Batch {i}/{num_batches} ({len(batch_images)} imgs)...", end="", flush=True)
+                
+                # --- GPU Inference (Synchronous) ---
+                # Random sampling happens inside here for each call, 
+                # ensuring unique keywords for each epoch/image combo
+                responses = self.process_batch_multi_image(batch_images)
+                
+                # --- Async Save ---
+                self.save_executor.submit(
+                    self.save_batch_results, 
+                    list(batch_urls), 
+                    list(responses), 
+                    output_folder,
+                    bucket_name,
+                    epoch # Pass epoch index for naming
+                )
+                
+                batch_time = time.time() - batch_start
+                total_overall_processed += len(batch_images)
+                print(f" Done ({batch_time:.2f}s)")
             
         # Wait for all saves to finish
         self.save_executor.shutdown(wait=True)
             
-        total_processing_time = time.time() - total_start_time
+        total_time = time.time() - pipeline_start_time
         
         print(f"\n\n{'#'*80}")
         print(f"SHARD {shard_id+1}/{total_shards} COMPLETE")
         print(f"{'#'*80}")
-        print(f"Images processed: {total_processed}")
-        print(f"Total time: {total_processing_time:.2f}s")
+        print(f"Total Images Processed: {total_overall_processed} (over {epochs} epochs)")
+        print(f"Total Pipeline Time: {total_time:.2f}s")
         print(f"{'#'*80}\n")
         
 
 def main():
     """Main execution function"""
+    
+    # Apply AWS Credentials from config if set and not default
+    if config.AWS_ACCESS_KEY_ID and "your_access_key" not in config.AWS_ACCESS_KEY_ID:
+        os.environ["AWS_ACCESS_KEY_ID"] = config.AWS_ACCESS_KEY_ID
+    if config.AWS_SECRET_ACCESS_KEY and "your_secret_key" not in config.AWS_SECRET_ACCESS_KEY:
+        os.environ["AWS_SECRET_ACCESS_KEY"] = config.AWS_SECRET_ACCESS_KEY
+    if config.AWS_REGION_NAME:
+        os.environ["AWS_REGION_NAME"] = config.AWS_REGION_NAME
+
     parser = argparse.ArgumentParser(description="Qwen VLM Batch Inference")
     parser.add_argument("--difficulty", type=str, choices=['easy', 'medium', 'hard'], default='medium', help="Sampler difficulty")
-    parser.add_argument("--bucket", type=str, default="vton-pe", help="S3 Bucket Name")
-    parser.add_argument("--batch_size", type=int, default=28, help="Batch size")
+    parser.add_argument("--bucket", type=str, default=config.S3_BUCKET_NAME, help="S3 Bucket Name")
+    parser.add_argument("--batch_size", type=int, default=config.BATCH_SIZE, help="Batch size")
     
     # New arguments for parallel execution
     parser.add_argument("--gender", type=str, choices=['male', 'female'], required=True, help="Process 'male' or 'female' partition")
     parser.add_argument("--shard_id", type=int, default=0, help="Shard index (0-indexed)")
     parser.add_argument("--total_shards", type=int, default=1, help="Total number of parallel shards")
-    
+    parser.add_argument("--epochs", type=int, default=8, help="Number of times to process dataset (Expansion factor)")
+
     args = parser.parse_args()
     
     # Initialize processor
@@ -236,10 +251,10 @@ def main():
     # Define Strict Paths
     if args.gender == 'male':
         input_prefix = "p1-to-ep1/dataset/male/male/images/"
-        output_folder = "p1-to-ep1/dataset/edit_prompts/edit_male"
+        output_folder = f"p1-to-ep1/dataset/edit_prompts/{args.difficulty}/edit_male"
     else:
         input_prefix = "p1-to-ep1/dataset/female/female/images/"
-        output_folder = "p1-to-ep1/dataset/edit_prompts/edit_female"
+        output_folder = f"p1-to-ep1/dataset/edit_prompts/{args.difficulty}/edit_female"
     
     # Run Sharded Processing
     processor.process_s3_group(
@@ -248,7 +263,8 @@ def main():
         output_folder=output_folder,
         batch_size=args.batch_size,
         shard_id=args.shard_id,
-        total_shards=args.total_shards
+        total_shards=args.total_shards,
+        epochs=args.epochs
     )
     
     print("\n✓ Processing complete!")

@@ -5,4 +5,5 @@ python qwen_batch_inference.py \
   --difficulty hard \
   --batch_size 28 \
   --shard_id 4 \
-  --total_shards 7
+  --total_shards 7 \
+  --epochs 3

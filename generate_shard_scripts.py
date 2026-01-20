@@ -5,11 +5,13 @@ def create_scripts():
     num_shards_male = 7
     num_shards_female = 7
     batch_size = 28
-    
     for diff in difficulties:
+        # Set epochs based on user request (3 for all)
+        epochs = 3
+            
         folder_name = f"{diff}_bash_scripts"
         os.makedirs(folder_name, exist_ok=True)
-        print(f"\nGenerating {diff.upper()} Scripts in {folder_name}/...")
+        print(f"\nGenerating {diff.upper()} Scripts in {folder_name}/... (Epochs: {epochs})")
         
         # --- Generate Male Scripts ---
         for i in range(num_shards_male):
@@ -22,7 +24,8 @@ def create_scripts():
                 f"  --difficulty {diff} \\\n"
                 f"  --batch_size {batch_size} \\\n"
                 f"  --shard_id {i} \\\n"
-                f"  --total_shards {num_shards_male}\n"
+                f"  --total_shards {num_shards_male} \\\n"
+                f"  --epochs {epochs}\n"
             )
             
             with open(filename, "w") as f:
@@ -40,7 +43,8 @@ def create_scripts():
                 f"  --difficulty {diff} \\\n"
                 f"  --batch_size {batch_size} \\\n"
                 f"  --shard_id {i} \\\n"
-                f"  --total_shards {num_shards_female}\n"
+                f"  --total_shards {num_shards_female} \\\n"
+                f"  --epochs {epochs}\n"
             )
             
             with open(filename, "w") as f:

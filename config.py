@@ -1,10 +1,14 @@
-"""
-Configuration file for Qwen VLM Batch Inference
-"""
+import os
 
 # Paths
 IMAGE_FOLDER = "./data/images"
 OUTPUT_FOLDER = "./outputs/prompts"
+
+# AWS S3 Configuration
+S3_BUCKET_NAME = os.getenv("S3_BUCKET_NAME", "vton-pe")
+AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID", "your_access_key_here")
+AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY", "your_secret_key_here")
+AWS_REGION_NAME = os.getenv("AWS_REGION_NAME", "us-east-1")
 
 # Model settings
 MODEL_NAME = "Qwen/Qwen3-VL-4B-Instruct"
