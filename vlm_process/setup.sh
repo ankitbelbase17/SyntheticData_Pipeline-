@@ -2,5 +2,5 @@ apt update
 apt install nano
 apt install -y tmux
 pip install -r requirements.txt
-tmux new -s test_session -d nano config.py
-tmux attach -t test_session
+nano config.py
+tmux new -s test_session
