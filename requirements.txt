@@ -1,0 +1,10 @@
+torch
+diffusers
+transformers
+Pillow
+numpy
+accelerate
+sentencepiece
+protobuf
+boto3
+requests
