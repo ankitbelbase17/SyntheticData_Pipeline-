@@ -34,10 +34,10 @@ class Config:
         # AWS S3 Credentials
         self.AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID", "your_access_key")
         self.AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY", "your_secret_key")
-        self.AWS_REGION_NAME = os.getenv("AWS_REGION_NAME", "us-east-1")
+        self.AWS_REGION_NAME = os.getenv("AWS_REGION_NAME", "ap-south-1")
         self.S3_BUCKET_NAME = os.getenv("S3_BUCKET_NAME", "your_bucket_name")
         self.HF_TOKEN = os.getenv("HF_TOKEN", "your_hf_token")
         self.DIFFICULTY = "easy"
-        self.GENDER = "lower_body"
+        self.GENDER = "female"
 
 config = Config()
