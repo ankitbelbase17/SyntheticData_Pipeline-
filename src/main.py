@@ -8,7 +8,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from core.models import FluxGenerator, QwenVLM
 from core.feedback_loop import FeedbackSystem
 from data.dataloader import get_dataloader
-from utils.helpers import ensure_directories_exist, load_image_from_url
+from utils.helpers import ensure_directories_exist, load_image_from_url, save_image
 from config import config
 from PIL import Image, ImageDraw
 
@@ -77,14 +77,28 @@ def main():
         except Exception as e:
             print(f"Error downloading images: {e}")
             continue
+
+        # Save input images locally with simple naming
+        # Format: {count}_person.jpg and {count}_cloth.jpg
+        p_ext = os.path.splitext(p_name)[1]
+        c_ext = os.path.splitext(c_name)[1]
+        # Ensure extension exists
+        if not p_ext: p_ext = ".jpg"
+        if not c_ext: c_ext = ".jpg"
+            
+        simple_p_name = f"{count}_person{p_ext}"
+        simple_c_name = f"{count}_cloth{c_ext}"
+        
+        save_image(p_img, config.PERSON_DIR, simple_p_name)
+        save_image(c_img, config.CLOTH_DIR, simple_c_name)
             
         # Default prompt
-        prompt = "A photorealistic image of a person wearing the provided cloth, high quality, 8k"
+        prompt = "Make the person in the first image wear the cloth from the second image. High quality, photorealistic, no unintended changes."
         
         # Start timing (excluding dataloading/downloading)
         start_time = time.time()
         
-        feedback_system.run(p_name, c_name, p_img, c_img, prompt)
+        feedback_system.run(p_name, c_name, p_img, c_img, prompt, count)
         
         end_time = time.time()
         latency = end_time - start_time

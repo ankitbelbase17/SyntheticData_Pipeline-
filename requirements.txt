@@ -8,3 +8,6 @@ sentencepiece
 protobuf
 boto3
 requests
+safetensors
+huggingface_hub
+qwen-vl-utils
