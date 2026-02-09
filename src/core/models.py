@@ -29,6 +29,7 @@ class FluxGenerator:
     def _load_model(self):
         """Load the FLUX.2 Klein pipeline"""
         from huggingface_hub import login
+        import torch
         
         print("=" * 60)
         print(f"Loading FLUX.2 Klein Model: {self.model_id}")
@@ -57,6 +58,7 @@ class FluxGenerator:
             model_name = "black-forest-labs/FLUX.2-klein-4B"
         
         try:
+            # User specifically requested Flux2KleinPipeline for 9B model
             from diffusers import Flux2KleinPipeline
             
             print(f"Loading {model_name} with Flux2KleinPipeline...")
@@ -65,87 +67,167 @@ class FluxGenerator:
                 torch_dtype=self.dtype,
                 token=hf_token
             )
-            self.pipe.enable_model_cpu_offload()  # Saves VRAM
+            self.pipe.to(self.device)
             print("Loaded Flux2KleinPipeline successfully")
             
+        except ImportError:
+            print("Flux2KleinPipeline not found in diffusers. Please ensure you have the latest diffusers (git+https://github.com/huggingface/diffusers.git).")
+            print("Falling back to FluxPipeline (Note: 'image' argument might not work)...")
+            try:
+                from diffusers import FluxPipeline
+                self.pipe = FluxPipeline.from_pretrained(
+                    model_name,
+                    torch_dtype=self.dtype,
+                    token=hf_token
+                )
+                self.pipe.to(self.device)
+            except Exception as e:
+                print(f"Failed to load fallback FluxPipeline: {e}")
+                
         except Exception as e:
-            print(f"Flux2KleinPipeline failed: {e}")
-            print("Falling back to FLUX.1-dev...")
+            print(f"Failed to load Flux2KleinPipeline: {e}")
+            print("Falling back to standard FluxPipeline...")
             
-            from diffusers import FluxPipeline
-            self.pipe = FluxPipeline.from_pretrained(
-                "black-forest-labs/FLUX.1-dev",
-                torch_dtype=self.dtype,
-                token=hf_token
-            )
-            self.pipe.to(self.device)
+            try:
+                from diffusers import FluxPipeline
+                self.pipe = FluxPipeline.from_pretrained(
+                    "black-forest-labs/FLUX.1-dev",
+                    torch_dtype=self.dtype,
+                    token=hf_token
+                )
+                self.pipe.to(self.device)
+            except Exception as e2:
+                print(f"CRITICAL: Could not load any Flux model: {e2}")
         
         print(f"Pipeline type: {type(self.pipe).__name__}")
         print("✓ FluxGenerator ready!")
 
-    def generate(self, person_image: Image.Image, cloth_image: Image.Image, prompt: str, 
+    def generate(self, person_image: Union[Image.Image, List[Image.Image]], 
+                 cloth_image: Union[Image.Image, List[Image.Image]], 
+                 prompt: Union[str, List[str]], 
                  height: int = 1024, width: int = 1024, steps: int = 4, 
                  guidance: float = 1.0, seed: int = None, 
-                 strength: float = 0.75) -> Image.Image: # Keeping strength in signature for compatibility but ignoring it
+                 strength: float = 0.75) -> Union[Image.Image, List[Image.Image]]:
         """
-        Generates a try-on image using multi-reference editing.
+        Generates try-on images. Supports both single samples and batches.
         """
-        # Ensure prompt is a string
-        if isinstance(prompt, list):
-            prompt = prompt[0] if prompt else ""
-        prompt = str(prompt)
+        # Determine if batch mode
+        is_batch = isinstance(person_image, list)
         
-        print(f"Generating try-on image with prompt: {prompt[:100]}...")
+        # Normalize inputs
+        prompts = prompt if isinstance(prompt, list) else [prompt]
+        p_imgs = person_image if isinstance(person_image, list) else [person_image]
+        c_imgs = cloth_image if isinstance(cloth_image, list) else [cloth_image]
         
+        # Replicate prompt if single prompt provided for batch
+        if len(prompts) == 1 and len(p_imgs) > 1:
+            prompts = prompts * len(p_imgs)
+            
+        print(f"Generating {'batch of ' + str(len(p_imgs)) if is_batch else 'single'} try-on image(s)...")
+
         generator = None
         if seed is not None:
+             # Create list of generators for batch if needed, or single
             generator = torch.Generator(device=self.device).manual_seed(seed)
         else:
-            # Default seed 0 as requested if none provided
             generator = torch.Generator(device=self.device).manual_seed(0)
         
-        # Helper to resize images to be divisible by 16 (for FLUX)
         def resize_for_flux(img, max_size=1024):
             img = img.copy()
             img.thumbnail((max_size, max_size), Image.Resampling.LANCZOS)
             w, h = img.size
             w = (w // 16) * 16
             h = (h // 16) * 16
-            # Avoid resizing to 0
-            w = max(16, w)
-            h = max(16, h)
-            return img.resize((w, h), Image.Resampling.LANCZOS)
+            return img.resize((max(16, w), max(16, h)), Image.Resampling.LANCZOS)
 
-        # Preprocess images
-        p_img_resized = resize_for_flux(person_image, max(height, width))
-        c_img_resized = resize_for_flux(cloth_image, max(height, width))
+        p_imgs_resized = [resize_for_flux(img, max(height, width)) for img in p_imgs]
+        c_imgs_resized = [resize_for_flux(img, max(height, width)) for img in c_imgs]
         
-        # FLUX pipeline call
+        # Prepare inputs as expected by pipeline
+        # Common structure for multi-image pipelines in batch:
+        # image = [[p1, c1], [p2, c2], ...] failed with "got list".
+        # Try flattened list: [p1, c1, p2, c2, ...] if pipeline consumes N images per prompt?
+        # Or maybe it expects [p_batch, c_batch] ?? (List of 2 lists, each length B)?
+        # Let's try flattening first as [p1, c1, p2, c2...] or [p1, p2..., c1, c2...]
+        # Given single sample is [p, c], linear consumption implies [p1, c1, p2, c2].
+        
+        output_images = []
         try:
-            print(f"Calling pipeline with [person, cloth] images. Steps={steps}, Guidance={guidance} (Klein settings)")
-            
-            # Pass list of images as per example, removing strength
-            image = self.pipe(
-                prompt=prompt,
-                image=[p_img_resized, c_img_resized],  # Multiple reference images
-                height=height,
-                width=width,
-                guidance_scale=guidance,
-                num_inference_steps=steps,
-                generator=generator
-            ).images[0]
-                
+            if is_batch:
+                 # Strategy 1: Flattened list [p1, c1, p2, c2, ...]
+                 batch_inputs_flat = [img for p, c in zip(p_imgs_resized, c_imgs_resized) for img in (p, c)]
+                 
+                 print(f"Calling pipeline with Batch Size={len(p_imgs)} (Flat images list len={len(batch_inputs_flat)})...")
+                 output_images = self.pipe(
+                    prompt=prompts,
+                    image=batch_inputs_flat, 
+                    height=height,
+                    width=width,
+                    guidance_scale=guidance,
+                    num_inference_steps=steps,
+                    generator=generator
+                ).images
+            else:
+                # Single sample case (pass simple list [p, c])
+                batch_inputs = [[p, c] for p, c in zip(p_imgs_resized, c_imgs_resized)]
+                output_images = self.pipe(
+                    prompt=prompts[0],
+                    image=batch_inputs[0],
+                    height=height,
+                    width=width,
+                    guidance_scale=guidance,
+                    num_inference_steps=steps,
+                    generator=generator
+                ).images
+
         except Exception as e:
-            print(f"Generation error: {e}")
-            # Fallback: return resized person image
-            print("Falling back to returning person image...")
-            image = person_image.copy().resize((width, height), Image.Resampling.LANCZOS)
+            print(f"Batch Generation error: {e}")
+            
+            # If flat list failed, try Strategy 2: List of Batches [ [p1, p2...], [c1, c2...] ]
+            try:
+                print("Retrying with List of Batches [Batch_P, Batch_C]...")
+                batch_inputs_cols = [p_imgs_resized, c_imgs_resized]
+                output_images = self.pipe(
+                    prompt=prompts,
+                    image=batch_inputs_cols, 
+                    height=height,
+                    width=width,
+                    guidance_scale=guidance,
+                    num_inference_steps=steps,
+                    generator=generator
+                ).images
+                
+            except Exception as e2:
+                print(f"Batch Strategy 2 failed: {e2}")
+                print("Falling back to sequential loop...")
+                batch_inputs = [[p, c] for p, c in zip(p_imgs_resized, c_imgs_resized)]
+                output_images = []
+                for i, p_txt in enumerate(prompts):
+                     try:
+                         # For single sample fallback, pass [p, c]
+                         res = self.pipe(
+                            prompt=p_txt,
+                            image=batch_inputs[i],
+                            height=height,
+                            width=width,
+                            guidance_scale=guidance,
+                            num_inference_steps=steps,
+                            generator=generator
+                        ).images[0]
+                         output_images.append(res)
+                     except Exception as inner_e:
+                         print(f"  Error on sample {i}: {inner_e}")
+                         output_images.append(p_imgs[i].copy())
         
-        # Clear CUDA cache after generation
+        # Clear CUDA cache if needed
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
+            torch.cuda.synchronize()
         
-        return image
+        if is_batch:
+            return output_images
+        else:
+            return output_images[0]
 
 
 class QwenVLM:
@@ -219,78 +301,92 @@ class QwenVLM:
         print("✓ QwenVLM ready!")
 
     def evaluate(self, 
-                 person_image: Image.Image, 
-                 cloth_image: Image.Image, 
-                 try_on_images: List[Image.Image], 
+                 person_image: Union[Image.Image, List[Image.Image]], 
+                 cloth_image: Union[Image.Image, List[Image.Image]], 
+                 try_on_images: Union[List[Image.Image], List[List[Image.Image]]], 
                  iteration: int,
                  max_new_tokens: int = 1024,
-                 temperature: float = 0.3) -> Dict[str, Any]:
+                 temperature: float = 0.3) -> Union[Dict[str, Any], List[Dict[str, Any]]]:
         """
-        Evaluates the try-on images and returns feedback in JSON format.
+        Evaluates try-on images. Supports both single samples and batches.
+        For batch, try_on_images should be a List of Lists of Images (one history per sample).
+        """
+        # Determine if batch mode
+        is_batch = isinstance(person_image, list)
         
-        Image format sent to VLM:
-        - Iteration 1: person_image, cloth_image, incorrect_tryon_1
-        - Iteration 2: person_image, cloth_image, incorrect_tryon_1, incorrect_tryon_2
-        - Iteration N: person_image, cloth_image, incorrect_tryon_1, ..., incorrect_tryon_N
+        if is_batch:
+            # Normalize inputs
+            p_imgs = person_image
+            c_imgs = cloth_image
+            # try_on_images must be List[List[Image]]
+            histories = try_on_images
+            batch_size = len(p_imgs)
+            print(f"Evaluating VLM batch of {batch_size} samples (Iteration {iteration})...")
+        else:
+            # Single sample normalized to list format
+            p_imgs = [person_image]
+            c_imgs = [cloth_image]
+            histories = [try_on_images]
+            batch_size = 1
+            print(f"Evaluating iteration {iteration} for single sample.")
+
+        if not histories or any(not h for h in histories):
+             # Handle empty history case
+             if is_batch:
+                 return [self._default_error_response("No try-on image provided") for _ in range(batch_size)]
+             else:
+                 return self._default_error_response("No try-on image provided")
+
+        # Move model to GPU for inference
+        print("Moving VLM to GPU...")
+        self.model.to(self.device)
         
-        Args:
-            person_image: Original person image
-            cloth_image: Original cloth image
-            try_on_images: List of ALL generated try-on images (cumulative history)
-            iteration: Current iteration number
-            max_new_tokens: Max tokens to generate
-            temperature: Sampling temperature (lower = more deterministic)
+        texts = []
+        image_inputs = [] 
+        
+        for i in range(batch_size):
+            p_img = p_imgs[i]
+            c_img = c_imgs[i]
+            history = histories[i]
             
-        Returns:
-            Dictionary with feedback, improved_prompt, and constraint_scores
-        """
-        print(f"Evaluating iteration {iteration} with {len(try_on_images)} try-on images.")
-        
-        if not try_on_images:
-            return self._default_error_response("No try-on image provided")
-        
-        # Construct the evaluation prompt
-        system_prompt = self._get_system_prompt()
-        user_prompt = self._construct_user_prompt(iteration, len(try_on_images))
-        
-        # Build images list: person, cloth, then ALL try-on images in order
-        images = [person_image, cloth_image] + try_on_images
-        
-        # Build the message content with all images
-        content = [
-            {"type": "text", "text": system_prompt},
-            {"type": "text", "text": "\n\nImage 1 - Original Person:"},
-            {"type": "image", "image": person_image},
-            {"type": "text", "text": "\n\nImage 2 - Original Cloth:"},
-            {"type": "image", "image": cloth_image},
-        ]
-        
-        # Add all try-on images with labels
-        for idx, tryon_img in enumerate(try_on_images, start=1):
-            img_num = idx + 2  # person=1, cloth=2, so tryons start at 3
-            if idx == len(try_on_images):
-                # Latest (current) try-on
-                content.append({"type": "text", "text": f"\n\nImage {img_num} - Generated Try-On Iteration {idx} (LATEST - evaluate this):"})
-            else:
-                # Previous try-on
-                content.append({"type": "text", "text": f"\n\nImage {img_num} - Generated Try-On Iteration {idx} (previous attempt):"})
-            content.append({"type": "image", "image": tryon_img})
-        
-        content.append({"type": "text", "text": f"\n\n{user_prompt}"})
-        
-        messages = [{"role": "user", "content": content}]
-        
-        # Apply chat template
-        text = self.processor.apply_chat_template(
-            messages,
-            tokenize=False,
-            add_generation_prompt=True
-        )
-        
-        # Process inputs
+            system_prompt = self._get_system_prompt()
+            user_prompt = self._construct_user_prompt(iteration, len(history))
+            
+            # Content definition
+            content = [
+                {"type": "text", "text": system_prompt},
+                {"type": "text", "text": "\n\nImage 1 - Original Person:"},
+                {"type": "image", "image": p_img},
+                {"type": "text", "text": "\n\nImage 2 - Original Cloth:"},
+                {"type": "image", "image": c_img},
+            ]
+            
+            # Track images for this sample
+            current_sample_images = [p_img, c_img]
+            
+            for idx, tryon_img in enumerate(history, start=1):
+                img_num = idx + 2
+                label = "(LATEST - evaluate this)" if idx == len(history) else "(previous attempt)"
+                content.append({"type": "text", "text": f"\n\nImage {img_num} - Generated Try-On Iteration {idx} {label}:"})
+                content.append({"type": "image", "image": tryon_img})
+                current_sample_images.append(tryon_img)
+            
+            content.append({"type": "text", "text": f"\n\n{user_prompt}"})
+            
+            # Apply chat template
+            text = self.processor.apply_chat_template(
+                [{"role": "user", "content": content}],
+                tokenize=False,
+                add_generation_prompt=True
+            )
+            texts.append(text)
+            image_inputs.append(current_sample_images)
+
+        # Process batch inputs
+        # For Qwen2-VL, passing list of texts and list of lists of images works for batching
         inputs = self.processor(
-            text=[text],
-            images=images,
+            text=texts,
+            images=image_inputs,
             return_tensors="pt",
             padding=True,
             truncation=True
@@ -307,21 +403,27 @@ class QwenVLM:
             )
         
         # Decode output
-        generated_ids = output_ids[0][len(inputs.input_ids[0]):]
-        response_text = self.processor.decode(
+        generated_ids = output_ids[:, inputs.input_ids.shape[1]:]
+        
+        response_texts = self.processor.batch_decode(
             generated_ids,
             skip_special_tokens=True,
             clean_up_tokenization_spaces=False
         )
         
-        # Parse the JSON response
-        result = self._parse_response(response_text)
-        
-        # Clear CUDA cache after evaluation
+        # Move model back to CPU
+        print("Moving VLM back to CPU...")
+        self.model.cpu()
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
+            
+        # Parse results
+        results = [self._parse_response(r) for r in response_texts]
         
-        return result
+        if is_batch:
+            return results
+        else:
+            return results[0]
 
     def _get_system_prompt(self) -> str:
         # Use system prompt from config if available, else fallback to generic
@@ -414,4 +516,11 @@ Output ONLY the JSON."""
             "result": "NOT_SUCCESS",
             "explanation": f"Error: Failed to parse response: {response_text[:200]}",
             "improved_prompt": "A photorealistic virtual try-on image showing the person wearing the exact cloth with accurate colors, patterns, and fit."
+        }
+    
+    def _default_error_response(self, error_msg: str) -> Dict[str, Any]:
+        return {
+            "result": "NOT_SUCCESS",
+            "explanation": error_msg,
+            "improved_prompt": ""
         }
