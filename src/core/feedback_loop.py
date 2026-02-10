@@ -61,7 +61,14 @@ class FeedbackSystem:
                 io_time = time.time() - t0
                 total_io_time += io_time
                 print(f"  [Latency] Disk Save:       {io_time:.4f}s")
-                return
+                print(f"  [Latency] Disk Save:       {io_time:.4f}s")
+                return {
+                    "status": "SUCCESS",
+                    "iteration": i,
+                    "image": try_on_img,
+                    "filename": output_filename,
+                    "local_path": os.path.join(save_dir, output_filename)
+                }
             else:
                 # Save as incorrect for this stage
                 save_dir = self.config.INCORRECT_TRY_ON_DIRS.get(i, f"{self.config.OUTPUT_DIR}/unknown_iter")
@@ -73,7 +80,17 @@ class FeedbackSystem:
                 if i == self.config.MAX_ITERATIONS:
                     print("Max iterations reached. Stopping.")
                     print(f"\n[Summary] Total Generation: {total_gen_time:.2f}s | Total Eval: {total_eval_time:.2f}s | Total IO: {total_io_time:.2f}s")
-                    return
+                    print(f"\n[Summary] Total Generation: {total_gen_time:.2f}s | Total Eval: {total_eval_time:.2f}s | Total IO: {total_io_time:.2f}s")
+                    # Return the last attempt as failure
+                    # Since we save incorrect attempts, we can return the last filepath
+                    last_save_dir = save_dir
+                    return {
+                        "status": "NOT_SUCCESS",
+                        "iteration": i,
+                        "image": try_on_img,
+                        "filename": output_filename,
+                        "local_path": os.path.join(last_save_dir, output_filename)
+                    }
                 current_prompt = improved_prompt
                 print(f"Retrying with improved prompt: {current_prompt}")
             
