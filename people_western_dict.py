@@ -579,8 +579,9 @@
         "focus": "slightly out of focus, no background blur",
         "lighting": "ambient natural lighting, uneven exposure",
         "composition": "candid angle, off-center framing",
-        "quality": "minimal grain, slight motion blur, authentic feel"
+        "quality": "minimal grain, minimal motion blur, authentic feel"
       }
     }
   }
+
 }
