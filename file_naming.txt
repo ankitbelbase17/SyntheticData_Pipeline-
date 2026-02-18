@@ -1,0 +1,41 @@
+Output File Naming & Schema
+============================
+
+Input:  sampled_keywords_7000.json  (JSON dict with numeric string keys "1" .. "7000")
+Output: generated_prompts.jsonl     (JSONL — one JSON object per line)
+
+Each output line follows this schema:
+
+{
+    "id": "1",
+    "filename": "pw_0001_average-height_overweight_...",
+    "keywords": {
+        "body_type": "...",
+        "body_type_description": "...",
+        "pose": "...",
+        "country": "...",
+        "ethnicity": "...",
+        "gender": "...",
+        "clothing": "...",
+        "spectacles": "...",
+        "shoes": "...",
+        "shoes_visible": "...",
+        "top_of_head_visible": "...",
+        "disability": "...",
+        "background": "...",
+        "photo_style": "...",
+        "body_part_visible": "...",
+        "camera": "...",
+        "focus": "...",
+        "lighting": "...",
+        "composition": "...",
+        "quality": "..."
+    },
+    "prompt": "<generated image prompt from Qwen3-VL-32B>"
+}
+
+Notes:
+- The "prompt" key is the ONLY new field; all original fields are preserved.
+- Entries are written in sequential order (matching the input key order).
+- The file is flushed after every batch of 35 entries.
+- Use --resume flag to continue from where you left off if interrupted.
