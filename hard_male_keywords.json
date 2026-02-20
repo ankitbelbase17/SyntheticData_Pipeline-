@@ -1,0 +1,2832 @@
+[
+  {
+    "serial_number": 1,
+    "file_name": "hf_hard_pose_deep_squat_heels_lifted",
+    "pose": "deep squat heels lifted"
+  },
+  {
+    "serial_number": 2,
+    "file_name": "hf_hard_pose_crouching_low_arms_forward",
+    "pose": "crouching low arms forward"
+  },
+  {
+    "serial_number": 3,
+    "file_name": "hf_hard_pose_crouching_behind_low_obstacle_peeking_over",
+    "pose": "crouching behind low obstacle peeking over"
+  },
+  {
+    "serial_number": 4,
+    "file_name": "hf_hard_pose_deep_squat_with_arms_wrapped_around_knees",
+    "pose": "deep squat with arms wrapped around knees"
+  },
+  {
+    "serial_number": 5,
+    "file_name": "hf_hard_pose_low_crouch_one_hand_touching_ground",
+    "pose": "low crouch one hand touching ground"
+  },
+  {
+    "serial_number": 6,
+    "file_name": "hf_hard_pose_cross-legged_seated_torso_twist",
+    "pose": "cross-legged seated torso twist"
+  },
+  {
+    "serial_number": 7,
+    "file_name": "hf_hard_pose_sitting_slouched_with_one_knee_raised",
+    "pose": "sitting slouched with one knee raised"
+  },
+  {
+    "serial_number": 8,
+    "file_name": "hf_hard_pose_sitting_sideways_on_chair_backrest",
+    "pose": "sitting sideways on chair backrest"
+  },
+  {
+    "serial_number": 9,
+    "file_name": "hf_hard_pose_seated_twisted_looking_behind",
+    "pose": "seated twisted looking behind"
+  },
+  {
+    "serial_number": 10,
+    "file_name": "hf_hard_pose_seated_hugging_knees_to_chest",
+    "pose": "seated hugging knees to chest"
+  },
+  {
+    "serial_number": 11,
+    "file_name": "hf_hard_pose_seated_cross-leg_one_foot_forward",
+    "pose": "seated cross-leg one foot forward"
+  },
+  {
+    "serial_number": 12,
+    "file_name": "hf_hard_pose_seated_with_both_legs_dangling_off_high_surface",
+    "pose": "seated with both legs dangling off high surface"
+  },
+  {
+    "serial_number": 13,
+    "file_name": "hf_hard_pose_seated_on_floor_spine_curved_over_tucked_knees",
+    "pose": "seated on floor spine curved over tucked knees"
+  },
+  {
+    "serial_number": 14,
+    "file_name": "hf_hard_pose_seated_reclined_on_hands_behind_body",
+    "pose": "seated reclined on hands behind body"
+  },
+  {
+    "serial_number": 15,
+    "file_name": "hf_hard_pose_kneeling_both_knees_leaning_forward",
+    "pose": "kneeling both knees leaning forward"
+  },
+  {
+    "serial_number": 16,
+    "file_name": "hf_hard_pose_kneeling_with_torso_twist_and_reach",
+    "pose": "kneeling with torso twist and reach"
+  },
+  {
+    "serial_number": 17,
+    "file_name": "hf_hard_pose_one-knee_kneel_arms_overhead",
+    "pose": "one-knee kneel arms overhead"
+  },
+  {
+    "serial_number": 18,
+    "file_name": "hf_hard_pose_kneeling_upright_arms_stretched_behind_back",
+    "pose": "kneeling upright arms stretched behind back"
+  },
+  {
+    "serial_number": 19,
+    "file_name": "hf_hard_pose_kneeling_low_forehead_near_ground_arms_forward",
+    "pose": "kneeling low forehead near ground arms forward"
+  },
+  {
+    "serial_number": 20,
+    "file_name": "hf_hard_pose_kneeling_on_both_knees_arms_wide_open",
+    "pose": "kneeling on both knees arms wide open"
+  },
+  {
+    "serial_number": 21,
+    "file_name": "hf_hard_pose_extreme_contrapposto_with_shoulder_drop",
+    "pose": "extreme contrapposto with shoulder drop"
+  },
+  {
+    "serial_number": 22,
+    "file_name": "hf_hard_pose_standing_on_toes_arms_raised",
+    "pose": "standing on toes arms raised"
+  },
+  {
+    "serial_number": 23,
+    "file_name": "hf_hard_pose_balancing_on_one_leg_forward_lean",
+    "pose": "balancing on one leg forward lean"
+  },
+  {
+    "serial_number": 24,
+    "file_name": "hf_hard_pose_off-balance_stumble_recovery",
+    "pose": "off-balance stumble recovery"
+  },
+  {
+    "serial_number": 25,
+    "file_name": "hf_hard_pose_standing_one_leg_extended_to_the_side",
+    "pose": "standing one leg extended to the side"
+  },
+  {
+    "serial_number": 26,
+    "file_name": "hf_hard_pose_heel-to-toe_balance_stance_arms_out",
+    "pose": "heel-to-toe balance stance arms out"
+  },
+  {
+    "serial_number": 27,
+    "file_name": "hf_hard_pose_single_leg_stand_knee_raised_high",
+    "pose": "single leg stand knee raised high"
+  },
+  {
+    "serial_number": 28,
+    "file_name": "hf_hard_pose_standing_deep_forward_lean_from_hips_arms_behind",
+    "pose": "standing deep forward lean from hips arms behind"
+  },
+  {
+    "serial_number": 29,
+    "file_name": "hf_hard_pose_standing_on_one_leg_other_extended_backward",
+    "pose": "standing on one leg other extended backward"
+  },
+  {
+    "serial_number": 30,
+    "file_name": "hf_hard_pose_walking_toward_camera_foreshortened",
+    "pose": "walking toward camera foreshortened"
+  },
+  {
+    "serial_number": 31,
+    "file_name": "hf_hard_pose_walking_away_looking_back_over_shoulder",
+    "pose": "walking away looking back over shoulder"
+  },
+  {
+    "serial_number": 32,
+    "file_name": "hf_hard_pose_running_diagonal_across_frame",
+    "pose": "running diagonal across frame"
+  },
+  {
+    "serial_number": 33,
+    "file_name": "hf_hard_pose_sudden_stop_mid-run_twist",
+    "pose": "sudden stop mid-run twist"
+  },
+  {
+    "serial_number": 34,
+    "file_name": "hf_hard_pose_walking_fast_with_exaggerated_arm_swing",
+    "pose": "walking fast with exaggerated arm swing"
+  },
+  {
+    "serial_number": 35,
+    "file_name": "hf_hard_pose_walking_with_torso_rotated_opposite_to_hips",
+    "pose": "walking with torso rotated opposite to hips"
+  },
+  {
+    "serial_number": 36,
+    "file_name": "hf_hard_pose_brisk_walk_arms_raised_briefcase_in_hand",
+    "pose": "brisk walk arms raised briefcase in hand"
+  },
+  {
+    "serial_number": 37,
+    "file_name": "hf_hard_pose_walking_with_head_turned_sharply_to_one_side",
+    "pose": "walking with head turned sharply to one side"
+  },
+  {
+    "serial_number": 38,
+    "file_name": "hf_hard_pose_lunging_forward_step_with_arms_swinging_opposite",
+    "pose": "lunging forward step with arms swinging opposite"
+  },
+  {
+    "serial_number": 39,
+    "file_name": "hf_hard_pose_jumping_knees_tucked",
+    "pose": "jumping knees tucked"
+  },
+  {
+    "serial_number": 40,
+    "file_name": "hf_hard_pose_jumping_with_torso_twist",
+    "pose": "jumping with torso twist"
+  },
+  {
+    "serial_number": 41,
+    "file_name": "hf_hard_pose_mid-air_one_leg_extended",
+    "pose": "mid-air one leg extended"
+  },
+  {
+    "serial_number": 42,
+    "file_name": "hf_hard_pose_jump_with_arms_wide_both_legs_off_ground",
+    "pose": "jump with arms wide both legs off ground"
+  },
+  {
+    "serial_number": 43,
+    "file_name": "hf_hard_pose_one-legged_hop_arms_asymmetric",
+    "pose": "one-legged hop arms asymmetric"
+  },
+  {
+    "serial_number": 44,
+    "file_name": "hf_hard_pose_jump_with_one_knee_tucked_one_leg_straight",
+    "pose": "jump with one knee tucked one leg straight"
+  },
+  {
+    "serial_number": 45,
+    "file_name": "hf_hard_pose_bending_deeply_to_pick_object",
+    "pose": "bending deeply to pick object"
+  },
+  {
+    "serial_number": 46,
+    "file_name": "hf_hard_pose_reaching_overhead_extreme_stretch",
+    "pose": "reaching overhead extreme stretch"
+  },
+  {
+    "serial_number": 47,
+    "file_name": "hf_hard_pose_reaching_down_across_body",
+    "pose": "reaching down across body"
+  },
+  {
+    "serial_number": 48,
+    "file_name": "hf_hard_pose_extreme_side_stretch_one_arm_over_head",
+    "pose": "extreme side stretch one arm over head"
+  },
+  {
+    "serial_number": 49,
+    "file_name": "hf_hard_pose_forward_fold_hands_reaching_toward_ground",
+    "pose": "forward fold hands reaching toward ground"
+  },
+  {
+    "serial_number": 50,
+    "file_name": "hf_hard_pose_lateral_lunge_with_torso_over_bent_knee",
+    "pose": "lateral lunge with torso over bent knee"
+  },
+  {
+    "serial_number": 51,
+    "file_name": "hf_hard_pose_bending_sideways_one_arm_trailing_downward",
+    "pose": "bending sideways one arm trailing downward"
+  },
+  {
+    "serial_number": 52,
+    "file_name": "hf_hard_pose_reaching_up_and_back_arched_spine",
+    "pose": "reaching up and back arched spine"
+  },
+  {
+    "serial_number": 53,
+    "file_name": "hf_hard_pose_arms_crossed_overhead_blocking_face",
+    "pose": "arms crossed overhead blocking face"
+  },
+  {
+    "serial_number": 54,
+    "file_name": "hf_hard_pose_hands_covering_face",
+    "pose": "hands covering face"
+  },
+  {
+    "serial_number": 55,
+    "file_name": "hf_hard_pose_hands_behind_head_elbows_forward",
+    "pose": "hands behind head elbows forward"
+  },
+  {
+    "serial_number": 56,
+    "file_name": "hf_hard_pose_both_arms_raised_elbows_bent_fists_up",
+    "pose": "both arms raised elbows bent fists up"
+  },
+  {
+    "serial_number": 57,
+    "file_name": "hf_hard_pose_arms_wrapped_tight_around_torso_self-hug",
+    "pose": "arms wrapped tight around torso self-hug"
+  },
+  {
+    "serial_number": 58,
+    "file_name": "hf_hard_pose_both_hands_pressed_flat_against_chest",
+    "pose": "both hands pressed flat against chest"
+  },
+  {
+    "serial_number": 59,
+    "file_name": "hf_hard_pose_arms_raised_overhead_wrists_crossed",
+    "pose": "arms raised overhead wrists crossed"
+  },
+  {
+    "serial_number": 60,
+    "file_name": "hf_hard_pose_forearm_blocking_face_from_front",
+    "pose": "forearm blocking face from front"
+  },
+  {
+    "serial_number": 61,
+    "file_name": "hf_hard_pose_leaning_forward_hands_on_thighs",
+    "pose": "leaning forward hands on thighs"
+  },
+  {
+    "serial_number": 62,
+    "file_name": "hf_hard_pose_leaning_sideways_torso_bend",
+    "pose": "leaning sideways torso bend"
+  },
+  {
+    "serial_number": 63,
+    "file_name": "hf_hard_pose_leaning_backward_unsupported",
+    "pose": "leaning backward unsupported"
+  },
+  {
+    "serial_number": 64,
+    "file_name": "hf_hard_pose_extreme_lean_to_one_side_arm_reaching_floor",
+    "pose": "extreme lean to one side arm reaching floor"
+  },
+  {
+    "serial_number": 65,
+    "file_name": "hf_hard_pose_leaning_far_forward_body_nearly_horizontal",
+    "pose": "leaning far forward body nearly horizontal"
+  },
+  {
+    "serial_number": 66,
+    "file_name": "hf_hard_pose_lying_supine_one_knee_bent",
+    "pose": "lying supine one knee bent"
+  },
+  {
+    "serial_number": 67,
+    "file_name": "hf_hard_pose_lying_on_side_upper_leg_raised",
+    "pose": "lying on side upper leg raised"
+  },
+  {
+    "serial_number": 68,
+    "file_name": "hf_hard_pose_lying_prone_propped_on_elbows",
+    "pose": "lying prone propped on elbows"
+  },
+  {
+    "serial_number": 69,
+    "file_name": "hf_hard_pose_lying_face_up_arms_spread_wide",
+    "pose": "lying face up arms spread wide"
+  },
+  {
+    "serial_number": 70,
+    "file_name": "hf_hard_pose_lying_on_back_knees_to_chest_arms_hugging_shins",
+    "pose": "lying on back knees to chest arms hugging shins"
+  },
+  {
+    "serial_number": 71,
+    "file_name": "hf_hard_pose_lying_on_stomach_chin_resting_on_stacked_hands",
+    "pose": "lying on stomach chin resting on stacked hands"
+  },
+  {
+    "serial_number": 72,
+    "file_name": "hf_hard_pose_lying_on_side_top_arm_raised_toward_ceiling",
+    "pose": "lying on side top arm raised toward ceiling"
+  },
+  {
+    "serial_number": 73,
+    "file_name": "hf_hard_pose_sitting_on_ground_leaning_back_arms_support",
+    "pose": "sitting on ground leaning back arms support"
+  },
+  {
+    "serial_number": 74,
+    "file_name": "hf_hard_pose_interacting_with_object_blocking_torso",
+    "pose": "interacting with object blocking torso"
+  },
+  {
+    "serial_number": 75,
+    "file_name": "hf_hard_pose_carrying_object_across_chest",
+    "pose": "carrying object across chest"
+  },
+  {
+    "serial_number": 76,
+    "file_name": "hf_hard_pose_holding_object_overhead",
+    "pose": "holding object overhead"
+  },
+  {
+    "serial_number": 77,
+    "file_name": "hf_hard_pose_pushing_heavy_object_both_arms_extended_forward",
+    "pose": "pushing heavy object both arms extended forward"
+  },
+  {
+    "serial_number": 78,
+    "file_name": "hf_hard_pose_pulling_object_toward_body_both_arms_bent",
+    "pose": "pulling object toward body both arms bent"
+  },
+  {
+    "serial_number": 79,
+    "file_name": "hf_hard_pose_lifting_heavy_box_both_hands_under_object_chin_level",
+    "pose": "lifting heavy box both hands under object chin level"
+  },
+  {
+    "serial_number": 80,
+    "file_name": "hf_hard_pose_dragging_object_to_side_body_twisted",
+    "pose": "dragging object to side body twisted"
+  },
+  {
+    "serial_number": 81,
+    "file_name": "hf_hard_pose_dancing_spin_motion_blur",
+    "pose": "dancing spin motion blur"
+  },
+  {
+    "serial_number": 82,
+    "file_name": "hf_hard_pose_asymmetric_freestyle_dance_pose",
+    "pose": "asymmetric freestyle dance pose"
+  },
+  {
+    "serial_number": 83,
+    "file_name": "hf_hard_pose_sharp_hip-hop_stance_arms_bent_angles",
+    "pose": "sharp hip-hop stance arms bent angles"
+  },
+  {
+    "serial_number": 84,
+    "file_name": "hf_hard_pose_contemporary_dance_split_weight_arms_flowing",
+    "pose": "contemporary dance split weight arms flowing"
+  },
+  {
+    "serial_number": 85,
+    "file_name": "hf_hard_pose_ballet-inspired_arabesque_arms_extended",
+    "pose": "ballet-inspired arabesque arms extended"
+  },
+  {
+    "serial_number": 86,
+    "file_name": "hf_hard_pose_jazz_hands_pose_arms_wide_fingers_spread",
+    "pose": "jazz hands pose arms wide fingers spread"
+  },
+  {
+    "serial_number": 87,
+    "file_name": "hf_hard_pose_pop-and-lock_frozen_pose_angled_torso",
+    "pose": "pop-and-lock frozen pose angled torso"
+  },
+  {
+    "serial_number": 88,
+    "file_name": "hf_hard_pose_yoga_balance_forward_fold",
+    "pose": "yoga balance forward fold"
+  },
+  {
+    "serial_number": 89,
+    "file_name": "hf_hard_pose_yoga_half-moon_pose",
+    "pose": "yoga half-moon pose"
+  },
+  {
+    "serial_number": 90,
+    "file_name": "hf_hard_pose_yoga_downward_dog_legs_visible",
+    "pose": "yoga downward dog legs visible"
+  },
+  {
+    "serial_number": 91,
+    "file_name": "hf_hard_pose_yoga_child_pose_arms_forward",
+    "pose": "yoga child pose arms forward"
+  },
+  {
+    "serial_number": 92,
+    "file_name": "hf_hard_pose_yoga_chair_pose_knees_bent_arms_raised",
+    "pose": "yoga chair pose knees bent arms raised"
+  },
+  {
+    "serial_number": 93,
+    "file_name": "hf_hard_pose_yoga_triangle_pose_deep_lateral_stretch",
+    "pose": "yoga triangle pose deep lateral stretch"
+  },
+  {
+    "serial_number": 94,
+    "file_name": "hf_hard_pose_plank_position_full_body_horizontal",
+    "pose": "plank position full body horizontal"
+  },
+  {
+    "serial_number": 95,
+    "file_name": "hf_hard_pose_side_plank_one_arm_raised_body_angled",
+    "pose": "side plank one arm raised body angled"
+  },
+  {
+    "serial_number": 96,
+    "file_name": "hf_hard_pose_stairs_climb_mid-step",
+    "pose": "stairs climb mid-step"
+  },
+  {
+    "serial_number": 97,
+    "file_name": "hf_hard_pose_stairs_descent_leaning_forward_weight_on_front_foot",
+    "pose": "stairs descent leaning forward weight on front foot"
+  },
+  {
+    "serial_number": 98,
+    "file_name": "hf_hard_pose_stepping_over_obstacle_with_wide_stance",
+    "pose": "stepping over obstacle with wide stance"
+  },
+  {
+    "serial_number": 99,
+    "file_name": "hf_hard_pose_ducking_under_low_object_torso_compressed",
+    "pose": "ducking under low object torso compressed"
+  },
+  {
+    "serial_number": 100,
+    "file_name": "hf_hard_pose_sprinting_start_position_crouched_forward_weight_on_toes",
+    "pose": "sprinting start position crouched forward weight on toes"
+  },
+  {
+    "serial_number": 101,
+    "file_name": "hf_hard_pose_extreme_twisting_reach_overhead_with_bent_back_knee",
+    "pose": "extreme twisting reach overhead with bent back knee"
+  },
+  {
+    "serial_number": 102,
+    "file_name": "hf_hard_occ_object_occluding_torso",
+    "occlusion": "object occluding torso"
+  },
+  {
+    "serial_number": 103,
+    "file_name": "hf_hard_occ_object_occluding_lower_body",
+    "occlusion": "object occluding lower body"
+  },
+  {
+    "serial_number": 104,
+    "file_name": "hf_hard_occ_object_occluding_upper_body",
+    "occlusion": "object occluding upper body"
+  },
+  {
+    "serial_number": 105,
+    "file_name": "hf_hard_occ_holding_large_object_blocking_torso",
+    "occlusion": "holding large object blocking torso"
+  },
+  {
+    "serial_number": 106,
+    "file_name": "hf_hard_occ_bag_carried_in_front_blocking_torso",
+    "occlusion": "bag carried in front blocking torso"
+  },
+  {
+    "serial_number": 107,
+    "file_name": "hf_hard_occ_child_held_in_front_blocking_torso",
+    "occlusion": "child held in front blocking torso"
+  },
+  {
+    "serial_number": 108,
+    "file_name": "hf_hard_occ_carrying_large_cardboard_box_blocking_chest_and_arms",
+    "occlusion": "carrying large cardboard box blocking chest and arms"
+  },
+  {
+    "serial_number": 109,
+    "file_name": "hf_hard_occ_holding_wide_tray_blocking_torso_and_lower_face",
+    "occlusion": "holding wide tray blocking torso and lower face"
+  },
+  {
+    "serial_number": 110,
+    "file_name": "hf_hard_occ_holding_large_framed_picture_covering_torso",
+    "occlusion": "holding large framed picture covering torso"
+  },
+  {
+    "serial_number": 111,
+    "file_name": "hf_hard_occ_carrying_surfboard_vertically_blocking_one_side_of_body",
+    "occlusion": "carrying surfboard vertically blocking one side of body"
+  },
+  {
+    "serial_number": 112,
+    "file_name": "hf_hard_occ_pushing_laundry_cart_blocking_lower_half",
+    "occlusion": "pushing laundry cart blocking lower half"
+  },
+  {
+    "serial_number": 113,
+    "file_name": "hf_hard_occ_holding_oversized_stuffed_toy_blocking_chest",
+    "occlusion": "holding oversized stuffed toy blocking chest"
+  },
+  {
+    "serial_number": 114,
+    "file_name": "hf_hard_occ_carrying_bundled_firewood_across_arms_blocking_torso",
+    "occlusion": "carrying bundled firewood across arms blocking torso"
+  },
+  {
+    "serial_number": 115,
+    "file_name": "hf_hard_occ_holding_open_folded_bicycle_blocking_legs",
+    "occlusion": "holding open folded bicycle blocking legs"
+  },
+  {
+    "serial_number": 116,
+    "file_name": "hf_hard_occ_pushing_full_luggage_trolley_blocking_lower_body",
+    "occlusion": "pushing full luggage trolley blocking lower body"
+  },
+  {
+    "serial_number": 117,
+    "file_name": "hf_hard_occ_arms_laden_with_stacked_books_blocking_mid-body",
+    "occlusion": "arms laden with stacked books blocking mid-body"
+  },
+  {
+    "serial_number": 118,
+    "file_name": "hf_hard_occ_carrying_infant_car_seat_in_front_blocking_lower_torso",
+    "occlusion": "carrying infant car seat in front blocking lower torso"
+  },
+  {
+    "serial_number": 119,
+    "file_name": "hf_hard_occ_gripping_large_sporting_equipment_golf_bag_ski_poles_beside_body",
+    "occlusion": "gripping large sporting equipment (golf bag, ski poles) beside body"
+  },
+  {
+    "serial_number": 120,
+    "file_name": "hf_hard_occ_holding_long_roll_of_fabric_obscuring_one_arm_and_torso",
+    "occlusion": "holding long roll of fabric obscuring one arm and torso"
+  },
+  {
+    "serial_number": 121,
+    "file_name": "hf_hard_occ_carrying_ladder_diagonally_blocking_upper_body",
+    "occlusion": "carrying ladder diagonally blocking upper body"
+  },
+  {
+    "serial_number": 122,
+    "file_name": "hf_hard_occ_holding_large_pizza_box_stack_blocking_torso",
+    "occlusion": "holding large pizza box stack blocking torso"
+  },
+  {
+    "serial_number": 123,
+    "file_name": "hf_hard_occ_carrying_rolled_carpet_blocking_side_of_body",
+    "occlusion": "carrying rolled carpet blocking side of body"
+  },
+  {
+    "serial_number": 124,
+    "file_name": "hf_hard_occ_holding_wide_poster_board_covering_chest",
+    "occlusion": "holding wide poster board covering chest"
+  },
+  {
+    "serial_number": 125,
+    "file_name": "hf_hard_occ_carrying_large_potted_plant_blocking_torso",
+    "occlusion": "carrying large potted plant blocking torso"
+  },
+  {
+    "serial_number": 126,
+    "file_name": "hf_hard_occ_holding_guitar_case_vertically_blocking_torso",
+    "occlusion": "holding guitar case vertically blocking torso"
+  },
+  {
+    "serial_number": 127,
+    "file_name": "hf_hard_occ_carrying_folded_table_blocking_lower_body",
+    "occlusion": "carrying folded table blocking lower body"
+  },
+  {
+    "serial_number": 128,
+    "file_name": "hf_hard_occ_holding_stacked_moving_boxes_blocking_face_and_chest",
+    "occlusion": "holding stacked moving boxes blocking face and chest"
+  },
+  {
+    "serial_number": 129,
+    "file_name": "hf_hard_occ_carrying_mattress_on_back_obscuring_body_shape",
+    "occlusion": "carrying mattress on back obscuring body shape"
+  },
+  {
+    "serial_number": 130,
+    "file_name": "hf_hard_occ_holding_large_mirror_blocking_entire_torso",
+    "occlusion": "holding large mirror blocking entire torso"
+  },
+  {
+    "serial_number": 131,
+    "file_name": "hf_hard_occ_carrying_kayak_overhead_blocking_upper_body",
+    "occlusion": "carrying kayak overhead blocking upper body"
+  },
+  {
+    "serial_number": 132,
+    "file_name": "hf_hard_occ_pushing_wheelchair_in_front_blocking_lower_body",
+    "occlusion": "pushing wheelchair in front blocking lower body"
+  },
+  {
+    "serial_number": 133,
+    "file_name": "hf_hard_occ_carrying_large_cooler_blocking_torso_and_arms",
+    "occlusion": "carrying large cooler blocking torso and arms"
+  },
+  {
+    "serial_number": 134,
+    "file_name": "hf_hard_occ_holding_wide_whiteboard_blocking_upper_body",
+    "occlusion": "holding wide whiteboard blocking upper body"
+  },
+  {
+    "serial_number": 135,
+    "file_name": "hf_hard_occ_carrying_bundled_tent_poles_blocking_shoulder_and_arm",
+    "occlusion": "carrying bundled tent poles blocking shoulder and arm"
+  },
+  {
+    "serial_number": 136,
+    "file_name": "hf_hard_occ_holding_large_flat_screen_tv_box_blocking_torso",
+    "occlusion": "holding large flat screen TV box blocking torso"
+  },
+  {
+    "serial_number": 137,
+    "file_name": "hf_hard_occ_carrying_yoga_ball_in_front_blocking_torso",
+    "occlusion": "carrying yoga ball in front blocking torso"
+  },
+  {
+    "serial_number": 138,
+    "file_name": "hf_hard_occ_holding_large_drum_blocking_midsection",
+    "occlusion": "holding large drum blocking midsection"
+  },
+  {
+    "serial_number": 139,
+    "file_name": "hf_hard_occ_carrying_stacked_plastic_chairs_blocking_side",
+    "occlusion": "carrying stacked plastic chairs blocking side"
+  },
+  {
+    "serial_number": 140,
+    "file_name": "hf_hard_occ_holding_large_wicker_basket_blocking_lower_torso",
+    "occlusion": "holding large wicker basket blocking lower torso"
+  },
+  {
+    "serial_number": 141,
+    "file_name": "hf_hard_occ_carrying_amplifier_blocking_one_side_of_body",
+    "occlusion": "carrying amplifier blocking one side of body"
+  },
+  {
+    "serial_number": 142,
+    "file_name": "hf_hard_occ_holding_large_art_canvas_blocking_chest_and_face",
+    "occlusion": "holding large art canvas blocking chest and face"
+  },
+  {
+    "serial_number": 143,
+    "file_name": "hf_hard_occ_carrying_ski_equipment_bundle_blocking_torso",
+    "occlusion": "carrying ski equipment bundle blocking torso"
+  },
+  {
+    "serial_number": 144,
+    "file_name": "hf_hard_occ_holding_large_umbrella_blocking_head_and_shoulders",
+    "occlusion": "holding large umbrella blocking head and shoulders"
+  },
+  {
+    "serial_number": 145,
+    "file_name": "hf_hard_occ_carrying_folding_bike_blocking_legs",
+    "occlusion": "carrying folding bike blocking legs"
+  },
+  {
+    "serial_number": 146,
+    "file_name": "hf_hard_occ_holding_large_serving_platter_blocking_chest",
+    "occlusion": "holding large serving platter blocking chest"
+  },
+  {
+    "serial_number": 147,
+    "file_name": "hf_hard_occ_counter_or_desk_blocking_lower_body",
+    "occlusion": "counter or desk blocking lower body"
+  },
+  {
+    "serial_number": 148,
+    "file_name": "hf_hard_occ_furniture_blocking_mid_body",
+    "occlusion": "furniture blocking mid body"
+  },
+  {
+    "serial_number": 149,
+    "file_name": "hf_hard_occ_vehicle_door_partially_blocking_body",
+    "occlusion": "vehicle door partially blocking body"
+  },
+  {
+    "serial_number": 150,
+    "file_name": "hf_hard_occ_sitting_at_kitchen_island_counter_visible_from_waist_up",
+    "occlusion": "sitting at kitchen island counter visible from waist up"
+  },
+  {
+    "serial_number": 151,
+    "file_name": "hf_hard_occ_seated_behind_restaurant_booth_table_visible_from_chest_up",
+    "occlusion": "seated behind restaurant booth table visible from chest up"
+  },
+  {
+    "serial_number": 152,
+    "file_name": "hf_hard_occ_standing_at_reception_desk_only_upper_body_visible",
+    "occlusion": "standing at reception desk only upper body visible"
+  },
+  {
+    "serial_number": 153,
+    "file_name": "hf_hard_occ_seated_at_classroom_desk_top_visible_from_waist_up",
+    "occlusion": "seated at classroom desk top visible from waist up"
+  },
+  {
+    "serial_number": 154,
+    "file_name": "hf_hard_occ_standing_behind_workbench_with_tool_blocking_forearm",
+    "occlusion": "standing behind workbench with tool blocking forearm"
+  },
+  {
+    "serial_number": 155,
+    "file_name": "hf_hard_occ_seated_on_sofa_with_cushion_on_lap_blocking_lower_torso",
+    "occlusion": "seated on sofa with cushion on lap blocking lower torso"
+  },
+  {
+    "serial_number": 156,
+    "file_name": "hf_hard_occ_leaning_over_car_hood_blocking_lower_half_of_body",
+    "occlusion": "leaning over car hood blocking lower half of body"
+  },
+  {
+    "serial_number": 157,
+    "file_name": "hf_hard_occ_seated_in_theater_seat_with_seat_back_visible_chest_up",
+    "occlusion": "seated in theater seat with seat back visible chest up"
+  },
+  {
+    "serial_number": 158,
+    "file_name": "hf_hard_occ_behind_bakery_display_case_visible_from_shoulders_up",
+    "occlusion": "behind bakery display case visible from shoulders up"
+  },
+  {
+    "serial_number": 159,
+    "file_name": "hf_hard_occ_sitting_inside_car_window_framing_shoulders_and_head_only",
+    "occlusion": "sitting inside car window framing shoulders and head only"
+  },
+  {
+    "serial_number": 160,
+    "file_name": "hf_hard_occ_seated_at_bar_with_bar_top_blocking_waist_down",
+    "occlusion": "seated at bar with bar top blocking waist down"
+  },
+  {
+    "serial_number": 161,
+    "file_name": "hf_hard_occ_standing_behind_dj_booth_visible_from_chest_up",
+    "occlusion": "standing behind DJ booth visible from chest up"
+  },
+  {
+    "serial_number": 162,
+    "file_name": "hf_hard_occ_seated_at_library_study_carrel_desk_blocking_lower_body",
+    "occlusion": "seated at library study carrel desk blocking lower body"
+  },
+  {
+    "serial_number": 163,
+    "file_name": "hf_hard_occ_standing_behind_museum_information_desk",
+    "occlusion": "standing behind museum information desk"
+  },
+  {
+    "serial_number": 164,
+    "file_name": "hf_hard_occ_seated_in_cubicle_with_partition_blocking_lower_body",
+    "occlusion": "seated in cubicle with partition blocking lower body"
+  },
+  {
+    "serial_number": 165,
+    "file_name": "hf_hard_occ_standing_behind_pharmacy_counter_visible_from_shoulders_up",
+    "occlusion": "standing behind pharmacy counter visible from shoulders up"
+  },
+  {
+    "serial_number": 166,
+    "file_name": "hf_hard_occ_seated_at_conference_table_visible_from_chest_up",
+    "occlusion": "seated at conference table visible from chest up"
+  },
+  {
+    "serial_number": 167,
+    "file_name": "hf_hard_occ_standing_behind_hotel_concierge_desk",
+    "occlusion": "standing behind hotel concierge desk"
+  },
+  {
+    "serial_number": 168,
+    "file_name": "hf_hard_occ_seated_at_piano_bench_with_piano_blocking_lower_body",
+    "occlusion": "seated at piano bench with piano blocking lower body"
+  },
+  {
+    "serial_number": 169,
+    "file_name": "hf_hard_occ_standing_behind_lab_bench_with_equipment_blocking_torso",
+    "occlusion": "standing behind lab bench with equipment blocking torso"
+  },
+  {
+    "serial_number": 170,
+    "file_name": "hf_hard_occ_seated_at_drafting_table_visible_from_waist_up",
+    "occlusion": "seated at drafting table visible from waist up"
+  },
+  {
+    "serial_number": 171,
+    "file_name": "hf_hard_occ_standing_behind_checkout_counter_with_register_blocking_view",
+    "occlusion": "standing behind checkout counter with register blocking view"
+  },
+  {
+    "serial_number": 172,
+    "file_name": "hf_hard_occ_seated_in_booth_with_high_table_blocking_chest",
+    "occlusion": "seated in booth with high table blocking chest"
+  },
+  {
+    "serial_number": 173,
+    "file_name": "hf_hard_occ_standing_behind_podium_with_microphone_blocking_chest",
+    "occlusion": "standing behind podium with microphone blocking chest"
+  },
+  {
+    "serial_number": 174,
+    "file_name": "hf_hard_occ_seated_at_vanity_with_mirror_blocking_upper_body_reflection",
+    "occlusion": "seated at vanity with mirror blocking upper body reflection"
+  },
+  {
+    "serial_number": 175,
+    "file_name": "hf_hard_occ_standing_behind_bank_teller_window_visible_from_shoulders_up",
+    "occlusion": "standing behind bank teller window visible from shoulders up"
+  },
+  {
+    "serial_number": 176,
+    "file_name": "hf_hard_occ_seated_at_sewing_machine_with_table_blocking_lap",
+    "occlusion": "seated at sewing machine with table blocking lap"
+  },
+  {
+    "serial_number": 177,
+    "file_name": "hf_hard_occ_tree_or_foliage_blocking_body_parts",
+    "occlusion": "tree or foliage blocking body parts"
+  },
+  {
+    "serial_number": 178,
+    "file_name": "hf_hard_occ_doorway_frame_blocking_body",
+    "occlusion": "doorway frame blocking body"
+  },
+  {
+    "serial_number": 179,
+    "file_name": "hf_hard_occ_window_frame_blocking_torso",
+    "occlusion": "window frame blocking torso"
+  },
+  {
+    "serial_number": 180,
+    "file_name": "hf_hard_occ_partial_body_behind_wall",
+    "occlusion": "partial body behind wall"
+  },
+  {
+    "serial_number": 181,
+    "file_name": "hf_hard_occ_partial_body_behind_pillar_or_pole",
+    "occlusion": "partial body behind pillar or pole"
+  },
+  {
+    "serial_number": 182,
+    "file_name": "hf_hard_occ_standing_behind_fence_or_bars",
+    "occlusion": "standing behind fence or bars"
+  },
+  {
+    "serial_number": 183,
+    "file_name": "hf_hard_occ_standing_in_tall_grass_blocking_lower_legs_and_feet",
+    "occlusion": "standing in tall grass blocking lower legs and feet"
+  },
+  {
+    "serial_number": 184,
+    "file_name": "hf_hard_occ_standing_behind_thick_tree_trunk_blocking_torso_center",
+    "occlusion": "standing behind thick tree trunk blocking torso center"
+  },
+  {
+    "serial_number": 185,
+    "file_name": "hf_hard_occ_peeking_around_corner_with_half_body_hidden_by_wall",
+    "occlusion": "peeking around corner with half body hidden by wall"
+  },
+  {
+    "serial_number": 186,
+    "file_name": "hf_hard_occ_standing_in_deep_doorway_shadow_blocking_one_side",
+    "occlusion": "standing in deep doorway shadow blocking one side"
+  },
+  {
+    "serial_number": 187,
+    "file_name": "hf_hard_occ_behind_iron_gate_bars_creating_vertical_stripe_occlusion",
+    "occlusion": "behind iron gate bars creating vertical stripe occlusion"
+  },
+  {
+    "serial_number": 188,
+    "file_name": "hf_hard_occ_standing_behind_densely_leafed_hedge_only_head_visible",
+    "occlusion": "standing behind densely leafed hedge only head visible"
+  },
+  {
+    "serial_number": 189,
+    "file_name": "hf_hard_occ_exiting_through_revolving_door_frame_bisecting_body",
+    "occlusion": "exiting through revolving door frame bisecting body"
+  },
+  {
+    "serial_number": 190,
+    "file_name": "hf_hard_occ_standing_at_edge_of_crowd_where_shoulder_is_behind_another_person",
+    "occlusion": "standing at edge of crowd where shoulder is behind another person"
+  },
+  {
+    "serial_number": 191,
+    "file_name": "hf_hard_occ_behind_curtain_pulled_aside_exposing_partial_body",
+    "occlusion": "behind curtain pulled aside exposing partial body"
+  },
+  {
+    "serial_number": 192,
+    "file_name": "hf_hard_occ_partially_hidden_behind_open_car_trunk_lid",
+    "occlusion": "partially hidden behind open car trunk lid"
+  },
+  {
+    "serial_number": 193,
+    "file_name": "hf_hard_occ_framed_in_small_window_cutout_showing_torso_only",
+    "occlusion": "framed in small window cutout showing torso only"
+  },
+  {
+    "serial_number": 194,
+    "file_name": "hf_hard_occ_standing_behind_jersey_barrier_on_roadside",
+    "occlusion": "standing behind jersey barrier on roadside"
+  },
+  {
+    "serial_number": 195,
+    "file_name": "hf_hard_occ_standing_behind_concrete_pillar_blocking_half_of_body",
+    "occlusion": "standing behind concrete pillar blocking half of body"
+  },
+  {
+    "serial_number": 196,
+    "file_name": "hf_hard_occ_standing_in_tall_wheat_field_blocking_lower_body",
+    "occlusion": "standing in tall wheat field blocking lower body"
+  },
+  {
+    "serial_number": 197,
+    "file_name": "hf_hard_occ_behind_chain-link_fence_creating_grid_pattern_over_body",
+    "occlusion": "behind chain-link fence creating grid pattern over body"
+  },
+  {
+    "serial_number": 198,
+    "file_name": "hf_hard_occ_standing_behind_scaffolding_bars_blocking_sections_of_body",
+    "occlusion": "standing behind scaffolding bars blocking sections of body"
+  },
+  {
+    "serial_number": 199,
+    "file_name": "hf_hard_occ_partially_obscured_by_hanging_vines",
+    "occlusion": "partially obscured by hanging vines"
+  },
+  {
+    "serial_number": 200,
+    "file_name": "hf_hard_occ_standing_behind_brick_column_blocking_side_of_body",
+    "occlusion": "standing behind brick column blocking side of body"
+  },
+  {
+    "serial_number": 201,
+    "file_name": "hf_hard_occ_standing_in_tall_corn_stalks_obscuring_body",
+    "occlusion": "standing in tall corn stalks obscuring body"
+  },
+  {
+    "serial_number": 202,
+    "file_name": "hf_hard_occ_behind_staircase_railing_with_vertical_bars",
+    "occlusion": "behind staircase railing with vertical bars"
+  },
+  {
+    "serial_number": 203,
+    "file_name": "hf_hard_occ_standing_behind_metal_grating_blocking_torso",
+    "occlusion": "standing behind metal grating blocking torso"
+  },
+  {
+    "serial_number": 204,
+    "file_name": "hf_hard_occ_partially_hidden_by_large_boulder",
+    "occlusion": "partially hidden by large boulder"
+  },
+  {
+    "serial_number": 205,
+    "file_name": "hf_hard_occ_standing_behind_ornate_room_divider_screen",
+    "occlusion": "standing behind ornate room divider screen"
+  },
+  {
+    "serial_number": 206,
+    "file_name": "hf_hard_occ_behind_lattice_panel_creating_diamond_pattern_occlusion",
+    "occlusion": "behind lattice panel creating diamond pattern occlusion"
+  },
+  {
+    "serial_number": 207,
+    "file_name": "hf_hard_occ_standing_in_dense_bamboo_forest_blocking_body_parts",
+    "occlusion": "standing in dense bamboo forest blocking body parts"
+  },
+  {
+    "serial_number": 208,
+    "file_name": "hf_hard_occ_behind_venetian_blinds_creating_horizontal_stripe_pattern",
+    "occlusion": "behind venetian blinds creating horizontal stripe pattern"
+  },
+  {
+    "serial_number": 209,
+    "file_name": "hf_hard_occ_standing_behind_wire_mesh_fence",
+    "occlusion": "standing behind wire mesh fence"
+  },
+  {
+    "serial_number": 210,
+    "file_name": "hf_hard_occ_partially_obscured_by_hanging_beads_or_curtain",
+    "occlusion": "partially obscured by hanging beads or curtain"
+  },
+  {
+    "serial_number": 211,
+    "file_name": "hf_hard_occ_standing_behind_pergola_posts_blocking_sections",
+    "occlusion": "standing behind pergola posts blocking sections"
+  },
+  {
+    "serial_number": 212,
+    "file_name": "hf_hard_occ_behind_tall_cattails_or_reeds_blocking_lower_body",
+    "occlusion": "behind tall cattails or reeds blocking lower body"
+  },
+  {
+    "serial_number": 213,
+    "file_name": "hf_hard_occ_standing_in_archway_with_arch_blocking_upper_frame",
+    "occlusion": "standing in archway with arch blocking upper frame"
+  },
+  {
+    "serial_number": 214,
+    "file_name": "hf_hard_occ_behind_wrought_iron_decorative_fence",
+    "occlusion": "behind wrought iron decorative fence"
+  },
+  {
+    "serial_number": 215,
+    "file_name": "hf_hard_occ_standing_behind_concrete_barrier_wall",
+    "occlusion": "standing behind concrete barrier wall"
+  },
+  {
+    "serial_number": 216,
+    "file_name": "hf_hard_occ_partially_hidden_by_large_industrial_pipes",
+    "occlusion": "partially hidden by large industrial pipes"
+  },
+  {
+    "serial_number": 217,
+    "file_name": "hf_hard_occ_standing_beside_open_car_door_with_door_blocking_one_arm_and_hip",
+    "occlusion": "standing beside open car door with door blocking one arm and hip"
+  },
+  {
+    "serial_number": 218,
+    "file_name": "hf_hard_occ_head_blocked_by_low_hanging_awning_edge",
+    "occlusion": "head blocked by low hanging awning edge"
+  },
+  {
+    "serial_number": 219,
+    "file_name": "hf_hard_occ_body_seen_from_behind_through_narrow_slit_in_wall",
+    "occlusion": "body seen from behind through narrow slit in wall"
+  },
+  {
+    "serial_number": 220,
+    "file_name": "hf_hard_occ_frame_showing_only_neck_to_hip_region",
+    "occlusion": "frame showing only neck to hip region"
+  },
+  {
+    "serial_number": 221,
+    "file_name": "hf_hard_occ_both_arms_extended_into_adjacent_doorways_out_of_central_view",
+    "occlusion": "both arms extended into adjacent doorways out of central view"
+  },
+  {
+    "serial_number": 222,
+    "file_name": "hf_hard_occ_diagonal_frame_edge_cutting_from_shoulder_to_hip",
+    "occlusion": "diagonal frame edge cutting from shoulder to hip"
+  },
+  {
+    "serial_number": 223,
+    "file_name": "hf_hard_occ_standing_inside_manhole_or_pit_with_upper_body_visible_only",
+    "occlusion": "standing inside manhole or pit with upper body visible only"
+  },
+  {
+    "serial_number": 224,
+    "file_name": "hf_hard_occ_only_legs_visible_under_long_dividing_table",
+    "occlusion": "only legs visible under long dividing table"
+  },
+  {
+    "serial_number": 225,
+    "file_name": "hf_hard_occ_cropped_at_chest_level_showing_only_upper_torso",
+    "occlusion": "cropped at chest level showing only upper torso"
+  },
+  {
+    "serial_number": 226,
+    "file_name": "hf_hard_occ_extreme_closeup_showing_only_face_and_partial_shoulders",
+    "occlusion": "extreme closeup showing only face and partial shoulders"
+  },
+  {
+    "serial_number": 227,
+    "file_name": "hf_hard_occ_frame_cutting_diagonally_from_head_to_waist",
+    "occlusion": "frame cutting diagonally from head to waist"
+  },
+  {
+    "serial_number": 228,
+    "file_name": "hf_hard_occ_only_lower_half_of_body_visible_in_frame",
+    "occlusion": "only lower half of body visible in frame"
+  },
+  {
+    "serial_number": 229,
+    "file_name": "hf_hard_occ_cropped_showing_only_midsection_waist_to_knees",
+    "occlusion": "cropped showing only midsection waist to knees"
+  },
+  {
+    "serial_number": 230,
+    "file_name": "hf_hard_occ_frame_showing_only_one_side_of_body_vertically_split",
+    "occlusion": "frame showing only one side of body vertically split"
+  },
+  {
+    "serial_number": 231,
+    "file_name": "hf_hard_occ_extreme_tight_crop_on_hands_and_torso_only",
+    "occlusion": "extreme tight crop on hands and torso only"
+  },
+  {
+    "serial_number": 232,
+    "file_name": "hf_hard_occ_cropped_at_unusual_angle_showing_shoulder_to_opposite_hip",
+    "occlusion": "cropped at unusual angle showing shoulder to opposite hip"
+  },
+  {
+    "serial_number": 233,
+    "file_name": "hf_hard_occ_only_feet_and_lower_legs_visible_in_frame",
+    "occlusion": "only feet and lower legs visible in frame"
+  },
+  {
+    "serial_number": 234,
+    "file_name": "hf_hard_occ_frame_cutting_off_top_of_head_and_below_knees",
+    "occlusion": "frame cutting off top of head and below knees"
+  },
+  {
+    "serial_number": 235,
+    "file_name": "hf_hard_occ_cropped_showing_back_only_from_shoulders_to_thighs",
+    "occlusion": "cropped showing back only from shoulders to thighs"
+  },
+  {
+    "serial_number": 236,
+    "file_name": "hf_hard_occ_extreme_side_crop_showing_only_profile_slice",
+    "occlusion": "extreme side crop showing only profile slice"
+  },
+  {
+    "serial_number": 237,
+    "file_name": "hf_hard_occ_mirror_reflection_blocking_body_parts",
+    "occlusion": "mirror reflection blocking body parts"
+  },
+  {
+    "serial_number": 238,
+    "file_name": "hf_hard_occ_glass_reflection_confusing_body_boundary",
+    "occlusion": "glass reflection confusing body boundary"
+  },
+  {
+    "serial_number": 239,
+    "file_name": "hf_hard_occ_frosted_glass_behind_which_body_is_blurred",
+    "occlusion": "frosted glass behind which body is blurred"
+  },
+  {
+    "serial_number": 240,
+    "file_name": "hf_hard_occ_heavy_condensation_on_glass_obscuring_body",
+    "occlusion": "heavy condensation on glass obscuring body"
+  },
+  {
+    "serial_number": 241,
+    "file_name": "hf_hard_occ_reflective_shop_window_overlaying_ghost_reflection_on_person",
+    "occlusion": "reflective shop window overlaying ghost reflection on person"
+  },
+  {
+    "serial_number": 242,
+    "file_name": "hf_hard_occ_car_window_tinting_making_lower_body_very_dark",
+    "occlusion": "car window tinting making lower body very dark"
+  },
+  {
+    "serial_number": 243,
+    "file_name": "hf_hard_occ_glossy_floor_reflection_doubling_lower_body_image",
+    "occlusion": "glossy floor reflection doubling lower body image"
+  },
+  {
+    "serial_number": 244,
+    "file_name": "hf_hard_occ_double_mirror_reflection_creating_multiple_overlapping_images",
+    "occlusion": "double mirror reflection creating multiple overlapping images"
+  },
+  {
+    "serial_number": 245,
+    "file_name": "hf_hard_occ_standing_behind_wet_glass_with_water_droplets_distorting_view",
+    "occlusion": "standing behind wet glass with water droplets distorting view"
+  },
+  {
+    "serial_number": 246,
+    "file_name": "hf_hard_occ_reflection_in_curved_mirror_distorting_body_shape",
+    "occlusion": "reflection in curved mirror distorting body shape"
+  },
+  {
+    "serial_number": 247,
+    "file_name": "hf_hard_occ_standing_behind_shower_glass_with_texture_obscuring_body",
+    "occlusion": "standing behind shower glass with texture obscuring body"
+  },
+  {
+    "serial_number": 248,
+    "file_name": "hf_hard_occ_reflection_in_chrome_surface_distorting_body_parts",
+    "occlusion": "reflection in chrome surface distorting body parts"
+  },
+  {
+    "serial_number": 249,
+    "file_name": "hf_hard_occ_standing_behind_stained_glass_creating_color_blocks_over_body",
+    "occlusion": "standing behind stained glass creating color blocks over body"
+  },
+  {
+    "serial_number": 250,
+    "file_name": "hf_hard_occ_reflection_in_water_surface_fragmenting_body_image",
+    "occlusion": "reflection in water surface fragmenting body image"
+  },
+  {
+    "serial_number": 251,
+    "file_name": "hf_hard_occ_standing_behind_tinted_glass_severely_darkening_visibility",
+    "occlusion": "standing behind tinted glass severely darkening visibility"
+  },
+  {
+    "serial_number": 252,
+    "file_name": "hf_hard_occ_strong_shadow_obscuring_body_regions",
+    "occlusion": "strong shadow obscuring body regions"
+  },
+  {
+    "serial_number": 253,
+    "file_name": "hf_hard_occ_backlighting_causing_silhouette_loss",
+    "occlusion": "backlighting causing silhouette loss"
+  },
+  {
+    "serial_number": 254,
+    "file_name": "hf_hard_occ_harsh_spotlight_creating_deep_shadow_on_half_body",
+    "occlusion": "harsh spotlight creating deep shadow on half body"
+  },
+  {
+    "serial_number": 255,
+    "file_name": "hf_hard_occ_heavy_cast_shadow_from_overhead_structure_covering_torso",
+    "occlusion": "heavy cast shadow from overhead structure covering torso"
+  },
+  {
+    "serial_number": 256,
+    "file_name": "hf_hard_occ_overexposed_foreground_washing_out_body_detail",
+    "occlusion": "overexposed foreground washing out body detail"
+  },
+  {
+    "serial_number": 257,
+    "file_name": "hf_hard_occ_dappled_sunlight_through_leaves_creating_irregular_occlusion",
+    "occlusion": "dappled sunlight through leaves creating irregular occlusion"
+  },
+  {
+    "serial_number": 258,
+    "file_name": "hf_hard_occ_neon_sign_glow_overexposing_and_losing_body_detail",
+    "occlusion": "neon sign glow overexposing and losing body detail"
+  },
+  {
+    "serial_number": 259,
+    "file_name": "hf_hard_occ_very_dark_background_merging_with_person_at_frame_edges",
+    "occlusion": "very dark background merging with person at frame edges"
+  },
+  {
+    "serial_number": 260,
+    "file_name": "hf_hard_occ_extreme_contrast_losing_detail_in_shadow_areas",
+    "occlusion": "extreme contrast losing detail in shadow areas"
+  },
+  {
+    "serial_number": 261,
+    "file_name": "hf_hard_occ_lens_flare_obscuring_portions_of_body",
+    "occlusion": "lens flare obscuring portions of body"
+  },
+  {
+    "serial_number": 262,
+    "file_name": "hf_hard_occ_heavy_fog_obscuring_lower_body",
+    "occlusion": "heavy fog obscuring lower body"
+  },
+  {
+    "serial_number": 263,
+    "file_name": "hf_hard_occ_smoke_obscuring_upper_body",
+    "occlusion": "smoke obscuring upper body"
+  },
+  {
+    "serial_number": 264,
+    "file_name": "hf_hard_occ_steam_obscuring_face_and_chest_area",
+    "occlusion": "steam obscuring face and chest area"
+  },
+  {
+    "serial_number": 265,
+    "file_name": "hf_hard_occ_bright_sunlight_creating_complete_silhouette",
+    "occlusion": "bright sunlight creating complete silhouette"
+  },
+  {
+    "serial_number": 266,
+    "file_name": "hf_hard_occ_venetian_blind_shadows_creating_horizontal_stripes_across_body",
+    "occlusion": "venetian blind shadows creating horizontal stripes across body"
+  },
+  {
+    "serial_number": 267,
+    "file_name": "hf_hard_occ_tree_shadow_pattern_breaking_up_body_outline",
+    "occlusion": "tree shadow pattern breaking up body outline"
+  },
+  {
+    "serial_number": 268,
+    "file_name": "hf_hard_occ_underexposed_making_dark_clothing_merge_with_background",
+    "occlusion": "underexposed making dark clothing merge with background"
+  },
+  {
+    "serial_number": 269,
+    "file_name": "hf_hard_occ_sunset_backlight_creating_rim_light_only_on_edges",
+    "occlusion": "sunset backlight creating rim light only on edges"
+  },
+  {
+    "serial_number": 270,
+    "file_name": "hf_hard_occ_overhead_harsh_noon_sun_creating_deep_eye_socket_shadows",
+    "occlusion": "overhead harsh noon sun creating deep eye socket shadows"
+  },
+  {
+    "serial_number": 271,
+    "file_name": "hf_hard_occ_car_headlight_glare_washing_out_lower_body_at_night",
+    "occlusion": "car headlight glare washing out lower body at night"
+  },
+  {
+    "serial_number": 272,
+    "file_name": "hf_hard_occ_large_waterproof_cover_obscuring_body_shape",
+    "occlusion": "large waterproof cover obscuring body shape"
+  },
+  {
+    "serial_number": 273,
+    "file_name": "hf_hard_occ_bulky_layered_outerwear_obscuring_body_contour",
+    "occlusion": "bulky layered outerwear obscuring body contour"
+  },
+  {
+    "serial_number": 274,
+    "file_name": "hf_hard_occ_oversized_layered_outerwear_obscuring_torso_silhouette",
+    "occlusion": "oversized layered outerwear obscuring torso silhouette"
+  },
+  {
+    "serial_number": 275,
+    "file_name": "hf_hard_occ_full-length_flowing_silhouette_merging_with_dark_background",
+    "occlusion": "full-length flowing silhouette merging with dark background"
+  },
+  {
+    "serial_number": 276,
+    "file_name": "hf_hard_occ_wide_flared_lower_portion_obscuring_leg_position",
+    "occlusion": "wide flared lower portion obscuring leg position"
+  },
+  {
+    "serial_number": 277,
+    "file_name": "hf_hard_occ_large_tool_belt_and_pouches_wrapping_around_hips_and_thighs",
+    "occlusion": "large tool belt and pouches wrapping around hips and thighs"
+  },
+  {
+    "serial_number": 278,
+    "file_name": "hf_hard_occ_heavy_textured_outerwear_obscuring_shoulder_and_arm_shape",
+    "occlusion": "heavy textured outerwear obscuring shoulder and arm shape"
+  },
+  {
+    "serial_number": 279,
+    "file_name": "hf_hard_occ_multiple_layered_outerwear_making_body_shape_ambiguous",
+    "occlusion": "multiple layered outerwear making body shape ambiguous"
+  },
+  {
+    "serial_number": 280,
+    "file_name": "hf_hard_occ_high_neckline_obscuring_jaw_and_neck_area",
+    "occlusion": "high neckline obscuring jaw and neck area"
+  },
+  {
+    "serial_number": 281,
+    "file_name": "hf_hard_occ_extra-long_cuffs_covering_hands_entirely",
+    "occlusion": "extra-long cuffs covering hands entirely"
+  },
+  {
+    "serial_number": 282,
+    "file_name": "hf_hard_occ_hood_up_and_pulled_forward_shadowing_face",
+    "occlusion": "hood up and pulled forward shadowing face"
+  },
+  {
+    "serial_number": 283,
+    "file_name": "hf_hard_occ_wide_flowing_outer_layer_draping_over_arms_obscuring_them",
+    "occlusion": "wide flowing outer layer draping over arms obscuring them"
+  },
+  {
+    "serial_number": 284,
+    "file_name": "hf_hard_occ_oversized_poncho_obscuring_torso_and_arm_position",
+    "occlusion": "oversized poncho obscuring torso and arm position"
+  },
+  {
+    "serial_number": 285,
+    "file_name": "hf_hard_occ_full-length_heavy_coat_obscuring_entire_body_silhouette",
+    "occlusion": "full-length heavy coat obscuring entire body silhouette"
+  },
+  {
+    "serial_number": 286,
+    "file_name": "hf_hard_occ_thick_winter_parka_with_fur_hood_obscuring_head_and_shoulders",
+    "occlusion": "thick winter parka with fur hood obscuring head and shoulders"
+  },
+  {
+    "serial_number": 287,
+    "file_name": "hf_hard_occ_baggy_oversized_clothing_hiding_body_contours",
+    "occlusion": "baggy oversized clothing hiding body contours"
+  },
+  {
+    "serial_number": 288,
+    "file_name": "hf_hard_occ_full-body_rain_suit_obscuring_shape",
+    "occlusion": "full-body rain suit obscuring shape"
+  },
+  {
+    "serial_number": 289,
+    "file_name": "hf_hard_occ_bulky_hazmat_suit_obscuring_body_form",
+    "occlusion": "bulky hazmat suit obscuring body form"
+  },
+  {
+    "serial_number": 290,
+    "file_name": "hf_hard_occ_thick_winter_coveralls_obscuring_body_shape",
+    "occlusion": "thick winter coveralls obscuring body shape"
+  },
+  {
+    "serial_number": 291,
+    "file_name": "hf_hard_occ_oversized_graduation_gown_obscuring_body",
+    "occlusion": "oversized graduation gown obscuring body"
+  },
+  {
+    "serial_number": 292,
+    "file_name": "hf_hard_occ_full_religious_robe_obscuring_body_contour",
+    "occlusion": "full religious robe obscuring body contour"
+  },
+  {
+    "serial_number": 293,
+    "file_name": "hf_hard_occ_heavy_blanket_wrapped_around_obscuring_shape",
+    "occlusion": "heavy blanket wrapped around obscuring shape"
+  },
+  {
+    "serial_number": 294,
+    "file_name": "hf_hard_occ_thick_sleeping_bag_wrapped_around_body",
+    "occlusion": "thick sleeping bag wrapped around body"
+  },
+  {
+    "serial_number": 295,
+    "file_name": "hf_hard_occ_oversized_mascot_costume_head_obscuring_upper_body",
+    "occlusion": "oversized mascot costume head obscuring upper body"
+  },
+  {
+    "serial_number": 296,
+    "file_name": "hf_hard_occ_bulky_costume_armor_obscuring_body_shape",
+    "occlusion": "bulky costume armor obscuring body shape"
+  },
+  {
+    "serial_number": 297,
+    "file_name": "hf_hard_occ_foreground_blur_object_blocking_body",
+    "occlusion": "foreground blur object blocking body"
+  },
+  {
+    "serial_number": 298,
+    "file_name": "hf_hard_occ_plastic_wrap_or_cover_partially_blocking_view",
+    "occlusion": "plastic wrap or cover partially blocking view"
+  },
+  {
+    "serial_number": 299,
+    "file_name": "hf_hard_occ_advertisement_board_blocking_body",
+    "occlusion": "advertisement board blocking body"
+  },
+  {
+    "serial_number": 300,
+    "file_name": "hf_hard_occ_signboard_blocking_torso",
+    "occlusion": "signboard blocking torso"
+  },
+  {
+    "serial_number": 301,
+    "file_name": "hf_hard_occ_handheld_box_blocking_torso_and_arms",
+    "occlusion": "handheld box blocking torso and arms"
+  },
+  {
+    "serial_number": 302,
+    "file_name": "hf_hard_occ_blurred_foreground_fence_post_partially_obscuring_hip",
+    "occlusion": "blurred foreground fence post partially obscuring hip"
+  },
+  {
+    "serial_number": 303,
+    "file_name": "hf_hard_occ_out-of-focus_foreground_umbrella_edge_clipping_shoulder",
+    "occlusion": "out-of-focus foreground umbrella edge clipping shoulder"
+  },
+  {
+    "serial_number": 304,
+    "file_name": "hf_hard_occ_blurred_bokeh_foreground_leaves_obscuring_lower_torso",
+    "occlusion": "blurred bokeh foreground leaves obscuring lower torso"
+  },
+  {
+    "serial_number": 305,
+    "file_name": "hf_hard_occ_foreground_crowd_members_arm_partially_crossing_frame",
+    "occlusion": "foreground crowd member's arm partially crossing frame"
+  },
+  {
+    "serial_number": 306,
+    "file_name": "hf_hard_occ_out-of-focus_foreground_vehicle_roof-line_obscuring_waist_area",
+    "occlusion": "out-of-focus foreground vehicle roof-line obscuring waist area"
+  },
+  {
+    "serial_number": 307,
+    "file_name": "hf_hard_occ_frosted_shop_window_display_obscuring_person_standing_inside",
+    "occlusion": "frosted shop window display obscuring person standing inside"
+  },
+  {
+    "serial_number": 308,
+    "file_name": "hf_hard_occ_blurred_foreground_crowd_hand_blocking_hip_and_thigh",
+    "occlusion": "blurred foreground crowd hand blocking hip and thigh"
+  },
+  {
+    "serial_number": 309,
+    "file_name": "hf_hard_occ_out-of-focus_foreground_street_sign_partially_blocking_head",
+    "occlusion": "out-of-focus foreground street sign partially blocking head"
+  },
+  {
+    "serial_number": 310,
+    "file_name": "hf_hard_occ_wet_pavement_reflection_underneath_distorting_lower_body_outline",
+    "occlusion": "wet pavement reflection underneath distorting lower body outline"
+  },
+  {
+    "serial_number": 311,
+    "file_name": "hf_hard_occ_standing_inside_phone_booth_frame_blocking_both_sides_of_torso",
+    "occlusion": "standing inside phone booth frame blocking both sides of torso"
+  },
+  {
+    "serial_number": 312,
+    "file_name": "hf_hard_occ_blurred_foreground_railing_obscuring_midsection",
+    "occlusion": "blurred foreground railing obscuring midsection"
+  },
+  {
+    "serial_number": 313,
+    "file_name": "hf_hard_occ_out-of-focus_foreground_person_blocking_half_the_frame",
+    "occlusion": "out-of-focus foreground person blocking half the frame"
+  },
+  {
+    "serial_number": 314,
+    "file_name": "hf_hard_occ_blurred_foreground_hanging_sign_blocking_upper_body",
+    "occlusion": "blurred foreground hanging sign blocking upper body"
+  },
+  {
+    "serial_number": 315,
+    "file_name": "hf_hard_occ_out-of-focus_foreground_branch_crossing_face",
+    "occlusion": "out-of-focus foreground branch crossing face"
+  },
+  {
+    "serial_number": 316,
+    "file_name": "hf_hard_occ_blurred_foreground_architectural_element_blocking_torso",
+    "occlusion": "blurred foreground architectural element blocking torso"
+  },
+  {
+    "serial_number": 317,
+    "file_name": "hf_hard_occ_out-of-focus_foreground_balloon_cluster_blocking_view",
+    "occlusion": "out-of-focus foreground balloon cluster blocking view"
+  },
+  {
+    "serial_number": 318,
+    "file_name": "hf_hard_occ_blurred_foreground_flag_partially_blocking_body",
+    "occlusion": "blurred foreground flag partially blocking body"
+  },
+  {
+    "serial_number": 319,
+    "file_name": "hf_hard_occ_out-of-focus_foreground_wire_or_cable_crossing_body",
+    "occlusion": "out-of-focus foreground wire or cable crossing body"
+  },
+  {
+    "serial_number": 320,
+    "file_name": "hf_hard_occ_blurred_foreground_awning_edge_blocking_upper_frame",
+    "occlusion": "blurred foreground awning edge blocking upper frame"
+  },
+  {
+    "serial_number": 321,
+    "file_name": "hf_hard_occ_out-of-focus_foreground_crowd_heads_blocking_lower_body",
+    "occlusion": "out-of-focus foreground crowd heads blocking lower body"
+  },
+  {
+    "serial_number": 322,
+    "file_name": "hf_hard_occ_blurred_foreground_shopping_cart_blocking_side",
+    "occlusion": "blurred foreground shopping cart blocking side"
+  },
+  {
+    "serial_number": 323,
+    "file_name": "hf_hard_occ_out-of-focus_foreground_banner_blocking_torso",
+    "occlusion": "out-of-focus foreground banner blocking torso"
+  },
+  {
+    "serial_number": 324,
+    "file_name": "hf_hard_occ_blurred_foreground_car_mirror_blocking_shoulder_area",
+    "occlusion": "blurred foreground car mirror blocking shoulder area"
+  },
+  {
+    "serial_number": 325,
+    "file_name": "hf_hard_occ_out-of-focus_foreground_flower_bouquet_blocking_chest",
+    "occlusion": "out-of-focus foreground flower bouquet blocking chest"
+  },
+  {
+    "serial_number": 326,
+    "file_name": "hf_hard_occ_blurred_foreground_fence_creating_bokeh_pattern_over_body",
+    "occlusion": "blurred foreground fence creating bokeh pattern over body"
+  },
+  {
+    "serial_number": 327,
+    "file_name": "hf_hard_both_asymmetric_freestyle_dance_pose_holding_large_mirror_blocking_entire_torso",
+    "pose": "asymmetric freestyle dance pose",
+    "occlusion": "holding large mirror blocking entire torso"
+  },
+  {
+    "serial_number": 328,
+    "file_name": "hf_hard_both_deep_squat_with_arms_wrapped_around_knees_oversized_graduation_gown_obscuring_body",
+    "pose": "deep squat with arms wrapped around knees",
+    "occlusion": "oversized graduation gown obscuring body"
+  },
+  {
+    "serial_number": 329,
+    "file_name": "hf_hard_both_brisk_walk_arms_raised_briefcase_in_hand_seated_in_cubicle_with_partition_blocking_lower_body",
+    "pose": "brisk walk arms raised briefcase in hand",
+    "occlusion": "seated in cubicle with partition blocking lower body"
+  },
+  {
+    "serial_number": 330,
+    "file_name": "hf_hard_both_standing_on_one_leg_other_extended_backward_carrying_yoga_ball_in_front_blocking_torso",
+    "pose": "standing on one leg other extended backward",
+    "occlusion": "carrying yoga ball in front blocking torso"
+  },
+  {
+    "serial_number": 331,
+    "file_name": "hf_hard_both_side_plank_one_arm_raised_body_angled_holding_stacked_moving_boxes_blocking_face_and_chest",
+    "pose": "side plank one arm raised body angled",
+    "occlusion": "holding stacked moving boxes blocking face and chest"
+  },
+  {
+    "serial_number": 332,
+    "file_name": "hf_hard_both_pop-and-lock_frozen_pose_angled_torso_oversized_graduation_gown_obscuring_body",
+    "pose": "pop-and-lock frozen pose angled torso",
+    "occlusion": "oversized graduation gown obscuring body"
+  },
+  {
+    "serial_number": 333,
+    "file_name": "hf_hard_both_lying_on_back_knees_to_chest_arms_hugging_shins_holding_wide_poster_board_covering_chest",
+    "pose": "lying on back knees to chest arms hugging shins",
+    "occlusion": "holding wide poster board covering chest"
+  },
+  {
+    "serial_number": 334,
+    "file_name": "hf_hard_both_holding_object_overhead_partially_obscured_by_hanging_beads_or_curtain",
+    "pose": "holding object overhead",
+    "occlusion": "partially obscured by hanging beads or curtain"
+  },
+  {
+    "serial_number": 335,
+    "file_name": "hf_hard_both_low_crouch_one_hand_touching_ground_holding_wide_tray_blocking_torso_and_lower_face",
+    "pose": "low crouch one hand touching ground",
+    "occlusion": "holding wide tray blocking torso and lower face"
+  },
+  {
+    "serial_number": 336,
+    "file_name": "hf_hard_both_seated_with_both_legs_dangling_off_high_surface_seated_in_theater_seat_with_seat_back_visible_chest_up",
+    "pose": "seated with both legs dangling off high surface",
+    "occlusion": "seated in theater seat with seat back visible chest up"
+  },
+  {
+    "serial_number": 337,
+    "file_name": "hf_hard_both_walking_toward_camera_foreshortened_extreme_tight_crop_on_hands_and_torso_only",
+    "pose": "walking toward camera foreshortened",
+    "occlusion": "extreme tight crop on hands and torso only"
+  },
+  {
+    "serial_number": 338,
+    "file_name": "hf_hard_both_pulling_object_toward_body_both_arms_bent_carrying_large_cardboard_box_blocking_chest_and_arms",
+    "pose": "pulling object toward body both arms bent",
+    "occlusion": "carrying large cardboard box blocking chest and arms"
+  },
+  {
+    "serial_number": 339,
+    "file_name": "hf_hard_both_lying_on_side_top_arm_raised_toward_ceiling_standing_at_reception_desk_only_upper_body_visible",
+    "pose": "lying on side top arm raised toward ceiling",
+    "occlusion": "standing at reception desk only upper body visible"
+  },
+  {
+    "serial_number": 340,
+    "file_name": "hf_hard_both_yoga_chair_pose_knees_bent_arms_raised_underexposed_making_dark_clothing_merge_with_background",
+    "pose": "yoga chair pose knees bent arms raised",
+    "occlusion": "underexposed making dark clothing merge with background"
+  },
+  {
+    "serial_number": 341,
+    "file_name": "hf_hard_both_yoga_downward_dog_legs_visible_reflective_shop_window_overlaying_ghost_reflection_on_person",
+    "pose": "yoga downward dog legs visible",
+    "occlusion": "reflective shop window overlaying ghost reflection on person"
+  },
+  {
+    "serial_number": 342,
+    "file_name": "hf_hard_both_hands_covering_face_behind_bakery_display_case_visible_from_shoulders_up",
+    "pose": "hands covering face",
+    "occlusion": "behind bakery display case visible from shoulders up"
+  },
+  {
+    "serial_number": 343,
+    "file_name": "hf_hard_both_both_hands_pressed_flat_against_chest_strong_shadow_obscuring_body_regions",
+    "pose": "both hands pressed flat against chest",
+    "occlusion": "strong shadow obscuring body regions"
+  },
+  {
+    "serial_number": 344,
+    "file_name": "hf_hard_both_brisk_walk_arms_raised_briefcase_in_hand_out-of-focus_foreground_street_sign_partially_blocking_head",
+    "pose": "brisk walk arms raised briefcase in hand",
+    "occlusion": "out-of-focus foreground street sign partially blocking head"
+  },
+  {
+    "serial_number": 345,
+    "file_name": "hf_hard_both_deep_squat_heels_lifted_bulky_costume_armor_obscuring_body_shape",
+    "pose": "deep squat heels lifted",
+    "occlusion": "bulky costume armor obscuring body shape"
+  },
+  {
+    "serial_number": 346,
+    "file_name": "hf_hard_both_extreme_contrapposto_with_shoulder_drop_high_neckline_obscuring_jaw_and_neck_area",
+    "pose": "extreme contrapposto with shoulder drop",
+    "occlusion": "high neckline obscuring jaw and neck area"
+  },
+  {
+    "serial_number": 347,
+    "file_name": "hf_hard_both_hands_behind_head_elbows_forward_exiting_through_revolving_door_frame_bisecting_body",
+    "pose": "hands behind head elbows forward",
+    "occlusion": "exiting through revolving door frame bisecting body"
+  },
+  {
+    "serial_number": 348,
+    "file_name": "hf_hard_both_brisk_walk_arms_raised_briefcase_in_hand_carrying_amplifier_blocking_one_side_of_body",
+    "pose": "brisk walk arms raised briefcase in hand",
+    "occlusion": "carrying amplifier blocking one side of body"
+  },
+  {
+    "serial_number": 349,
+    "file_name": "hf_hard_both_standing_deep_forward_lean_from_hips_arms_behind_foreground_blur_object_blocking_body",
+    "pose": "standing deep forward lean from hips arms behind",
+    "occlusion": "foreground blur object blocking body"
+  },
+  {
+    "serial_number": 350,
+    "file_name": "hf_hard_both_jump_with_one_knee_tucked_one_leg_straight_holding_stacked_moving_boxes_blocking_face_and_chest",
+    "pose": "jump with one knee tucked one leg straight",
+    "occlusion": "holding stacked moving boxes blocking face and chest"
+  },
+  {
+    "serial_number": 351,
+    "file_name": "hf_hard_both_seated_with_both_legs_dangling_off_high_surface_partially_obscured_by_hanging_vines",
+    "pose": "seated with both legs dangling off high surface",
+    "occlusion": "partially obscured by hanging vines"
+  },
+  {
+    "serial_number": 352,
+    "file_name": "hf_hard_both_seated_on_floor_spine_curved_over_tucked_knees_framed_in_small_window_cutout_showing_torso_only",
+    "pose": "seated on floor spine curved over tucked knees",
+    "occlusion": "framed in small window cutout showing torso only"
+  },
+  {
+    "serial_number": 353,
+    "file_name": "hf_hard_both_bending_deeply_to_pick_object_overexposed_foreground_washing_out_body_detail",
+    "pose": "bending deeply to pick object",
+    "occlusion": "overexposed foreground washing out body detail"
+  },
+  {
+    "serial_number": 354,
+    "file_name": "hf_hard_both_walking_fast_with_exaggerated_arm_swing_blurred_foreground_crowd_hand_blocking_hip_and_thigh",
+    "pose": "walking fast with exaggerated arm swing",
+    "occlusion": "blurred foreground crowd hand blocking hip and thigh"
+  },
+  {
+    "serial_number": 355,
+    "file_name": "hf_hard_both_cross-legged_seated_torso_twist_full-body_rain_suit_obscuring_shape",
+    "pose": "cross-legged seated torso twist",
+    "occlusion": "full-body rain suit obscuring shape"
+  },
+  {
+    "serial_number": 356,
+    "file_name": "hf_hard_both_arms_raised_overhead_wrists_crossed_frosted_glass_behind_which_body_is_blurred",
+    "pose": "arms raised overhead wrists crossed",
+    "occlusion": "frosted glass behind which body is blurred"
+  },
+  {
+    "serial_number": 357,
+    "file_name": "hf_hard_both_kneeling_with_torso_twist_and_reach_standing_behind_scaffolding_bars_blocking_sections_of_body",
+    "pose": "kneeling with torso twist and reach",
+    "occlusion": "standing behind scaffolding bars blocking sections of body"
+  },
+  {
+    "serial_number": 358,
+    "file_name": "hf_hard_both_seated_cross-leg_one_foot_forward_glossy_floor_reflection_doubling_lower_body_image",
+    "pose": "seated cross-leg one foot forward",
+    "occlusion": "glossy floor reflection doubling lower body image"
+  },
+  {
+    "serial_number": 359,
+    "file_name": "hf_hard_both_lunging_forward_step_with_arms_swinging_opposite_blurred_foreground_hanging_sign_blocking_upper_body",
+    "pose": "lunging forward step with arms swinging opposite",
+    "occlusion": "blurred foreground hanging sign blocking upper body"
+  },
+  {
+    "serial_number": 360,
+    "file_name": "hf_hard_both_dancing_spin_motion_blur_extreme_contrast_losing_detail_in_shadow_areas",
+    "pose": "dancing spin motion blur",
+    "occlusion": "extreme contrast losing detail in shadow areas"
+  },
+  {
+    "serial_number": 361,
+    "file_name": "hf_hard_both_reaching_down_across_body_standing_behind_stained_glass_creating_color_blocks_over_body",
+    "pose": "reaching down across body",
+    "occlusion": "standing behind stained glass creating color blocks over body"
+  },
+  {
+    "serial_number": 362,
+    "file_name": "hf_hard_both_standing_one_leg_extended_to_the_side_hood_up_and_pulled_forward_shadowing_face",
+    "pose": "standing one leg extended to the side",
+    "occlusion": "hood up and pulled forward shadowing face"
+  },
+  {
+    "serial_number": 363,
+    "file_name": "hf_hard_both_seated_twisted_looking_behind_holding_oversized_stuffed_toy_blocking_chest",
+    "pose": "seated twisted looking behind",
+    "occlusion": "holding oversized stuffed toy blocking chest"
+  },
+  {
+    "serial_number": 364,
+    "file_name": "hf_hard_both_ballet-inspired_arabesque_arms_extended_seated_at_bar_with_bar_top_blocking_waist_down",
+    "pose": "ballet-inspired arabesque arms extended",
+    "occlusion": "seated at bar with bar top blocking waist down"
+  },
+  {
+    "serial_number": 365,
+    "file_name": "hf_hard_both_ducking_under_low_object_torso_compressed_seated_at_sewing_machine_with_table_blocking_lap",
+    "pose": "ducking under low object torso compressed",
+    "occlusion": "seated at sewing machine with table blocking lap"
+  },
+  {
+    "serial_number": 366,
+    "file_name": "hf_hard_both_seated_cross-leg_one_foot_forward_blurred_foreground_awning_edge_blocking_upper_frame",
+    "pose": "seated cross-leg one foot forward",
+    "occlusion": "blurred foreground awning edge blocking upper frame"
+  },
+  {
+    "serial_number": 367,
+    "file_name": "hf_hard_both_walking_toward_camera_foreshortened_out-of-focus_foreground_banner_blocking_torso",
+    "pose": "walking toward camera foreshortened",
+    "occlusion": "out-of-focus foreground banner blocking torso"
+  },
+  {
+    "serial_number": 368,
+    "file_name": "hf_hard_both_seated_on_floor_spine_curved_over_tucked_knees_partially_obscured_by_hanging_vines",
+    "pose": "seated on floor spine curved over tucked knees",
+    "occlusion": "partially obscured by hanging vines"
+  },
+  {
+    "serial_number": 369,
+    "file_name": "hf_hard_both_brisk_walk_arms_raised_briefcase_in_hand_head_blocked_by_low_hanging_awning_edge",
+    "pose": "brisk walk arms raised briefcase in hand",
+    "occlusion": "head blocked by low hanging awning edge"
+  },
+  {
+    "serial_number": 370,
+    "file_name": "hf_hard_both_asymmetric_freestyle_dance_pose_out-of-focus_foreground_branch_crossing_face",
+    "pose": "asymmetric freestyle dance pose",
+    "occlusion": "out-of-focus foreground branch crossing face"
+  },
+  {
+    "serial_number": 371,
+    "file_name": "hf_hard_both_reaching_down_across_body_carrying_ski_equipment_bundle_blocking_torso",
+    "pose": "reaching down across body",
+    "occlusion": "carrying ski equipment bundle blocking torso"
+  },
+  {
+    "serial_number": 372,
+    "file_name": "hf_hard_both_extreme_side_stretch_one_arm_over_head_partially_hidden_behind_open_car_trunk_lid",
+    "pose": "extreme side stretch one arm over head",
+    "occlusion": "partially hidden behind open car trunk lid"
+  },
+  {
+    "serial_number": 373,
+    "file_name": "hf_hard_both_single_leg_stand_knee_raised_high_bulky_layered_outerwear_obscuring_body_contour",
+    "pose": "single leg stand knee raised high",
+    "occlusion": "bulky layered outerwear obscuring body contour"
+  },
+  {
+    "serial_number": 374,
+    "file_name": "hf_hard_both_walking_with_torso_rotated_opposite_to_hips_extra-long_cuffs_covering_hands_entirely",
+    "pose": "walking with torso rotated opposite to hips",
+    "occlusion": "extra-long cuffs covering hands entirely"
+  },
+  {
+    "serial_number": 375,
+    "file_name": "hf_hard_both_yoga_balance_forward_fold_tree_shadow_pattern_breaking_up_body_outline",
+    "pose": "yoga balance forward fold",
+    "occlusion": "tree shadow pattern breaking up body outline"
+  },
+  {
+    "serial_number": 376,
+    "file_name": "hf_hard_both_seated_hugging_knees_to_chest_dappled_sunlight_through_leaves_creating_irregular_occlusion",
+    "pose": "seated hugging knees to chest",
+    "occlusion": "dappled sunlight through leaves creating irregular occlusion"
+  },
+  {
+    "serial_number": 377,
+    "file_name": "hf_hard_both_asymmetric_freestyle_dance_pose_carrying_folding_bike_blocking_legs",
+    "pose": "asymmetric freestyle dance pose",
+    "occlusion": "carrying folding bike blocking legs"
+  },
+  {
+    "serial_number": 378,
+    "file_name": "hf_hard_both_lying_face_up_arms_spread_wide_full-body_rain_suit_obscuring_shape",
+    "pose": "lying face up arms spread wide",
+    "occlusion": "full-body rain suit obscuring shape"
+  },
+  {
+    "serial_number": 379,
+    "file_name": "hf_hard_both_running_diagonal_across_frame_carrying_ski_equipment_bundle_blocking_torso",
+    "pose": "running diagonal across frame",
+    "occlusion": "carrying ski equipment bundle blocking torso"
+  },
+  {
+    "serial_number": 380,
+    "file_name": "hf_hard_both_forearm_blocking_face_from_front_partially_obscured_by_hanging_vines",
+    "pose": "forearm blocking face from front",
+    "occlusion": "partially obscured by hanging vines"
+  },
+  {
+    "serial_number": 381,
+    "file_name": "hf_hard_both_walking_with_torso_rotated_opposite_to_hips_bright_sunlight_creating_complete_silhouette",
+    "pose": "walking with torso rotated opposite to hips",
+    "occlusion": "bright sunlight creating complete silhouette"
+  },
+  {
+    "serial_number": 382,
+    "file_name": "hf_hard_both_yoga_half-moon_pose_double_mirror_reflection_creating_multiple_overlapping_images",
+    "pose": "yoga half-moon pose",
+    "occlusion": "double mirror reflection creating multiple overlapping images"
+  },
+  {
+    "serial_number": 383,
+    "file_name": "hf_hard_both_standing_on_one_leg_other_extended_backward_large_tool_belt_and_pouches_wrapping_around_hips_and_thighs",
+    "pose": "standing on one leg other extended backward",
+    "occlusion": "large tool belt and pouches wrapping around hips and thighs"
+  },
+  {
+    "serial_number": 384,
+    "file_name": "hf_hard_both_jump_with_arms_wide_both_legs_off_ground_out-of-focus_foreground_balloon_cluster_blocking_view",
+    "pose": "jump with arms wide both legs off ground",
+    "occlusion": "out-of-focus foreground balloon cluster blocking view"
+  },
+  {
+    "serial_number": 385,
+    "file_name": "hf_hard_both_ducking_under_low_object_torso_compressed_signboard_blocking_torso",
+    "pose": "ducking under low object torso compressed",
+    "occlusion": "signboard blocking torso"
+  },
+  {
+    "serial_number": 386,
+    "file_name": "hf_hard_both_sitting_sideways_on_chair_backrest_seated_at_bar_with_bar_top_blocking_waist_down",
+    "pose": "sitting sideways on chair backrest",
+    "occlusion": "seated at bar with bar top blocking waist down"
+  },
+  {
+    "serial_number": 387,
+    "file_name": "hf_hard_both_low_crouch_one_hand_touching_ground_blurred_foreground_crowd_hand_blocking_hip_and_thigh",
+    "pose": "low crouch one hand touching ground",
+    "occlusion": "blurred foreground crowd hand blocking hip and thigh"
+  },
+  {
+    "serial_number": 388,
+    "file_name": "hf_hard_both_mid-air_one_leg_extended_partially_hidden_by_large_boulder",
+    "pose": "mid-air one leg extended",
+    "occlusion": "partially hidden by large boulder"
+  },
+  {
+    "serial_number": 389,
+    "file_name": "hf_hard_both_walking_with_torso_rotated_opposite_to_hips_carrying_infant_car_seat_in_front_blocking_lower_torso",
+    "pose": "walking with torso rotated opposite to hips",
+    "occlusion": "carrying infant car seat in front blocking lower torso"
+  },
+  {
+    "serial_number": 390,
+    "file_name": "hf_hard_both_standing_deep_forward_lean_from_hips_arms_behind_standing_behind_shower_glass_with_texture_obscuring_body",
+    "pose": "standing deep forward lean from hips arms behind",
+    "occlusion": "standing behind shower glass with texture obscuring body"
+  },
+  {
+    "serial_number": 391,
+    "file_name": "hf_hard_both_yoga_chair_pose_knees_bent_arms_raised_standing_behind_fence_or_bars",
+    "pose": "yoga chair pose knees bent arms raised",
+    "occlusion": "standing behind fence or bars"
+  },
+  {
+    "serial_number": 392,
+    "file_name": "hf_hard_both_standing_deep_forward_lean_from_hips_arms_behind_sunset_backlight_creating_rim_light_only_on_edges",
+    "pose": "standing deep forward lean from hips arms behind",
+    "occlusion": "sunset backlight creating rim light only on edges"
+  },
+  {
+    "serial_number": 393,
+    "file_name": "hf_hard_both_extreme_lean_to_one_side_arm_reaching_floor_standing_behind_metal_grating_blocking_torso",
+    "pose": "extreme lean to one side arm reaching floor",
+    "occlusion": "standing behind metal grating blocking torso"
+  },
+  {
+    "serial_number": 394,
+    "file_name": "hf_hard_both_sharp_hip-hop_stance_arms_bent_angles_body_seen_from_behind_through_narrow_slit_in_wall",
+    "pose": "sharp hip-hop stance arms bent angles",
+    "occlusion": "body seen from behind through narrow slit in wall"
+  },
+  {
+    "serial_number": 395,
+    "file_name": "hf_hard_both_kneeling_low_forehead_near_ground_arms_forward_standing_behind_lab_bench_with_equipment_blocking_torso",
+    "pose": "kneeling low forehead near ground arms forward",
+    "occlusion": "standing behind lab bench with equipment blocking torso"
+  },
+  {
+    "serial_number": 396,
+    "file_name": "hf_hard_both_kneeling_upright_arms_stretched_behind_back_standing_behind_pharmacy_counter_visible_from_shoulders_up",
+    "pose": "kneeling upright arms stretched behind back",
+    "occlusion": "standing behind pharmacy counter visible from shoulders up"
+  },
+  {
+    "serial_number": 397,
+    "file_name": "hf_hard_both_stairs_climb_mid-step_standing_behind_wet_glass_with_water_droplets_distorting_view",
+    "pose": "stairs climb mid-step",
+    "occlusion": "standing behind wet glass with water droplets distorting view"
+  },
+  {
+    "serial_number": 398,
+    "file_name": "hf_hard_both_lying_face_up_arms_spread_wide_standing_behind_lab_bench_with_equipment_blocking_torso",
+    "pose": "lying face up arms spread wide",
+    "occlusion": "standing behind lab bench with equipment blocking torso"
+  },
+  {
+    "serial_number": 399,
+    "file_name": "hf_hard_both_stairs_climb_mid-step_standing_behind_tinted_glass_severely_darkening_visibility",
+    "pose": "stairs climb mid-step",
+    "occlusion": "standing behind tinted glass severely darkening visibility"
+  },
+  {
+    "serial_number": 400,
+    "file_name": "hf_hard_both_hands_behind_head_elbows_forward_standing_behind_tinted_glass_severely_darkening_visibility",
+    "pose": "hands behind head elbows forward",
+    "occlusion": "standing behind tinted glass severely darkening visibility"
+  },
+  {
+    "serial_number": 401,
+    "file_name": "hf_hard_both_reaching_up_and_back_arched_spine_standing_behind_jersey_barrier_on_roadside",
+    "pose": "reaching up and back arched spine",
+    "occlusion": "standing behind jersey barrier on roadside"
+  },
+  {
+    "serial_number": 402,
+    "file_name": "hf_hard_both_standing_on_one_leg_other_extended_backward_carrying_yoga_ball_in_front_blocking_torso",
+    "pose": "standing on one leg other extended backward",
+    "occlusion": "carrying yoga ball in front blocking torso"
+  },
+  {
+    "serial_number": 403,
+    "file_name": "hf_hard_both_lying_supine_one_knee_bent_only_lower_half_of_body_visible_in_frame",
+    "pose": "lying supine one knee bent",
+    "occlusion": "only lower half of body visible in frame"
+  },
+  {
+    "serial_number": 404,
+    "file_name": "hf_hard_both_seated_with_both_legs_dangling_off_high_surface_oversized_mascot_costume_head_obscuring_upper_body",
+    "pose": "seated with both legs dangling off high surface",
+    "occlusion": "oversized mascot costume head obscuring upper body"
+  },
+  {
+    "serial_number": 405,
+    "file_name": "hf_hard_both_sitting_slouched_with_one_knee_raised_blurred_foreground_shopping_cart_blocking_side",
+    "pose": "sitting slouched with one knee raised",
+    "occlusion": "blurred foreground shopping cart blocking side"
+  },
+  {
+    "serial_number": 406,
+    "file_name": "hf_hard_both_kneeling_both_knees_leaning_forward_carrying_amplifier_blocking_one_side_of_body",
+    "pose": "kneeling both knees leaning forward",
+    "occlusion": "carrying amplifier blocking one side of body"
+  },
+  {
+    "serial_number": 407,
+    "file_name": "hf_hard_both_dancing_spin_motion_blur_holding_large_art_canvas_blocking_chest_and_face",
+    "pose": "dancing spin motion blur",
+    "occlusion": "holding large art canvas blocking chest and face"
+  },
+  {
+    "serial_number": 408,
+    "file_name": "hf_hard_both_yoga_balance_forward_fold_partially_obscured_by_hanging_beads_or_curtain",
+    "pose": "yoga balance forward fold",
+    "occlusion": "partially obscured by hanging beads or curtain"
+  },
+  {
+    "serial_number": 409,
+    "file_name": "hf_hard_both_pushing_heavy_object_both_arms_extended_forward_carrying_infant_car_seat_in_front_blocking_lower_torso",
+    "pose": "pushing heavy object both arms extended forward",
+    "occlusion": "carrying infant car seat in front blocking lower torso"
+  },
+  {
+    "serial_number": 410,
+    "file_name": "hf_hard_both_lateral_lunge_with_torso_over_bent_knee_partially_obscured_by_hanging_vines",
+    "pose": "lateral lunge with torso over bent knee",
+    "occlusion": "partially obscured by hanging vines"
+  },
+  {
+    "serial_number": 411,
+    "file_name": "hf_hard_both_pushing_heavy_object_both_arms_extended_forward_both_arms_extended_into_adjacent_doorways_out_of_central_view",
+    "pose": "pushing heavy object both arms extended forward",
+    "occlusion": "both arms extended into adjacent doorways out of central view"
+  },
+  {
+    "serial_number": 412,
+    "file_name": "hf_hard_both_lying_prone_propped_on_elbows_seated_at_conference_table_visible_from_chest_up",
+    "pose": "lying prone propped on elbows",
+    "occlusion": "seated at conference table visible from chest up"
+  },
+  {
+    "serial_number": 413,
+    "file_name": "hf_hard_both_lying_on_stomach_chin_resting_on_stacked_hands_blurred_foreground_shopping_cart_blocking_side",
+    "pose": "lying on stomach chin resting on stacked hands",
+    "occlusion": "blurred foreground shopping cart blocking side"
+  },
+  {
+    "serial_number": 414,
+    "file_name": "hf_hard_both_crouching_low_arms_forward_wide_flared_lower_portion_obscuring_leg_position",
+    "pose": "crouching low arms forward",
+    "occlusion": "wide flared lower portion obscuring leg position"
+  },
+  {
+    "serial_number": 415,
+    "file_name": "hf_hard_both_yoga_triangle_pose_deep_lateral_stretch_carrying_kayak_overhead_blocking_upper_body",
+    "pose": "yoga triangle pose deep lateral stretch",
+    "occlusion": "carrying kayak overhead blocking upper body"
+  },
+  {
+    "serial_number": 416,
+    "file_name": "hf_hard_both_yoga_balance_forward_fold_frosted_glass_behind_which_body_is_blurred",
+    "pose": "yoga balance forward fold",
+    "occlusion": "frosted glass behind which body is blurred"
+  },
+  {
+    "serial_number": 417,
+    "file_name": "hf_hard_both_stairs_descent_leaning_forward_weight_on_front_foot_seated_at_drafting_table_visible_from_waist_up",
+    "pose": "stairs descent leaning forward weight on front foot",
+    "occlusion": "seated at drafting table visible from waist up"
+  },
+  {
+    "serial_number": 418,
+    "file_name": "hf_hard_both_ducking_under_low_object_torso_compressed_venetian_blind_shadows_creating_horizontal_stripes_across_body",
+    "pose": "ducking under low object torso compressed",
+    "occlusion": "venetian blind shadows creating horizontal stripes across body"
+  },
+  {
+    "serial_number": 419,
+    "file_name": "hf_hard_both_jump_with_one_knee_tucked_one_leg_straight_holding_large_mirror_blocking_entire_torso",
+    "pose": "jump with one knee tucked one leg straight",
+    "occlusion": "holding large mirror blocking entire torso"
+  },
+  {
+    "serial_number": 420,
+    "file_name": "hf_hard_both_lunging_forward_step_with_arms_swinging_opposite_standing_in_archway_with_arch_blocking_upper_frame",
+    "pose": "lunging forward step with arms swinging opposite",
+    "occlusion": "standing in archway with arch blocking upper frame"
+  },
+  {
+    "serial_number": 421,
+    "file_name": "hf_hard_both_extreme_contrapposto_with_shoulder_drop_head_blocked_by_low_hanging_awning_edge",
+    "pose": "extreme contrapposto with shoulder drop",
+    "occlusion": "head blocked by low hanging awning edge"
+  },
+  {
+    "serial_number": 422,
+    "file_name": "hf_hard_both_deep_squat_heels_lifted_thick_winter_parka_with_fur_hood_obscuring_head_and_shoulders",
+    "pose": "deep squat heels lifted",
+    "occlusion": "thick winter parka with fur hood obscuring head and shoulders"
+  },
+  {
+    "serial_number": 423,
+    "file_name": "hf_hard_both_yoga_triangle_pose_deep_lateral_stretch_standing_behind_lab_bench_with_equipment_blocking_torso",
+    "pose": "yoga triangle pose deep lateral stretch",
+    "occlusion": "standing behind lab bench with equipment blocking torso"
+  },
+  {
+    "serial_number": 424,
+    "file_name": "hf_hard_both_leaning_far_forward_body_nearly_horizontal_foreground_blur_object_blocking_body",
+    "pose": "leaning far forward body nearly horizontal",
+    "occlusion": "foreground blur object blocking body"
+  },
+  {
+    "serial_number": 425,
+    "file_name": "hf_hard_both_balancing_on_one_leg_forward_lean_extreme_tight_crop_on_hands_and_torso_only",
+    "pose": "balancing on one leg forward lean",
+    "occlusion": "extreme tight crop on hands and torso only"
+  },
+  {
+    "serial_number": 426,
+    "file_name": "hf_hard_both_seated_reclined_on_hands_behind_body_blurred_foreground_car_mirror_blocking_shoulder_area",
+    "pose": "seated reclined on hands behind body",
+    "occlusion": "blurred foreground car mirror blocking shoulder area"
+  },
+  {
+    "serial_number": 427,
+    "file_name": "hf_hard_both_dancing_spin_motion_blur_doorway_frame_blocking_body",
+    "pose": "dancing spin motion blur",
+    "occlusion": "doorway frame blocking body"
+  },
+  {
+    "serial_number": 428,
+    "file_name": "hf_hard_both_asymmetric_freestyle_dance_pose_extreme_tight_crop_on_hands_and_torso_only",
+    "pose": "asymmetric freestyle dance pose",
+    "occlusion": "extreme tight crop on hands and torso only"
+  },
+  {
+    "serial_number": 429,
+    "file_name": "hf_hard_both_pulling_object_toward_body_both_arms_bent_standing_at_reception_desk_only_upper_body_visible",
+    "pose": "pulling object toward body both arms bent",
+    "occlusion": "standing at reception desk only upper body visible"
+  },
+  {
+    "serial_number": 430,
+    "file_name": "hf_hard_both_kneeling_on_both_knees_arms_wide_open_behind_chain-link_fence_creating_grid_pattern_over_body",
+    "pose": "kneeling on both knees arms wide open",
+    "occlusion": "behind chain-link fence creating grid pattern over body"
+  },
+  {
+    "serial_number": 431,
+    "file_name": "hf_hard_both_stepping_over_obstacle_with_wide_stance_carrying_ski_equipment_bundle_blocking_torso",
+    "pose": "stepping over obstacle with wide stance",
+    "occlusion": "carrying ski equipment bundle blocking torso"
+  },
+  {
+    "serial_number": 432,
+    "file_name": "hf_hard_both_lying_on_back_knees_to_chest_arms_hugging_shins_handheld_box_blocking_torso_and_arms",
+    "pose": "lying on back knees to chest arms hugging shins",
+    "occlusion": "handheld box blocking torso and arms"
+  },
+  {
+    "serial_number": 433,
+    "file_name": "hf_hard_both_lying_prone_propped_on_elbows_object_occluding_torso",
+    "pose": "lying prone propped on elbows",
+    "occlusion": "object occluding torso"
+  },
+  {
+    "serial_number": 434,
+    "file_name": "hf_hard_both_pushing_heavy_object_both_arms_extended_forward_standing_behind_thick_tree_trunk_blocking_torso_center",
+    "pose": "pushing heavy object both arms extended forward",
+    "occlusion": "standing behind thick tree trunk blocking torso center"
+  },
+  {
+    "serial_number": 435,
+    "file_name": "hf_hard_both_leaning_backward_unsupported_bag_carried_in_front_blocking_torso",
+    "pose": "leaning backward unsupported",
+    "occlusion": "bag carried in front blocking torso"
+  },
+  {
+    "serial_number": 436,
+    "file_name": "hf_hard_both_kneeling_both_knees_leaning_forward_standing_behind_jersey_barrier_on_roadside",
+    "pose": "kneeling both knees leaning forward",
+    "occlusion": "standing behind jersey barrier on roadside"
+  },
+  {
+    "serial_number": 437,
+    "file_name": "hf_hard_both_jumping_with_torso_twist_standing_behind_museum_information_desk",
+    "pose": "jumping with torso twist",
+    "occlusion": "standing behind museum information desk"
+  },
+  {
+    "serial_number": 438,
+    "file_name": "hf_hard_both_sitting_sideways_on_chair_backrest_standing_behind_museum_information_desk",
+    "pose": "sitting sideways on chair backrest",
+    "occlusion": "standing behind museum information desk"
+  },
+  {
+    "serial_number": 439,
+    "file_name": "hf_hard_both_sitting_on_ground_leaning_back_arms_support_holding_large_pizza_box_stack_blocking_torso",
+    "pose": "sitting on ground leaning back arms support",
+    "occlusion": "holding large pizza box stack blocking torso"
+  },
+  {
+    "serial_number": 440,
+    "file_name": "hf_hard_both_seated_cross-leg_one_foot_forward_bulky_hazmat_suit_obscuring_body_form",
+    "pose": "seated cross-leg one foot forward",
+    "occlusion": "bulky hazmat suit obscuring body form"
+  },
+  {
+    "serial_number": 441,
+    "file_name": "hf_hard_both_leaning_backward_unsupported_wet_pavement_reflection_underneath_distorting_lower_body_outline",
+    "pose": "leaning backward unsupported",
+    "occlusion": "wet pavement reflection underneath distorting lower body outline"
+  },
+  {
+    "serial_number": 442,
+    "file_name": "hf_hard_both_seated_twisted_looking_behind_bulky_costume_armor_obscuring_body_shape",
+    "pose": "seated twisted looking behind",
+    "occlusion": "bulky costume armor obscuring body shape"
+  },
+  {
+    "serial_number": 443,
+    "file_name": "hf_hard_both_lying_face_up_arms_spread_wide_plastic_wrap_or_cover_partially_blocking_view",
+    "pose": "lying face up arms spread wide",
+    "occlusion": "plastic wrap or cover partially blocking view"
+  },
+  {
+    "serial_number": 444,
+    "file_name": "hf_hard_both_one-knee_kneel_arms_overhead_holding_wide_whiteboard_blocking_upper_body",
+    "pose": "one-knee kneel arms overhead",
+    "occlusion": "holding wide whiteboard blocking upper body"
+  },
+  {
+    "serial_number": 445,
+    "file_name": "hf_hard_both_ballet-inspired_arabesque_arms_extended_standing_inside_manhole_or_pit_with_upper_body_visible_only",
+    "pose": "ballet-inspired arabesque arms extended",
+    "occlusion": "standing inside manhole or pit with upper body visible only"
+  },
+  {
+    "serial_number": 446,
+    "file_name": "hf_hard_both_lying_on_stomach_chin_resting_on_stacked_hands_holding_large_umbrella_blocking_head_and_shoulders",
+    "pose": "lying on stomach chin resting on stacked hands",
+    "occlusion": "holding large umbrella blocking head and shoulders"
+  },
+  {
+    "serial_number": 447,
+    "file_name": "hf_hard_both_walking_fast_with_exaggerated_arm_swing_mirror_reflection_blocking_body_parts",
+    "pose": "walking fast with exaggerated arm swing",
+    "occlusion": "mirror reflection blocking body parts"
+  },
+  {
+    "serial_number": 448,
+    "file_name": "hf_hard_both_pulling_object_toward_body_both_arms_bent_partially_obscured_by_hanging_beads_or_curtain",
+    "pose": "pulling object toward body both arms bent",
+    "occlusion": "partially obscured by hanging beads or curtain"
+  },
+  {
+    "serial_number": 449,
+    "file_name": "hf_hard_both_standing_deep_forward_lean_from_hips_arms_behind_heavy_condensation_on_glass_obscuring_body",
+    "pose": "standing deep forward lean from hips arms behind",
+    "occlusion": "heavy condensation on glass obscuring body"
+  },
+  {
+    "serial_number": 450,
+    "file_name": "hf_hard_both_stairs_descent_leaning_forward_weight_on_front_foot_full-body_rain_suit_obscuring_shape",
+    "pose": "stairs descent leaning forward weight on front foot",
+    "occlusion": "full-body rain suit obscuring shape"
+  },
+  {
+    "serial_number": 451,
+    "file_name": "hf_hard_both_yoga_half-moon_pose_seated_at_classroom_desk_top_visible_from_waist_up",
+    "pose": "yoga half-moon pose",
+    "occlusion": "seated at classroom desk top visible from waist up"
+  },
+  {
+    "serial_number": 452,
+    "file_name": "hf_hard_both_yoga_chair_pose_knees_bent_arms_raised_partial_body_behind_pillar_or_pole",
+    "pose": "yoga chair pose knees bent arms raised",
+    "occlusion": "partial body behind pillar or pole"
+  },
+  {
+    "serial_number": 453,
+    "file_name": "hf_hard_both_reaching_up_and_back_arched_spine_bulky_layered_outerwear_obscuring_body_contour",
+    "pose": "reaching up and back arched spine",
+    "occlusion": "bulky layered outerwear obscuring body contour"
+  },
+  {
+    "serial_number": 454,
+    "file_name": "hf_hard_both_contemporary_dance_split_weight_arms_flowing_behind_chain-link_fence_creating_grid_pattern_over_body",
+    "pose": "contemporary dance split weight arms flowing",
+    "occlusion": "behind chain-link fence creating grid pattern over body"
+  },
+  {
+    "serial_number": 455,
+    "file_name": "hf_hard_both_arms_wrapped_tight_around_torso_self-hug_frame_cutting_off_top_of_head_and_below_knees",
+    "pose": "arms wrapped tight around torso self-hug",
+    "occlusion": "frame cutting off top of head and below knees"
+  },
+  {
+    "serial_number": 456,
+    "file_name": "hf_hard_both_both_hands_pressed_flat_against_chest_pushing_wheelchair_in_front_blocking_lower_body",
+    "pose": "both hands pressed flat against chest",
+    "occlusion": "pushing wheelchair in front blocking lower body"
+  },
+  {
+    "serial_number": 457,
+    "file_name": "hf_hard_both_running_diagonal_across_frame_sitting_inside_car_window_framing_shoulders_and_head_only",
+    "pose": "running diagonal across frame",
+    "occlusion": "sitting inside car window framing shoulders and head only"
+  },
+  {
+    "serial_number": 458,
+    "file_name": "hf_hard_both_seated_twisted_looking_behind_standing_behind_densely_leafed_hedge_only_head_visible",
+    "pose": "seated twisted looking behind",
+    "occlusion": "standing behind densely leafed hedge only head visible"
+  },
+  {
+    "serial_number": 459,
+    "file_name": "hf_hard_both_crouching_behind_low_obstacle_peeking_over_strong_shadow_obscuring_body_regions",
+    "pose": "crouching behind low obstacle peeking over",
+    "occlusion": "strong shadow obscuring body regions"
+  },
+  {
+    "serial_number": 460,
+    "file_name": "hf_hard_both_lying_on_stomach_chin_resting_on_stacked_hands_seated_at_bar_with_bar_top_blocking_waist_down",
+    "pose": "lying on stomach chin resting on stacked hands",
+    "occlusion": "seated at bar with bar top blocking waist down"
+  },
+  {
+    "serial_number": 461,
+    "file_name": "hf_hard_both_holding_object_overhead_behind_bakery_display_case_visible_from_shoulders_up",
+    "pose": "holding object overhead",
+    "occlusion": "behind bakery display case visible from shoulders up"
+  },
+  {
+    "serial_number": 462,
+    "file_name": "hf_hard_both_deep_squat_heels_lifted_holding_long_roll_of_fabric_obscuring_one_arm_and_torso",
+    "pose": "deep squat heels lifted",
+    "occlusion": "holding long roll of fabric obscuring one arm and torso"
+  },
+  {
+    "serial_number": 463,
+    "file_name": "hf_hard_both_yoga_child_pose_arms_forward_smoke_obscuring_upper_body",
+    "pose": "yoga child pose arms forward",
+    "occlusion": "smoke obscuring upper body"
+  },
+  {
+    "serial_number": 464,
+    "file_name": "hf_hard_both_sitting_sideways_on_chair_backrest_seated_at_bar_with_bar_top_blocking_waist_down",
+    "pose": "sitting sideways on chair backrest",
+    "occlusion": "seated at bar with bar top blocking waist down"
+  },
+  {
+    "serial_number": 465,
+    "file_name": "hf_hard_both_seated_twisted_looking_behind_holding_large_framed_picture_covering_torso",
+    "pose": "seated twisted looking behind",
+    "occlusion": "holding large framed picture covering torso"
+  },
+  {
+    "serial_number": 466,
+    "file_name": "hf_hard_both_one-legged_hop_arms_asymmetric_holding_long_roll_of_fabric_obscuring_one_arm_and_torso",
+    "pose": "one-legged hop arms asymmetric",
+    "occlusion": "holding long roll of fabric obscuring one arm and torso"
+  },
+  {
+    "serial_number": 467,
+    "file_name": "hf_hard_both_lying_supine_one_knee_bent_seated_at_library_study_carrel_desk_blocking_lower_body",
+    "pose": "lying supine one knee bent",
+    "occlusion": "seated at library study carrel desk blocking lower body"
+  },
+  {
+    "serial_number": 468,
+    "file_name": "hf_hard_both_brisk_walk_arms_raised_briefcase_in_hand_bulky_layered_outerwear_obscuring_body_contour",
+    "pose": "brisk walk arms raised briefcase in hand",
+    "occlusion": "bulky layered outerwear obscuring body contour"
+  },
+  {
+    "serial_number": 469,
+    "file_name": "hf_hard_both_leaning_backward_unsupported_leaning_over_car_hood_blocking_lower_half_of_body",
+    "pose": "leaning backward unsupported",
+    "occlusion": "leaning over car hood blocking lower half of body"
+  },
+  {
+    "serial_number": 470,
+    "file_name": "hf_hard_both_lying_on_back_knees_to_chest_arms_hugging_shins_carrying_bundled_tent_poles_blocking_shoulder_and_arm",
+    "pose": "lying on back knees to chest arms hugging shins",
+    "occlusion": "carrying bundled tent poles blocking shoulder and arm"
+  },
+  {
+    "serial_number": 471,
+    "file_name": "hf_hard_both_yoga_triangle_pose_deep_lateral_stretch_reflection_in_chrome_surface_distorting_body_parts",
+    "pose": "yoga triangle pose deep lateral stretch",
+    "occlusion": "reflection in chrome surface distorting body parts"
+  },
+  {
+    "serial_number": 472,
+    "file_name": "hf_hard_both_interacting_with_object_blocking_torso_standing_inside_manhole_or_pit_with_upper_body_visible_only",
+    "pose": "interacting with object blocking torso",
+    "occlusion": "standing inside manhole or pit with upper body visible only"
+  },
+  {
+    "serial_number": 473,
+    "file_name": "hf_hard_both_running_diagonal_across_frame_blurred_foreground_fence_post_partially_obscuring_hip",
+    "pose": "running diagonal across frame",
+    "occlusion": "blurred foreground fence post partially obscuring hip"
+  },
+  {
+    "serial_number": 474,
+    "file_name": "hf_hard_both_leaning_forward_hands_on_thighs_blurred_foreground_crowd_hand_blocking_hip_and_thigh",
+    "pose": "leaning forward hands on thighs",
+    "occlusion": "blurred foreground crowd hand blocking hip and thigh"
+  },
+  {
+    "serial_number": 475,
+    "file_name": "hf_hard_both_arms_crossed_overhead_blocking_face_sitting_at_kitchen_island_counter_visible_from_waist_up",
+    "pose": "arms crossed overhead blocking face",
+    "occlusion": "sitting at kitchen island counter visible from waist up"
+  },
+  {
+    "serial_number": 476,
+    "file_name": "hf_hard_both_seated_on_floor_spine_curved_over_tucked_knees_holding_guitar_case_vertically_blocking_torso",
+    "pose": "seated on floor spine curved over tucked knees",
+    "occlusion": "holding guitar case vertically blocking torso"
+  },
+  {
+    "serial_number": 477,
+    "file_name": "hf_hard_both_ballet-inspired_arabesque_arms_extended_behind_tall_cattails_or_reeds_blocking_lower_body",
+    "pose": "ballet-inspired arabesque arms extended",
+    "occlusion": "behind tall cattails or reeds blocking lower body"
+  },
+  {
+    "serial_number": 478,
+    "file_name": "hf_hard_both_reaching_overhead_extreme_stretch_partially_obscured_by_hanging_beads_or_curtain",
+    "pose": "reaching overhead extreme stretch",
+    "occlusion": "partially obscured by hanging beads or curtain"
+  },
+  {
+    "serial_number": 479,
+    "file_name": "hf_hard_both_arms_crossed_overhead_blocking_face_both_arms_extended_into_adjacent_doorways_out_of_central_view",
+    "pose": "arms crossed overhead blocking face",
+    "occlusion": "both arms extended into adjacent doorways out of central view"
+  },
+  {
+    "serial_number": 480,
+    "file_name": "hf_hard_both_plank_position_full_body_horizontal_holding_open_folded_bicycle_blocking_legs",
+    "pose": "plank position full body horizontal",
+    "occlusion": "holding open folded bicycle blocking legs"
+  },
+  {
+    "serial_number": 481,
+    "file_name": "hf_hard_both_pop-and-lock_frozen_pose_angled_torso_sunset_backlight_creating_rim_light_only_on_edges",
+    "pose": "pop-and-lock frozen pose angled torso",
+    "occlusion": "sunset backlight creating rim light only on edges"
+  },
+  {
+    "serial_number": 482,
+    "file_name": "hf_hard_both_sharp_hip-hop_stance_arms_bent_angles_carrying_folded_table_blocking_lower_body",
+    "pose": "sharp hip-hop stance arms bent angles",
+    "occlusion": "carrying folded table blocking lower body"
+  },
+  {
+    "serial_number": 483,
+    "file_name": "hf_hard_both_sitting_sideways_on_chair_backrest_standing_behind_ornate_room_divider_screen",
+    "pose": "sitting sideways on chair backrest",
+    "occlusion": "standing behind ornate room divider screen"
+  },
+  {
+    "serial_number": 484,
+    "file_name": "hf_hard_both_plank_position_full_body_horizontal_standing_behind_densely_leafed_hedge_only_head_visible",
+    "pose": "plank position full body horizontal",
+    "occlusion": "standing behind densely leafed hedge only head visible"
+  },
+  {
+    "serial_number": 485,
+    "file_name": "hf_hard_both_seated_reclined_on_hands_behind_body_standing_behind_pharmacy_counter_visible_from_shoulders_up",
+    "pose": "seated reclined on hands behind body",
+    "occlusion": "standing behind pharmacy counter visible from shoulders up"
+  },
+  {
+    "serial_number": 486,
+    "file_name": "hf_hard_both_standing_one_leg_extended_to_the_side_sitting_at_kitchen_island_counter_visible_from_waist_up",
+    "pose": "standing one leg extended to the side",
+    "occlusion": "sitting at kitchen island counter visible from waist up"
+  },
+  {
+    "serial_number": 487,
+    "file_name": "hf_hard_both_lying_face_up_arms_spread_wide_partially_hidden_by_large_industrial_pipes",
+    "pose": "lying face up arms spread wide",
+    "occlusion": "partially hidden by large industrial pipes"
+  },
+  {
+    "serial_number": 488,
+    "file_name": "hf_hard_both_kneeling_upright_arms_stretched_behind_back_partially_obscured_by_hanging_beads_or_curtain",
+    "pose": "kneeling upright arms stretched behind back",
+    "occlusion": "partially obscured by hanging beads or curtain"
+  },
+  {
+    "serial_number": 489,
+    "file_name": "hf_hard_both_off-balance_stumble_recovery_standing_behind_podium_with_microphone_blocking_chest",
+    "pose": "off-balance stumble recovery",
+    "occlusion": "standing behind podium with microphone blocking chest"
+  },
+  {
+    "serial_number": 490,
+    "file_name": "hf_hard_both_forearm_blocking_face_from_front_standing_behind_pharmacy_counter_visible_from_shoulders_up",
+    "pose": "forearm blocking face from front",
+    "occlusion": "standing behind pharmacy counter visible from shoulders up"
+  },
+  {
+    "serial_number": 491,
+    "file_name": "hf_hard_both_seated_hugging_knees_to_chest_standing_behind_concrete_barrier_wall",
+    "pose": "seated hugging knees to chest",
+    "occlusion": "standing behind concrete barrier wall"
+  },
+  {
+    "serial_number": 492,
+    "file_name": "hf_hard_both_lying_on_stomach_chin_resting_on_stacked_hands_carrying_folded_table_blocking_lower_body",
+    "pose": "lying on stomach chin resting on stacked hands",
+    "occlusion": "carrying folded table blocking lower body"
+  },
+  {
+    "serial_number": 493,
+    "file_name": "hf_hard_both_sitting_slouched_with_one_knee_raised_underexposed_making_dark_clothing_merge_with_background",
+    "pose": "sitting slouched with one knee raised",
+    "occlusion": "underexposed making dark clothing merge with background"
+  },
+  {
+    "serial_number": 494,
+    "file_name": "hf_hard_both_lying_on_back_knees_to_chest_arms_hugging_shins_blurred_foreground_architectural_element_blocking_torso",
+    "pose": "lying on back knees to chest arms hugging shins",
+    "occlusion": "blurred foreground architectural element blocking torso"
+  },
+  {
+    "serial_number": 495,
+    "file_name": "hf_hard_both_crouching_low_arms_forward_carrying_large_potted_plant_blocking_torso",
+    "pose": "crouching low arms forward",
+    "occlusion": "carrying large potted plant blocking torso"
+  },
+  {
+    "serial_number": 496,
+    "file_name": "hf_hard_both_stairs_descent_leaning_forward_weight_on_front_foot_out-of-focus_foreground_wire_or_cable_crossing_body",
+    "pose": "stairs descent leaning forward weight on front foot",
+    "occlusion": "out-of-focus foreground wire or cable crossing body"
+  },
+  {
+    "serial_number": 497,
+    "file_name": "hf_hard_both_walking_away_looking_back_over_shoulder_holding_large_umbrella_blocking_head_and_shoulders",
+    "pose": "walking away looking back over shoulder",
+    "occlusion": "holding large umbrella blocking head and shoulders"
+  },
+  {
+    "serial_number": 498,
+    "file_name": "hf_hard_both_arms_crossed_overhead_blocking_face_extreme_closeup_showing_only_face_and_partial_shoulders",
+    "pose": "arms crossed overhead blocking face",
+    "occlusion": "extreme closeup showing only face and partial shoulders"
+  },
+  {
+    "serial_number": 499,
+    "file_name": "hf_hard_both_leaning_sideways_torso_bend_leaning_over_car_hood_blocking_lower_half_of_body",
+    "pose": "leaning sideways torso bend",
+    "occlusion": "leaning over car hood blocking lower half of body"
+  },
+  {
+    "serial_number": 500,
+    "file_name": "hf_hard_both_reaching_up_and_back_arched_spine_arms_laden_with_stacked_books_blocking_mid-body",
+    "pose": "reaching up and back arched spine",
+    "occlusion": "arms laden with stacked books blocking mid-body"
+  },
+  {
+    "serial_number": 501,
+    "file_name": "hf_hard_both_standing_on_toes_arms_raised_partially_obscured_by_hanging_vines",
+    "pose": "standing on toes arms raised",
+    "occlusion": "partially obscured by hanging vines"
+  },
+  {
+    "serial_number": 502,
+    "file_name": "hf_hard_both_deep_squat_heels_lifted_standing_in_tall_corn_stalks_obscuring_body",
+    "pose": "deep squat heels lifted",
+    "occlusion": "standing in tall corn stalks obscuring body"
+  },
+  {
+    "serial_number": 503,
+    "file_name": "hf_hard_both_walking_fast_with_exaggerated_arm_swing_blurred_foreground_fence_post_partially_obscuring_hip",
+    "pose": "walking fast with exaggerated arm swing",
+    "occlusion": "blurred foreground fence post partially obscuring hip"
+  },
+  {
+    "serial_number": 504,
+    "file_name": "hf_hard_both_extreme_twisting_reach_overhead_with_bent_back_knee_head_blocked_by_low_hanging_awning_edge",
+    "pose": "extreme twisting reach overhead with bent back knee",
+    "occlusion": "head blocked by low hanging awning edge"
+  },
+  {
+    "serial_number": 505,
+    "file_name": "hf_hard_both_walking_with_head_turned_sharply_to_one_side_partially_obscured_by_hanging_beads_or_curtain",
+    "pose": "walking with head turned sharply to one side",
+    "occlusion": "partially obscured by hanging beads or curtain"
+  },
+  {
+    "serial_number": 506,
+    "file_name": "hf_hard_both_yoga_downward_dog_legs_visible_bulky_hazmat_suit_obscuring_body_form",
+    "pose": "yoga downward dog legs visible",
+    "occlusion": "bulky hazmat suit obscuring body form"
+  },
+  {
+    "serial_number": 507,
+    "file_name": "hf_hard_both_extreme_twisting_reach_overhead_with_bent_back_knee_double_mirror_reflection_creating_multiple_overlapping_images",
+    "pose": "extreme twisting reach overhead with bent back knee",
+    "occlusion": "double mirror reflection creating multiple overlapping images"
+  },
+  {
+    "serial_number": 508,
+    "file_name": "hf_hard_both_ballet-inspired_arabesque_arms_extended_full-length_heavy_coat_obscuring_entire_body_silhouette",
+    "pose": "ballet-inspired arabesque arms extended",
+    "occlusion": "full-length heavy coat obscuring entire body silhouette"
+  },
+  {
+    "serial_number": 509,
+    "file_name": "hf_hard_both_leaning_backward_unsupported_carrying_amplifier_blocking_one_side_of_body",
+    "pose": "leaning backward unsupported",
+    "occlusion": "carrying amplifier blocking one side of body"
+  },
+  {
+    "serial_number": 510,
+    "file_name": "hf_hard_both_standing_one_leg_extended_to_the_side_tree_or_foliage_blocking_body_parts",
+    "pose": "standing one leg extended to the side",
+    "occlusion": "tree or foliage blocking body parts"
+  },
+  {
+    "serial_number": 511,
+    "file_name": "hf_hard_both_standing_deep_forward_lean_from_hips_arms_behind_pushing_full_luggage_trolley_blocking_lower_body",
+    "pose": "standing deep forward lean from hips arms behind",
+    "occlusion": "pushing full luggage trolley blocking lower body"
+  },
+  {
+    "serial_number": 512,
+    "file_name": "hf_hard_both_carrying_object_across_chest_thick_winter_coveralls_obscuring_body_shape",
+    "pose": "carrying object across chest",
+    "occlusion": "thick winter coveralls obscuring body shape"
+  },
+  {
+    "serial_number": 513,
+    "file_name": "hf_hard_both_lying_on_back_knees_to_chest_arms_hugging_shins_arms_laden_with_stacked_books_blocking_mid-body",
+    "pose": "lying on back knees to chest arms hugging shins",
+    "occlusion": "arms laden with stacked books blocking mid-body"
+  },
+  {
+    "serial_number": 514,
+    "file_name": "hf_hard_both_stairs_climb_mid-step_standing_behind_fence_or_bars",
+    "pose": "stairs climb mid-step",
+    "occlusion": "standing behind fence or bars"
+  },
+  {
+    "serial_number": 515,
+    "file_name": "hf_hard_both_sitting_sideways_on_chair_backrest_carrying_bundled_firewood_across_arms_blocking_torso",
+    "pose": "sitting sideways on chair backrest",
+    "occlusion": "carrying bundled firewood across arms blocking torso"
+  },
+  {
+    "serial_number": 516,
+    "file_name": "hf_hard_both_carrying_object_across_chest_only_legs_visible_under_long_dividing_table",
+    "pose": "carrying object across chest",
+    "occlusion": "only legs visible under long dividing table"
+  },
+  {
+    "serial_number": 517,
+    "file_name": "hf_hard_both_leaning_far_forward_body_nearly_horizontal_blurred_foreground_awning_edge_blocking_upper_frame",
+    "pose": "leaning far forward body nearly horizontal",
+    "occlusion": "blurred foreground awning edge blocking upper frame"
+  },
+  {
+    "serial_number": 518,
+    "file_name": "hf_hard_both_lying_prone_propped_on_elbows_holding_large_art_canvas_blocking_chest_and_face",
+    "pose": "lying prone propped on elbows",
+    "occlusion": "holding large art canvas blocking chest and face"
+  },
+  {
+    "serial_number": 519,
+    "file_name": "hf_hard_both_sitting_sideways_on_chair_backrest_cropped_at_unusual_angle_showing_shoulder_to_opposite_hip",
+    "pose": "sitting sideways on chair backrest",
+    "occlusion": "cropped at unusual angle showing shoulder to opposite hip"
+  },
+  {
+    "serial_number": 520,
+    "file_name": "hf_hard_both_seated_cross-leg_one_foot_forward_out-of-focus_foreground_wire_or_cable_crossing_body",
+    "pose": "seated cross-leg one foot forward",
+    "occlusion": "out-of-focus foreground wire or cable crossing body"
+  },
+  {
+    "serial_number": 521,
+    "file_name": "hf_hard_both_off-balance_stumble_recovery_gripping_large_sporting_equipment_golf_bag_ski_poles_beside_body",
+    "pose": "off-balance stumble recovery",
+    "occlusion": "gripping large sporting equipment (golf bag, ski poles) beside body"
+  },
+  {
+    "serial_number": 522,
+    "file_name": "hf_hard_both_pushing_heavy_object_both_arms_extended_forward_gripping_large_sporting_equipment_golf_bag_ski_poles_beside_body",
+    "pose": "pushing heavy object both arms extended forward",
+    "occlusion": "gripping large sporting equipment (golf bag, ski poles) beside body"
+  },
+  {
+    "serial_number": 523,
+    "file_name": "hf_hard_both_pop-and-lock_frozen_pose_angled_torso_blurred_foreground_shopping_cart_blocking_side",
+    "pose": "pop-and-lock frozen pose angled torso",
+    "occlusion": "blurred foreground shopping cart blocking side"
+  },
+  {
+    "serial_number": 524,
+    "file_name": "hf_hard_both_walking_away_looking_back_over_shoulder_standing_behind_ornate_room_divider_screen",
+    "pose": "walking away looking back over shoulder",
+    "occlusion": "standing behind ornate room divider screen"
+  },
+  {
+    "serial_number": 525,
+    "file_name": "hf_hard_both_kneeling_with_torso_twist_and_reach_standing_behind_shower_glass_with_texture_obscuring_body",
+    "pose": "kneeling with torso twist and reach",
+    "occlusion": "standing behind shower glass with texture obscuring body"
+  },
+  {
+    "serial_number": 526,
+    "file_name": "hf_hard_both_running_diagonal_across_frame_reflection_in_water_surface_fragmenting_body_image",
+    "pose": "running diagonal across frame",
+    "occlusion": "reflection in water surface fragmenting body image"
+  }
+]

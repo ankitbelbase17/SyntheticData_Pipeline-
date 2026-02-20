@@ -1,0 +1,2707 @@
+[
+  {
+    "serial_number": 1,
+    "file_name": "hf_pose_standing_straight",
+    "pose": "standing straight"
+  },
+  {
+    "serial_number": 2,
+    "file_name": "hf_pose_standing_casually",
+    "pose": "standing casually"
+  },
+  {
+    "serial_number": 3,
+    "file_name": "hf_pose_arms_at_sides",
+    "pose": "arms at sides"
+  },
+  {
+    "serial_number": 4,
+    "file_name": "hf_pose_weight_shifted_to_one_leg",
+    "pose": "weight shifted to one leg"
+  },
+  {
+    "serial_number": 5,
+    "file_name": "hf_pose_hands_in_pockets",
+    "pose": "hands in pockets"
+  },
+  {
+    "serial_number": 6,
+    "file_name": "hf_pose_arms_crossed",
+    "pose": "arms crossed"
+  },
+  {
+    "serial_number": 7,
+    "file_name": "hf_pose_one_hand_on_hip",
+    "pose": "one hand on hip"
+  },
+  {
+    "serial_number": 8,
+    "file_name": "hf_pose_both_hands_on_hips",
+    "pose": "both hands on hips"
+  },
+  {
+    "serial_number": 9,
+    "file_name": "hf_pose_slight_twist_at_waist",
+    "pose": "slight twist at waist"
+  },
+  {
+    "serial_number": 10,
+    "file_name": "hf_pose_looking_over_shoulder",
+    "pose": "looking over shoulder"
+  },
+  {
+    "serial_number": 11,
+    "file_name": "hf_pose_standing_with_feet_shoulder-width_apart",
+    "pose": "standing with feet shoulder-width apart"
+  },
+  {
+    "serial_number": 12,
+    "file_name": "hf_pose_standing_with_one_foot_forward",
+    "pose": "standing with one foot forward"
+  },
+  {
+    "serial_number": 13,
+    "file_name": "hf_pose_standing_with_ankles_crossed",
+    "pose": "standing with ankles crossed"
+  },
+  {
+    "serial_number": 14,
+    "file_name": "hf_pose_standing_with_hands_clasped_in_front",
+    "pose": "standing with hands clasped in front"
+  },
+  {
+    "serial_number": 15,
+    "file_name": "hf_pose_standing_with_hands_behind_back",
+    "pose": "standing with hands behind back"
+  },
+  {
+    "serial_number": 16,
+    "file_name": "hf_pose_standing_with_thumbs_in_belt_loops",
+    "pose": "standing with thumbs in belt loops"
+  },
+  {
+    "serial_number": 17,
+    "file_name": "hf_pose_standing_relaxed_one_knee_slightly_bent",
+    "pose": "standing relaxed one knee slightly bent"
+  },
+  {
+    "serial_number": 18,
+    "file_name": "hf_pose_standing_with_arms_loosely_behind_back",
+    "pose": "standing with arms loosely behind back"
+  },
+  {
+    "serial_number": 19,
+    "file_name": "hf_pose_walking_forward",
+    "pose": "walking forward"
+  },
+  {
+    "serial_number": 20,
+    "file_name": "hf_pose_mid-stride",
+    "pose": "mid-stride"
+  },
+  {
+    "serial_number": 21,
+    "file_name": "hf_pose_stepping_to_the_side",
+    "pose": "stepping to the side"
+  },
+  {
+    "serial_number": 22,
+    "file_name": "hf_pose_turning_to_look_back",
+    "pose": "turning to look back"
+  },
+  {
+    "serial_number": 23,
+    "file_name": "hf_pose_walking_upstairs",
+    "pose": "walking upstairs"
+  },
+  {
+    "serial_number": 24,
+    "file_name": "hf_pose_walking_downstairs",
+    "pose": "walking downstairs"
+  },
+  {
+    "serial_number": 25,
+    "file_name": "hf_pose_strolling_with_one_hand_swinging",
+    "pose": "strolling with one hand swinging"
+  },
+  {
+    "serial_number": 26,
+    "file_name": "hf_pose_taking_a_step_forward_with_arms_relaxed",
+    "pose": "taking a step forward with arms relaxed"
+  },
+  {
+    "serial_number": 27,
+    "file_name": "hf_pose_simple_contrapposto_pose",
+    "pose": "simple contrapposto pose"
+  },
+  {
+    "serial_number": 28,
+    "file_name": "hf_pose_pivoting_on_one_foot",
+    "pose": "pivoting on one foot"
+  },
+  {
+    "serial_number": 29,
+    "file_name": "hf_pose_pointing_forward",
+    "pose": "pointing forward"
+  },
+  {
+    "serial_number": 30,
+    "file_name": "hf_pose_waving_hand",
+    "pose": "waving hand"
+  },
+  {
+    "serial_number": 31,
+    "file_name": "hf_pose_arms_raised_in_celebration",
+    "pose": "arms raised in celebration"
+  },
+  {
+    "serial_number": 32,
+    "file_name": "hf_pose_thinking_pose_hand_on_chin",
+    "pose": "thinking pose hand on chin"
+  },
+  {
+    "serial_number": 33,
+    "file_name": "hf_pose_listening_pose_hand_to_ear",
+    "pose": "listening pose hand to ear"
+  },
+  {
+    "serial_number": 34,
+    "file_name": "hf_pose_face_palm",
+    "pose": "face palm"
+  },
+  {
+    "serial_number": 35,
+    "file_name": "hf_pose_one_arm_raised",
+    "pose": "one arm raised"
+  },
+  {
+    "serial_number": 36,
+    "file_name": "hf_pose_stretching_arms_overhead",
+    "pose": "stretching arms overhead"
+  },
+  {
+    "serial_number": 37,
+    "file_name": "hf_pose_reaching_forward",
+    "pose": "reaching forward"
+  },
+  {
+    "serial_number": 38,
+    "file_name": "hf_pose_arms_spread_wide",
+    "pose": "arms spread wide"
+  },
+  {
+    "serial_number": 39,
+    "file_name": "hf_pose_both_arms_reaching_upward_slightly",
+    "pose": "both arms reaching upward slightly"
+  },
+  {
+    "serial_number": 40,
+    "file_name": "hf_pose_one_hand_extended_palm_out_stop_gesture",
+    "pose": "one hand extended palm out stop gesture"
+  },
+  {
+    "serial_number": 41,
+    "file_name": "hf_pose_arms_loosely_folded_at_stomach",
+    "pose": "arms loosely folded at stomach"
+  },
+  {
+    "serial_number": 42,
+    "file_name": "hf_pose_resting_chin_on_hands",
+    "pose": "resting chin on hands"
+  },
+  {
+    "serial_number": 43,
+    "file_name": "hf_pose_snapping_fingers",
+    "pose": "snapping fingers"
+  },
+  {
+    "serial_number": 44,
+    "file_name": "hf_pose_holding_out_open_hand_palm_up",
+    "pose": "holding out open hand palm up"
+  },
+  {
+    "serial_number": 45,
+    "file_name": "hf_pose_fingers_in_gun_pose",
+    "pose": "fingers in gun pose"
+  },
+  {
+    "serial_number": 46,
+    "file_name": "hf_pose_army_salutation_pose",
+    "pose": "army salutation pose"
+  },
+  {
+    "serial_number": 47,
+    "file_name": "hf_pose_hands_clasped_above_head",
+    "pose": "hands clasped above head"
+  },
+  {
+    "serial_number": 48,
+    "file_name": "hf_pose_one_hand_on_chest",
+    "pose": "one hand on chest"
+  },
+  {
+    "serial_number": 49,
+    "file_name": "hf_pose_sitting_on_chair",
+    "pose": "sitting on chair"
+  },
+  {
+    "serial_number": 50,
+    "file_name": "hf_pose_sitting_cross-legged",
+    "pose": "sitting cross-legged"
+  },
+  {
+    "serial_number": 51,
+    "file_name": "hf_pose_perched_on_stool",
+    "pose": "perched on stool"
+  },
+  {
+    "serial_number": 52,
+    "file_name": "hf_pose_sitting_with_legs_stretched_forward",
+    "pose": "sitting with legs stretched forward"
+  },
+  {
+    "serial_number": 53,
+    "file_name": "hf_pose_sitting_with_both_hands_on_knees",
+    "pose": "sitting with both hands on knees"
+  },
+  {
+    "serial_number": 54,
+    "file_name": "hf_pose_sitting_upright_arms_on_armrests",
+    "pose": "sitting upright arms on armrests"
+  },
+  {
+    "serial_number": 55,
+    "file_name": "hf_pose_sitting_forward_leaning_elbows_on_knees",
+    "pose": "sitting forward leaning elbows on knees"
+  },
+  {
+    "serial_number": 56,
+    "file_name": "hf_pose_sitting_with_one_leg_crossed_over_the_other",
+    "pose": "sitting with one leg crossed over the other"
+  },
+  {
+    "serial_number": 57,
+    "file_name": "hf_pose_sitting_on_edge_of_chair",
+    "pose": "sitting on edge of chair"
+  },
+  {
+    "serial_number": 58,
+    "file_name": "hf_pose_sitting_with_hands_in_lap",
+    "pose": "sitting with hands in lap"
+  },
+  {
+    "serial_number": 59,
+    "file_name": "hf_pose_sitting_on_bench_looking_forward",
+    "pose": "sitting on bench looking forward"
+  },
+  {
+    "serial_number": 60,
+    "file_name": "hf_pose_sitting_with_one_arm_resting_on_chair_back",
+    "pose": "sitting with one arm resting on chair back"
+  },
+  {
+    "serial_number": 61,
+    "file_name": "hf_pose_leaning_against_wall",
+    "pose": "leaning against wall"
+  },
+  {
+    "serial_number": 62,
+    "file_name": "hf_pose_leaning_on_railing",
+    "pose": "leaning on railing"
+  },
+  {
+    "serial_number": 63,
+    "file_name": "hf_pose_leaning_forward_with_hands_on_knees",
+    "pose": "leaning forward with hands on knees"
+  },
+  {
+    "serial_number": 64,
+    "file_name": "hf_pose_leaning_against_wall_arms_crossed",
+    "pose": "leaning against wall arms crossed"
+  },
+  {
+    "serial_number": 65,
+    "file_name": "hf_pose_leaning_on_counter_with_both_forearms",
+    "pose": "leaning on counter with both forearms"
+  },
+  {
+    "serial_number": 66,
+    "file_name": "hf_pose_leaning_on_wall_one_shoulder_touching",
+    "pose": "leaning on wall one shoulder touching"
+  },
+  {
+    "serial_number": 67,
+    "file_name": "hf_pose_leaning_on_table_with_one_elbow",
+    "pose": "leaning on table with one elbow"
+  },
+  {
+    "serial_number": 68,
+    "file_name": "hf_pose_kneeling_on_one_knee",
+    "pose": "kneeling on one knee"
+  },
+  {
+    "serial_number": 69,
+    "file_name": "hf_pose_casual_lunge",
+    "pose": "casual lunge"
+  },
+  {
+    "serial_number": 70,
+    "file_name": "hf_pose_squatting",
+    "pose": "squatting"
+  },
+  {
+    "serial_number": 71,
+    "file_name": "hf_pose_lying_on_side",
+    "pose": "lying on side"
+  },
+  {
+    "serial_number": 72,
+    "file_name": "hf_pose_kneeling_upright_on_both_knees",
+    "pose": "kneeling upright on both knees"
+  },
+  {
+    "serial_number": 73,
+    "file_name": "hf_pose_sitting_on_floor_with_knees_bent_feet_flat",
+    "pose": "sitting on floor with knees bent feet flat"
+  },
+  {
+    "serial_number": 74,
+    "file_name": "hf_pose_sitting_on_floor_with_legs_to_one_side",
+    "pose": "sitting on floor with legs to one side"
+  },
+  {
+    "serial_number": 75,
+    "file_name": "hf_pose_crouching_slightly_with_hands_on_thighs",
+    "pose": "crouching slightly with hands on thighs"
+  },
+  {
+    "serial_number": 76,
+    "file_name": "hf_pose_jumping",
+    "pose": "jumping"
+  },
+  {
+    "serial_number": 77,
+    "file_name": "hf_pose_running",
+    "pose": "running"
+  },
+  {
+    "serial_number": 78,
+    "file_name": "hf_pose_bending_slightly_forward",
+    "pose": "bending slightly forward"
+  },
+  {
+    "serial_number": 79,
+    "file_name": "hf_pose_yoga_tree_pose",
+    "pose": "yoga tree pose"
+  },
+  {
+    "serial_number": 80,
+    "file_name": "hf_pose_yoga_warrior_pose",
+    "pose": "yoga warrior pose"
+  },
+  {
+    "serial_number": 81,
+    "file_name": "hf_pose_namaste_prayer_pose",
+    "pose": "namaste prayer pose"
+  },
+  {
+    "serial_number": 82,
+    "file_name": "hf_pose_dancing_freestyle",
+    "pose": "dancing freestyle"
+  },
+  {
+    "serial_number": 83,
+    "file_name": "hf_pose_looking_down_at_phone",
+    "pose": "looking down at phone"
+  },
+  {
+    "serial_number": 84,
+    "file_name": "hf_pose_carrying_object_with_one_hand",
+    "pose": "carrying object with one hand"
+  },
+  {
+    "serial_number": 85,
+    "file_name": "hf_pose_stretching_one_arm_across_chest",
+    "pose": "stretching one arm across chest"
+  },
+  {
+    "serial_number": 86,
+    "file_name": "hf_pose_one_hand_gripping_opposite_forearm",
+    "pose": "one hand gripping opposite forearm"
+  },
+  {
+    "serial_number": 87,
+    "file_name": "hf_pose_tying_shoelace_kneeling",
+    "pose": "tying shoelace kneeling"
+  },
+  {
+    "serial_number": 88,
+    "file_name": "hf_pose_reaching_into_bag_at_side",
+    "pose": "reaching into bag at side"
+  },
+  {
+    "serial_number": 89,
+    "file_name": "hf_pose_holding_both_hands_out_in_shrug_gesture",
+    "pose": "holding both hands out in shrug gesture"
+  },
+  {
+    "serial_number": 90,
+    "file_name": "hf_pose_arms_bent_at_elbow_hands_at_waist",
+    "pose": "arms bent at elbow hands at waist"
+  },
+  {
+    "serial_number": 91,
+    "file_name": "hf_pose_light_jog_arms_at_sides",
+    "pose": "light jog arms at sides"
+  },
+  {
+    "serial_number": 92,
+    "file_name": "hf_pose_stepping_up_onto_curb",
+    "pose": "stepping up onto curb"
+  },
+  {
+    "serial_number": 93,
+    "file_name": "hf_pose_standing_with_both_hands_pulling_open_layered_top",
+    "pose": "standing with both hands pulling open layered top"
+  },
+  {
+    "serial_number": 94,
+    "file_name": "hf_pose_standing_with_one_hand_raised_touching_hair",
+    "pose": "standing with one hand raised touching hair"
+  },
+  {
+    "serial_number": 95,
+    "file_name": "hf_pose_sitting_on_steps_with_elbows_on_knees",
+    "pose": "sitting on steps with elbows on knees"
+  },
+  {
+    "serial_number": 96,
+    "file_name": "hf_pose_standing_with_arms_gently_swinging_forward",
+    "pose": "standing with arms gently swinging forward"
+  },
+  {
+    "serial_number": 97,
+    "file_name": "hf_pose_hands_on_lower_back_standing_upright",
+    "pose": "hands on lower back standing upright"
+  },
+  {
+    "serial_number": 98,
+    "file_name": "hf_pose_standing_on_tiptoes_slightly_reaching_up",
+    "pose": "standing on tiptoes slightly reaching up"
+  },
+  {
+    "serial_number": 99,
+    "file_name": "hf_pose_crossing_arms_low_at_stomach_relaxed",
+    "pose": "crossing arms low at stomach relaxed"
+  },
+  {
+    "serial_number": 100,
+    "file_name": "hf_pose_standing_profile_head_turned_toward_camera",
+    "pose": "standing profile head turned toward camera"
+  },
+  {
+    "serial_number": 101,
+    "file_name": "hf_pose_casual_stance_weight_on_back_foot_arms_loose",
+    "pose": "casual stance weight on back foot arms loose"
+  },
+  {
+    "serial_number": 102,
+    "file_name": "hf_occ_holding_small_package_or_parcel",
+    "occlusion": "holding small package or parcel"
+  },
+  {
+    "serial_number": 103,
+    "file_name": "hf_occ_holding_cameradslr_in_front_of_face",
+    "occlusion": "holding camera/DSLR in front of face"
+  },
+  {
+    "serial_number": 104,
+    "file_name": "hf_occ_foreground_balloon_partially_blocking_upper_body",
+    "occlusion": "foreground balloon partially blocking upper body"
+  },
+  {
+    "serial_number": 105,
+    "file_name": "hf_occ_wearing_fedora",
+    "occlusion": "wearing fedora"
+  },
+  {
+    "serial_number": 106,
+    "file_name": "hf_occ_stroller_or_baby_carriage_in_front_blocking_lower_torso",
+    "occlusion": "stroller or baby carriage in front blocking lower torso"
+  },
+  {
+    "serial_number": 107,
+    "file_name": "hf_occ_frame_cutting_off_at_ankle_level",
+    "occlusion": "frame cutting off at ankle level"
+  },
+  {
+    "serial_number": 108,
+    "file_name": "hf_occ_single-strap_bag_over_one_shoulder",
+    "occlusion": "single-strap bag over one shoulder"
+  },
+  {
+    "serial_number": 109,
+    "file_name": "hf_occ_holding_small_notebook",
+    "occlusion": "holding small notebook"
+  },
+  {
+    "serial_number": 110,
+    "file_name": "hf_occ_holding_gardening_gloves",
+    "occlusion": "holding gardening gloves"
+  },
+  {
+    "serial_number": 111,
+    "file_name": "hf_occ_wearing_name_tag",
+    "occlusion": "wearing name tag"
+  },
+  {
+    "serial_number": 112,
+    "file_name": "hf_occ_wearing_crossbody_bag",
+    "occlusion": "wearing crossbody bag"
+  },
+  {
+    "serial_number": 113,
+    "file_name": "hf_occ_insulated_lunch_bag_in_hand",
+    "occlusion": "insulated lunch bag in hand"
+  },
+  {
+    "serial_number": 114,
+    "file_name": "hf_occ_wearing_wristwatch",
+    "occlusion": "wearing wristwatch"
+  },
+  {
+    "serial_number": 115,
+    "file_name": "hf_occ_standing_behind_baby_gate_blocking_lower_legs",
+    "occlusion": "standing behind baby gate blocking lower legs"
+  },
+  {
+    "serial_number": 116,
+    "file_name": "hf_occ_holding_wrapped_gift_small",
+    "occlusion": "holding wrapped gift (small)"
+  },
+  {
+    "serial_number": 117,
+    "file_name": "hf_occ_raised_arm_with_fabric_covering_wrist_and_hand",
+    "occlusion": "raised arm with fabric covering wrist and hand"
+  },
+  {
+    "serial_number": 118,
+    "file_name": "hf_occ_wearing_fitness_tracker",
+    "occlusion": "wearing fitness tracker"
+  },
+  {
+    "serial_number": 119,
+    "file_name": "hf_occ_holding_can_of_soda",
+    "occlusion": "holding can of soda"
+  },
+  {
+    "serial_number": 120,
+    "file_name": "hf_occ_holding_keys_in_hand",
+    "occlusion": "holding keys in hand"
+  },
+  {
+    "serial_number": 121,
+    "file_name": "hf_occ_foreground_hanging_plant_partially_blocking_face",
+    "occlusion": "foreground hanging plant partially blocking face"
+  },
+  {
+    "serial_number": 122,
+    "file_name": "hf_occ_standing_behind_tall_reception_counter_visible_from_shoulders_up",
+    "occlusion": "standing behind tall reception counter visible from shoulders up"
+  },
+  {
+    "serial_number": 123,
+    "file_name": "hf_occ_wearing_ankle_bracelet_visible",
+    "occlusion": "wearing ankle bracelet visible"
+  },
+  {
+    "serial_number": 124,
+    "file_name": "hf_occ_standing_behind_half-height_wall",
+    "occlusion": "standing behind half-height wall"
+  },
+  {
+    "serial_number": 125,
+    "file_name": "hf_occ_holding_protein_bar",
+    "occlusion": "holding protein bar"
+  },
+  {
+    "serial_number": 126,
+    "file_name": "hf_occ_wearing_beret",
+    "occlusion": "wearing beret"
+  },
+  {
+    "serial_number": 127,
+    "file_name": "hf_occ_standing_in_doorway_frame_edges_clipping_shoulders",
+    "occlusion": "standing in doorway frame edges clipping shoulders"
+  },
+  {
+    "serial_number": 128,
+    "file_name": "hf_occ_draped_outer_layer_over_forearm_partially_blocking_hip",
+    "occlusion": "draped outer layer over forearm partially blocking hip"
+  },
+  {
+    "serial_number": 129,
+    "file_name": "hf_occ_standing_next_to_bicycle_blocking_one_leg",
+    "occlusion": "standing next to bicycle blocking one leg"
+  },
+  {
+    "serial_number": 130,
+    "file_name": "hf_occ_wearing_blazer_unbuttoned",
+    "occlusion": "wearing blazer unbuttoned"
+  },
+  {
+    "serial_number": 131,
+    "file_name": "hf_occ_long_fabric_end_hanging_over_chest_partially_obscuring_torso",
+    "occlusion": "long fabric end hanging over chest partially obscuring torso"
+  },
+  {
+    "serial_number": 132,
+    "file_name": "hf_occ_head_partially_behind_door_frame_or_window_edge",
+    "occlusion": "head partially behind door frame or window edge"
+  },
+  {
+    "serial_number": 133,
+    "file_name": "hf_occ_small_cooler_bag_held_at_side",
+    "occlusion": "small cooler bag held at side"
+  },
+  {
+    "serial_number": 134,
+    "file_name": "hf_occ_wearing_suspenders",
+    "occlusion": "wearing suspenders"
+  },
+  {
+    "serial_number": 135,
+    "file_name": "hf_occ_fanny_pack_worn_at_waist",
+    "occlusion": "fanny pack worn at waist"
+  },
+  {
+    "serial_number": 136,
+    "file_name": "hf_occ_long_fabric_draped_loosely_over_both_shoulders",
+    "occlusion": "long fabric draped loosely over both shoulders"
+  },
+  {
+    "serial_number": 137,
+    "file_name": "hf_occ_hands_partially_hidden_by_an_object_eg_bag_cup",
+    "occlusion": "hands partially hidden by an object (e.g., bag, cup)"
+  },
+  {
+    "serial_number": 138,
+    "file_name": "hf_occ_reusable_produce_bag_in_hand",
+    "occlusion": "reusable produce bag in hand"
+  },
+  {
+    "serial_number": 139,
+    "file_name": "hf_occ_standing_in_shallow_water_obscuring_feet_and_ankles",
+    "occlusion": "standing in shallow water obscuring feet and ankles"
+  },
+  {
+    "serial_number": 140,
+    "file_name": "hf_occ_standing_at_checkout_counter_blocking_waist_down",
+    "occlusion": "standing at checkout counter blocking waist down"
+  },
+  {
+    "serial_number": 141,
+    "file_name": "hf_occ_holding_water_bottle",
+    "occlusion": "holding water bottle"
+  },
+  {
+    "serial_number": 142,
+    "file_name": "hf_occ_holding_laptop_or_tablet_in_front",
+    "occlusion": "holding laptop or tablet in front"
+  },
+  {
+    "serial_number": 143,
+    "file_name": "hf_occ_holding_ice_cream_cone",
+    "occlusion": "holding ice cream cone"
+  },
+  {
+    "serial_number": 144,
+    "file_name": "hf_occ_holding_jump_rope",
+    "occlusion": "holding jump rope"
+  },
+  {
+    "serial_number": 145,
+    "file_name": "hf_occ_holding_travel_mug",
+    "occlusion": "holding travel mug"
+  },
+  {
+    "serial_number": 146,
+    "file_name": "hf_occ_small_suitcase_held_at_side",
+    "occlusion": "small suitcase held at side"
+  },
+  {
+    "serial_number": 147,
+    "file_name": "hf_occ_unzipped_top_layer_partially_open_at_front",
+    "occlusion": "unzipped top layer partially open at front"
+  },
+  {
+    "serial_number": 148,
+    "file_name": "hf_occ_drawstring_bag_on_back",
+    "occlusion": "drawstring bag on back"
+  },
+  {
+    "serial_number": 149,
+    "file_name": "hf_occ_standing_behind_glass_window_minor_reflectionobstruction",
+    "occlusion": "standing behind glass window (minor reflection/obstruction)"
+  },
+  {
+    "serial_number": 150,
+    "file_name": "hf_occ_paper_shopping_bag_with_handles_in_one_hand",
+    "occlusion": "paper shopping bag with handles in one hand"
+  },
+  {
+    "serial_number": 151,
+    "file_name": "hf_occ_gym_bag_on_one_shoulder",
+    "occlusion": "gym bag on one shoulder"
+  },
+  {
+    "serial_number": 152,
+    "file_name": "hf_occ_laptop_bag_strap_across_chest",
+    "occlusion": "laptop bag strap across chest"
+  },
+  {
+    "serial_number": 153,
+    "file_name": "hf_occ_holding_takeaway_food_bag",
+    "occlusion": "holding takeaway food bag"
+  },
+  {
+    "serial_number": 154,
+    "file_name": "hf_occ_wearing_belt_with_visible_buckle",
+    "occlusion": "wearing belt with visible buckle"
+  },
+  {
+    "serial_number": 155,
+    "file_name": "hf_occ_wearing_headband",
+    "occlusion": "wearing headband"
+  },
+  {
+    "serial_number": 156,
+    "file_name": "hf_occ_full_body_visible",
+    "occlusion": "full body visible"
+  },
+  {
+    "serial_number": 157,
+    "file_name": "hf_occ_wearing_bracelet",
+    "occlusion": "wearing bracelet"
+  },
+  {
+    "serial_number": 158,
+    "file_name": "hf_occ_holding_book",
+    "occlusion": "holding book"
+  },
+  {
+    "serial_number": 159,
+    "file_name": "hf_occ_wearing_earrings",
+    "occlusion": "wearing earrings"
+  },
+  {
+    "serial_number": 160,
+    "file_name": "hf_occ_wearing_headphones_around_neck",
+    "occlusion": "wearing headphones around neck"
+  },
+  {
+    "serial_number": 161,
+    "file_name": "hf_occ_wearing_ring_visible_on_hand",
+    "occlusion": "wearing ring visible on hand"
+  },
+  {
+    "serial_number": 162,
+    "file_name": "hf_occ_holding_pen_or_pencil",
+    "occlusion": "holding pen or pencil"
+  },
+  {
+    "serial_number": 163,
+    "file_name": "hf_occ_hair_covering_part_of_face",
+    "occlusion": "hair covering part of face"
+  },
+  {
+    "serial_number": 164,
+    "file_name": "hf_occ_standing_behind_parking_meter_blocking_leg",
+    "occlusion": "standing behind parking meter blocking leg"
+  },
+  {
+    "serial_number": 165,
+    "file_name": "hf_occ_wearing_smartwatch",
+    "occlusion": "wearing smartwatch"
+  },
+  {
+    "serial_number": 166,
+    "file_name": "hf_occ_foreground_plant_partially_blocking_body",
+    "occlusion": "foreground plant partially blocking body"
+  },
+  {
+    "serial_number": 167,
+    "file_name": "hf_occ_standing_beside_parked_scooter_blocking_one_leg",
+    "occlusion": "standing beside parked scooter blocking one leg"
+  },
+  {
+    "serial_number": 168,
+    "file_name": "hf_occ_holding_lip_balm_or_chapstick",
+    "occlusion": "holding lip balm or chapstick"
+  },
+  {
+    "serial_number": 169,
+    "file_name": "hf_occ_standing_partially_behind_open_door",
+    "occlusion": "standing partially behind open door"
+  },
+  {
+    "serial_number": 170,
+    "file_name": "hf_occ_wearing_vest_over_shirt",
+    "occlusion": "wearing vest over shirt"
+  },
+  {
+    "serial_number": 171,
+    "file_name": "hf_occ_wearing_light_shawl",
+    "occlusion": "wearing light shawl"
+  },
+  {
+    "serial_number": 172,
+    "file_name": "hf_occ_hand_on_cheek",
+    "occlusion": "hand on cheek"
+  },
+  {
+    "serial_number": 173,
+    "file_name": "hf_occ_wearing_necktie",
+    "occlusion": "wearing necktie"
+  },
+  {
+    "serial_number": 174,
+    "file_name": "hf_occ_cosmetics_bag_in_hand",
+    "occlusion": "cosmetics bag in hand"
+  },
+  {
+    "serial_number": 175,
+    "file_name": "hf_occ_wearing_cardigan_open",
+    "occlusion": "wearing cardigan open"
+  },
+  {
+    "serial_number": 176,
+    "file_name": "hf_occ_holding_small_bouquet_of_flowers",
+    "occlusion": "holding small bouquet of flowers"
+  },
+  {
+    "serial_number": 177,
+    "file_name": "hf_occ_holding_shopping_receipt_or_paper",
+    "occlusion": "holding shopping receipt or paper"
+  },
+  {
+    "serial_number": 178,
+    "file_name": "hf_occ_side_bag_with_wide_strap_crossing_chest_diagonally",
+    "occlusion": "side bag with wide strap crossing chest diagonally"
+  },
+  {
+    "serial_number": 179,
+    "file_name": "hf_occ_hand_touching_hair",
+    "occlusion": "hand touching hair"
+  },
+  {
+    "serial_number": 180,
+    "file_name": "hf_occ_hand_raised_near_face_mid-gesture",
+    "occlusion": "hand raised near face mid-gesture"
+  },
+  {
+    "serial_number": 181,
+    "file_name": "hf_occ_duffel_bag_held_at_side",
+    "occlusion": "duffel bag held at side"
+  },
+  {
+    "serial_number": 182,
+    "file_name": "hf_occ_open_layered_top_revealing_inner_layer",
+    "occlusion": "open layered top revealing inner layer"
+  },
+  {
+    "serial_number": 183,
+    "file_name": "hf_occ_wearing_newsboy_cap",
+    "occlusion": "wearing newsboy cap"
+  },
+  {
+    "serial_number": 184,
+    "file_name": "hf_occ_holding_dog_leash",
+    "occlusion": "holding dog leash"
+  },
+  {
+    "serial_number": 185,
+    "file_name": "hf_occ_wearing_necklace",
+    "occlusion": "wearing necklace"
+  },
+  {
+    "serial_number": 186,
+    "file_name": "hf_occ_car_door_open_partially_blocking_lower_body",
+    "occlusion": "car door open partially blocking lower body"
+  },
+  {
+    "serial_number": 187,
+    "file_name": "hf_occ_holding_spray_bottle",
+    "occlusion": "holding spray bottle"
+  },
+  {
+    "serial_number": 188,
+    "file_name": "hf_occ_bangs_covering_forehead",
+    "occlusion": "bangs covering forehead"
+  },
+  {
+    "serial_number": 189,
+    "file_name": "hf_occ_hand_near_ear_on_phone",
+    "occlusion": "hand near ear on phone"
+  },
+  {
+    "serial_number": 190,
+    "file_name": "hf_occ_wearing_lanyard_with_id",
+    "occlusion": "wearing lanyard with ID"
+  },
+  {
+    "serial_number": 191,
+    "file_name": "hf_occ_wearing_bucket_hat",
+    "occlusion": "wearing bucket hat"
+  },
+  {
+    "serial_number": 192,
+    "file_name": "hf_occ_reflection_on_glass_partially_obscuring_body",
+    "occlusion": "reflection on glass partially obscuring body"
+  },
+  {
+    "serial_number": 193,
+    "file_name": "hf_occ_hand_covering_mouth_while_speaking",
+    "occlusion": "hand covering mouth while speaking"
+  },
+  {
+    "serial_number": 194,
+    "file_name": "hf_occ_holding_boarding_pass",
+    "occlusion": "holding boarding pass"
+  },
+  {
+    "serial_number": 195,
+    "file_name": "hf_occ_standing_behind_shopping_cart_blocking_lower_body",
+    "occlusion": "standing behind shopping cart blocking lower body"
+  },
+  {
+    "serial_number": 196,
+    "file_name": "hf_occ_carrying_rolled_poster_tube_under_arm_across_torso",
+    "occlusion": "carrying rolled poster tube under arm across torso"
+  },
+  {
+    "serial_number": 197,
+    "file_name": "hf_occ_picnic_basket_held_in_one_hand",
+    "occlusion": "picnic basket held in one hand"
+  },
+  {
+    "serial_number": 198,
+    "file_name": "hf_occ_handheld_fan_partially_obscuring_lower_face",
+    "occlusion": "handheld fan partially obscuring lower face"
+  },
+  {
+    "serial_number": 199,
+    "file_name": "hf_occ_tote_bag_hanging_at_elbow",
+    "occlusion": "tote bag hanging at elbow"
+  },
+  {
+    "serial_number": 200,
+    "file_name": "hf_occ_beach_bag_on_shoulder",
+    "occlusion": "beach bag on shoulder"
+  },
+  {
+    "serial_number": 201,
+    "file_name": "hf_occ_standing_behind_market_stall_counter",
+    "occlusion": "standing behind market stall counter"
+  },
+  {
+    "serial_number": 202,
+    "file_name": "hf_occ_wearing_hairpin_or_clip",
+    "occlusion": "wearing hairpin or clip"
+  },
+  {
+    "serial_number": 203,
+    "file_name": "hf_occ_sitting_behind_table_with_table_blocking_lower_body",
+    "occlusion": "sitting behind table with table blocking lower body"
+  },
+  {
+    "serial_number": 204,
+    "file_name": "hf_occ_messenger_bag_worn_across_body",
+    "occlusion": "messenger bag worn across body"
+  },
+  {
+    "serial_number": 205,
+    "file_name": "hf_occ_holding_smartphone_charger_cable",
+    "occlusion": "holding smartphone charger cable"
+  },
+  {
+    "serial_number": 206,
+    "file_name": "hf_occ_seated_on_bar_stool_with_footrest_visible",
+    "occlusion": "seated on bar stool with footrest visible"
+  },
+  {
+    "serial_number": 207,
+    "file_name": "hf_occ_wearing_winter_scarf_loosely",
+    "occlusion": "wearing winter scarf loosely"
+  },
+  {
+    "serial_number": 208,
+    "file_name": "hf_occ_holding_small_plant_pot",
+    "occlusion": "holding small plant pot"
+  },
+  {
+    "serial_number": 209,
+    "file_name": "hf_occ_window_sill_partially_blocking_lower_body_from_outside_view",
+    "occlusion": "window sill partially blocking lower body from outside view"
+  },
+  {
+    "serial_number": 210,
+    "file_name": "hf_occ_neck-level_fabric_tube_pulled_down_below_chin",
+    "occlusion": "neck-level fabric tube pulled down below chin"
+  },
+  {
+    "serial_number": 211,
+    "file_name": "hf_occ_frame_cutting_off_at_mid-thigh",
+    "occlusion": "frame cutting off at mid-thigh"
+  },
+  {
+    "serial_number": 212,
+    "file_name": "hf_occ_wearing_bow_tie",
+    "occlusion": "wearing bow tie"
+  },
+  {
+    "serial_number": 213,
+    "file_name": "hf_occ_holding_folded_map",
+    "occlusion": "holding folded map"
+  },
+  {
+    "serial_number": 214,
+    "file_name": "hf_occ_foreground_street_sign_pole_partially_blocking_shoulder",
+    "occlusion": "foreground street sign pole partially blocking shoulder"
+  },
+  {
+    "serial_number": 215,
+    "file_name": "hf_occ_layered_open-front_top_over_inner_layer",
+    "occlusion": "layered open-front top over inner layer"
+  },
+  {
+    "serial_number": 216,
+    "file_name": "hf_occ_full-front_work_covering_tied_at_waist",
+    "occlusion": "full-front work covering tied at waist"
+  },
+  {
+    "serial_number": 217,
+    "file_name": "hf_occ_holding_map_or_pamphlet_partially_blocking_abdomen",
+    "occlusion": "holding map or pamphlet partially blocking abdomen"
+  },
+  {
+    "serial_number": 218,
+    "file_name": "hf_occ_wearing_wrist_sweatband",
+    "occlusion": "wearing wrist sweatband"
+  },
+  {
+    "serial_number": 219,
+    "file_name": "hf_occ_low_shrub_hedge_partially_blocking_feet_and_ankles",
+    "occlusion": "low shrub hedge partially blocking feet and ankles"
+  },
+  {
+    "serial_number": 220,
+    "file_name": "hf_occ_standing_behind_newsstand_counter",
+    "occlusion": "standing behind newsstand counter"
+  },
+  {
+    "serial_number": 221,
+    "file_name": "hf_occ_standing_at_edge_of_frame_with_one_side_cut",
+    "occlusion": "standing at edge of frame with one side cut"
+  },
+  {
+    "serial_number": 222,
+    "file_name": "hf_occ_low_fence_partially_blocking_lower_legs",
+    "occlusion": "low fence partially blocking lower legs"
+  },
+  {
+    "serial_number": 223,
+    "file_name": "hf_occ_diaper_bag_over_shoulder",
+    "occlusion": "diaper bag over shoulder"
+  },
+  {
+    "serial_number": 224,
+    "file_name": "hf_occ_wearing_visor",
+    "occlusion": "wearing visor"
+  },
+  {
+    "serial_number": 225,
+    "file_name": "hf_occ_holding_business_card",
+    "occlusion": "holding business card"
+  },
+  {
+    "serial_number": 226,
+    "file_name": "hf_occ_holding_resistance_band",
+    "occlusion": "holding resistance band"
+  },
+  {
+    "serial_number": 227,
+    "file_name": "hf_occ_neckline_folded_up_partially_covering_jaw",
+    "occlusion": "neckline folded up partially covering jaw"
+  },
+  {
+    "serial_number": 228,
+    "file_name": "hf_occ_holding_open_outer_layer_flap_partially_covering_torso",
+    "occlusion": "holding open outer layer flap partially covering torso"
+  },
+  {
+    "serial_number": 229,
+    "file_name": "hf_occ_foreground_umbrella_edge_clipping_frame",
+    "occlusion": "foreground umbrella edge clipping frame"
+  },
+  {
+    "serial_number": 230,
+    "file_name": "hf_occ_holding_small_juice_box",
+    "occlusion": "holding small juice box"
+  },
+  {
+    "serial_number": 231,
+    "file_name": "hf_occ_holding_folded_newspaper",
+    "occlusion": "holding folded newspaper"
+  },
+  {
+    "serial_number": 232,
+    "file_name": "hf_occ_briefcase_held_at_side",
+    "occlusion": "briefcase held at side"
+  },
+  {
+    "serial_number": 233,
+    "file_name": "hf_occ_holding_hand_trowel",
+    "occlusion": "holding hand trowel"
+  },
+  {
+    "serial_number": 234,
+    "file_name": "hf_occ_mask_covering_lower_face",
+    "occlusion": "mask covering lower face"
+  },
+  {
+    "serial_number": 235,
+    "file_name": "hf_occ_wearing_wide-brim_hat",
+    "occlusion": "wearing wide-brim hat"
+  },
+  {
+    "serial_number": 236,
+    "file_name": "hf_occ_holding_single_apple_or_fruit",
+    "occlusion": "holding single apple or fruit"
+  },
+  {
+    "serial_number": 237,
+    "file_name": "hf_occ_wearing_baseball_cap",
+    "occlusion": "wearing baseball cap"
+  },
+  {
+    "serial_number": 238,
+    "file_name": "hf_occ_wearing_ponytail_holder",
+    "occlusion": "wearing ponytail holder"
+  },
+  {
+    "serial_number": 239,
+    "file_name": "hf_occ_outdoor_bench_partially_blocking_lower_legs_when_seated",
+    "occlusion": "outdoor bench partially blocking lower legs when seated"
+  },
+  {
+    "serial_number": 240,
+    "file_name": "hf_occ_standing_at_shop_counter_blocking_lower_torso",
+    "occlusion": "standing at shop counter blocking lower torso"
+  },
+  {
+    "serial_number": 241,
+    "file_name": "hf_occ_holding_rolled_yoga_mat_under_arm",
+    "occlusion": "holding rolled yoga mat under arm"
+  },
+  {
+    "serial_number": 242,
+    "file_name": "hf_occ_standing_at_podium_blocking_lower_half_of_body",
+    "occlusion": "standing at podium blocking lower half of body"
+  },
+  {
+    "serial_number": 243,
+    "file_name": "hf_occ_standing_at_gas_pump_partially_blocking_leg",
+    "occlusion": "standing at gas pump partially blocking leg"
+  },
+  {
+    "serial_number": 244,
+    "file_name": "hf_occ_camera_bag_slung_over_shoulder",
+    "occlusion": "camera bag slung over shoulder"
+  },
+  {
+    "serial_number": 245,
+    "file_name": "hf_occ_carrying_shopping_bags",
+    "occlusion": "carrying shopping bags"
+  },
+  {
+    "serial_number": 246,
+    "file_name": "hf_occ_neck_cord_card_hanging_over_chest_area",
+    "occlusion": "neck cord card hanging over chest area"
+  },
+  {
+    "serial_number": 247,
+    "file_name": "hf_occ_holding_reusable_cup_with_lid",
+    "occlusion": "holding reusable cup with lid"
+  },
+  {
+    "serial_number": 248,
+    "file_name": "hf_occ_holding_tennis_ball",
+    "occlusion": "holding tennis ball"
+  },
+  {
+    "serial_number": 249,
+    "file_name": "hf_occ_hand_adjusting_glasses",
+    "occlusion": "hand adjusting glasses"
+  },
+  {
+    "serial_number": 250,
+    "file_name": "hf_occ_wearing_beanie_hat",
+    "occlusion": "wearing beanie hat"
+  },
+  {
+    "serial_number": 251,
+    "file_name": "hf_occ_small_rolling_carry-on_at_side",
+    "occlusion": "small rolling carry-on at side"
+  },
+  {
+    "serial_number": 252,
+    "file_name": "hf_occ_hair_falling_over_one_eye",
+    "occlusion": "hair falling over one eye"
+  },
+  {
+    "serial_number": 253,
+    "file_name": "hf_occ_holding_envelope_in_one_hand",
+    "occlusion": "holding envelope in one hand"
+  },
+  {
+    "serial_number": 254,
+    "file_name": "hf_occ_wearing_earmuffs",
+    "occlusion": "wearing earmuffs"
+  },
+  {
+    "serial_number": 255,
+    "file_name": "hf_occ_holding_compact_mirror",
+    "occlusion": "holding compact mirror"
+  },
+  {
+    "serial_number": 256,
+    "file_name": "hf_occ_earphones_with_wires_crossing_torso",
+    "occlusion": "earphones with wires crossing torso"
+  },
+  {
+    "serial_number": 257,
+    "file_name": "hf_occ_wearing_bandana",
+    "occlusion": "wearing bandana"
+  },
+  {
+    "serial_number": 258,
+    "file_name": "hf_occ_holding_umbrella",
+    "occlusion": "holding umbrella"
+  },
+  {
+    "serial_number": 259,
+    "file_name": "hf_occ_small_clutch_purse_held_in_both_hands",
+    "occlusion": "small clutch purse held in both hands"
+  },
+  {
+    "serial_number": 260,
+    "file_name": "hf_occ_layered_chains_hanging_over_neckline_area",
+    "occlusion": "layered chains hanging over neckline area"
+  },
+  {
+    "serial_number": 261,
+    "file_name": "hf_occ_wearing_sunglasses",
+    "occlusion": "wearing sunglasses"
+  },
+  {
+    "serial_number": 262,
+    "file_name": "hf_occ_loose_fabric_wrapped_loosely_around_neck",
+    "occlusion": "loose fabric wrapped loosely around neck"
+  },
+  {
+    "serial_number": 263,
+    "file_name": "hf_occ_holding_hat_in_hand_at_side",
+    "occlusion": "holding hat in hand at side"
+  },
+  {
+    "serial_number": 264,
+    "file_name": "hf_occ_neck_cord_with_card_hanging_at_chest",
+    "occlusion": "neck cord with card hanging at chest"
+  },
+  {
+    "serial_number": 265,
+    "file_name": "hf_occ_standing_behind_park_bench_backrest",
+    "occlusion": "standing behind park bench backrest"
+  },
+  {
+    "serial_number": 266,
+    "file_name": "hf_occ_standing_behind_display_stand_partially_blocking_torso",
+    "occlusion": "standing behind display stand partially blocking torso"
+  },
+  {
+    "serial_number": 267,
+    "file_name": "hf_occ_tool_bag_held_at_side",
+    "occlusion": "tool bag held at side"
+  },
+  {
+    "serial_number": 268,
+    "file_name": "hf_occ_partial_shadow_from_overhead_structure_on_lower_body",
+    "occlusion": "partial shadow from overhead structure on lower body"
+  },
+  {
+    "serial_number": 269,
+    "file_name": "hf_occ_holding_sandwich_in_wrapper",
+    "occlusion": "holding sandwich in wrapper"
+  },
+  {
+    "serial_number": 270,
+    "file_name": "hf_occ_standing_behind_luggage_rack_blocking_lower_body",
+    "occlusion": "standing behind luggage rack blocking lower body"
+  },
+  {
+    "serial_number": 271,
+    "file_name": "hf_occ_wearing_hat",
+    "occlusion": "wearing hat"
+  },
+  {
+    "serial_number": 272,
+    "file_name": "hf_occ_standing_behind_ticket_kiosk",
+    "occlusion": "standing behind ticket kiosk"
+  },
+  {
+    "serial_number": 273,
+    "file_name": "hf_occ_holding_pastry_or_donut",
+    "occlusion": "holding pastry or donut"
+  },
+  {
+    "serial_number": 274,
+    "file_name": "hf_occ_standing_behind_low_garden_wall_blocking_lower_legs",
+    "occlusion": "standing behind low garden wall blocking lower legs"
+  },
+  {
+    "serial_number": 275,
+    "file_name": "hf_occ_bicycle_helmet_hanging_from_one_hand",
+    "occlusion": "bicycle helmet hanging from one hand"
+  },
+  {
+    "serial_number": 276,
+    "file_name": "hf_occ_foreground_pole_or_post_partially_blocking_body",
+    "occlusion": "foreground pole or post partially blocking body"
+  },
+  {
+    "serial_number": 277,
+    "file_name": "hf_occ_wearing_nose_ring",
+    "occlusion": "wearing nose ring"
+  },
+  {
+    "serial_number": 278,
+    "file_name": "hf_occ_holding_gaming_controller",
+    "occlusion": "holding gaming controller"
+  },
+  {
+    "serial_number": 279,
+    "file_name": "hf_occ_wearing_pendant",
+    "occlusion": "wearing pendant"
+  },
+  {
+    "serial_number": 280,
+    "file_name": "hf_occ_standing_at_bar_counter_blocking_lower_body",
+    "occlusion": "standing at bar counter blocking lower body"
+  },
+  {
+    "serial_number": 281,
+    "file_name": "hf_occ_wheeled_travel_bag_in_front_partially_blocking_legs",
+    "occlusion": "wheeled travel bag in front partially blocking legs"
+  },
+  {
+    "serial_number": 282,
+    "file_name": "hf_occ_holding_frisbee",
+    "occlusion": "holding frisbee"
+  },
+  {
+    "serial_number": 283,
+    "file_name": "hf_occ_hair_tied_back_with_loose_strands",
+    "occlusion": "hair tied back with loose strands"
+  },
+  {
+    "serial_number": 284,
+    "file_name": "hf_occ_leaning_against_wall_with_shoulder_partially_obscured",
+    "occlusion": "leaning against wall with shoulder partially obscured"
+  },
+  {
+    "serial_number": 285,
+    "file_name": "hf_occ_small_signboard_or_poster_partially_blocking_lower_body",
+    "occlusion": "small signboard or poster partially blocking lower body"
+  },
+  {
+    "serial_number": 286,
+    "file_name": "hf_occ_wearing_badge_or_pin",
+    "occlusion": "wearing badge or pin"
+  },
+  {
+    "serial_number": 287,
+    "file_name": "hf_occ_carrying_backpack",
+    "occlusion": "carrying backpack"
+  },
+  {
+    "serial_number": 288,
+    "file_name": "hf_occ_holding_tv_remote",
+    "occlusion": "holding TV remote"
+  },
+  {
+    "serial_number": 289,
+    "file_name": "hf_occ_holding_gym_towel_in_hand",
+    "occlusion": "holding gym towel in hand"
+  },
+  {
+    "serial_number": 290,
+    "file_name": "hf_occ_holding_phone",
+    "occlusion": "holding phone"
+  },
+  {
+    "serial_number": 291,
+    "file_name": "hf_occ_holding_coffee_cup",
+    "occlusion": "holding coffee cup"
+  },
+  {
+    "serial_number": 292,
+    "file_name": "hf_occ_wearing_brooch",
+    "occlusion": "wearing brooch"
+  },
+  {
+    "serial_number": 293,
+    "file_name": "hf_occ_standing_behind_railing",
+    "occlusion": "standing behind railing"
+  },
+  {
+    "serial_number": 294,
+    "file_name": "hf_occ_holding_sunglasses_in_one_hand",
+    "occlusion": "holding sunglasses in one hand"
+  },
+  {
+    "serial_number": 295,
+    "file_name": "hf_occ_fingers_partially_covering_chin",
+    "occlusion": "fingers partially covering chin"
+  },
+  {
+    "serial_number": 296,
+    "file_name": "hf_occ_standing_at_information_desk_blocking_lower_half",
+    "occlusion": "standing at information desk blocking lower half"
+  },
+  {
+    "serial_number": 297,
+    "file_name": "hf_occ_seated_at_café_table_top_of_table_blocking_waist",
+    "occlusion": "seated at café table top of table blocking waist"
+  },
+  {
+    "serial_number": 298,
+    "file_name": "hf_occ_holding_reusable_grocery_bag_in_one_hand",
+    "occlusion": "holding reusable grocery bag in one hand"
+  },
+  {
+    "serial_number": 299,
+    "file_name": "hf_occ_standing_at_atm_machine_blocking_lower_torso",
+    "occlusion": "standing at ATM machine blocking lower torso"
+  },
+  {
+    "serial_number": 300,
+    "file_name": "hf_occ_holding_transit_card_or_metro_pass",
+    "occlusion": "holding transit card or metro pass"
+  },
+  {
+    "serial_number": 301,
+    "file_name": "hf_occ_holding_small_handbag",
+    "occlusion": "holding small handbag"
+  },
+  {
+    "serial_number": 302,
+    "file_name": "hf_both_lying_on_side_handheld_fan_partially_obscuring_lower_face",
+    "pose": "lying on side",
+    "occlusion": "handheld fan partially obscuring lower face"
+  },
+  {
+    "serial_number": 303,
+    "file_name": "hf_both_sitting_forward_leaning_elbows_on_knees_hair_tied_back_with_loose_strands",
+    "pose": "sitting forward leaning elbows on knees",
+    "occlusion": "hair tied back with loose strands"
+  },
+  {
+    "serial_number": 304,
+    "file_name": "hf_both_standing_casually_holding_earbuds_case",
+    "pose": "standing casually",
+    "occlusion": "holding earbuds case"
+  },
+  {
+    "serial_number": 305,
+    "file_name": "hf_both_looking_over_shoulder_standing_in_shallow_water_obscuring_feet_and_ankles",
+    "pose": "looking over shoulder",
+    "occlusion": "standing in shallow water obscuring feet and ankles"
+  },
+  {
+    "serial_number": 306,
+    "file_name": "hf_both_mid-stride_fingers_partially_covering_chin",
+    "pose": "mid-stride",
+    "occlusion": "fingers partially covering chin"
+  },
+  {
+    "serial_number": 307,
+    "file_name": "hf_both_hands_in_pockets_wearing_wide-brim_hat",
+    "pose": "hands in pockets",
+    "occlusion": "wearing wide-brim hat"
+  },
+  {
+    "serial_number": 308,
+    "file_name": "hf_both_crouching_slightly_with_hands_on_thighs_hair_falling_over_one_eye",
+    "pose": "crouching slightly with hands on thighs",
+    "occlusion": "hair falling over one eye"
+  },
+  {
+    "serial_number": 309,
+    "file_name": "hf_both_walking_forward_wearing_smartwatch",
+    "pose": "walking forward",
+    "occlusion": "wearing smartwatch"
+  },
+  {
+    "serial_number": 310,
+    "file_name": "hf_both_standing_relaxed_one_knee_slightly_bent_holding_book",
+    "pose": "standing relaxed one knee slightly bent",
+    "occlusion": "holding book"
+  },
+  {
+    "serial_number": 311,
+    "file_name": "hf_both_one_hand_extended_palm_out_stop_gesture_wearing_baseball_cap",
+    "pose": "one hand extended palm out stop gesture",
+    "occlusion": "wearing baseball cap"
+  },
+  {
+    "serial_number": 312,
+    "file_name": "hf_both_arms_crossed_loose_fabric_wrapped_loosely_around_neck",
+    "pose": "arms crossed",
+    "occlusion": "loose fabric wrapped loosely around neck"
+  },
+  {
+    "serial_number": 313,
+    "file_name": "hf_both_simple_contrapposto_pose_holding_open_outer_layer_flap_partially_covering_torso",
+    "pose": "simple contrapposto pose",
+    "occlusion": "holding open outer layer flap partially covering torso"
+  },
+  {
+    "serial_number": 314,
+    "file_name": "hf_both_thinking_pose_hand_on_chin_standing_behind_market_stall_counter",
+    "pose": "thinking pose hand on chin",
+    "occlusion": "standing behind market stall counter"
+  },
+  {
+    "serial_number": 315,
+    "file_name": "hf_both_standing_with_hands_clasped_in_front_mask_covering_lower_face",
+    "pose": "standing with hands clasped in front",
+    "occlusion": "mask covering lower face"
+  },
+  {
+    "serial_number": 316,
+    "file_name": "hf_both_standing_profile_head_turned_toward_camera_hair_tied_back_with_loose_strands",
+    "pose": "standing profile head turned toward camera",
+    "occlusion": "hair tied back with loose strands"
+  },
+  {
+    "serial_number": 317,
+    "file_name": "hf_both_sitting_with_both_hands_on_knees_standing_at_edge_of_frame_with_one_side_cut",
+    "pose": "sitting with both hands on knees",
+    "occlusion": "standing at edge of frame with one side cut"
+  },
+  {
+    "serial_number": 318,
+    "file_name": "hf_both_standing_with_arms_gently_swinging_forward_holding_sandwich_in_wrapper",
+    "pose": "standing with arms gently swinging forward",
+    "occlusion": "holding sandwich in wrapper"
+  },
+  {
+    "serial_number": 319,
+    "file_name": "hf_both_arms_raised_in_celebration_holding_single_apple_or_fruit",
+    "pose": "arms raised in celebration",
+    "occlusion": "holding single apple or fruit"
+  },
+  {
+    "serial_number": 320,
+    "file_name": "hf_both_walking_upstairs_wearing_bow_tie",
+    "pose": "walking upstairs",
+    "occlusion": "wearing bow tie"
+  },
+  {
+    "serial_number": 321,
+    "file_name": "hf_both_weight_shifted_to_one_leg_holding_travel_mug",
+    "pose": "weight shifted to one leg",
+    "occlusion": "holding travel mug"
+  },
+  {
+    "serial_number": 322,
+    "file_name": "hf_both_sitting_on_steps_with_elbows_on_knees_cosmetics_bag_in_hand",
+    "pose": "sitting on steps with elbows on knees",
+    "occlusion": "cosmetics bag in hand"
+  },
+  {
+    "serial_number": 323,
+    "file_name": "hf_both_casual_stance_weight_on_back_foot_arms_loose_wearing_bow_tie",
+    "pose": "casual stance weight on back foot arms loose",
+    "occlusion": "wearing bow tie"
+  },
+  {
+    "serial_number": 324,
+    "file_name": "hf_both_one_hand_gripping_opposite_forearm_standing_at_atm_machine_blocking_lower_torso",
+    "pose": "one hand gripping opposite forearm",
+    "occlusion": "standing at ATM machine blocking lower torso"
+  },
+  {
+    "serial_number": 325,
+    "file_name": "hf_both_thinking_pose_hand_on_chin_briefcase_held_at_side",
+    "pose": "thinking pose hand on chin",
+    "occlusion": "briefcase held at side"
+  },
+  {
+    "serial_number": 326,
+    "file_name": "hf_both_stepping_to_the_side_standing_behind_parking_meter_blocking_leg",
+    "pose": "stepping to the side",
+    "occlusion": "standing behind parking meter blocking leg"
+  },
+  {
+    "serial_number": 327,
+    "file_name": "hf_both_arms_bent_at_elbow_hands_at_waist_holding_smartphone_charger_cable",
+    "pose": "arms bent at elbow hands at waist",
+    "occlusion": "holding smartphone charger cable"
+  },
+  {
+    "serial_number": 328,
+    "file_name": "hf_both_sitting_on_chair_holding_water_bottle",
+    "pose": "sitting on chair",
+    "occlusion": "holding water bottle"
+  },
+  {
+    "serial_number": 329,
+    "file_name": "hf_both_leaning_against_wall_holding_gaming_controller",
+    "pose": "leaning against wall",
+    "occlusion": "holding gaming controller"
+  },
+  {
+    "serial_number": 330,
+    "file_name": "hf_both_taking_a_step_forward_with_arms_relaxed_wearing_bandana",
+    "pose": "taking a step forward with arms relaxed",
+    "occlusion": "wearing bandana"
+  },
+  {
+    "serial_number": 331,
+    "file_name": "hf_both_fingers_in_gun_pose_reusable_produce_bag_in_hand",
+    "pose": "fingers in gun pose",
+    "occlusion": "reusable produce bag in hand"
+  },
+  {
+    "serial_number": 332,
+    "file_name": "hf_both_waving_hand_holding_small_handbag",
+    "pose": "waving hand",
+    "occlusion": "holding small handbag"
+  },
+  {
+    "serial_number": 333,
+    "file_name": "hf_both_weight_shifted_to_one_leg_outdoor_bench_partially_blocking_lower_legs_when_seated",
+    "pose": "weight shifted to one leg",
+    "occlusion": "outdoor bench partially blocking lower legs when seated"
+  },
+  {
+    "serial_number": 334,
+    "file_name": "hf_both_strolling_with_one_hand_swinging_long_fabric_draped_loosely_over_both_shoulders",
+    "pose": "strolling with one hand swinging",
+    "occlusion": "long fabric draped loosely over both shoulders"
+  },
+  {
+    "serial_number": 335,
+    "file_name": "hf_both_snapping_fingers_bicycle_helmet_hanging_from_one_hand",
+    "pose": "snapping fingers",
+    "occlusion": "bicycle helmet hanging from one hand"
+  },
+  {
+    "serial_number": 336,
+    "file_name": "hf_both_slight_twist_at_waist_foreground_street_sign_pole_partially_blocking_shoulder",
+    "pose": "slight twist at waist",
+    "occlusion": "foreground street sign pole partially blocking shoulder"
+  },
+  {
+    "serial_number": 337,
+    "file_name": "hf_both_stretching_arms_overhead_wearing_wristwatch",
+    "pose": "stretching arms overhead",
+    "occlusion": "wearing wristwatch"
+  },
+  {
+    "serial_number": 338,
+    "file_name": "hf_both_looking_down_at_phone_wearing_lanyard_with_id",
+    "pose": "looking down at phone",
+    "occlusion": "wearing lanyard with ID"
+  },
+  {
+    "serial_number": 339,
+    "file_name": "hf_both_sitting_with_legs_stretched_forward_seated_at_café_table_top_of_table_blocking_waist",
+    "pose": "sitting with legs stretched forward",
+    "occlusion": "seated at café table top of table blocking waist"
+  },
+  {
+    "serial_number": 340,
+    "file_name": "hf_both_casual_lunge_small_suitcase_held_at_side",
+    "pose": "casual lunge",
+    "occlusion": "small suitcase held at side"
+  },
+  {
+    "serial_number": 341,
+    "file_name": "hf_both_weight_shifted_to_one_leg_holding_folded_map",
+    "pose": "weight shifted to one leg",
+    "occlusion": "holding folded map"
+  },
+  {
+    "serial_number": 342,
+    "file_name": "hf_both_face_palm_holding_travel_mug",
+    "pose": "face palm",
+    "occlusion": "holding travel mug"
+  },
+  {
+    "serial_number": 343,
+    "file_name": "hf_both_crouching_slightly_with_hands_on_thighs_small_clutch_purse_held_in_both_hands",
+    "pose": "crouching slightly with hands on thighs",
+    "occlusion": "small clutch purse held in both hands"
+  },
+  {
+    "serial_number": 344,
+    "file_name": "hf_both_hands_in_pockets_holding_smartphone_charger_cable",
+    "pose": "hands in pockets",
+    "occlusion": "holding smartphone charger cable"
+  },
+  {
+    "serial_number": 345,
+    "file_name": "hf_both_running_wearing_bracelet",
+    "pose": "running",
+    "occlusion": "wearing bracelet"
+  },
+  {
+    "serial_number": 346,
+    "file_name": "hf_both_fingers_in_gun_pose_partial_shadow_from_overhead_structure_on_lower_body",
+    "pose": "fingers in gun pose",
+    "occlusion": "partial shadow from overhead structure on lower body"
+  },
+  {
+    "serial_number": 347,
+    "file_name": "hf_both_casual_stance_weight_on_back_foot_arms_loose_insulated_lunch_bag_in_hand",
+    "pose": "casual stance weight on back foot arms loose",
+    "occlusion": "insulated lunch bag in hand"
+  },
+  {
+    "serial_number": 348,
+    "file_name": "hf_both_sitting_with_one_leg_crossed_over_the_other_hands_partially_hidden_by_an_object_eg_bag_cup",
+    "pose": "sitting with one leg crossed over the other",
+    "occlusion": "hands partially hidden by an object (e.g., bag, cup)"
+  },
+  {
+    "serial_number": 349,
+    "file_name": "hf_both_leaning_on_wall_one_shoulder_touching_holding_folded_map",
+    "pose": "leaning on wall one shoulder touching",
+    "occlusion": "holding folded map"
+  },
+  {
+    "serial_number": 350,
+    "file_name": "hf_both_sitting_cross-legged_hand_adjusting_glasses",
+    "pose": "sitting cross-legged",
+    "occlusion": "hand adjusting glasses"
+  },
+  {
+    "serial_number": 351,
+    "file_name": "hf_both_strolling_with_one_hand_swinging_duffel_bag_held_at_side",
+    "pose": "strolling with one hand swinging",
+    "occlusion": "duffel bag held at side"
+  },
+  {
+    "serial_number": 352,
+    "file_name": "hf_both_arms_crossed_carrying_rolled_poster_tube_under_arm_across_torso",
+    "pose": "arms crossed",
+    "occlusion": "carrying rolled poster tube under arm across torso"
+  },
+  {
+    "serial_number": 353,
+    "file_name": "hf_both_sitting_with_one_leg_crossed_over_the_other_full_body_visible",
+    "pose": "sitting with one leg crossed over the other",
+    "occlusion": "full body visible"
+  },
+  {
+    "serial_number": 354,
+    "file_name": "hf_both_leaning_on_table_with_one_elbow_earphones_with_wires_crossing_torso",
+    "pose": "leaning on table with one elbow",
+    "occlusion": "earphones with wires crossing torso"
+  },
+  {
+    "serial_number": 355,
+    "file_name": "hf_both_reaching_into_bag_at_side_standing_behind_shopping_cart_blocking_lower_body",
+    "pose": "reaching into bag at side",
+    "occlusion": "standing behind shopping cart blocking lower body"
+  },
+  {
+    "serial_number": 356,
+    "file_name": "hf_both_sitting_on_steps_with_elbows_on_knees_standing_at_atm_machine_blocking_lower_torso",
+    "pose": "sitting on steps with elbows on knees",
+    "occlusion": "standing at ATM machine blocking lower torso"
+  },
+  {
+    "serial_number": 357,
+    "file_name": "hf_both_one_hand_gripping_opposite_forearm_holding_frisbee",
+    "pose": "one hand gripping opposite forearm",
+    "occlusion": "holding frisbee"
+  },
+  {
+    "serial_number": 358,
+    "file_name": "hf_both_hands_clasped_above_head_wearing_smartwatch",
+    "pose": "hands clasped above head",
+    "occlusion": "wearing smartwatch"
+  },
+  {
+    "serial_number": 359,
+    "file_name": "hf_both_slight_twist_at_waist_standing_behind_market_stall_counter",
+    "pose": "slight twist at waist",
+    "occlusion": "standing behind market stall counter"
+  },
+  {
+    "serial_number": 360,
+    "file_name": "hf_both_snapping_fingers_low_fence_partially_blocking_lower_legs",
+    "pose": "snapping fingers",
+    "occlusion": "low fence partially blocking lower legs"
+  },
+  {
+    "serial_number": 361,
+    "file_name": "hf_both_arms_loosely_folded_at_stomach_low_shrub_hedge_partially_blocking_feet_and_ankles",
+    "pose": "arms loosely folded at stomach",
+    "occlusion": "low shrub hedge partially blocking feet and ankles"
+  },
+  {
+    "serial_number": 362,
+    "file_name": "hf_both_standing_with_thumbs_in_belt_loops_standing_behind_shopping_cart_blocking_lower_body",
+    "pose": "standing with thumbs in belt loops",
+    "occlusion": "standing behind shopping cart blocking lower body"
+  },
+  {
+    "serial_number": 363,
+    "file_name": "hf_both_both_arms_reaching_upward_slightly_wearing_badge_or_pin",
+    "pose": "both arms reaching upward slightly",
+    "occlusion": "wearing badge or pin"
+  },
+  {
+    "serial_number": 364,
+    "file_name": "hf_both_one_hand_extended_palm_out_stop_gesture_standing_behind_market_stall_counter",
+    "pose": "one hand extended palm out stop gesture",
+    "occlusion": "standing behind market stall counter"
+  },
+  {
+    "serial_number": 365,
+    "file_name": "hf_both_sitting_with_both_hands_on_knees_beach_bag_on_shoulder",
+    "pose": "sitting with both hands on knees",
+    "occlusion": "beach bag on shoulder"
+  },
+  {
+    "serial_number": 366,
+    "file_name": "hf_both_sitting_with_legs_stretched_forward_draped_outer_layer_over_forearm_partially_blocking_hip",
+    "pose": "sitting with legs stretched forward",
+    "occlusion": "draped outer layer over forearm partially blocking hip"
+  },
+  {
+    "serial_number": 367,
+    "file_name": "hf_both_arms_spread_wide_hair_falling_over_one_eye",
+    "pose": "arms spread wide",
+    "occlusion": "hair falling over one eye"
+  },
+  {
+    "serial_number": 368,
+    "file_name": "hf_both_standing_relaxed_one_knee_slightly_bent_holding_tennis_ball",
+    "pose": "standing relaxed one knee slightly bent",
+    "occlusion": "holding tennis ball"
+  },
+  {
+    "serial_number": 369,
+    "file_name": "hf_both_sitting_upright_arms_on_armrests_standing_behind_market_stall_counter",
+    "pose": "sitting upright arms on armrests",
+    "occlusion": "standing behind market stall counter"
+  },
+  {
+    "serial_number": 370,
+    "file_name": "hf_both_sitting_on_chair_seated_at_café_table_top_of_table_blocking_waist",
+    "pose": "sitting on chair",
+    "occlusion": "seated at café table top of table blocking waist"
+  },
+  {
+    "serial_number": 371,
+    "file_name": "hf_both_standing_with_arms_gently_swinging_forward_holding_can_of_soda",
+    "pose": "standing with arms gently swinging forward",
+    "occlusion": "holding can of soda"
+  },
+  {
+    "serial_number": 372,
+    "file_name": "hf_both_yoga_tree_pose_hand_covering_mouth_while_speaking",
+    "pose": "yoga tree pose",
+    "occlusion": "hand covering mouth while speaking"
+  },
+  {
+    "serial_number": 373,
+    "file_name": "hf_both_both_arms_reaching_upward_slightly_neck-level_fabric_tube_pulled_down_below_chin",
+    "pose": "both arms reaching upward slightly",
+    "occlusion": "neck-level fabric tube pulled down below chin"
+  },
+  {
+    "serial_number": 374,
+    "file_name": "hf_both_lying_on_side_full_body_visible",
+    "pose": "lying on side",
+    "occlusion": "full body visible"
+  },
+  {
+    "serial_number": 375,
+    "file_name": "hf_both_both_arms_reaching_upward_slightly_fanny_pack_worn_at_waist",
+    "pose": "both arms reaching upward slightly",
+    "occlusion": "fanny pack worn at waist"
+  },
+  {
+    "serial_number": 376,
+    "file_name": "hf_both_simple_contrapposto_pose_wearing_smartwatch",
+    "pose": "simple contrapposto pose",
+    "occlusion": "wearing smartwatch"
+  },
+  {
+    "serial_number": 377,
+    "file_name": "hf_both_casual_stance_weight_on_back_foot_arms_loose_hand_near_ear_on_phone",
+    "pose": "casual stance weight on back foot arms loose",
+    "occlusion": "hand near ear on phone"
+  },
+  {
+    "serial_number": 378,
+    "file_name": "hf_both_bending_slightly_forward_standing_in_doorway_frame_edges_clipping_shoulders",
+    "pose": "bending slightly forward",
+    "occlusion": "standing in doorway frame edges clipping shoulders"
+  },
+  {
+    "serial_number": 379,
+    "file_name": "hf_both_resting_chin_on_hands_wearing_bucket_hat",
+    "pose": "resting chin on hands",
+    "occlusion": "wearing bucket hat"
+  },
+  {
+    "serial_number": 380,
+    "file_name": "hf_both_sitting_on_edge_of_chair_wearing_earrings",
+    "pose": "sitting on edge of chair",
+    "occlusion": "wearing earrings"
+  },
+  {
+    "serial_number": 381,
+    "file_name": "hf_both_tying_shoelace_kneeling_holding_spray_bottle",
+    "pose": "tying shoelace kneeling",
+    "occlusion": "holding spray bottle"
+  },
+  {
+    "serial_number": 382,
+    "file_name": "hf_both_leaning_on_wall_one_shoulder_touching_wearing_fedora",
+    "pose": "leaning on wall one shoulder touching",
+    "occlusion": "wearing fedora"
+  },
+  {
+    "serial_number": 383,
+    "file_name": "hf_both_sitting_on_steps_with_elbows_on_knees_holding_small_juice_box",
+    "pose": "sitting on steps with elbows on knees",
+    "occlusion": "holding small juice box"
+  },
+  {
+    "serial_number": 384,
+    "file_name": "hf_both_stretching_one_arm_across_chest_holding_pen_or_pencil",
+    "pose": "stretching one arm across chest",
+    "occlusion": "holding pen or pencil"
+  },
+  {
+    "serial_number": 385,
+    "file_name": "hf_both_reaching_forward_wearing_belt_with_visible_buckle",
+    "pose": "reaching forward",
+    "occlusion": "wearing belt with visible buckle"
+  },
+  {
+    "serial_number": 386,
+    "file_name": "hf_both_stretching_one_arm_across_chest_standing_at_shop_counter_blocking_lower_torso",
+    "pose": "stretching one arm across chest",
+    "occlusion": "standing at shop counter blocking lower torso"
+  },
+  {
+    "serial_number": 387,
+    "file_name": "hf_both_yoga_warrior_pose_cosmetics_bag_in_hand",
+    "pose": "yoga warrior pose",
+    "occlusion": "cosmetics bag in hand"
+  },
+  {
+    "serial_number": 388,
+    "file_name": "hf_both_standing_with_one_foot_forward_standing_behind_baby_gate_blocking_lower_legs",
+    "pose": "standing with one foot forward",
+    "occlusion": "standing behind baby gate blocking lower legs"
+  },
+  {
+    "serial_number": 389,
+    "file_name": "hf_both_arms_raised_in_celebration_standing_beside_parked_scooter_blocking_one_leg",
+    "pose": "arms raised in celebration",
+    "occlusion": "standing beside parked scooter blocking one leg"
+  },
+  {
+    "serial_number": 390,
+    "file_name": "hf_both_one_hand_extended_palm_out_stop_gesture_holding_small_handbag",
+    "pose": "one hand extended palm out stop gesture",
+    "occlusion": "holding small handbag"
+  },
+  {
+    "serial_number": 391,
+    "file_name": "hf_both_taking_a_step_forward_with_arms_relaxed_holding_wrapped_gift_small",
+    "pose": "taking a step forward with arms relaxed",
+    "occlusion": "holding wrapped gift (small)"
+  },
+  {
+    "serial_number": 392,
+    "file_name": "hf_both_weight_shifted_to_one_leg_holding_umbrella",
+    "pose": "weight shifted to one leg",
+    "occlusion": "holding umbrella"
+  },
+  {
+    "serial_number": 393,
+    "file_name": "hf_both_thinking_pose_hand_on_chin_wearing_fedora",
+    "pose": "thinking pose hand on chin",
+    "occlusion": "wearing fedora"
+  },
+  {
+    "serial_number": 394,
+    "file_name": "hf_both_yoga_tree_pose_standing_behind_display_stand_partially_blocking_torso",
+    "pose": "yoga tree pose",
+    "occlusion": "standing behind display stand partially blocking torso"
+  },
+  {
+    "serial_number": 395,
+    "file_name": "hf_both_looking_over_shoulder_wearing_ponytail_holder",
+    "pose": "looking over shoulder",
+    "occlusion": "wearing ponytail holder"
+  },
+  {
+    "serial_number": 396,
+    "file_name": "hf_both_sitting_upright_arms_on_armrests_standing_behind_half-height_wall",
+    "pose": "sitting upright arms on armrests",
+    "occlusion": "standing behind half-height wall"
+  },
+  {
+    "serial_number": 397,
+    "file_name": "hf_both_sitting_on_floor_with_legs_to_one_side_holding_tennis_ball",
+    "pose": "sitting on floor with legs to one side",
+    "occlusion": "holding tennis ball"
+  },
+  {
+    "serial_number": 398,
+    "file_name": "hf_both_stepping_up_onto_curb_draped_outer_layer_over_forearm_partially_blocking_hip",
+    "pose": "stepping up onto curb",
+    "occlusion": "draped outer layer over forearm partially blocking hip"
+  },
+  {
+    "serial_number": 399,
+    "file_name": "hf_both_sitting_cross-legged_wearing_cardigan_open",
+    "pose": "sitting cross-legged",
+    "occlusion": "wearing cardigan open"
+  },
+  {
+    "serial_number": 400,
+    "file_name": "hf_both_sitting_with_legs_stretched_forward_cane_or_walking_aid_in_front_of_lower_leg",
+    "pose": "sitting with legs stretched forward",
+    "occlusion": "cane or walking aid in front of lower leg"
+  },
+  {
+    "serial_number": 401,
+    "file_name": "hf_both_walking_forward_standing_in_doorway_frame_edges_clipping_shoulders",
+    "pose": "walking forward",
+    "occlusion": "standing in doorway frame edges clipping shoulders"
+  },
+  {
+    "serial_number": 402,
+    "file_name": "hf_both_holding_both_hands_out_in_shrug_gesture_standing_behind_low_garden_wall_blocking_lower_legs",
+    "pose": "holding both hands out in shrug gesture",
+    "occlusion": "standing behind low garden wall blocking lower legs"
+  },
+  {
+    "serial_number": 403,
+    "file_name": "hf_both_hands_on_lower_back_standing_upright_foreground_street_sign_pole_partially_blocking_shoulder",
+    "pose": "hands on lower back standing upright",
+    "occlusion": "foreground street sign pole partially blocking shoulder"
+  },
+  {
+    "serial_number": 404,
+    "file_name": "hf_both_standing_with_hands_clasped_in_front_foreground_balloon_partially_blocking_upper_body",
+    "pose": "standing with hands clasped in front",
+    "occlusion": "foreground balloon partially blocking upper body"
+  },
+  {
+    "serial_number": 405,
+    "file_name": "hf_both_sitting_forward_leaning_elbows_on_knees_holding_gaming_controller",
+    "pose": "sitting forward leaning elbows on knees",
+    "occlusion": "holding gaming controller"
+  },
+  {
+    "serial_number": 406,
+    "file_name": "hf_both_walking_upstairs_standing_at_checkout_counter_blocking_waist_down",
+    "pose": "walking upstairs",
+    "occlusion": "standing at checkout counter blocking waist down"
+  },
+  {
+    "serial_number": 407,
+    "file_name": "hf_both_arms_bent_at_elbow_hands_at_waist_wearing_suspenders",
+    "pose": "arms bent at elbow hands at waist",
+    "occlusion": "wearing suspenders"
+  },
+  {
+    "serial_number": 408,
+    "file_name": "hf_both_sitting_with_one_arm_resting_on_chair_back_holding_laptop_or_tablet_in_front",
+    "pose": "sitting with one arm resting on chair back",
+    "occlusion": "holding laptop or tablet in front"
+  },
+  {
+    "serial_number": 409,
+    "file_name": "hf_both_kneeling_upright_on_both_knees_tote_bag_hanging_at_elbow",
+    "pose": "kneeling upright on both knees",
+    "occlusion": "tote bag hanging at elbow"
+  },
+  {
+    "serial_number": 410,
+    "file_name": "hf_both_standing_with_thumbs_in_belt_loops_wearing_ponytail_holder",
+    "pose": "standing with thumbs in belt loops",
+    "occlusion": "wearing ponytail holder"
+  },
+  {
+    "serial_number": 411,
+    "file_name": "hf_both_standing_with_arms_loosely_behind_back_standing_at_checkout_counter_blocking_waist_down",
+    "pose": "standing with arms loosely behind back",
+    "occlusion": "standing at checkout counter blocking waist down"
+  },
+  {
+    "serial_number": 412,
+    "file_name": "hf_both_sitting_with_one_arm_resting_on_chair_back_standing_behind_market_stall_counter",
+    "pose": "sitting with one arm resting on chair back",
+    "occlusion": "standing behind market stall counter"
+  },
+  {
+    "serial_number": 413,
+    "file_name": "hf_both_kneeling_on_one_knee_hair_tied_back_with_loose_strands",
+    "pose": "kneeling on one knee",
+    "occlusion": "hair tied back with loose strands"
+  },
+  {
+    "serial_number": 414,
+    "file_name": "hf_both_running_diaper_bag_over_shoulder",
+    "pose": "running",
+    "occlusion": "diaper bag over shoulder"
+  },
+  {
+    "serial_number": 415,
+    "file_name": "hf_both_hands_on_lower_back_standing_upright_wearing_earrings",
+    "pose": "hands on lower back standing upright",
+    "occlusion": "wearing earrings"
+  },
+  {
+    "serial_number": 416,
+    "file_name": "hf_both_yoga_tree_pose_standing_behind_shopping_cart_blocking_lower_body",
+    "pose": "yoga tree pose",
+    "occlusion": "standing behind shopping cart blocking lower body"
+  },
+  {
+    "serial_number": 417,
+    "file_name": "hf_both_leaning_on_counter_with_both_forearms_wearing_fitness_tracker",
+    "pose": "leaning on counter with both forearms",
+    "occlusion": "wearing fitness tracker"
+  },
+  {
+    "serial_number": 418,
+    "file_name": "hf_both_lying_on_side_wearing_nose_ring",
+    "pose": "lying on side",
+    "occlusion": "wearing nose ring"
+  },
+  {
+    "serial_number": 419,
+    "file_name": "hf_both_stepping_to_the_side_standing_behind_ticket_kiosk",
+    "pose": "stepping to the side",
+    "occlusion": "standing behind ticket kiosk"
+  },
+  {
+    "serial_number": 420,
+    "file_name": "hf_both_leaning_against_wall_wearing_hairpin_or_clip",
+    "pose": "leaning against wall",
+    "occlusion": "wearing hairpin or clip"
+  },
+  {
+    "serial_number": 421,
+    "file_name": "hf_both_face_palm_standing_behind_baby_gate_blocking_lower_legs",
+    "pose": "face palm",
+    "occlusion": "standing behind baby gate blocking lower legs"
+  },
+  {
+    "serial_number": 422,
+    "file_name": "hf_both_thinking_pose_hand_on_chin_seated_at_desk_with_desk_blocking_lap",
+    "pose": "thinking pose hand on chin",
+    "occlusion": "seated at desk with desk blocking lap"
+  },
+  {
+    "serial_number": 423,
+    "file_name": "hf_both_stretching_arms_overhead_standing_behind_display_stand_partially_blocking_torso",
+    "pose": "stretching arms overhead",
+    "occlusion": "standing behind display stand partially blocking torso"
+  },
+  {
+    "serial_number": 424,
+    "file_name": "hf_both_standing_profile_head_turned_toward_camera_wearing_ankle_bracelet_visible",
+    "pose": "standing profile head turned toward camera",
+    "occlusion": "wearing ankle bracelet visible"
+  },
+  {
+    "serial_number": 425,
+    "file_name": "hf_both_leaning_forward_with_hands_on_knees_sitting_behind_table_with_table_blocking_lower_body",
+    "pose": "leaning forward with hands on knees",
+    "occlusion": "sitting behind table with table blocking lower body"
+  },
+  {
+    "serial_number": 426,
+    "file_name": "hf_both_arms_raised_in_celebration_carrying_flat_box_in_both_hands_in_front",
+    "pose": "arms raised in celebration",
+    "occlusion": "carrying flat box in both hands in front"
+  },
+  {
+    "serial_number": 427,
+    "file_name": "hf_both_sitting_on_edge_of_chair_holding_small_bouquet_of_flowers",
+    "pose": "sitting on edge of chair",
+    "occlusion": "holding small bouquet of flowers"
+  },
+  {
+    "serial_number": 428,
+    "file_name": "hf_both_stepping_up_onto_curb_fanny_pack_worn_at_waist",
+    "pose": "stepping up onto curb",
+    "occlusion": "fanny pack worn at waist"
+  },
+  {
+    "serial_number": 429,
+    "file_name": "hf_both_arms_raised_in_celebration_gym_bag_on_one_shoulder",
+    "pose": "arms raised in celebration",
+    "occlusion": "gym bag on one shoulder"
+  },
+  {
+    "serial_number": 430,
+    "file_name": "hf_both_snapping_fingers_diaper_bag_over_shoulder",
+    "pose": "snapping fingers",
+    "occlusion": "diaper bag over shoulder"
+  },
+  {
+    "serial_number": 431,
+    "file_name": "hf_both_squatting_holding_envelope_in_one_hand",
+    "pose": "squatting",
+    "occlusion": "holding envelope in one hand"
+  },
+  {
+    "serial_number": 432,
+    "file_name": "hf_both_standing_with_arms_loosely_behind_back_holding_ice_cream_cone",
+    "pose": "standing with arms loosely behind back",
+    "occlusion": "holding ice cream cone"
+  },
+  {
+    "serial_number": 433,
+    "file_name": "hf_both_waving_hand_full-front_work_covering_tied_at_waist",
+    "pose": "waving hand",
+    "occlusion": "full-front work covering tied at waist"
+  },
+  {
+    "serial_number": 434,
+    "file_name": "hf_both_holding_both_hands_out_in_shrug_gesture_holding_sandwich_in_wrapper",
+    "pose": "holding both hands out in shrug gesture",
+    "occlusion": "holding sandwich in wrapper"
+  },
+  {
+    "serial_number": 435,
+    "file_name": "hf_both_light_jog_arms_at_sides_holding_spray_bottle",
+    "pose": "light jog arms at sides",
+    "occlusion": "holding spray bottle"
+  },
+  {
+    "serial_number": 436,
+    "file_name": "hf_both_slight_twist_at_waist_wearing_necklace",
+    "pose": "slight twist at waist",
+    "occlusion": "wearing necklace"
+  },
+  {
+    "serial_number": 437,
+    "file_name": "hf_both_sitting_with_both_hands_on_knees_small_suitcase_held_at_side",
+    "pose": "sitting with both hands on knees",
+    "occlusion": "small suitcase held at side"
+  },
+  {
+    "serial_number": 438,
+    "file_name": "hf_both_squatting_wearing_bucket_hat",
+    "pose": "squatting",
+    "occlusion": "wearing bucket hat"
+  },
+  {
+    "serial_number": 439,
+    "file_name": "hf_both_sitting_upright_arms_on_armrests_holding_keys_in_hand",
+    "pose": "sitting upright arms on armrests",
+    "occlusion": "holding keys in hand"
+  },
+  {
+    "serial_number": 440,
+    "file_name": "hf_both_simple_contrapposto_pose_wearing_pendant",
+    "pose": "simple contrapposto pose",
+    "occlusion": "wearing pendant"
+  },
+  {
+    "serial_number": 441,
+    "file_name": "hf_both_sitting_cross-legged_foreground_street_sign_pole_partially_blocking_shoulder",
+    "pose": "sitting cross-legged",
+    "occlusion": "foreground street sign pole partially blocking shoulder"
+  },
+  {
+    "serial_number": 442,
+    "file_name": "hf_both_crouching_slightly_with_hands_on_thighs_draped_outer_layer_over_forearm_partially_blocking_hip",
+    "pose": "crouching slightly with hands on thighs",
+    "occlusion": "draped outer layer over forearm partially blocking hip"
+  },
+  {
+    "serial_number": 443,
+    "file_name": "hf_both_arms_at_sides_standing_behind_luggage_rack_blocking_lower_body",
+    "pose": "arms at sides",
+    "occlusion": "standing behind luggage rack blocking lower body"
+  },
+  {
+    "serial_number": 444,
+    "file_name": "hf_both_sitting_on_floor_with_legs_to_one_side_neck_cord_with_card_hanging_at_chest",
+    "pose": "sitting on floor with legs to one side",
+    "occlusion": "neck cord with card hanging at chest"
+  },
+  {
+    "serial_number": 445,
+    "file_name": "hf_both_leaning_on_railing_standing_behind_low_garden_wall_blocking_lower_legs",
+    "pose": "leaning on railing",
+    "occlusion": "standing behind low garden wall blocking lower legs"
+  },
+  {
+    "serial_number": 446,
+    "file_name": "hf_both_army_salutation_pose_drawstring_bag_on_back",
+    "pose": "army salutation pose",
+    "occlusion": "drawstring bag on back"
+  },
+  {
+    "serial_number": 447,
+    "file_name": "hf_both_hands_on_lower_back_standing_upright_layered_open-front_top_over_inner_layer",
+    "pose": "hands on lower back standing upright",
+    "occlusion": "layered open-front top over inner layer"
+  },
+  {
+    "serial_number": 448,
+    "file_name": "hf_both_sitting_upright_arms_on_armrests_earphones_with_wires_crossing_torso",
+    "pose": "sitting upright arms on armrests",
+    "occlusion": "earphones with wires crossing torso"
+  },
+  {
+    "serial_number": 449,
+    "file_name": "hf_both_standing_with_arms_gently_swinging_forward_standing_at_atm_machine_blocking_lower_torso",
+    "pose": "standing with arms gently swinging forward",
+    "occlusion": "standing at ATM machine blocking lower torso"
+  },
+  {
+    "serial_number": 450,
+    "file_name": "hf_both_squatting_standing_behind_newsstand_counter",
+    "pose": "squatting",
+    "occlusion": "standing behind newsstand counter"
+  },
+  {
+    "serial_number": 451,
+    "file_name": "hf_both_bending_slightly_forward_holding_gaming_controller",
+    "pose": "bending slightly forward",
+    "occlusion": "holding gaming controller"
+  },
+  {
+    "serial_number": 452,
+    "file_name": "hf_both_leaning_forward_with_hands_on_knees_holding_gaming_controller",
+    "pose": "leaning forward with hands on knees",
+    "occlusion": "holding gaming controller"
+  },
+  {
+    "serial_number": 453,
+    "file_name": "hf_both_one_arm_raised_wearing_bracelet",
+    "pose": "one arm raised",
+    "occlusion": "wearing bracelet"
+  },
+  {
+    "serial_number": 454,
+    "file_name": "hf_both_leaning_forward_with_hands_on_knees_holding_phone",
+    "pose": "leaning forward with hands on knees",
+    "occlusion": "holding phone"
+  },
+  {
+    "serial_number": 455,
+    "file_name": "hf_both_sitting_cross-legged_tool_bag_held_at_side",
+    "pose": "sitting cross-legged",
+    "occlusion": "tool bag held at side"
+  },
+  {
+    "serial_number": 456,
+    "file_name": "hf_both_one_hand_gripping_opposite_forearm_seated_at_café_table_top_of_table_blocking_waist",
+    "pose": "one hand gripping opposite forearm",
+    "occlusion": "seated at café table top of table blocking waist"
+  },
+  {
+    "serial_number": 457,
+    "file_name": "hf_both_sitting_with_legs_stretched_forward_standing_at_podium_blocking_lower_half_of_body",
+    "pose": "sitting with legs stretched forward",
+    "occlusion": "standing at podium blocking lower half of body"
+  },
+  {
+    "serial_number": 458,
+    "file_name": "hf_both_turning_to_look_back_wearing_bucket_hat",
+    "pose": "turning to look back",
+    "occlusion": "wearing bucket hat"
+  },
+  {
+    "serial_number": 459,
+    "file_name": "hf_both_standing_relaxed_one_knee_slightly_bent_low_fence_partially_blocking_lower_legs",
+    "pose": "standing relaxed one knee slightly bent",
+    "occlusion": "low fence partially blocking lower legs"
+  },
+  {
+    "serial_number": 460,
+    "file_name": "hf_both_casual_lunge_frame_cutting_off_just_below_waist",
+    "pose": "casual lunge",
+    "occlusion": "frame cutting off just below waist"
+  },
+  {
+    "serial_number": 461,
+    "file_name": "hf_both_perched_on_stool_standing_behind_railing",
+    "pose": "perched on stool",
+    "occlusion": "standing behind railing"
+  },
+  {
+    "serial_number": 462,
+    "file_name": "hf_both_sitting_on_floor_with_knees_bent_feet_flat_low_shrub_hedge_partially_blocking_feet_and_ankles",
+    "pose": "sitting on floor with knees bent feet flat",
+    "occlusion": "low shrub hedge partially blocking feet and ankles"
+  },
+  {
+    "serial_number": 463,
+    "file_name": "hf_both_weight_shifted_to_one_leg_holding_pen_or_pencil",
+    "pose": "weight shifted to one leg",
+    "occlusion": "holding pen or pencil"
+  },
+  {
+    "serial_number": 464,
+    "file_name": "hf_both_looking_down_at_phone_wearing_fitness_tracker",
+    "pose": "looking down at phone",
+    "occlusion": "wearing fitness tracker"
+  },
+  {
+    "serial_number": 465,
+    "file_name": "hf_both_standing_with_arms_loosely_behind_back_wearing_visor",
+    "pose": "standing with arms loosely behind back",
+    "occlusion": "wearing visor"
+  },
+  {
+    "serial_number": 466,
+    "file_name": "hf_both_walking_downstairs_holding_laptop_or_tablet_in_front",
+    "pose": "walking downstairs",
+    "occlusion": "holding laptop or tablet in front"
+  },
+  {
+    "serial_number": 467,
+    "file_name": "hf_both_face_palm_neck_cord_with_card_hanging_at_chest",
+    "pose": "face palm",
+    "occlusion": "neck cord with card hanging at chest"
+  },
+  {
+    "serial_number": 468,
+    "file_name": "hf_both_resting_chin_on_hands_holding_spray_bottle",
+    "pose": "resting chin on hands",
+    "occlusion": "holding spray bottle"
+  },
+  {
+    "serial_number": 469,
+    "file_name": "hf_both_sitting_on_bench_looking_forward_beach_bag_on_shoulder",
+    "pose": "sitting on bench looking forward",
+    "occlusion": "beach bag on shoulder"
+  },
+  {
+    "serial_number": 470,
+    "file_name": "hf_both_holding_out_open_hand_palm_up_seated_on_bar_stool_with_footrest_visible",
+    "pose": "holding out open hand palm up",
+    "occlusion": "seated on bar stool with footrest visible"
+  },
+  {
+    "serial_number": 471,
+    "file_name": "hf_both_sitting_on_chair_bicycle_helmet_hanging_from_one_hand",
+    "pose": "sitting on chair",
+    "occlusion": "bicycle helmet hanging from one hand"
+  },
+  {
+    "serial_number": 472,
+    "file_name": "hf_both_hands_on_lower_back_standing_upright_wearing_pendant",
+    "pose": "hands on lower back standing upright",
+    "occlusion": "wearing pendant"
+  },
+  {
+    "serial_number": 473,
+    "file_name": "hf_both_listening_pose_hand_to_ear_holding_envelope_in_one_hand",
+    "pose": "listening pose hand to ear",
+    "occlusion": "holding envelope in one hand"
+  },
+  {
+    "serial_number": 474,
+    "file_name": "hf_both_leaning_against_wall_frame_cutting_off_at_mid-thigh",
+    "pose": "leaning against wall",
+    "occlusion": "frame cutting off at mid-thigh"
+  },
+  {
+    "serial_number": 475,
+    "file_name": "hf_both_standing_with_arms_gently_swinging_forward_hand_raised_near_face_mid-gesture",
+    "pose": "standing with arms gently swinging forward",
+    "occlusion": "hand raised near face mid-gesture"
+  },
+  {
+    "serial_number": 476,
+    "file_name": "hf_both_one_hand_on_hip_wearing_wristwatch",
+    "pose": "one hand on hip",
+    "occlusion": "wearing wristwatch"
+  },
+  {
+    "serial_number": 477,
+    "file_name": "hf_both_pointing_forward_wheeled_travel_bag_in_front_partially_blocking_legs",
+    "pose": "pointing forward",
+    "occlusion": "wheeled travel bag in front partially blocking legs"
+  },
+  {
+    "serial_number": 478,
+    "file_name": "hf_both_slight_twist_at_waist_foreground_balloon_partially_blocking_upper_body",
+    "pose": "slight twist at waist",
+    "occlusion": "foreground balloon partially blocking upper body"
+  },
+  {
+    "serial_number": 479,
+    "file_name": "hf_both_carrying_object_with_one_hand_holding_book",
+    "pose": "carrying object with one hand",
+    "occlusion": "holding book"
+  },
+  {
+    "serial_number": 480,
+    "file_name": "hf_both_hands_on_lower_back_standing_upright_holding_phone",
+    "pose": "hands on lower back standing upright",
+    "occlusion": "holding phone"
+  },
+  {
+    "serial_number": 481,
+    "file_name": "hf_both_thinking_pose_hand_on_chin_holding_small_plant_pot",
+    "pose": "thinking pose hand on chin",
+    "occlusion": "holding small plant pot"
+  },
+  {
+    "serial_number": 482,
+    "file_name": "hf_both_arms_at_sides_low_fence_partially_blocking_lower_legs",
+    "pose": "arms at sides",
+    "occlusion": "low fence partially blocking lower legs"
+  },
+  {
+    "serial_number": 483,
+    "file_name": "hf_both_mid-stride_stroller_or_baby_carriage_in_front_blocking_lower_torso",
+    "pose": "mid-stride",
+    "occlusion": "stroller or baby carriage in front blocking lower torso"
+  },
+  {
+    "serial_number": 484,
+    "file_name": "hf_both_standing_relaxed_one_knee_slightly_bent_wearing_fedora",
+    "pose": "standing relaxed one knee slightly bent",
+    "occlusion": "wearing fedora"
+  },
+  {
+    "serial_number": 485,
+    "file_name": "hf_both_one_hand_gripping_opposite_forearm_holding_folded_map",
+    "pose": "one hand gripping opposite forearm",
+    "occlusion": "holding folded map"
+  },
+  {
+    "serial_number": 486,
+    "file_name": "hf_both_sitting_on_floor_with_knees_bent_feet_flat_holding_tv_remote",
+    "pose": "sitting on floor with knees bent feet flat",
+    "occlusion": "holding TV remote"
+  },
+  {
+    "serial_number": 487,
+    "file_name": "hf_both_sitting_with_one_arm_resting_on_chair_back_long_fabric_end_hanging_over_chest_partially_obscuring_torso",
+    "pose": "sitting with one arm resting on chair back",
+    "occlusion": "long fabric end hanging over chest partially obscuring torso"
+  },
+  {
+    "serial_number": 488,
+    "file_name": "hf_both_listening_pose_hand_to_ear_standing_behind_display_stand_partially_blocking_torso",
+    "pose": "listening pose hand to ear",
+    "occlusion": "standing behind display stand partially blocking torso"
+  },
+  {
+    "serial_number": 489,
+    "file_name": "hf_both_one_hand_on_chest_holding_protein_bar",
+    "pose": "one hand on chest",
+    "occlusion": "holding protein bar"
+  },
+  {
+    "serial_number": 490,
+    "file_name": "hf_both_bending_slightly_forward_hands_partially_hidden_by_an_object_eg_bag_cup",
+    "pose": "bending slightly forward",
+    "occlusion": "hands partially hidden by an object (e.g., bag, cup)"
+  },
+  {
+    "serial_number": 491,
+    "file_name": "hf_both_standing_with_arms_gently_swinging_forward_layered_chains_hanging_over_neckline_area",
+    "pose": "standing with arms gently swinging forward",
+    "occlusion": "layered chains hanging over neckline area"
+  },
+  {
+    "serial_number": 492,
+    "file_name": "hf_both_standing_with_hands_behind_back_foreground_balloon_partially_blocking_upper_body",
+    "pose": "standing with hands behind back",
+    "occlusion": "foreground balloon partially blocking upper body"
+  },
+  {
+    "serial_number": 493,
+    "file_name": "hf_both_stepping_to_the_side_small_cooler_bag_held_at_side",
+    "pose": "stepping to the side",
+    "occlusion": "small cooler bag held at side"
+  },
+  {
+    "serial_number": 494,
+    "file_name": "hf_both_standing_with_hands_clasped_in_front_hand_near_ear_on_phone",
+    "pose": "standing with hands clasped in front",
+    "occlusion": "hand near ear on phone"
+  },
+  {
+    "serial_number": 495,
+    "file_name": "hf_both_weight_shifted_to_one_leg_small_cooler_bag_held_at_side",
+    "pose": "weight shifted to one leg",
+    "occlusion": "small cooler bag held at side"
+  },
+  {
+    "serial_number": 496,
+    "file_name": "hf_both_sitting_on_floor_with_legs_to_one_side_seated_at_café_table_top_of_table_blocking_waist",
+    "pose": "sitting on floor with legs to one side",
+    "occlusion": "seated at café table top of table blocking waist"
+  },
+  {
+    "serial_number": 497,
+    "file_name": "hf_both_sitting_on_chair_open_layered_top_revealing_inner_layer",
+    "pose": "sitting on chair",
+    "occlusion": "open layered top revealing inner layer"
+  },
+  {
+    "serial_number": 498,
+    "file_name": "hf_both_stepping_up_onto_curb_holding_frisbee",
+    "pose": "stepping up onto curb",
+    "occlusion": "holding frisbee"
+  },
+  {
+    "serial_number": 499,
+    "file_name": "hf_both_looking_over_shoulder_standing_behind_railing",
+    "pose": "looking over shoulder",
+    "occlusion": "standing behind railing"
+  },
+  {
+    "serial_number": 500,
+    "file_name": "hf_both_holding_both_hands_out_in_shrug_gesture_sitting_behind_table_with_table_blocking_lower_body",
+    "pose": "holding both hands out in shrug gesture",
+    "occlusion": "sitting behind table with table blocking lower body"
+  },
+  {
+    "serial_number": 501,
+    "file_name": "hf_both_thinking_pose_hand_on_chin_holding_reusable_grocery_bag_in_one_hand",
+    "pose": "thinking pose hand on chin",
+    "occlusion": "holding reusable grocery bag in one hand"
+  }
+]
